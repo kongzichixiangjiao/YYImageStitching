@@ -8,12 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		DC64BC01205FB88B003E204E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC00205FB88B003E204E /* AppDelegate.swift */; };
-		DC64BC03205FB88B003E204E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC02205FB88B003E204E /* ViewController.swift */; };
+		DC64BC03205FB88B003E204E /* YYMovingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC02205FB88B003E204E /* YYMovingViewController.swift */; };
 		DC64BC06205FB88B003E204E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC64BC04205FB88B003E204E /* Main.storyboard */; };
 		DC64BC08205FB88B003E204E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC64BC07205FB88B003E204E /* Assets.xcassets */; };
 		DC64BC0B205FB88B003E204E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC64BC09205FB88B003E204E /* LaunchScreen.storyboard */; };
 		DC64BC16205FB88B003E204E /* YYImageStitchingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC15205FB88B003E204E /* YYImageStitchingTests.swift */; };
 		DC64BC21205FB88B003E204E /* YYImageStitchingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC20205FB88B003E204E /* YYImageStitchingUITests.swift */; };
+		DC64BC30205FBF7C003E204E /* YYStitchingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC2F205FBF7C003E204E /* YYStitchingFlowLayout.swift */; };
+		DC64BC33205FC0FF003E204E /* YYStitchingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC31205FC0FF003E204E /* YYStitchingCell.swift */; };
+		DC64BC34205FC0FF003E204E /* YYStitchingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC64BC32205FC0FF003E204E /* YYStitchingCell.xib */; };
+		DC64BC36205FC134003E204E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC35205FC134003E204E /* UIColor+Extension.swift */; };
+		DC64BC38205FC165003E204E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC37205FC165003E204E /* String+Extension.swift */; };
+		DC64BC3A205FC1A0003E204E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC39205FC1A0003E204E /* UIImage+Extension.swift */; };
+		DC64BC3C205FDE3C003E204E /* YYRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC3B205FDE3C003E204E /* YYRootViewController.swift */; };
+		DC64BC3E205FDF1D003E204E /* YYStitchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC3D205FDF1D003E204E /* YYStitchingViewController.swift */; };
+		DC64BC40205FE077003E204E /* YYPickerImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC3F205FE077003E204E /* YYPickerImageViewController.swift */; };
+		DC64BC422060B686003E204E /* YYImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC412060B686003E204E /* YYImageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +46,7 @@
 /* Begin PBXFileReference section */
 		DC64BBFD205FB88B003E204E /* YYImageStitching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYImageStitching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC64BC00205FB88B003E204E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC64BC02205FB88B003E204E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DC64BC02205FB88B003E204E /* YYMovingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYMovingViewController.swift; sourceTree = "<group>"; };
 		DC64BC05205FB88B003E204E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC64BC07205FB88B003E204E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC64BC0A205FB88B003E204E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +57,16 @@
 		DC64BC1C205FB88B003E204E /* YYImageStitchingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YYImageStitchingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC64BC20205FB88B003E204E /* YYImageStitchingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYImageStitchingUITests.swift; sourceTree = "<group>"; };
 		DC64BC22205FB88B003E204E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC64BC2F205FBF7C003E204E /* YYStitchingFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYStitchingFlowLayout.swift; sourceTree = "<group>"; };
+		DC64BC31205FC0FF003E204E /* YYStitchingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYStitchingCell.swift; sourceTree = "<group>"; };
+		DC64BC32205FC0FF003E204E /* YYStitchingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYStitchingCell.xib; sourceTree = "<group>"; };
+		DC64BC35205FC134003E204E /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		DC64BC37205FC165003E204E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		DC64BC39205FC1A0003E204E /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		DC64BC3B205FDE3C003E204E /* YYRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYRootViewController.swift; sourceTree = "<group>"; };
+		DC64BC3D205FDF1D003E204E /* YYStitchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYStitchingViewController.swift; sourceTree = "<group>"; };
+		DC64BC3F205FE077003E204E /* YYPickerImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYPickerImageViewController.swift; sourceTree = "<group>"; };
+		DC64BC412060B686003E204E /* YYImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYImageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +117,9 @@
 		DC64BBFF205FB88B003E204E /* YYImageStitching */ = {
 			isa = PBXGroup;
 			children = (
+				DC64BC2E205FBF51003E204E /* Stitching */,
 				DC64BC00205FB88B003E204E /* AppDelegate.swift */,
-				DC64BC02205FB88B003E204E /* ViewController.swift */,
+				DC64BC3B205FDE3C003E204E /* YYRootViewController.swift */,
 				DC64BC04205FB88B003E204E /* Main.storyboard */,
 				DC64BC07205FB88B003E204E /* Assets.xcassets */,
 				DC64BC09205FB88B003E204E /* LaunchScreen.storyboard */,
@@ -123,6 +144,23 @@
 				DC64BC22205FB88B003E204E /* Info.plist */,
 			);
 			path = YYImageStitchingUITests;
+			sourceTree = "<group>";
+		};
+		DC64BC2E205FBF51003E204E /* Stitching */ = {
+			isa = PBXGroup;
+			children = (
+				DC64BC3F205FE077003E204E /* YYPickerImageViewController.swift */,
+				DC64BC02205FB88B003E204E /* YYMovingViewController.swift */,
+				DC64BC3D205FDF1D003E204E /* YYStitchingViewController.swift */,
+				DC64BC39205FC1A0003E204E /* UIImage+Extension.swift */,
+				DC64BC35205FC134003E204E /* UIColor+Extension.swift */,
+				DC64BC37205FC165003E204E /* String+Extension.swift */,
+				DC64BC2F205FBF7C003E204E /* YYStitchingFlowLayout.swift */,
+				DC64BC31205FC0FF003E204E /* YYStitchingCell.swift */,
+				DC64BC32205FC0FF003E204E /* YYStitchingCell.xib */,
+				DC64BC412060B686003E204E /* YYImageModel.swift */,
+			);
+			path = Stitching;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +273,7 @@
 				DC64BC0B205FB88B003E204E /* LaunchScreen.storyboard in Resources */,
 				DC64BC08205FB88B003E204E /* Assets.xcassets in Resources */,
 				DC64BC06205FB88B003E204E /* Main.storyboard in Resources */,
+				DC64BC34205FC0FF003E204E /* YYStitchingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +298,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC64BC03205FB88B003E204E /* ViewController.swift in Sources */,
+				DC64BC422060B686003E204E /* YYImageModel.swift in Sources */,
+				DC64BC03205FB88B003E204E /* YYMovingViewController.swift in Sources */,
+				DC64BC3A205FC1A0003E204E /* UIImage+Extension.swift in Sources */,
+				DC64BC3C205FDE3C003E204E /* YYRootViewController.swift in Sources */,
+				DC64BC30205FBF7C003E204E /* YYStitchingFlowLayout.swift in Sources */,
+				DC64BC40205FE077003E204E /* YYPickerImageViewController.swift in Sources */,
+				DC64BC3E205FDF1D003E204E /* YYStitchingViewController.swift in Sources */,
 				DC64BC01205FB88B003E204E /* AppDelegate.swift in Sources */,
+				DC64BC33205FC0FF003E204E /* YYStitchingCell.swift in Sources */,
+				DC64BC38205FC165003E204E /* String+Extension.swift in Sources */,
+				DC64BC36205FC134003E204E /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -414,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -429,6 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HGA4995V4J;
 				INFOPLIST_FILE = YYImageStitching/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JN.PuXin.YYImageStitching;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,6 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HGA4995V4J;
 				INFOPLIST_FILE = YYImageStitching/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JN.PuXin.YYImageStitching;
 				PRODUCT_NAME = "$(TARGET_NAME)";
