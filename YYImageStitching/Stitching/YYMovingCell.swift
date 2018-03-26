@@ -8,9 +8,9 @@
 
 import UIKit
 
-class YYStitchingCell: UICollectionViewCell {
+class YYMovingCell: UICollectionViewCell {
 
-    static let identifier = "YYStitchingCell"
+    static let identifier = "YYMovingCell"
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!

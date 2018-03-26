@@ -8,14 +8,27 @@
 
 import UIKit
 
-class YYStitchingViewController: YYMovingViewController {
+protocol YYStitchingViewControllerDelegate: class {
+    func stichingBack(models: [YYImageModel])
+}
+
+class YYStitchingViewController: YYBaseCollectionViewController {
+    
+    weak var myDelegate: YYStitchingViewControllerDelegate?
     
     var selectedArray: [YYImageModel] = []
-    
     var isEdit: Bool = false 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadData()
+        updateFrame(bottom: 44)
+        registerCell(nibName: YYMovingCell.identifier)
+        collectionView.reloadData()
+    }
+    
+    private func loadData() {
         let assets = initAssets()
         for i in 0..<assets.count {
             let asset = assets[i]
@@ -51,15 +64,14 @@ class YYStitchingViewController: YYMovingViewController {
     }
     
     @IBAction func finishedAction(_ sender: UIButton) {
-        let rootVC = self.navigationController?.childViewControllers[0] as! YYRootViewController
-        rootVC.dataSource = self.selectedArray
+        myDelegate?.stichingBack(models: self.selectedArray)
         self.navigationController?.popViewController(animated: true)
     }
 }
 
 extension YYStitchingViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YYStitchingCell.identifier, for: indexPath) as! YYStitchingCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YYMovingCell.identifier, for: indexPath) as! YYMovingCell
         cell.contentView.backgroundColor = UIColor.randomColor()
         cell.titleLabel.text = String(indexPath.row)
         cell.model = self.dataSource[indexPath.row]

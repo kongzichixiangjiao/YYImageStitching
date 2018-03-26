@@ -2,18 +2,21 @@
 //  YYStitchingFlowLayout.swift
 //  YYImageStitching
 //
-//  Created by 侯佳男 on 2018/3/19.
+//  Created by 侯佳男 on 2018/3/22.
 //  Copyright © 2018年 侯佳男. All rights reserved.
 //
 
 import UIKit
 
 class YYStitchingFlowLayout: UICollectionViewFlowLayout {
+    
+    var minLineSpacing: CGFloat = 0
+    
     override func prepare() {
         super.prepare()
-        itemSize = CGSize(width: collectionView!.frame.width / 3 - 10, height: collectionView!.frame.width / 3)
-        minimumInteritemSpacing = 10
-        minimumLineSpacing = 10
+        itemSize = CGSize.zero
+        minimumInteritemSpacing = 0
+        minimumLineSpacing = minLineSpacing
         scrollDirection = .vertical
     }
 }

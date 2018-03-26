@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dfs-UP-jDI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jz5-3u-aRz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,17 +26,26 @@
             </objects>
             <point key="canvasLocation" x="-1025" y="34"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="BJ4-Fl-ORl">
+        <!--Scale View Controller-->
+        <scene sceneID="OT9-w3-ci3">
             <objects>
-                <viewController id="LWs-n8-ZBT" customClass="YYRootViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TEo-xJ-LkA">
+                <viewController id="jz5-3u-aRz" customClass="YYScaleViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n1f-tX-65U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="9zS-Ob-psf"/>
+                        <viewLayoutGuide key="safeArea" id="e8z-eU-hne"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Fsh-EL-8iq">
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcU-eO-I7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-873" y="782"/>
+        </scene>
+        <!--Stitching-->
+        <scene sceneID="BJ4-Fl-ORl">
+            <objects>
+                <viewController id="LWs-n8-ZBT" customClass="YYRootViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Stitching" id="Fsh-EL-8iq">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="1da-GV-CiQ">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vQm-Ft-rRc">
                                 <rect key="frame" x="313" y="7" width="46" height="30"/>
@@ -51,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQh-cr-djH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-364" y="34"/>
+            <point key="canvasLocation" x="-268" y="34"/>
         </scene>
         <!--Stitching View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -93,33 +102,20 @@
                                     <constraint firstAttribute="bottom" secondItem="1zD-1N-FeD" secondAttribute="bottom" id="uiI-83-7Dh"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HgH-CH-cVf">
-                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewLayout key="collectionViewLayout" id="41i-ok-S97" customClass="YYStitchingFlowLayout" customModule="YYImageStitching" customModuleProvider="target"/>
-                                <cells/>
-                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HgH-CH-cVf" secondAttribute="trailing" id="3Mc-IV-B5N"/>
-                            <constraint firstItem="HgH-CH-cVf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6fg-aq-ns4"/>
-                            <constraint firstItem="HgH-CH-cVf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DA0-4E-6Og"/>
                             <constraint firstItem="8m9-Xh-aQ3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M5V-rU-Mid"/>
                             <constraint firstItem="8m9-Xh-aQ3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dsI-bW-P5B"/>
-                            <constraint firstItem="8m9-Xh-aQ3" firstAttribute="top" secondItem="HgH-CH-cVf" secondAttribute="bottom" id="eEJ-5m-7ZR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8m9-Xh-aQ3" secondAttribute="bottom" id="eJ8-iM-UmX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="55b-IP-q4D"/>
-                    <connections>
-                        <outlet property="collectionView" destination="HgH-CH-cVf" id="not-2T-aSc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="370.39999999999998" y="33.733133433283363"/>
+            <point key="canvasLocation" x="486" y="34"/>
         </scene>
     </scenes>
 </document>

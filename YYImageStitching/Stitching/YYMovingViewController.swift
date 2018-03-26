@@ -9,34 +9,19 @@
 import UIKit
 import Photos
 
-class YYMovingViewController: YYPickerImageViewController {
+class YYMovingViewController: YYBaseCollectionViewController {
     
     enum MoveCellType {
         case MOVE, SELECTED, NONE
     }
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    
     var longPressGesture: UILongPressGestureRecognizer!
     var moveCellType: MoveCellType! = .NONE
     var indexPathMove: IndexPath! = IndexPath(item: 1000, section: 0)
     
-    var dataSource: [YYImageModel] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        initCollectionView()
-        
         addLongPressGesture()
-    }
-    
-    private func initCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.isPagingEnabled = true
-        collectionView.register(UINib(nibName: YYStitchingCell.identifier, bundle: nil),
-                                forCellWithReuseIdentifier: YYStitchingCell.identifier)
     }
     
     private func addLongPressGesture() {
@@ -77,34 +62,7 @@ class YYMovingViewController: YYPickerImageViewController {
     }
 }
 
-extension YYMovingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
-        print("1")
-        return true
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        print("2")
-        return true
-    }
-    
+extension YYMovingViewController {
     func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let sourceModel = self.dataSource[sourceIndexPath.row]
         dataSource.remove(at: sourceIndexPath.row)
@@ -119,21 +77,17 @@ extension YYMovingViewController: UICollectionViewDelegate, UICollectionViewData
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, targetIndexPathForMoveFromItemAt originalIndexPath: IndexPath, toProposedIndexPath proposedIndexPath: IndexPath) -> IndexPath {
-        return proposedIndexPath
-    }
-    
     // iOS8 适配
     func moveCollectionViewCell(indexPath: IndexPath) {
         if indexPath == indexPathMove {
-            _ = collectionView.cellForItem(at: indexPath) as! YYStitchingCell
+            _ = collectionView.cellForItem(at: indexPath) as! YYMovingCell
             moveCellType = .NONE
             indexPathMove = IndexPath(item: 1000, section: 0)
             collectionView.endInteractiveMovement()
         } else {
             switch moveCellType! {
             case .SELECTED:
-                _ = collectionView.cellForItem(at: indexPath) as! YYStitchingCell
+                _ = collectionView.cellForItem(at: indexPath) as! YYMovingCell
                 collectionView.moveItem(at: indexPathMove, to: indexPath)
                 moveCellType = .NONE
                 indexPathMove = IndexPath(item: 1000, section: 0)
@@ -142,13 +96,29 @@ extension YYMovingViewController: UICollectionViewDelegate, UICollectionViewData
             case .MOVE:
                 break
             case .NONE:
-                _ = collectionView.cellForItem(at: indexPath) as! YYStitchingCell
+                _ = collectionView.cellForItem(at: indexPath) as! YYMovingCell
                 indexPathMove = indexPath
                 moveCellType = .SELECTED
                 collectionView.beginInteractiveMovementForItem(at: indexPath)
                 break
             }
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, targetIndexPathForMoveFromItemAt originalIndexPath: IndexPath, toProposedIndexPath proposedIndexPath: IndexPath) -> IndexPath {
+        return proposedIndexPath
     }
     
 }
