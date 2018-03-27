@@ -60,7 +60,7 @@ extension YYScaleMovingCell: UIScrollViewDelegate {
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        self.imgView.center = self.center
+        self.imgView.center = self.scrollView.center
     }
     
 }

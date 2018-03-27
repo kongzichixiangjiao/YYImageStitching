@@ -45,7 +45,7 @@ extension UIImage {
 
 extension UIImage {
     ///对指定图片进行拉伸
-    func resizableImage(_ name: String) -> UIImage {
+    func yy_resizableImage(_ name: String) -> UIImage {
         var normal = UIImage(named: name)!
         let imageWidth = normal.size.width * 0.5
         let imageHeight = normal.size.height * 0.5
@@ -62,10 +62,10 @@ extension UIImage {
      *
      *  return 压缩后图片的二进制
      */
-    func compressImage(_ maxLength: Int) -> Data? {
+    func yy_compressImage(_ maxLength: Int) -> Data? {
         
-        let newSize = self.scaleImage(self, imageLength: 300)
-        let newImage = self.resizeImage(newSize: newSize)
+        let newSize = self.yy_scaleImage(self, imageLength: 300)
+        let newImage = self.yy_resizeImage(newSize: newSize)
         
         var compress:CGFloat = 0.9
         var data = UIImageJPEGRepresentation(newImage, compress)
@@ -86,27 +86,20 @@ extension UIImage {
      *
      *  return 获得等比例的size
      */
-    func scaleImage(_ image: UIImage, imageLength: CGFloat) -> CGSize {
+    func yy_scaleImage(_ image: UIImage, imageLength: CGFloat) -> CGSize {
         
         var newWidth:CGFloat = 0.0
         var newHeight:CGFloat = 0.0
         let width = image.size.width
         let height = image.size.height
-        
         if (width > imageLength || height > imageLength){
-            
             if (width > height) {
-                
                 newWidth = imageLength;
                 newHeight = newWidth * height / width;
-                
             }else if(height > width){
-                
                 newHeight = imageLength;
                 newWidth = newHeight * width / height;
-                
             }else{
-                
                 newWidth = imageLength;
                 newHeight = imageLength;
             }
@@ -124,7 +117,7 @@ extension UIImage {
      *
      *  return 调整后的图片
      */
-    func resizeImage(newSize: CGSize, scale: CGFloat = 2) -> UIImage {
+    func yy_resizeImage(newSize: CGSize, scale: CGFloat = 2) -> UIImage {
         UIGraphicsBeginImageContext(newSize)
         
         UIGraphicsBeginImageContextWithOptions(newSize, false, scale)
@@ -137,6 +130,28 @@ extension UIImage {
         
         return newImage!
     }
+    /// 将传入的图片裁剪成圆形图片
+    func yy_circleImage() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.size, false, 0.0)
+        let ctx = UIGraphicsGetCurrentContext()
+        let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
+        ctx?.addEllipse(in: rect)
+        
+        ctx?.clip()
+        self.draw(in: rect)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
     
-    
+    func yy_proportionZoom(w: CGFloat, h: CGFloat) -> CGSize {
+        let vW: CGFloat = UIScreen.main.bounds.size.width
+        let _: CGFloat = UIScreen.main.bounds.size.height
+        let scale: CGFloat = UIScreen.main.scale
+        let iW: CGFloat = CGFloat(h) / scale
+        let iH: CGFloat = CGFloat(h) / scale
+        let h: CGFloat = (iH / iW) * vW
+        return CGSize(width: vW, height: h)
+    }
 }

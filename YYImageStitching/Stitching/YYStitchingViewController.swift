@@ -26,6 +26,12 @@ class YYStitchingViewController: YYBaseCollectionViewController {
         updateFrame(bottom: 44)
         registerCell(nibName: YYMovingCell.identifier)
         collectionView.reloadData()
+        
+        self.isEdit = true
+        self.collectionView.reloadData()
+        if !self.isEdit {
+            self.selectedArray.removeAll()
+        }
     }
     
     private func loadData() {

@@ -74,10 +74,7 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zD-1N-FeD">
-                                        <rect key="frame" x="20" y="0.0" width="44" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="RMr-k0-Cpf"/>
-                                        </constraints>
+                                        <rect key="frame" x="20" y="0.0" width="30" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="选择"/>
                                         <state key="selected" title="取消"/>
@@ -86,10 +83,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A11-Wo-Ojr">
-                                        <rect key="frame" x="311" y="0.0" width="44" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="G4r-9U-sRH"/>
-                                        </constraints>
+                                        <rect key="frame" x="325" y="0.0" width="30" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="完成"/>
                                         <connections>
@@ -101,11 +95,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="CmA-9f-iYz"/>
                                     <constraint firstItem="1zD-1N-FeD" firstAttribute="top" secondItem="8m9-Xh-aQ3" secondAttribute="top" id="L91-UY-ii9"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1zD-1N-FeD" secondAttribute="trailing" constant="20" symbolic="YES" id="Tiz-oY-fl2"/>
                                     <constraint firstItem="1zD-1N-FeD" firstAttribute="leading" secondItem="8m9-Xh-aQ3" secondAttribute="leading" constant="20" id="ZUG-tU-CDt"/>
                                     <constraint firstAttribute="bottom" secondItem="A11-Wo-Ojr" secondAttribute="bottom" id="bLB-eZ-uWb"/>
                                     <constraint firstItem="A11-Wo-Ojr" firstAttribute="top" secondItem="8m9-Xh-aQ3" secondAttribute="top" id="bSs-i5-3C8"/>
                                     <constraint firstAttribute="trailing" secondItem="A11-Wo-Ojr" secondAttribute="trailing" constant="20" id="ph6-AC-KfX"/>
                                     <constraint firstAttribute="bottom" secondItem="1zD-1N-FeD" secondAttribute="bottom" id="uiI-83-7Dh"/>
+                                    <constraint firstItem="A11-Wo-Ojr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8m9-Xh-aQ3" secondAttribute="leading" constant="20" symbolic="YES" id="wQs-FB-fCa"/>
                                 </constraints>
                             </view>
                         </subviews>

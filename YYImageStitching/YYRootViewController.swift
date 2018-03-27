@@ -72,6 +72,7 @@ extension YYRootViewController {
         self.imageManager.requestImage(for: cell.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
             cell.imgView.image = result ?? UIImage.init(named: "iw_none")
             cell.scrollView.zoomScale = 1
+            self.dataSource[indexPath.row].image = result
         }
         return cell
     }
@@ -82,13 +83,7 @@ extension YYRootViewController {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let aseet = self.dataSource[indexPath.row].asset!
-        let vW: CGFloat = self.view.frame.size.width
-        let _: CGFloat = self.view.frame.size.height
-        let scale: CGFloat = UIScreen.main.scale
-        let iW: CGFloat = CGFloat(aseet.pixelWidth) / scale
-        let iH: CGFloat = CGFloat(aseet.pixelHeight) / scale
-        let h: CGFloat = (iH / iW) * vW
-        return CGSize(width: vW, height: h)
+        return CGSize.yy_imageZoom(w: CGFloat(aseet.pixelWidth), h: CGFloat(aseet.pixelHeight))
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
