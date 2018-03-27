@@ -21,6 +21,8 @@ class YYMovingCell: UICollectionViewCell {
     @IBOutlet weak var leftSpace: NSLayoutConstraint!
     @IBOutlet weak var rightSpace: NSLayoutConstraint!
     
+  
+    
     var model: YYImageModel! {
         didSet {
             selectedButton.isSelected = model.isSelected
@@ -29,7 +31,6 @@ class YYMovingCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     func setupEdit(isEdit: Bool) {
@@ -37,3 +38,5 @@ class YYMovingCell: UICollectionViewCell {
     }
 
 }
+
+

@@ -13,4 +13,5 @@ class YYImageModel {
     var asset: PHAsset!
     var isSelected: Bool = false
     var indexPath: IndexPath!
+    
 }

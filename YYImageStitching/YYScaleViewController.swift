@@ -8,36 +8,48 @@
 
 import UIKit
 
-class YYScaleViewController: UIViewController {
+class YYScaleViewController: YYPickerImageViewController {
+    
+    var model: YYImageModel! {
+        didSet {
+        }
+    }
 
     lazy var scrollView: UIScrollView = {
-        let v = UIScrollView()
+        let v = UIScrollView(frame: self.view.bounds)
         v.delegate = self
-        v.zoomScale = 1
+        v.minimumZoomScale = 0.1
+        v.maximumZoomScale = 3
+        v.zoomScale = 3
+        v.backgroundColor = UIColor.orange
+        self.view.addSubview(v)
+        return v
+    }()
+    
+    lazy var imgView: UIImageView = {
+        let v = UIImageView(frame: self.view.bounds)
+        v.image = UIImage(named: "5.jpg")
         return v
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.scrollView.addSubview(imgView)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
 }
 
 extension YYScaleViewController: UIScrollViewDelegate {
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        print("1")
-    }
     
-    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-        scrollView.zoom(to: <#T##CGRect#>, animated: <#T##Bool#>)
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.imgView
+    }
+
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        self.imgView.center = scrollView.center
     }
     
 }

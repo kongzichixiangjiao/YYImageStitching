@@ -17,7 +17,7 @@ class YYRootViewController: YYMovingViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        registerCell(nibName: YYMovingCell.identifier)
+        registerCell(nibName: YYScaleMovingCell.identifier)
         collectionView.collectionViewLayout = flowLayout
         collectionView.emptyDelegate = self
         collectionView.yy_reloadData()
@@ -66,11 +66,12 @@ extension YYRootViewController: UICollectionViewPlaceHolderDelegate
 }
 extension YYRootViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YYMovingCell.identifier, for: indexPath) as! YYMovingCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YYScaleMovingCell.identifier, for: indexPath) as! YYScaleMovingCell
 
         cell.model = self.dataSource[indexPath.row]
         self.imageManager.requestImage(for: cell.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
-            cell.imageView.image = result ?? UIImage.init(named: "iw_none")
+            cell.imgView.image = result ?? UIImage.init(named: "iw_none")
+            cell.scrollView.zoomScale = 1
         }
         return cell
     }
@@ -91,8 +92,9 @@ extension YYRootViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let vc = YYScaleViewController()
+        vc.model = self.dataSource[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-    
     
 }

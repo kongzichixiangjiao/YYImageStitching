@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jz5-3u-aRz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dfs-UP-jDI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -46,11 +46,11 @@
             <objects>
                 <viewController id="LWs-n8-ZBT" customClass="YYRootViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Stitching" id="Fsh-EL-8iq">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="1da-GV-CiQ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vQm-Ft-rRc">
-                                <rect key="frame" x="313" y="7" width="46" height="30"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="1da-GV-CiQ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vQm-Ft-rRc">
+                                <rect key="frame" x="311" y="0.0" width="48" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="添加"/>
+                                <state key="normal" image="icon_add"/>
                                 <connections>
                                     <action selector="addPictures:" destination="LWs-n8-ZBT" eventType="touchUpInside" id="q5V-G2-QG1"/>
                                 </connections>
@@ -74,7 +74,10 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zD-1N-FeD">
-                                        <rect key="frame" x="20" y="0.0" width="30" height="44"/>
+                                        <rect key="frame" x="20" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="RMr-k0-Cpf"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="选择"/>
                                         <state key="selected" title="取消"/>
@@ -83,7 +86,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A11-Wo-Ojr">
-                                        <rect key="frame" x="70" y="0.0" width="30" height="44"/>
+                                        <rect key="frame" x="311" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="G4r-9U-sRH"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="完成"/>
                                         <connections>
@@ -91,14 +97,14 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.50486905809859151" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="CmA-9f-iYz"/>
-                                    <constraint firstItem="A11-Wo-Ojr" firstAttribute="leading" secondItem="1zD-1N-FeD" secondAttribute="trailing" constant="20" id="DZi-Lb-WrH"/>
                                     <constraint firstItem="1zD-1N-FeD" firstAttribute="top" secondItem="8m9-Xh-aQ3" secondAttribute="top" id="L91-UY-ii9"/>
                                     <constraint firstItem="1zD-1N-FeD" firstAttribute="leading" secondItem="8m9-Xh-aQ3" secondAttribute="leading" constant="20" id="ZUG-tU-CDt"/>
                                     <constraint firstAttribute="bottom" secondItem="A11-Wo-Ojr" secondAttribute="bottom" id="bLB-eZ-uWb"/>
                                     <constraint firstItem="A11-Wo-Ojr" firstAttribute="top" secondItem="8m9-Xh-aQ3" secondAttribute="top" id="bSs-i5-3C8"/>
+                                    <constraint firstAttribute="trailing" secondItem="A11-Wo-Ojr" secondAttribute="trailing" constant="20" id="ph6-AC-KfX"/>
                                     <constraint firstAttribute="bottom" secondItem="1zD-1N-FeD" secondAttribute="bottom" id="uiI-83-7Dh"/>
                                 </constraints>
                             </view>
@@ -115,7 +121,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="486" y="34"/>
+            <point key="canvasLocation" x="485.60000000000002" y="33.733133433283363"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_add" width="32" height="32"/>
+    </resources>
 </document>

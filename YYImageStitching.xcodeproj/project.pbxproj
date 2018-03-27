@@ -15,6 +15,10 @@
 		DC229C7E2063A88C00F45C8C /* YYStitchingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC229C7C2063A88C00F45C8C /* YYStitchingCell.xib */; };
 		DC229C802063A90100F45C8C /* YYStitchingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC229C7F2063A90100F45C8C /* YYStitchingFlowLayout.swift */; };
 		DC229C932064DF0500F45C8C /* YYScaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC229C922064DF0500F45C8C /* YYScaleViewController.swift */; };
+		DC5A186D206888160028CA54 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC5A186C206888150028CA54 /* 5.jpg */; };
+		DC5A187020688E5E0028CA54 /* YYScaleMovingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5A186E20688E5E0028CA54 /* YYScaleMovingCell.swift */; };
+		DC5A187120688E5E0028CA54 /* YYScaleMovingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5A186F20688E5E0028CA54 /* YYScaleMovingCell.xib */; };
+		DC5A1873206892300028CA54 /* img_default.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5A1872206892300028CA54 /* img_default.png */; };
 		DC64BC01205FB88B003E204E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC00205FB88B003E204E /* AppDelegate.swift */; };
 		DC64BC03205FB88B003E204E /* YYMovingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC02205FB88B003E204E /* YYMovingViewController.swift */; };
 		DC64BC06205FB88B003E204E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC64BC04205FB88B003E204E /* Main.storyboard */; };
@@ -60,6 +64,10 @@
 		DC229C7C2063A88C00F45C8C /* YYStitchingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYStitchingCell.xib; sourceTree = "<group>"; };
 		DC229C7F2063A90100F45C8C /* YYStitchingFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYStitchingFlowLayout.swift; sourceTree = "<group>"; };
 		DC229C922064DF0500F45C8C /* YYScaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYScaleViewController.swift; sourceTree = "<group>"; };
+		DC5A186C206888150028CA54 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		DC5A186E20688E5E0028CA54 /* YYScaleMovingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYScaleMovingCell.swift; sourceTree = "<group>"; };
+		DC5A186F20688E5E0028CA54 /* YYScaleMovingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYScaleMovingCell.xib; sourceTree = "<group>"; };
+		DC5A1872206892300028CA54 /* img_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_default.png; sourceTree = "<group>"; };
 		DC64BBFD205FB88B003E204E /* YYImageStitching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYImageStitching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC64BC00205FB88B003E204E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC64BC02205FB88B003E204E /* YYMovingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYMovingViewController.swift; sourceTree = "<group>"; };
@@ -140,9 +148,11 @@
 				DC229C7C2063A88C00F45C8C /* YYStitchingCell.xib */,
 				DC229C7F2063A90100F45C8C /* YYStitchingFlowLayout.swift */,
 				DC229C922064DF0500F45C8C /* YYScaleViewController.swift */,
-				DC64BC04205FB88B003E204E /* Main.storyboard */,
 				DC229C772063A10F00F45C8C /* YYEmptyView.swift */,
 				DC229C792063A11700F45C8C /* YYEmptyView.xib */,
+				DC64BC04205FB88B003E204E /* Main.storyboard */,
+				DC5A186C206888150028CA54 /* 5.jpg */,
+				DC5A1872206892300028CA54 /* img_default.png */,
 				DC64BC07205FB88B003E204E /* Assets.xcassets */,
 				DC64BC09205FB88B003E204E /* LaunchScreen.storyboard */,
 				DC64BC0C205FB88B003E204E /* Info.plist */,
@@ -182,6 +192,8 @@
 				DC64BC2F205FBF7C003E204E /* YYMovingFlowLayout.swift */,
 				DC64BC31205FC0FF003E204E /* YYMovingCell.swift */,
 				DC64BC32205FC0FF003E204E /* YYMovingCell.xib */,
+				DC5A186E20688E5E0028CA54 /* YYScaleMovingCell.swift */,
+				DC5A186F20688E5E0028CA54 /* YYScaleMovingCell.xib */,
 				DC64BC412060B686003E204E /* YYImageModel.swift */,
 			);
 			path = Stitching;
@@ -294,12 +306,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC5A187120688E5E0028CA54 /* YYScaleMovingCell.xib in Resources */,
 				DC64BC0B205FB88B003E204E /* LaunchScreen.storyboard in Resources */,
 				DC64BC08205FB88B003E204E /* Assets.xcassets in Resources */,
 				DC64BC06205FB88B003E204E /* Main.storyboard in Resources */,
 				DC229C7A2063A11700F45C8C /* YYEmptyView.xib in Resources */,
+				DC5A186D206888160028CA54 /* 5.jpg in Resources */,
 				DC64BC34205FC0FF003E204E /* YYMovingCell.xib in Resources */,
 				DC229C7E2063A88C00F45C8C /* YYStitchingCell.xib in Resources */,
+				DC5A1873206892300028CA54 /* img_default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC5A187020688E5E0028CA54 /* YYScaleMovingCell.swift in Sources */,
 				DC229C7620639FB900F45C8C /* ScrollView+PlaceHolder.swift in Sources */,
 				DC64BC422060B686003E204E /* YYImageModel.swift in Sources */,
 				DC229C932064DF0500F45C8C /* YYScaleViewController.swift in Sources */,
