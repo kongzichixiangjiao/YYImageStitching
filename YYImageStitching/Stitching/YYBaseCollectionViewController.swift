@@ -18,6 +18,7 @@ class YYBaseCollectionViewController: YYPickerImageViewController {
         c.delegate = self
         c.dataSource = self
         c.backgroundColor = UIColor.white
+    
         self.view.addSubview(c)
         return c
     }()

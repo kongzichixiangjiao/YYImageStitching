@@ -54,4 +54,59 @@ extension String {
         
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(alpha))
     }
+
+}
+// MARK: xibLoadView()
+extension String {
+    func xibLoadView() -> UIView {
+        return Bundle.main.loadNibNamed(self, owner: nil, options: nil)?.last as! UIView
+    }
+}
+
+// MARK: toFloat() toDouble()
+extension String {
+    func toFloat() -> Float? {
+        let numberFormatter = NumberFormatter()
+        return numberFormatter.number(from: self)?.floatValue
+    }
+    
+    func toDouble() -> Double? {
+        let numberFormatter = NumberFormatter()
+        return numberFormatter.number(from: self)?.doubleValue
+    }
+}
+
+// UIStoryboard XIB
+extension String {
+    func yy_storyboard() -> UIStoryboard {
+        return UIStoryboard(name: self, bundle: nil)
+    }
+    
+    func yy_xib() -> UIViewController {
+        return UIViewController(nibName: self, bundle: nil)
+    }
+}
+
+
+private let kStoryboadName = "Main"
+extension UIStoryboard {
+    static func yy_main() -> UIStoryboard {
+        return UIStoryboard(name: kStoryboadName, bundle: nil)
+    }
+    
+    static func yy_main(vcName: String) -> UIViewController? {
+        print("Storyboard ID 设置了吗？")
+        let vc = UIStoryboard(name: kStoryboadName, bundle: nil).instantiateViewController(withIdentifier: vcName)
+        return vc
+    }
+    
+    static func yy_storyboard(name: String) -> UIStoryboard {
+        return UIStoryboard(name: name, bundle: nil)
+    }
+    
+    static func yy_storyboard(name: String, vcName: String) -> UIViewController? {
+        print("Storyboard ID 设置了吗？")
+        let vc = UIStoryboard(name: name, bundle: nil).instantiateViewController(withIdentifier: vcName)
+        return vc
+    }
 }

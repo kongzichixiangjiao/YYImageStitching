@@ -24,7 +24,7 @@ class YYScaleMovingCell: UICollectionViewCell {
         return v
     }()
     
-    lazy var imgView: UIImageView = {
+    lazy var imageView: UIImageView = {
         let v = UIImageView(frame: self.bounds)
         v.image = UIImage(named: "img_default.jpg")
         v.isUserInteractionEnabled = false
@@ -33,7 +33,7 @@ class YYScaleMovingCell: UICollectionViewCell {
     
     var model: YYImageModel! {
         didSet {
-            imgView.image = model.image
+            imageView.image = model.image
         }
     }
 
@@ -47,8 +47,9 @@ class YYScaleMovingCell: UICollectionViewCell {
     }
     
     func initViews() {
-        self.contentView.addSubview(scrollView)
-        self.scrollView.addSubview(imgView)
+//        self.contentView.addSubview(scrollView)
+//        self.scrollView.addSubview(imageView)
+        self.contentView.addSubview(imageView)
     }
 
 }
@@ -56,11 +57,19 @@ class YYScaleMovingCell: UICollectionViewCell {
 extension YYScaleMovingCell: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return self.imgView
+        return self.imageView
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        self.imgView.center = self.scrollView.center
+        if self.imageView.frame.size.width > scrollView.frame.size.width {
+            if (self.imageView.frame.size.height < scrollView.contentSize.height) {
+                self.imageView.center = CGPoint(x: scrollView.contentSize.width / 2, y: scrollView.contentSize.height / 2)
+            } else {
+                self.imageView.center = CGPoint(x: scrollView.contentSize.width / 2, y: scrollView.center.y)
+            }
+        } else {
+            self.imageView.center = CGPoint(x: self.scrollView.center.x, y: self.scrollView.center.y)
+        }
     }
     
 }

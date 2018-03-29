@@ -37,6 +37,13 @@
 		DC64BC3E205FDF1D003E204E /* YYStitchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC3D205FDF1D003E204E /* YYStitchingViewController.swift */; };
 		DC64BC40205FE077003E204E /* YYPickerImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC3F205FE077003E204E /* YYPickerImageViewController.swift */; };
 		DC64BC422060B686003E204E /* YYImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC412060B686003E204E /* YYImageModel.swift */; };
+		DC94D07E206A49A3006A8B20 /* YYClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC94D07D206A49A3006A8B20 /* YYClipView.swift */; };
+		DCB63B8F206A3AB900E7DEB6 /* YYNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB63B8E206A3AB900E7DEB6 /* YYNavigationView.swift */; };
+		DCB63B91206A3AC000E7DEB6 /* YYNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB63B90206A3AC000E7DEB6 /* YYNavigationView.xib */; };
+		DCC064FE206B2ED9009DD6D9 /* YYClipImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC064FD206B2ED9009DD6D9 /* YYClipImageView.swift */; };
+		DCC06500206B447E009DD6D9 /* YYClipBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC064FF206B447E009DD6D9 /* YYClipBorderView.swift */; };
+		DCC06502206B7BF7009DD6D9 /* download.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCC06501206B7BF7009DD6D9 /* download.plist */; };
+		DCC06504206B82EF009DD6D9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC06503206B82EF009DD6D9 /* UIView+Extension.swift */; };
 		DCCB54FF206A1D240024F22B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCB54FE206A1D240024F22B /* Array+Extension.swift */; };
 		DCF7465B206A17BB00C487B6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7465A206A17BB00C487B6 /* UIImageView+Extension.swift */; };
 		DCF7465D206A188900C487B6 /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7465C206A188800C487B6 /* CGSize+Extension.swift */; };
@@ -96,6 +103,13 @@
 		DC64BC3D205FDF1D003E204E /* YYStitchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYStitchingViewController.swift; sourceTree = "<group>"; };
 		DC64BC3F205FE077003E204E /* YYPickerImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYPickerImageViewController.swift; sourceTree = "<group>"; };
 		DC64BC412060B686003E204E /* YYImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYImageModel.swift; sourceTree = "<group>"; };
+		DC94D07D206A49A3006A8B20 /* YYClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYClipView.swift; sourceTree = "<group>"; };
+		DCB63B8E206A3AB900E7DEB6 /* YYNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYNavigationView.swift; sourceTree = "<group>"; };
+		DCB63B90206A3AC000E7DEB6 /* YYNavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYNavigationView.xib; sourceTree = "<group>"; };
+		DCC064FD206B2ED9009DD6D9 /* YYClipImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYClipImageView.swift; sourceTree = "<group>"; };
+		DCC064FF206B447E009DD6D9 /* YYClipBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYClipBorderView.swift; sourceTree = "<group>"; };
+		DCC06501206B7BF7009DD6D9 /* download.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = download.plist; sourceTree = "<group>"; };
+		DCC06503206B82EF009DD6D9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DCCB54FE206A1D240024F22B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		DCF7465A206A17BB00C487B6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		DCF7465C206A188800C487B6 /* CGSize+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extension.swift"; sourceTree = "<group>"; };
@@ -137,6 +151,7 @@
 				DCF7465A206A17BB00C487B6 /* UIImageView+Extension.swift */,
 				DCF7465C206A188800C487B6 /* CGSize+Extension.swift */,
 				DCCB54FE206A1D240024F22B /* Array+Extension.swift */,
+				DCC06503206B82EF009DD6D9 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -171,9 +186,15 @@
 				DC229C7C2063A88C00F45C8C /* YYStitchingCell.xib */,
 				DC229C7F2063A90100F45C8C /* YYStitchingFlowLayout.swift */,
 				DC229C922064DF0500F45C8C /* YYScaleViewController.swift */,
+				DC94D07D206A49A3006A8B20 /* YYClipView.swift */,
+				DCC064FD206B2ED9009DD6D9 /* YYClipImageView.swift */,
+				DCC064FF206B447E009DD6D9 /* YYClipBorderView.swift */,
+				DCB63B8E206A3AB900E7DEB6 /* YYNavigationView.swift */,
+				DCB63B90206A3AC000E7DEB6 /* YYNavigationView.xib */,
 				DC229C772063A10F00F45C8C /* YYEmptyView.swift */,
 				DC229C792063A11700F45C8C /* YYEmptyView.xib */,
 				DC64BC04205FB88B003E204E /* Main.storyboard */,
+				DCC06501206B7BF7009DD6D9 /* download.plist */,
 				DC5A186C206888150028CA54 /* 5.jpg */,
 				DC5A1872206892300028CA54 /* img_default.png */,
 				DC64BC07205FB88B003E204E /* Assets.xcassets */,
@@ -328,12 +349,14 @@
 			files = (
 				DC5A187120688E5E0028CA54 /* YYScaleMovingCell.xib in Resources */,
 				DC64BC0B205FB88B003E204E /* LaunchScreen.storyboard in Resources */,
+				DCB63B91206A3AC000E7DEB6 /* YYNavigationView.xib in Resources */,
 				DC64BC08205FB88B003E204E /* Assets.xcassets in Resources */,
 				DC64BC06205FB88B003E204E /* Main.storyboard in Resources */,
 				DC229C7A2063A11700F45C8C /* YYEmptyView.xib in Resources */,
 				DC5A186D206888160028CA54 /* 5.jpg in Resources */,
 				DC64BC34205FC0FF003E204E /* YYMovingCell.xib in Resources */,
 				DC229C7E2063A88C00F45C8C /* YYStitchingCell.xib in Resources */,
+				DCC06502206B7BF7009DD6D9 /* download.plist in Resources */,
 				DC5A1873206892300028CA54 /* img_default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,13 +383,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC5A187020688E5E0028CA54 /* YYScaleMovingCell.swift in Sources */,
+				DCB63B8F206A3AB900E7DEB6 /* YYNavigationView.swift in Sources */,
 				DC229C7620639FB900F45C8C /* ScrollView+PlaceHolder.swift in Sources */,
 				DC64BC422060B686003E204E /* YYImageModel.swift in Sources */,
 				DCCB54FF206A1D240024F22B /* Array+Extension.swift in Sources */,
 				DC229C932064DF0500F45C8C /* YYScaleViewController.swift in Sources */,
+				DCC06500206B447E009DD6D9 /* YYClipBorderView.swift in Sources */,
+				DCC064FE206B2ED9009DD6D9 /* YYClipImageView.swift in Sources */,
 				DC64BC03205FB88B003E204E /* YYMovingViewController.swift in Sources */,
 				DC229C7D2063A88C00F45C8C /* YYStitchingCell.swift in Sources */,
+				DC94D07E206A49A3006A8B20 /* YYClipView.swift in Sources */,
 				DC64BC3A205FC1A0003E204E /* UIImage+Extension.swift in Sources */,
+				DCC06504206B82EF009DD6D9 /* UIView+Extension.swift in Sources */,
 				DC64BC3C205FDE3C003E204E /* YYRootViewController.swift in Sources */,
 				DC292AC22069E8A5004A989B /* UIDevice+Extension.swift in Sources */,
 				DC64BC30205FBF7C003E204E /* YYMovingFlowLayout.swift in Sources */,

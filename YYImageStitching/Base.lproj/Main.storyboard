@@ -29,17 +29,72 @@
         <!--Scale View Controller-->
         <scene sceneID="OT9-w3-ci3">
             <objects>
-                <viewController id="jz5-3u-aRz" customClass="YYScaleViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcU-eO-I7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="YYScaleViewController" id="jz5-3u-aRz" customClass="YYScaleViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n1f-tX-65U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXd-GH-r4G">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQh-wO-XXq">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="yoc-DQ-Unn"/>
+                                        </constraints>
+                                        <state key="normal" title="backColor"/>
+                                        <connections>
+                                            <action selector="changBackgroundColor:" destination="jz5-3u-aRz" eventType="touchUpInside" id="Enz-ar-p8X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoA-7T-a4A">
+                                        <rect key="frame" x="70" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="DRy-7w-aHH"/>
+                                        </constraints>
+                                        <state key="normal" title="+"/>
+                                        <connections>
+                                            <action selector="addSpace:" destination="jz5-3u-aRz" eventType="touchUpInside" id="YgC-tv-G1X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7o-5b-1kB">
+                                        <rect key="frame" x="114" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="UNx-6z-HgQ"/>
+                                        </constraints>
+                                        <state key="normal" title="-"/>
+                                        <connections>
+                                            <action selector="subtractionSpace:" destination="jz5-3u-aRz" eventType="touchUpInside" id="lJf-Tz-CR1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="AQh-wO-XXq" firstAttribute="leading" secondItem="vXd-GH-r4G" secondAttribute="leading" id="4lV-9S-gR9"/>
+                                    <constraint firstAttribute="height" constant="44" id="G1L-BN-Q5J"/>
+                                    <constraint firstItem="XoA-7T-a4A" firstAttribute="leading" secondItem="AQh-wO-XXq" secondAttribute="trailing" id="GVh-Kz-lDQ"/>
+                                    <constraint firstItem="XoA-7T-a4A" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="Oal-fz-YuH"/>
+                                    <constraint firstAttribute="bottom" secondItem="b7o-5b-1kB" secondAttribute="bottom" id="dIC-BO-T1I"/>
+                                    <constraint firstAttribute="bottom" secondItem="XoA-7T-a4A" secondAttribute="bottom" id="hJs-At-XVN"/>
+                                    <constraint firstAttribute="bottom" secondItem="AQh-wO-XXq" secondAttribute="bottom" id="hdc-HU-EZA"/>
+                                    <constraint firstItem="b7o-5b-1kB" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="sSO-JT-cHa"/>
+                                    <constraint firstItem="b7o-5b-1kB" firstAttribute="leading" secondItem="XoA-7T-a4A" secondAttribute="trailing" id="scE-EM-k2m"/>
+                                    <constraint firstItem="AQh-wO-XXq" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="uxa-sM-a8p"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vXd-GH-r4G" firstAttribute="trailing" secondItem="e8z-eU-hne" secondAttribute="trailing" id="NBW-og-TDz"/>
+                            <constraint firstItem="vXd-GH-r4G" firstAttribute="bottom" secondItem="e8z-eU-hne" secondAttribute="bottom" id="Soi-i7-nHz"/>
+                            <constraint firstItem="vXd-GH-r4G" firstAttribute="leading" secondItem="e8z-eU-hne" secondAttribute="leading" id="dog-1q-8Ue"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="e8z-eU-hne"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mcU-eO-I7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-873" y="782"/>
+            <point key="canvasLocation" x="-874.39999999999998" y="781.25937031484261"/>
         </scene>
         <!--Stitching-->
         <scene sceneID="BJ4-Fl-ORl">

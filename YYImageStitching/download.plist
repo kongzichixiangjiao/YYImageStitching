@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>assets</key>
+			<array>
+				<dict>
+					<key>kind</key>
+					<string>software-package</string>
+					<key>url</key>
+					<string>https://cp.app.com/my.ipa （你的服务器的ipa下载地址）</string>
+				</dict>
+				<dict>
+					<key>full-size-image</key>
+					<string>needs-shine</string>
+					<key>url</key>
+					<string>https://cp.rrgapp.com/f.png</string>
+				</dict>
+				<dict>
+					<key>display-image</key>
+					<string>needs-shine</string>
+					<key>url</key>
+					<string>https://cp.rrgapp.com/f.png</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>metadata</key>
+	<dict>
+		<key>bundle-identifier</key>
+		<string>com.eygxhw.ycxnc （iOS 应用bundle ID，可以随便填写）</string>
+		<key>bundle-version</key>
+		<string>1.0</string>
+		<key>kind</key>
+		<string>software</string>
+		<key>title</key>
+		<string>你的app名字</string>
+	</dict>
+</dict>
+</plist>

@@ -8,78 +8,118 @@
 
 import UIKit
 
-private let kNavigationViewBottomSpace: CGFloat = 0
-private var kTopSpace: CGFloat = 64
+private var kTopSpace: CGFloat = 0
+private let kNavigationViewHeight: CGFloat = 64
 class YYScaleViewController: YYPickerImageViewController {
-
+    
+    typealias ScaleViewControllerBackHandler = (_ image: UIImage, _ row: Int) -> ()
+    var scaleViewControllerBackHandler: ScaleViewControllerBackHandler?
+    
+    var row: Int = 0
+    
     var model: YYImageModel! {
         didSet {
         }
     }
-
-    lazy var scrollView: UIScrollView = {
-        var insets = UIEdgeInsets.zero
-        if UIDevice.current.isX {
-            if #available(iOS 11.0, *) {
-                insets = UIApplication.shared.delegate?.window??.safeAreaInsets ?? UIEdgeInsets.zero
-                kTopSpace -= kNavigationViewBottomSpace
-            }
-        }
-        let v = UIScrollView(frame: CGRect(x: 0, y: kTopSpace, width: self.view.bounds.width, height: self.view.bounds.height - kTopSpace))
-        v.delegate = self
-        v.minimumZoomScale = 0.5
-        v.maximumZoomScale = 3
-        v.zoomScale = 1
-        v.backgroundColor = UIColor.white
+    
+    lazy var navigationView: UIView = {
+        let v = YYNavigationView.loadView()
+        v.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: kNavigationViewHeight)
+        v.navigationBackHandler = navigationBackHandler
+        v.navigationScaleHandler = navigationScaleHandler
         return v
     }()
     
-    lazy var imgView: UIImageView = {
-        var insets = UIEdgeInsets.zero
-        if UIDevice.current.isX {
-            if #available(iOS 11.0, *) {
-                insets = UIApplication.shared.delegate?.window??.safeAreaInsets ?? UIEdgeInsets.zero
-                kTopSpace -= kNavigationViewBottomSpace
-            }
+    lazy var navigationBackHandler: YYNavigationView.NavigationBackHandler = {
+        [weak self] in
+        if let weakSelf = self {
+            weakSelf.clipView.transform = CGAffineTransform.identity
+            weakSelf.changeBackgroundColor(color: weakSelf.clipView.backgroundColor!)
+                
+            weakSelf.scaleViewControllerBackHandler!(weakSelf.clipView.yy_screenshot()!, weakSelf.row)
+            weakSelf.navigationController?.popViewController(animated: true)
         }
-        let vSize = CGSize.yy_imageZoom(w: CGFloat(self.model.image.size.width), h: CGFloat(self.model.image.size.height))
-        let v = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: self.view.center.y - vSize.height / 2  - kTopSpace), size: vSize))
-        v.image = UIImage(named: "5.jpg")
+    }
+    
+    lazy var navigationScaleHandler: YYNavigationView.NavigationScaleHandler = {
+        [weak self] type in
+        switch type {
+        case .scaleAdd:
+            self?.clipView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+            break
+        case .scaleSubtraction:
+            self?.clipView.transform = CGAffineTransform.init(scaleX: 0.5, y: 0.5)
+            break 
+        }
+    }
+    
+    lazy var clipView: YYClipView = {
+        let vSize = CGSize.yy_imageZoom(w: CGFloat(self.model.image!.size.width), h: CGFloat(self.model.image!.size.height))
+        let y: CGFloat = vSize.height > self.view.frame.size.height ? kNavigationViewHeight : self.view.frame.size.height / 2 - vSize.height / 2
+        let v = YYClipView(frame: CGRect(origin: CGPoint(x: 0, y: y), size: vSize))
+        v.backgroundColor = UIColor.darkText
         return v
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(self.scrollView)
-        self.scrollView.addSubview(self.imgView)
-        self.imgView.image = model.image
+        
+        initViews()
+    }
+    
+    private func initViews() {
+        self.view.addSubview(self.clipView)
+        self.imageManager.requestImage(for: self.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
+            self.clipView.image = result ?? UIImage.init(named: "iw_none")
+        }
+        self.view.addSubview(self.navigationView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewwi
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    private func changeBackgroundColor(color: UIColor = UIColor.white) {
+        self.view.backgroundColor = color
+    }
+    
+    private func changeBorderColor(color: UIColor = UIColor.white) {
+        self.clipView.backgroundColor = color
+        self.imageManager.requestImage(for: self.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
+            self.clipView.image = nil
+            self.clipView.image = result
+            self.clipView.borderColor = color
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-}
-
-extension YYScaleViewController: UIScrollViewDelegate {
     
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return self.imgView
+    @IBAction func changBackgroundColor(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        changeBackgroundColor(color: sender.isSelected ? UIColor.black : UIColor.white)
+        changeBorderColor(color: sender.isSelected ? UIColor.white : UIColor.black)
     }
-
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        if self.imgView.frame.size.width > scrollView.frame.size.width {
-            if (self.imgView.frame.size.height < scrollView.contentSize.height) {
-                self.imgView.center = CGPoint(x: scrollView.contentSize.width / 2, y: scrollView.contentSize.height / 2)
-            } else {
-                self.imgView.center = CGPoint(x: scrollView.contentSize.width / 2, y: scrollView.center.y - kTopSpace)
-            }
-        } else {
-            self.imgView.center = CGPoint(x: self.scrollView.center.x, y: self.scrollView.center.y - kTopSpace)
-        }
+    
+    @IBAction func addSpace(_ sender: UIButton) {
+        self.clipView.adjustSpace(space: 2, type: .add)
+    }
+    
+    @IBAction func subtractionSpace(_ sender: UIButton) {
+        self.clipView.adjustSpace(space: 2, type: .subtraction)
     }
     
 }
+

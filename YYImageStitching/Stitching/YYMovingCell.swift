@@ -21,8 +21,6 @@ class YYMovingCell: UICollectionViewCell {
     @IBOutlet weak var leftSpace: NSLayoutConstraint!
     @IBOutlet weak var rightSpace: NSLayoutConstraint!
     
-  
-    
     var model: YYImageModel! {
         didSet {
             selectedButton.isSelected = model.isSelected
