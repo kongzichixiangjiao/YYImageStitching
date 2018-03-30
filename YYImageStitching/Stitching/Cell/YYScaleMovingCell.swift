@@ -36,22 +36,26 @@ class YYScaleMovingCell: UICollectionViewCell {
             imageView.image = model.image
         }
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        initViews()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        initViews()
     }
     
     func initViews() {
-//        self.contentView.addSubview(scrollView)
-//        self.scrollView.addSubview(imageView)
+        /*
+         self.contentView.addSubview(scrollView)
+         self.scrollView.addSubview(imageView)
+        */
         self.contentView.addSubview(imageView)
+        imageView.yy_addConstraint(toItem: self.contentView)
     }
-
+    
 }
 
 extension YYScaleMovingCell: UIScrollViewDelegate {
@@ -73,3 +77,4 @@ extension YYScaleMovingCell: UIScrollViewDelegate {
     }
     
 }
+

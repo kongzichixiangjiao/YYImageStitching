@@ -17,3 +17,4 @@ class YYMovingFlowLayout: UICollectionViewFlowLayout {
         scrollDirection = .vertical
     }
 }
+

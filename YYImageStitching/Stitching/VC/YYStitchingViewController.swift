@@ -17,21 +17,30 @@ class YYStitchingViewController: YYBaseCollectionViewController {
     weak var myDelegate: YYStitchingViewControllerDelegate?
     
     var selectedArray: [YYImageModel] = []
-    var isEdit: Bool = false 
+    var isEdit: Bool = true
+    
+    lazy var flowLayout: YYStitchingFlowLayout = {
+        let f = YYStitchingFlowLayout()
+        f.minLineSpacing = 10
+        return f
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadData()
-        updateFrame(bottom: 44)
-        registerCell(nibName: YYMovingCell.identifier)
-        collectionView.reloadData()
+        initViews()
         
-        self.isEdit = true
+        loadData()
+        
         self.collectionView.reloadData()
-        if !self.isEdit {
-            self.selectedArray.removeAll()
-        }
+    }
+    
+    private func initViews() {
+        self.navigationController?.title = "相册"
+        
+        updateCollectionViewFrame(top: 0, left: 10, bottom: 44, right: 10)
+        collectionView.collectionViewLayout = flowLayout
+        registerCell(nibName: YYMovingCell.identifier)
     }
     
     private func loadData() {
@@ -42,6 +51,10 @@ class YYStitchingViewController: YYBaseCollectionViewController {
             model.asset = asset
             model.isSelected = false
             dataSource.append(model)
+        }
+        
+        if !self.isEdit {
+            self.selectedArray.removeAll()
         }
     }
     

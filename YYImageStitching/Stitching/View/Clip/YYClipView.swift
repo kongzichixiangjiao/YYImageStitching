@@ -64,13 +64,16 @@ class YYClipView: UIView {
     public func adjustSpace(space: CGFloat, type: YYClipViewSpaceType) {
         switch type {
         case .add:
-            self.space += space
+            self.space = space
             self.borderView.space = self.space
             self.setNeedsDisplay()
 
             break
         case .subtraction:
-            self.space -= space
+            if (self.space <= 0) {
+                return 
+            }
+            self.space = space
             self.borderView.space = self.space
             self.setNeedsDisplay()
 
@@ -80,12 +83,13 @@ class YYClipView: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
+        return
         let strokeRect = rect
         let context = UIGraphicsGetCurrentContext()
         context?.setStrokeColor(self.borderColor.cgColor)
         context?.stroke(strokeRect, width: self.space * 2)
         context?.drawPath(using: .stroke)
-        return 
+        
         guard let image = self.image else {
             return
         }

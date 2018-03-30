@@ -18,7 +18,8 @@ class YYBaseCollectionViewController: YYPickerImageViewController {
         c.delegate = self
         c.dataSource = self
         c.backgroundColor = UIColor.white
-    
+        c.showsVerticalScrollIndicator = false
+        c.showsHorizontalScrollIndicator = false
         self.view.addSubview(c)
         return c
     }()
@@ -27,7 +28,7 @@ class YYBaseCollectionViewController: YYPickerImageViewController {
         collectionView.register(UINib(nibName: nibName, bundle: nil), forCellWithReuseIdentifier: nibName)
     }
     
-    public func updateFrame(top: CGFloat = 0, left: CGFloat = 0, bottom: CGFloat = 0, right: CGFloat = 0) {
+    public func updateCollectionViewFrame(top: CGFloat = 0, left: CGFloat = 0, bottom: CGFloat = 0, right: CGFloat = 0) {
         collectionView.frame = CGRect(x: left,
                                       y: top,
                                       width: self.view.frame.width - left - right,

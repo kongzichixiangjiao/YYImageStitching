@@ -8,16 +8,25 @@
 
 import UIKit
 
+let kSelfViewColor = UIColor.rgb(180, 180, 180)
 class YYRootViewController: YYMovingViewController {
     
-    lazy var flowLayout: YYStitchingFlowLayout = {
-        return YYStitchingFlowLayout()
+    lazy var flowLayout: YYRootFlowLayout = {
+        return YYRootFlowLayout()
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = kSelfViewColor
+        
+        initViews()
+    }
+    
+    func initViews() {
         registerCell(nibName: YYScaleMovingCell.identifier)
+        updateCollectionViewFrame(left: 30, right: 30)
+        collectionView.backgroundColor = kSelfViewColor
         collectionView.collectionViewLayout = flowLayout
         collectionView.emptyDelegate = self
         collectionView.yy_reloadData()
@@ -60,7 +69,7 @@ extension YYRootViewController: YYStitchingViewControllerDelegate {
 extension YYRootViewController: UICollectionViewPlaceHolderDelegate {
     func collectionViewPlaceHolderView() -> UIView {
         let v = Bundle.main.loadNibNamed("YYEmptyView", owner: self, options: nil)?.last as! YYEmptyView
-        v.frame = collectionView.bounds
+        v.frame = CGRect(x: collectionView.bounds.size.width /  2 - v.frame.size.width / 2, y: collectionView.bounds.size.height /  2 - v.frame.size.height, width: v.frame.size.width, height: v.frame.size.height)
         return v
     }
     
@@ -91,10 +100,10 @@ extension YYRootViewController {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let img = self.dataSource[indexPath.row].image else {
             let aseet = self.dataSource[indexPath.row].asset!
-            return CGSize.yy_imageZoom(w: CGFloat(aseet.pixelWidth), h: CGFloat(aseet.pixelHeight))
+            return CGSize.yy_imageZoom(baseW: self.collectionView.frame.size.width, w: CGFloat(aseet.pixelWidth), h: CGFloat(aseet.pixelHeight))
         }
         print("row", indexPath.row, "w", img.size.width, "h", img.size.height)
-        return CGSize.yy_imageZoom(w: img.size.width, h: img.size.height)
+        return CGSize.yy_imageZoom(baseW: self.collectionView.frame.size.width, w: img.size.width, h: img.size.height)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

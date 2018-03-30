@@ -67,6 +67,7 @@ extension YYMovingViewController {
         let sourceModel = self.dataSource[sourceIndexPath.row]
         dataSource.remove(at: sourceIndexPath.row)
         dataSource.insert(sourceModel, at: destinationIndexPath.row)
+        collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {

@@ -23,6 +23,7 @@ class YYPickerImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         initImageManager()
     }
     

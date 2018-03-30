@@ -63,6 +63,7 @@ class YYClipImageView: UIImageView {
     // 点击手势
     @objc func tap(sender: UITapGestureRecognizer) {
         self.transform = CGAffineTransform.identity
+        self.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
     }
     
     required init?(coder aDecoder: NSCoder) {

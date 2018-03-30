@@ -9,13 +9,12 @@
 import UIKit
 
 class YYStitchingFlowLayout: UICollectionViewFlowLayout {
-    
     var minLineSpacing: CGFloat = 0
     
     override func prepare() {
         super.prepare()
-        itemSize = CGSize.zero
-        minimumInteritemSpacing = 0
+        itemSize = CGSize(width: (collectionView!.frame.size.width - minLineSpacing * 2) / 3, height: collectionView!.frame.size.width / 3)
+        minimumInteritemSpacing = minLineSpacing
         minimumLineSpacing = minLineSpacing
         scrollDirection = .vertical
     }
