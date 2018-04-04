@@ -108,7 +108,7 @@ class YYScaleViewController: YYPickerImageViewController {
             self?.clipView.transform = CGAffineTransform.init(scaleX: scale, y: scale)
         }
     }
-    
+    //
     lazy var filtersToolsViewHandler: YYSelectedFiltersView.FiltersToolsViewHandler = {
         [weak self] type in
         if let weakSelf = self {
