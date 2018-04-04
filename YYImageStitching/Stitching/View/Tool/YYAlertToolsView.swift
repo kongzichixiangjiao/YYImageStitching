@@ -37,7 +37,7 @@ class YYAlertToolsView: UIView {
         v.filtersToolsViewHandler = filtersToolsViewHandler
         return v
     }()
-
+    
     lazy var progressViewHandler: YYProgressView.YYProgressViewHandler = {
         [weak self] width, type in
         if let weakSelf = self {
@@ -88,7 +88,6 @@ class YYAlertToolsView: UIView {
     }
     
     public func show(type: YYAlertToolsViewType) {
-        
         self.currentType = type
         self.frame = CGRect(x: 0, y: backY(isShow: false, type: type), width: MainScreenWidth, height: backH(type: type))
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: .curveEaseInOut, animations: {
@@ -102,6 +101,7 @@ class YYAlertToolsView: UIView {
         }, completion: { b in
             self.scaleToolsView.isHidden = true
             self.borderToolsView.isHidden = true
+            self.filtersToolsView.isHidden = true
             self.removeFromSuperview()
         })
     }
@@ -116,10 +116,10 @@ class YYAlertToolsView: UIView {
         case .defualt:
             return MainScreenHeight
         case .scale:
-            scaleToolsView.isHidden = false 
+            scaleToolsView.isHidden = false
             return MainScreenHeight + (isShow ? -(type.rawValue + self.kFinishedButtonHeight) : 0)
         case .filter:
-            filtersToolsView.isHidden = false 
+            filtersToolsView.isHidden = false
             return MainScreenHeight + (isShow ? -(type.rawValue + self.kFinishedButtonHeight) : 0)
         }
     }
