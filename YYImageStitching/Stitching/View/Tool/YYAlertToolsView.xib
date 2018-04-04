@@ -13,12 +13,45 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YYAlertToolsView" customModule="YYImageStitching" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="286"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIX-pt-Hgp">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXJ-56-Xoc">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="完成">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="finished:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ztf-HO-Jxo"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="YXJ-56-Xoc" secondAttribute="bottom" id="26h-9W-aNm"/>
+                        <constraint firstAttribute="height" constant="44" id="Be2-bK-Z3i"/>
+                        <constraint firstItem="YXJ-56-Xoc" firstAttribute="leading" secondItem="KIX-pt-Hgp" secondAttribute="leading" id="a1b-CK-xPE"/>
+                        <constraint firstItem="YXJ-56-Xoc" firstAttribute="top" secondItem="KIX-pt-Hgp" secondAttribute="top" id="dvd-HU-TMW"/>
+                        <constraint firstAttribute="trailing" secondItem="YXJ-56-Xoc" secondAttribute="trailing" id="fZn-Rr-O2M"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KIX-pt-Hgp" secondAttribute="trailing" id="Owr-RJ-kAB"/>
+                <constraint firstItem="KIX-pt-Hgp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kih-Dv-52f"/>
+                <constraint firstItem="KIX-pt-Hgp" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="rI3-dZ-Jfl"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="33.5" y="-154"/>
+            <connections>
+                <outlet property="finishedButtonHeight" destination="Be2-bK-Z3i" id="FbD-an-V3x"/>
+            </connections>
+            <point key="canvasLocation" x="30.5" y="-83"/>
         </view>
     </objects>
 </document>

@@ -19,6 +19,13 @@ class YYNavigationView: UIView {
     var navigationBackHandler: NavigationBackHandler?
     var navigationScaleHandler: NavigationScaleHandler?
 
+    @IBOutlet weak var mTitleLabel: UILabel!
+    public var myTitle: String! {
+        didSet {
+            mTitleLabel.text = myTitle
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -31,11 +38,4 @@ class YYNavigationView: UIView {
         navigationBackHandler!()
     }
     
-    @IBAction func scaleSubtract(_ sender: UIButton) {
-        navigationScaleHandler!(.scaleSubtraction)
-    }
-    
-    @IBAction func scaleAdd(_ sender: UIButton) {
-        navigationScaleHandler!(.scaleAdd)
-    }
 }

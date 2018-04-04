@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dfs-UP-jDI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dfs-UP-jDI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSZ-Hh-Wqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1025" y="34"/>
+            <point key="canvasLocation" x="-969" y="34"/>
         </scene>
         <!--Scale View Controller-->
         <scene sceneID="OT9-w3-ci3">
@@ -38,10 +38,7 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQh-wO-XXq">
-                                        <rect key="frame" x="20" y="0.0" width="70" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="yoc-DQ-Unn"/>
-                                        </constraints>
+                                        <rect key="frame" x="20" y="0.0" width="30" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="边框">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,20 +55,56 @@
                                             <action selector="changBackgroundColor:" destination="jz5-3u-aRz" eventType="touchUpInside" id="Enz-ar-p8X"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E5Y-67-Lhg">
-                                        <rect key="frame" x="188" y="10" width="177" height="24"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBJ-yN-Jer">
+                                        <rect key="frame" x="83" y="0.0" width="30" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="缩放">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="ga_borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="ga_borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="scaleAction:" destination="jz5-3u-aRz" eventType="touchUpInside" id="MAE-JI-7rg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHl-iu-f0e">
+                                        <rect key="frame" x="146" y="0.0" width="30" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="滤镜">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="ga_borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="ga_borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="filterAction:" destination="jz5-3u-aRz" eventType="touchUpInside" id="eFN-fT-Sbv"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="AQh-wO-XXq" firstAttribute="leading" secondItem="vXd-GH-r4G" secondAttribute="leading" constant="20" id="4lV-9S-gR9"/>
-                                    <constraint firstAttribute="trailing" secondItem="E5Y-67-Lhg" secondAttribute="trailing" constant="10" id="748-k0-qyt"/>
-                                    <constraint firstAttribute="bottom" secondItem="E5Y-67-Lhg" secondAttribute="bottom" constant="10" id="BNX-Ao-Owf"/>
+                                    <constraint firstItem="EHl-iu-f0e" firstAttribute="leading" secondItem="YBJ-yN-Jer" secondAttribute="trailing" constant="33" id="B9q-bq-ocW"/>
                                     <constraint firstAttribute="height" constant="44" id="G1L-BN-Q5J"/>
+                                    <constraint firstItem="YBJ-yN-Jer" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="MvF-Qr-AL6"/>
+                                    <constraint firstAttribute="bottom" secondItem="EHl-iu-f0e" secondAttribute="bottom" id="OFR-Lv-VUG"/>
+                                    <constraint firstAttribute="bottom" secondItem="YBJ-yN-Jer" secondAttribute="bottom" id="UFQ-kR-hN4"/>
+                                    <constraint firstItem="YBJ-yN-Jer" firstAttribute="leading" secondItem="AQh-wO-XXq" secondAttribute="trailing" constant="33" id="ej3-nZ-wQb"/>
+                                    <constraint firstItem="EHl-iu-f0e" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="h2b-qr-lnf"/>
                                     <constraint firstAttribute="bottom" secondItem="AQh-wO-XXq" secondAttribute="bottom" id="hdc-HU-EZA"/>
-                                    <constraint firstItem="E5Y-67-Lhg" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" constant="10" id="qKS-w9-wDi"/>
                                     <constraint firstItem="AQh-wO-XXq" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="uxa-sM-a8p"/>
+                                    <constraint firstItem="YBJ-yN-Jer" firstAttribute="centerY" secondItem="AQh-wO-XXq" secondAttribute="centerY" id="z1t-Fg-x2p"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -82,20 +115,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e8z-eU-hne"/>
                     </view>
-                    <connections>
-                        <outlet property="progressView" destination="E5Y-67-Lhg" id="ifE-VD-L9F"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcU-eO-I7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-874.39999999999998" y="781.25937031484261"/>
+            <point key="canvasLocation" x="-704" y="773"/>
         </scene>
         <!--Stitching-->
         <scene sceneID="BJ4-Fl-ORl">
             <objects>
                 <viewController id="LWs-n8-ZBT" customClass="YYRootViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Stitching" id="Fsh-EL-8iq">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="1da-GV-CiQ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="1da-GV-CiQ">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vQm-Ft-rRc">
                                 <rect key="frame" x="311" y="0.0" width="48" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -107,9 +137,6 @@
                                     <action selector="addPictures:" destination="LWs-n8-ZBT" eventType="touchUpInside" id="q5V-G2-QG1"/>
                                 </connections>
                             </button>
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="push" id="407-Vy-d0n"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -161,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="485.60000000000002" y="33.733133433283363"/>
+            <point key="canvasLocation" x="191" y="34"/>
         </scene>
     </scenes>
 </document>

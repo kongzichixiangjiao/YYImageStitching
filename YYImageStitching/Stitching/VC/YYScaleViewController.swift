@@ -10,12 +10,12 @@ import UIKit
 
 private var kTopSpace: CGFloat = 0
 private let kNavigationViewHeight: CGFloat = 64
+
 class YYScaleViewController: YYPickerImageViewController {
     
     typealias ScaleViewControllerBackHandler = (_ image: UIImage, _ row: Int) -> ()
     var scaleViewControllerBackHandler: ScaleViewControllerBackHandler?
     
-    @IBOutlet weak var progressView: UIView!
     var row: Int = 0
     
     var model: YYImageModel! {
@@ -62,15 +62,12 @@ class YYScaleViewController: YYPickerImageViewController {
         return v
     }()
     
-    lazy var progressV: YYProgressView = {
-        let v = YYProgressView(frame: self.progressView.bounds)
-        v.progressViewHandler = progressViewHandler
-        return v
-    }()
-    
     lazy var alertToolsView: YYAlertToolsView = {
-        let v = YYAlertToolsView.ga_loadView(count: YYAlertToolsView.kXIBCount) as! YYAlertToolsView
+        let v = YYAlertToolsView.ga_loadView() as! YYAlertToolsView
         v.progressViewHandler = progressViewHandler
+        v.borderToolsViewDidSelectedColorHanlder = borderToolsViewDidSelectedColorHanlder
+        v.scaleToolsViewHandler = scaleToolsViewHandler
+        v.filtersToolsViewHandler = filtersToolsViewHandler
         return v
     }()
     
@@ -81,22 +78,48 @@ class YYScaleViewController: YYPickerImageViewController {
     }
     
     private func initViews() {
-        self.progressView.addSubview(self.progressV)
+        
         self.view.addSubview(self.clipView)
+        
         self.imageManager.requestImage(for: self.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
             self.clipView.image = result ?? UIImage.init(named: "iw_none")
         }
-        self.view.addSubview(self.navigationView)
         
-        self.view.addSubview(alertToolsView)
-        alertToolsView.frame = CGRect(x: 0, y: 400, width: self.view.frame.size.width, height: 400)
+        self.view.addSubview(self.navigationView)
     }
     
     lazy var progressViewHandler: YYProgressView.YYProgressViewHandler = {
         [weak self] width, type in
         if let weakSelf = self {
-            print(type)
             weakSelf.clipView.adjustSpace(space: width, type: type)
+        }
+    }
+    
+    lazy var borderToolsViewDidSelectedColorHanlder: YYBorderToolsView.BorderToolsViewDidSelectedColorHanlder = {
+        [weak self] color in
+        if let weakSelf = self {
+            weakSelf.changeBorderColor(color: color)
+        }
+    }
+    
+    lazy var scaleToolsViewHandler: YYScaleToolsView.ScaleToolsViewHandler = {
+        [weak self] scale in
+        if let weakSelf = self {
+            self?.clipView.transform = CGAffineTransform.init(scaleX: scale, y: scale)
+        }
+    }
+    
+    lazy var filtersToolsViewHandler: YYSelectedFiltersView.FiltersToolsViewHandler = {
+        [weak self] type in
+        if let weakSelf = self {
+            YYFilterManager.shared.outputImage(originalImage: weakSelf.clipView.image!, type: type) {
+                [weak self] image,success  in
+                if let weakSelf = self {
+                    if success {
+                        weakSelf.clipView.image = image
+                    }
+                }
+            }
         }
     }
     
@@ -108,6 +131,7 @@ class YYScaleViewController: YYPickerImageViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
+        alertToolsView.hide(type: .defualt)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -133,19 +157,19 @@ class YYScaleViewController: YYPickerImageViewController {
     }
     
     @IBAction func changBackgroundColor(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        sender.layer.borderColor = sender.isSelected ? UIColor.white.cgColor : UIColor.black.cgColor
-            sender.layer.borderWidth = 2
-        changeBackgroundColor(color: sender.isSelected ? kSelfViewColor : kSelfViewColor)
-        changeBorderColor(color: sender.isSelected ? UIColor.white : UIColor.black)
+        alertToolsView.show(type: .border)
     }
     
-    @IBAction func addSpace(_ sender: UIButton) {
-        self.clipView.adjustSpace(space: 2, type: .add)
+    @IBAction func scaleAction(_ sender: UIButton) {
+        alertToolsView.show(type: .scale)
     }
     
-    @IBAction func subtractionSpace(_ sender: UIButton) {
-        self.clipView.adjustSpace(space: 2, type: .subtraction)
+    @IBAction func filterAction(_ sender: UIButton) {
+        alertToolsView.show(type: .filter)
+    }
+    
+    deinit {
+        print("-----------YYScaleViewController--------------")
     }
     
 }

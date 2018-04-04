@@ -83,17 +83,18 @@ class YYClipView: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        return
-        let strokeRect = rect
-        let context = UIGraphicsGetCurrentContext()
-        context?.setStrokeColor(self.borderColor.cgColor)
-        context?.stroke(strokeRect, width: self.space * 2)
-        context?.drawPath(using: .stroke)
-        
-        guard let image = self.image else {
-            return
-        }
-        context?.draw(image.cgImage!, in: CGRect(x: self.space, y: self.space, width: rect.width - self.space * 2, height: rect.height - self.space * 2))
+        /*
+            let strokeRect = rect
+            let context = UIGraphicsGetCurrentContext()
+            context?.setStrokeColor(self.borderColor.cgColor)
+            context?.stroke(strokeRect, width: self.space * 2)
+            context?.drawPath(using: .stroke)
+            
+            guard let image = self.image else {
+                return
+            }
+            context?.draw(image.cgImage!, in: CGRect(x: self.space, y: self.space, width: rect.width - self.space * 2, height: rect.height - self.space * 2))
+         */
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

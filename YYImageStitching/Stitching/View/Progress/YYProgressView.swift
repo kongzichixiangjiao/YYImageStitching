@@ -8,13 +8,22 @@
 
 import UIKit
 
-private let kProgressViewHeight: CGFloat = 5
+private let kProgressViewHeight: CGFloat = 8
 
 class YYProgressView: UIControl {
     
+    public var progressColor: UIColor = UIColor.orange {
+        didSet {
+            let w: CGFloat = self.currentPointX - self.space
+            up.backgroundColor = w <= 0 ? UIColor.red : progressColor
+        }
+    }
     
     typealias YYProgressViewHandler = (_ width: CGFloat, _ type: YYClipViewSpaceType) -> ()
     var progressViewHandler: YYProgressViewHandler?
+    
+    private let space: CGFloat = 20
+    private var currentPointX: CGFloat = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,7 +52,7 @@ class YYProgressView: UIControl {
     
     lazy var up: YYProgressUpView = {
         let up = YYProgressUpView(frame: CGRect(x: 20, y: 0, width: 2, height: kProgressViewHeight))
-        up.backgroundColor = UIColor.orange
+        up.backgroundColor = self.progressColor
         return up
     }()
     
@@ -76,12 +85,11 @@ class YYProgressView: UIControl {
             return
         }
         let point = touch.location(in: self)
-        if point.x > 0 && point.x < self.frame.size.width {
-            let space: CGFloat = 20
+        currentPointX = point.x
+        if currentPointX > 0 && currentPointX < self.frame.size.width {
             let w: CGFloat = point.x - space
-            print(w)
             up.frame = CGRect(x: space, y: 0, width: w, height: kProgressViewHeight)
-            up.backgroundColor = w <= 0 ? UIColor.red : UIColor.orange
+            up.backgroundColor = w <= 0 ? UIColor.red : progressColor
             progressViewHandler!(w <= 0 ? 0 : w, .add)
         }
     }
@@ -100,6 +108,7 @@ class YYProgressUpView: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
+        /*
         return
         let borderW: CGFloat = 1
         let oldW: CGFloat = rect.size.width
@@ -127,6 +136,7 @@ class YYProgressUpView: UIView {
         context?.setLineWidth(borderW)
         context?.strokePath()
         context?.drawPath(using: .fillStroke)
+         */
     }
 }
 

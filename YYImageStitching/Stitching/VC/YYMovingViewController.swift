@@ -21,7 +21,8 @@ class YYMovingViewController: YYBaseCollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addLongPressGesture()
+        
+//        addLongPressGesture()
     }
     
     private func addLongPressGesture() {

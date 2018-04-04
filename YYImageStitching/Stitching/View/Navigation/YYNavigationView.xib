@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,32 +27,25 @@
                         <action selector="back:" destination="iN0-l3-epB" eventType="touchUpInside" id="j7d-AP-p1O"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tyn-VW-JkO">
-                    <rect key="frame" x="315" y="20" width="30" height="30"/>
-                    <state key="normal" title="+"/>
-                    <connections>
-                        <action selector="scaleAdd:" destination="iN0-l3-epB" eventType="touchUpInside" id="z2h-zk-A1E"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJc-Pf-ua4">
-                    <rect key="frame" x="266" y="20" width="30" height="30"/>
-                    <state key="normal" title="-"/>
-                    <connections>
-                        <action selector="scaleSubtract:" destination="iN0-l3-epB" eventType="touchUpInside" id="Uzh-gS-dte"/>
-                    </connections>
-                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mos-Mo-WbC">
+                    <rect key="frame" x="166.5" y="24" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="eJc-Pf-ua4" firstAttribute="centerY" secondItem="Tyn-VW-JkO" secondAttribute="centerY" id="7JR-z1-aYx"/>
+                <constraint firstItem="Mos-Mo-WbC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1Vg-sc-XE7"/>
                 <constraint firstItem="cBy-xP-ZuQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Cui-cu-uVP"/>
-                <constraint firstItem="Tyn-VW-JkO" firstAttribute="leading" secondItem="eJc-Pf-ua4" secondAttribute="trailing" constant="19" id="b8T-Da-ggA"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Tyn-VW-JkO" secondAttribute="trailing" constant="30" id="igL-w8-Crr"/>
-                <constraint firstItem="Tyn-VW-JkO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="lwm-Rt-6nh"/>
+                <constraint firstItem="Mos-Mo-WbC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jnD-mf-mn7"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cBy-xP-ZuQ" secondAttribute="bottom" id="qGz-Cc-jrE"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="mTitleLabel" destination="Mos-Mo-WbC" id="tOy-L3-L2V"/>
+            </connections>
             <point key="canvasLocation" x="34.5" y="-244.5"/>
         </view>
     </objects>

@@ -145,7 +145,7 @@ extension UICollectionView {
     
     var emptyDelegate: UICollectionViewPlaceHolderDelegate? {
         set {
-            objc_setAssociatedObject(self, &UITableView.kEmptyDelegateKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &UITableView.kEmptyDelegateKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
         }
         get {
             return objc_getAssociatedObject(self, &UITableView.kEmptyDelegateKey) as? UICollectionViewPlaceHolderDelegate

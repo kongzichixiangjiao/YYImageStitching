@@ -23,4 +23,10 @@ extension UIColor {
                             blue: b / 255,
                             alpha: 1.0)
     }
+    static func rgba(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ a: CGFloat) -> UIColor {
+        return UIColor.init(red: r / 255,
+                            green: g / 255,
+                            blue: b / 255,
+                            alpha: a)
+    }
 }

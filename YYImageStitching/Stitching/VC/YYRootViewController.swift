@@ -52,7 +52,9 @@ class YYRootViewController: YYMovingViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
+    deinit {
+        print("-----------YYRootViewController--------------")
+    }
 }
 
 extension YYRootViewController: YYStitchingViewControllerDelegate {
@@ -102,7 +104,6 @@ extension YYRootViewController {
             let aseet = self.dataSource[indexPath.row].asset!
             return CGSize.yy_imageZoom(baseW: self.collectionView.frame.size.width, w: CGFloat(aseet.pixelWidth), h: CGFloat(aseet.pixelHeight))
         }
-        print("row", indexPath.row, "w", img.size.width, "h", img.size.height)
         return CGSize.yy_imageZoom(baseW: self.collectionView.frame.size.width, w: img.size.width, h: img.size.height)
     }
     
