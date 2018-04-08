@@ -20,6 +20,6 @@ class YYImageModel {
     var borderColor: UIColor!
     var filter: FilterEnum!
     var a: String!
-    
+    var b: String!
     
 }
