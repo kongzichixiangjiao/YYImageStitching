@@ -14,4 +14,11 @@ class YYImageModel {
     var isSelected: Bool = false
     var indexPath: IndexPath!
     var image: UIImage?
+    
+    var resultImage: UIImage?
+    var borderWidth: CGFloat!
+    var borderColor: UIColor!
+    var filter: FilterEnum!
+    var a: String!
+    var b: String!
 }
