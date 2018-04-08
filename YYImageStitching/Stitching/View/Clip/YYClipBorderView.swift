@@ -9,7 +9,7 @@
 import UIKit
 
 class YYClipBorderView: UIView {
-    public var borderColor: UIColor = UIColor.black {
+    public var borderColor: UIColor = UIColor.orange {
         didSet {
             
             self.setNeedsDisplay()

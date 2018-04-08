@@ -102,6 +102,7 @@ class YYAlertToolsView: UIView {
         }, completion: { b in
             self.scaleToolsView.isHidden = true
             self.borderToolsView.isHidden = true
+            self.filtersToolsView.isHidden = true
             self.removeFromSuperview()
         })
     }

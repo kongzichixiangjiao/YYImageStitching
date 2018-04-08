@@ -19,6 +19,4 @@ class YYImageModel {
     var borderWidth: CGFloat!
     var borderColor: UIColor!
     var filter: FilterEnum!
-    var a: String!
-    var b: String!
 }
