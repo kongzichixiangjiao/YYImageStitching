@@ -18,10 +18,7 @@ class YYScaleViewController: YYPickerImageViewController {
     
     var row: Int = 0
     
-    var model: YYImageModel! {
-        didSet {
-        }
-    }
+    var model: YYImageModel!
     
     lazy var navigationView: UIView = {
         let v = YYNavigationView.loadView()
@@ -98,6 +95,7 @@ class YYScaleViewController: YYPickerImageViewController {
     lazy var borderToolsViewDidSelectedColorHanlder: YYBorderToolsView.BorderToolsViewDidSelectedColorHanlder = {
         [weak self] color in
         if let weakSelf = self {
+//            weakSelf.model.
             weakSelf.changeBorderColor(color: color)
         }
     }

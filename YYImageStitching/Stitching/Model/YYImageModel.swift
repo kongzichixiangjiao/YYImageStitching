@@ -14,4 +14,6 @@ class YYImageModel {
     var isSelected: Bool = false
     var indexPath: IndexPath!
     var image: UIImage?
+    
+    
 }
