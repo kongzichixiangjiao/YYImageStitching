@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F10EC79DC8F2A644160E2AB /* Pods_YYImageStitching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF298D739C56639DCE89AC1 /* Pods_YYImageStitching.framework */; };
 		DC02F5B8206F8D0D006903DD /* YYFilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02F5B7206F8D0D006903DD /* YYFilterManager.swift */; };
 		DC02F5BB206F943C006903DD /* ImageVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02F5B9206F943C006903DD /* ImageVIewExtension.swift */; };
 		DC02F5BC206F943C006903DD /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02F5BA206F943C006903DD /* ImageHelper.swift */; };
@@ -92,6 +93,7 @@
 		DCB02AB32072330600F0D55B /* YYFilterStringFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB02AB22072330600F0D55B /* YYFilterStringFlowLayout.swift */; };
 		DCC06504206B82EF009DD6D9 /* UIView+Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC06503206B82EF009DD6D9 /* UIView+Shot.swift */; };
 		DCCB54FF206A1D240024F22B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCB54FE206A1D240024F22B /* Array+Extension.swift */; };
+		DCE6AD70207A03DD00B9117C /* WX+AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6AD6F207A03DC00B9117C /* WX+AppDelegate.swift */; };
 		DCF7465B206A17BB00C487B6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7465A206A17BB00C487B6 /* UIImageView+Extension.swift */; };
 		DCF7465D206A188900C487B6 /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7465C206A188800C487B6 /* CGSize+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -114,6 +116,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31B39726C2FE887516238629 /* Pods-YYImageStitching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYImageStitching.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYImageStitching/Pods-YYImageStitching.release.xcconfig"; sourceTree = "<group>"; };
+		8FF298D739C56639DCE89AC1 /* Pods_YYImageStitching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YYImageStitching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC9271E4800E9DEB597BB2EB /* Pods-YYImageStitching.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYImageStitching.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYImageStitching/Pods-YYImageStitching.debug.xcconfig"; sourceTree = "<group>"; };
 		DC02F5B7206F8D0D006903DD /* YYFilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFilterManager.swift; sourceTree = "<group>"; };
 		DC02F5B9206F943C006903DD /* ImageVIewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageVIewExtension.swift; sourceTree = "<group>"; };
 		DC02F5BA206F943C006903DD /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
@@ -198,6 +203,7 @@
 		DC862F12206DEB7300B7926F /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		DC862F15206E21BF00B7926F /* YYScaleToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYScaleToolsView.swift; sourceTree = "<group>"; };
 		DC862F17206E21C700B7926F /* YYScaleToolsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYScaleToolsView.xib; sourceTree = "<group>"; };
+		DC87BC242079FBEA005A0382 /* ImageStiching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageStiching.h; sourceTree = "<group>"; };
 		DCB02AAA2072307900F0D55B /* YYSelectedFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYSelectedFiltersView.swift; sourceTree = "<group>"; };
 		DCB02AAC2072308600F0D55B /* YYSelectedFiltersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYSelectedFiltersView.xib; sourceTree = "<group>"; };
 		DCB02AAE2072326000F0D55B /* YYFilterStringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFilterStringCell.swift; sourceTree = "<group>"; };
@@ -205,6 +211,7 @@
 		DCB02AB22072330600F0D55B /* YYFilterStringFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFilterStringFlowLayout.swift; sourceTree = "<group>"; };
 		DCC06503206B82EF009DD6D9 /* UIView+Shot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shot.swift"; sourceTree = "<group>"; };
 		DCCB54FE206A1D240024F22B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		DCE6AD6F207A03DC00B9117C /* WX+AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WX+AppDelegate.swift"; sourceTree = "<group>"; };
 		DCF7465A206A17BB00C487B6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		DCF7465C206A188800C487B6 /* CGSize+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,6 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F10EC79DC8F2A644160E2AB /* Pods_YYImageStitching.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +242,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D84F37426A746F932308820 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC9271E4800E9DEB597BB2EB /* Pods-YYImageStitching.debug.xcconfig */,
+				31B39726C2FE887516238629 /* Pods-YYImageStitching.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CC5D14E150092EBE5C8FA602 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FF298D739C56639DCE89AC1 /* Pods_YYImageStitching.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DC02F5B6206F8CE4006903DD /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +337,8 @@
 				DC64BC14205FB88B003E204E /* YYImageStitchingTests */,
 				DC64BC1F205FB88B003E204E /* YYImageStitchingUITests */,
 				DC64BBFE205FB88B003E204E /* Products */,
+				9D84F37426A746F932308820 /* Pods */,
+				CC5D14E150092EBE5C8FA602 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -377,6 +404,8 @@
 			children = (
 				DC862F12206DEB7300B7926F /* Theme.swift */,
 				DC862EBA206DDAF900B7926F /* AppDelegate.swift */,
+				DCE6AD6F207A03DC00B9117C /* WX+AppDelegate.swift */,
+				DC87BC242079FBEA005A0382 /* ImageStiching.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -540,9 +569,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC64BC25205FB88B003E204E /* Build configuration list for PBXNativeTarget "YYImageStitching" */;
 			buildPhases = (
+				5A9279601028E60D3D1C12AA /* [CP] Check Pods Manifest.lock */,
 				DC64BBF9205FB88B003E204E /* Sources */,
 				DC64BBFA205FB88B003E204E /* Frameworks */,
 				DC64BBFB205FB88B003E204E /* Resources */,
+				B5C72795C692ED7B49411C78 /* [CP] Embed Pods Frameworks */,
+				7760B6A2947FEB97C99EFF69 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -691,6 +723,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5A9279601028E60D3D1C12AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YYImageStitching-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7760B6A2947FEB97C99EFF69 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YYImageStitching/Pods-YYImageStitching-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5C72795C692ED7B49411C78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YYImageStitching/Pods-YYImageStitching-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DC64BBF9205FB88B003E204E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -727,6 +810,7 @@
 				DC6387EA2071BE0300FFBA05 /* PageControl.swift in Sources */,
 				DC862EEC206DDAFA00B7926F /* YYImageModel.swift in Sources */,
 				DCC06504206B82EF009DD6D9 /* UIView+Shot.swift in Sources */,
+				DCE6AD70207A03DD00B9117C /* WX+AppDelegate.swift in Sources */,
 				DC862F08206DE64400B7926F /* YYBorderToolsView.swift in Sources */,
 				DC862F0E206DE69D00B7926F /* YYBorderToolsColorCell.swift in Sources */,
 				DC862EEA206DDAFA00B7926F /* YYScaleViewController.swift in Sources */,
@@ -858,6 +942,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -909,6 +994,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -916,6 +1002,7 @@
 		};
 		DC64BC26205FB88B003E204E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC9271E4800E9DEB597BB2EB /* Pods-YYImageStitching.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -923,8 +1010,9 @@
 				INFOPLIST_FILE = YYImageStitching/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JN.PuXin.YYImageStitching;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stitching.jianan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Stitching/Other/ImageStiching.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -932,6 +1020,7 @@
 		};
 		DC64BC27205FB88B003E204E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31B39726C2FE887516238629 /* Pods-YYImageStitching.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -939,8 +1028,9 @@
 				INFOPLIST_FILE = YYImageStitching/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JN.PuXin.YYImageStitching;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stitching.jianan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Stitching/Other/ImageStiching.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
