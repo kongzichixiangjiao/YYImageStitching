@@ -14,9 +14,4 @@ class YYImageModel {
     var isSelected: Bool = false
     var indexPath: IndexPath!
     var image: UIImage?
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> parent of 6b3c1ec... 修改model
 }
