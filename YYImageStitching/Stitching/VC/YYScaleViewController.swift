@@ -34,9 +34,10 @@ class YYScaleViewController: YYPickerImageViewController {
     lazy var navigationBackHandler: YYNavigationView.NavigationBackHandler = {
         [weak self] in
         if let weakSelf = self {
+//            weakSelf.alertToolsView.hide(type: .defualt)
             weakSelf.clipView.transform = CGAffineTransform.identity
-            weakSelf.changeBackgroundColor(color: weakSelf.clipView.backgroundColor!)
-                
+//            weakSelf.changeBackgroundColor(color: weakSelf.clipView.backgroundColor!)
+            
             weakSelf.scaleViewControllerBackHandler!(weakSelf.clipView.yy_screenshot()!, weakSelf.row)
             weakSelf.navigationController?.popViewController(animated: true)
         }
@@ -131,7 +132,6 @@ class YYScaleViewController: YYPickerImageViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
-        alertToolsView.hide(type: .defualt)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

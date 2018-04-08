@@ -11,7 +11,7 @@ import UIKit
 class YYSelectedFiltersView: UIView {
 
     var filters: [FilterEnum] = [.chongyin, .danse, .heibai, .huaijue, .laohuang, .leng, .sediao, .suiyue, .tuise]
-
+    var filterNames: [String] = ["冲印", "单色", "黑白", "怀旧", "烙黄", "冷", "色调", "岁月", "褪色"]
     typealias FiltersToolsViewHandler = (_ type: FilterEnum) -> ()
     var filtersToolsViewHandler: FiltersToolsViewHandler!
     
@@ -30,7 +30,7 @@ class YYSelectedFiltersView: UIView {
 extension YYSelectedFiltersView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YYFilterStringCell.identifier, for: indexPath) as! YYFilterStringCell
-        cell.textLabel.text = filters[indexPath.row].rawValue
+        cell.textLabel.text = filterNames[indexPath.row]
         return cell
     }
     
