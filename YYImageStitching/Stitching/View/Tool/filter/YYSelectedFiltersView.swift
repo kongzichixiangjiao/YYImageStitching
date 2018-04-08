@@ -11,7 +11,8 @@ import UIKit
 class YYSelectedFiltersView: UIView {
 
     var filters: [FilterEnum] = [.chongyin, .danse, .heibai, .huaijue, .laohuang, .leng, .sediao, .suiyue, .tuise]
-
+    var filtersNames: [String] = ["冲印", "单色", "黑白", "怀旧", "烙黄", "冷", "色调", "岁月", "褪色"]
+    
     typealias FiltersToolsViewHandler = (_ type: FilterEnum) -> ()
     var filtersToolsViewHandler: FiltersToolsViewHandler!
     
