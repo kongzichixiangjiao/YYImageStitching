@@ -20,36 +20,12 @@ class YYScaleViewController: YYPickerImageViewController {
     
     var model: YYImageModel!
     
-    lazy var navigationView: UIView = {
+    lazy var navigationView: YYNavigationView = {
         let v = YYNavigationView.loadView()
         v.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: kNavigationViewHeight)
         v.navigationBackHandler = navigationBackHandler
-        v.navigationScaleHandler = navigationScaleHandler
         return v
     }()
-    
-    lazy var navigationBackHandler: YYNavigationView.NavigationBackHandler = {
-        [weak self] in
-        if let weakSelf = self {
-            weakSelf.clipView.transform = CGAffineTransform.identity
-            weakSelf.changeBackgroundColor(color: weakSelf.clipView.backgroundColor!)
-                
-            weakSelf.scaleViewControllerBackHandler!(weakSelf.clipView.yy_screenshot()!, weakSelf.row)
-            weakSelf.navigationController?.popViewController(animated: true)
-        }
-    }
-    
-    lazy var navigationScaleHandler: YYNavigationView.NavigationScaleHandler = {
-        [weak self] type in
-        switch type {
-        case .scaleAdd:
-            self?.clipView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
-            break
-        case .scaleSubtraction:
-            self?.clipView.transform = CGAffineTransform.init(scaleX: 0.5, y: 0.5)
-            break 
-        }
-    }
     
     lazy var clipView: YYClipView = {
         let vSize = CGSize.yy_imageZoomWithBaseScreen(w: CGFloat(self.model.image!.size.width), h: CGFloat(self.model.image!.size.height))
@@ -68,34 +44,52 @@ class YYScaleViewController: YYPickerImageViewController {
         return v
     }()
     
+    lazy var navigationBackHandler: YYNavigationView.NavigationBackHandler = {
+        [weak self] in
+        if let weakSelf = self {
+            weakSelf.navigationBackAction()
+        }
+    }
+    
+    func navigationBackAction() {
+        clipView.transform = CGAffineTransform.identity
+        changeBackgroundColor(color: clipView.backgroundColor!)
+        
+        scaleViewControllerBackHandler!(clipView.yy_screenshot()!, row)
+        navigationController?.popViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = kSelfViewColor
+        
         initViews()
     }
     
     private func initViews() {
-        
         self.view.addSubview(self.clipView)
-        
-        self.imageManager.requestImage(for: self.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
-            self.clipView.image = result ?? UIImage.init(named: "iw_none")
-        }
-        
         self.view.addSubview(self.navigationView)
+        
+        self.navigationView.myTitle = ""
+        
+        changeTransform(scale: self.model.scale)
+        changeBorderColor(color: self.model.borderColor)
+        changeBorderWidth(width: self.model.borderWidth, type: .add)
+        changeFilterImage(type: self.model.filter)
     }
     
     lazy var progressViewHandler: YYProgressView.YYProgressViewHandler = {
         [weak self] width, type in
         if let weakSelf = self {
-            weakSelf.clipView.adjustSpace(space: width, type: type)
+            weakSelf.model.borderWidth = width
+            weakSelf.changeBorderWidth(width: width, type: type)
         }
     }
     
     lazy var borderToolsViewDidSelectedColorHanlder: YYBorderToolsView.BorderToolsViewDidSelectedColorHanlder = {
         [weak self] color in
         if let weakSelf = self {
-//            weakSelf.model.
+            weakSelf.model.borderColor = color 
             weakSelf.changeBorderColor(color: color)
         }
     }
@@ -103,21 +97,15 @@ class YYScaleViewController: YYPickerImageViewController {
     lazy var scaleToolsViewHandler: YYScaleToolsView.ScaleToolsViewHandler = {
         [weak self] scale in
         if let weakSelf = self {
-            self?.clipView.transform = CGAffineTransform.init(scaleX: scale, y: scale)
+            weakSelf.model.scale = scale
+            weakSelf.changeTransform(scale: scale)
         }
     }
     
     lazy var filtersToolsViewHandler: YYSelectedFiltersView.FiltersToolsViewHandler = {
         [weak self] type in
         if let weakSelf = self {
-            YYFilterManager.shared.outputImage(originalImage: weakSelf.clipView.image!, type: type) {
-                [weak self] image,success  in
-                if let weakSelf = self {
-                    if success {
-                        weakSelf.clipView.image = image
-                    }
-                }
-            }
+            weakSelf.changeFilterImage(type: type)
         }
     }
     
@@ -137,17 +125,46 @@ class YYScaleViewController: YYPickerImageViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
     
+    private func changeFilterImage(type: FilterEnum) {
+        
+        self.imageManager.requestImage(for: self.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
+            guard let image = result else {
+                return
+            }
+            YYFilterManager.shared.outputImage(originalImage: image, type: type) {
+                [weak self] img,success  in
+                if let weakSelf = self {
+                    if success {
+                        weakSelf.model.filter = type
+                        weakSelf.clipView.image = img
+                    } else {
+                        weakSelf.clipView.image = image
+                    }
+                }
+            }
+        }
+    }
+    
+    private func changeBorderWidth(width: CGFloat, type: YYClipViewSpaceType) {
+        clipView.adjustSpace(space: width, type: type)
+    }
+    
     private func changeBackgroundColor(color: UIColor = UIColor.white) {
         self.view.backgroundColor = color
     }
     
     private func changeBorderColor(color: UIColor = UIColor.white) {
         self.clipView.backgroundColor = color
-        self.imageManager.requestImage(for: self.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
-            self.clipView.image = nil
-            self.clipView.image = result
-            self.clipView.borderColor = color
-        }
+        self.clipView.borderColor = color
+//        self.imageManager.requestImage(for: self.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
+////            self.clipView.image = nil
+////            self.clipView.image = result
+//            self.clipView.borderColor = color
+//        }
+    }
+    
+    func changeTransform(scale: CGFloat) {
+        clipView.transform = CGAffineTransform.init(scaleX: scale, y: scale)
     }
 
     override func didReceiveMemoryWarning() {
@@ -156,6 +173,7 @@ class YYScaleViewController: YYPickerImageViewController {
     
     @IBAction func changBackgroundColor(_ sender: UIButton) {
         alertToolsView.show(type: .border)
+        alertToolsView.updateBorderToolsView(borderWidth: self.model.borderWidth, progressColor: self.model.borderColor)
     }
     
     @IBAction func scaleAction(_ sender: UIButton) {

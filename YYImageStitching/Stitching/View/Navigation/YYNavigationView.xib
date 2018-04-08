@@ -28,7 +28,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mos-Mo-WbC">
-                    <rect key="frame" x="166.5" y="24" width="42" height="21"/>
+                    <rect key="frame" x="166.5" y="38.5" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -36,9 +36,9 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Mos-Mo-WbC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1Vg-sc-XE7"/>
                 <constraint firstItem="cBy-xP-ZuQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Cui-cu-uVP"/>
                 <constraint firstItem="Mos-Mo-WbC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jnD-mf-mn7"/>
+                <constraint firstItem="Mos-Mo-WbC" firstAttribute="centerY" secondItem="cBy-xP-ZuQ" secondAttribute="centerY" id="nb1-f4-W8x"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cBy-xP-ZuQ" secondAttribute="bottom" id="qGz-Cc-jrE"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

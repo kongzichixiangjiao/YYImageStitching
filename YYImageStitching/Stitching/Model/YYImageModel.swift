@@ -14,9 +14,9 @@ class YYImageModel {
     var isSelected: Bool = false
     var indexPath: IndexPath!
     var image: UIImage?
-    
+    var scale: CGFloat = 1
     var resultImage: UIImage?
-    var borderWidth: CGFloat!
-    var borderColor: UIColor!
-    var filter: FilterEnum!
+    var borderWidth: CGFloat = 0
+    var borderColor: UIColor = UIColor.orange
+    var filter: FilterEnum = .normal
 }

@@ -14,7 +14,7 @@ class YYProgressView: UIControl {
     
     public var progressColor: UIColor = UIColor.orange {
         didSet {
-            let w: CGFloat = self.currentPointX - self.space
+            let w: CGFloat = self.currentPointX - YYProgressView.space
             up.backgroundColor = w <= 0 ? UIColor.red : progressColor
         }
     }
@@ -22,8 +22,13 @@ class YYProgressView: UIControl {
     typealias YYProgressViewHandler = (_ width: CGFloat, _ type: YYClipViewSpaceType) -> ()
     var progressViewHandler: YYProgressViewHandler?
     
-    private let space: CGFloat = 20
-    private var currentPointX: CGFloat = 0
+    static let space: CGFloat = 20
+    
+    var currentPointX: CGFloat = 0 {
+        didSet {
+            updateCurrentPoint()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -86,9 +91,15 @@ class YYProgressView: UIControl {
         }
         let point = touch.location(in: self)
         currentPointX = point.x
-        if currentPointX > 0 && currentPointX < self.frame.size.width {
-            let w: CGFloat = point.x - space
-            up.frame = CGRect(x: space, y: 0, width: w, height: kProgressViewHeight)
+        if currentPointX < self.frame.size.width {
+            updateCurrentPoint()
+        }
+    }
+    
+    private func updateCurrentPoint() {
+        if currentPointX > 0 {
+            let w: CGFloat = currentPointX - YYProgressView.space
+            up.frame = CGRect(x: YYProgressView.space, y: 0, width: w, height: kProgressViewHeight)
             up.backgroundColor = w <= 0 ? UIColor.red : progressColor
             progressViewHandler!(w <= 0 ? 0 : w, .add)
         }

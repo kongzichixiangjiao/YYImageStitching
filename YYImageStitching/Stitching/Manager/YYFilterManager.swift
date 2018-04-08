@@ -9,7 +9,8 @@
 import UIKit
 
 enum FilterEnum: String {
-    case leng = "CIColorMonochrome",
+    case normal = "",
+    leng = "CIColorMonochrome",
     huaijue = "CIPhotoEffectInstant",
     heibai = "CIPhotoEffectNoir",
     sediao = "CIPhotoEffectTonal",
@@ -23,6 +24,9 @@ enum FilterEnum: String {
 extension UIImage {
     
     func yy_filter(type: FilterEnum) -> UIImage {
+        if type == .normal {
+            return self 
+        }
         //CIImage
         let ciImage = CIImage(image: self)
         // CIFilter

@@ -137,6 +137,11 @@ class YYAlertToolsView: UIView {
             return type.rawValue + self.kFinishedButtonHeight
         }
     }
+    
+    public func updateBorderToolsView(borderWidth: CGFloat, progressColor: UIColor) {
+        self.borderToolsView.borderWidth = borderWidth + YYProgressView.space
+        self.borderToolsView.progressView.progressColor = progressColor
+    }
 }
 
 

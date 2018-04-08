@@ -31,7 +31,8 @@ class YYSelectedFiltersView: UIView {
 extension YYSelectedFiltersView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YYFilterStringCell.identifier, for: indexPath) as! YYFilterStringCell
-        cell.textLabel.text = filters[indexPath.row].rawValue
+        cell.textLabel.text = filtersNames[indexPath.row]
+        
         return cell
     }
     

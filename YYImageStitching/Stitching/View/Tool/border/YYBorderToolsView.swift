@@ -18,6 +18,12 @@ class YYBorderToolsView: UIView {
     @IBOutlet weak var backProgressView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var borderWidth: CGFloat! {
+        didSet {
+            self.progressView.currentPointX = borderWidth 
+        }
+    }
+    
     private var colors: [UIColor] = []
     
     lazy var progressView: YYProgressView = {
