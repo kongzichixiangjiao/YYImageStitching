@@ -152,18 +152,36 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaL-4t-yAf">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcV-6b-Zud">
-                                        <rect key="frame" x="17" y="8" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcV-6b-Zud">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="pgB-1L-sPd"/>
+                                        </constraints>
+                                        <state key="normal" title="line space"/>
                                         <connections>
                                             <action selector="lineSpace:" destination="LWs-n8-ZBT" eventType="touchUpInside" id="t5p-3V-wIn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGY-jA-hfV">
+                                        <rect key="frame" x="70" y="0.0" width="70" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="9Xc-tt-Khh"/>
+                                        </constraints>
+                                        <state key="normal" title="left/right"/>
+                                        <connections>
+                                            <action selector="leftAndRightSpace:" destination="LWs-n8-ZBT" eventType="touchUpInside" id="GYU-4V-Ud5"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="BGY-jA-hfV" secondAttribute="bottom" id="Ozz-CB-tFY"/>
+                                    <constraint firstItem="mcV-6b-Zud" firstAttribute="top" secondItem="yaL-4t-yAf" secondAttribute="top" id="QLq-k0-260"/>
+                                    <constraint firstItem="BGY-jA-hfV" firstAttribute="top" secondItem="yaL-4t-yAf" secondAttribute="top" id="Qed-jX-y9a"/>
                                     <constraint firstAttribute="height" constant="44" id="Yi9-v1-ez6"/>
+                                    <constraint firstItem="mcV-6b-Zud" firstAttribute="leading" secondItem="yaL-4t-yAf" secondAttribute="leading" id="dZL-LO-RvX"/>
+                                    <constraint firstItem="BGY-jA-hfV" firstAttribute="leading" secondItem="mcV-6b-Zud" secondAttribute="trailing" id="dyC-5S-xzN"/>
+                                    <constraint firstAttribute="bottom" secondItem="mcV-6b-Zud" secondAttribute="bottom" id="fD9-NO-uV2"/>
                                 </constraints>
                             </view>
                         </subviews>

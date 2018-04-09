@@ -14,7 +14,6 @@ class YYRootFlowLayout: UICollectionViewFlowLayout {
     
     override func prepare() {
         super.prepare()
-        itemSize = CGSize.zero
         minimumInteritemSpacing = 0
         minimumLineSpacing = minLineSpacing
         scrollDirection = .vertical
