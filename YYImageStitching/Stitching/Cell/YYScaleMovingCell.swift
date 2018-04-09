@@ -9,9 +9,17 @@
 import UIKit
 import Photos
 
+protocol YYScaleMovingCellDelegate: class {
+    func deleteItem(row: Int)
+}
+
 class YYScaleMovingCell: UICollectionViewCell {
     
     static let identifier = "YYScaleMovingCell"
+    
+    weak var myDelegate: YYScaleMovingCellDelegate?
+    
+    @IBOutlet weak var deleteButton: UIButton!
     
     lazy var scrollView: UIScrollView = {
         let v = UIScrollView(frame: self.bounds)
@@ -43,6 +51,10 @@ class YYScaleMovingCell: UICollectionViewCell {
         initViews()
     }
     
+    @IBAction func deleteAction(_ sender: UIButton) {
+        myDelegate?.deleteItem(row: model.row)
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
     }
@@ -54,6 +66,7 @@ class YYScaleMovingCell: UICollectionViewCell {
         */
         self.contentView.addSubview(imageView)
         imageView.yy_addConstraint(toItem: self.contentView)
+        self.contentView.insertSubview(deleteButton, at: 10)
     }
     
 }

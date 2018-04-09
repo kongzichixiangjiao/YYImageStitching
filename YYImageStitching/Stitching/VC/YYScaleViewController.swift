@@ -53,7 +53,7 @@ class YYScaleViewController: YYPickerImageViewController {
     
     func navigationBackAction() {
         clipView.transform = CGAffineTransform.identity
-        changeBackgroundColor(color: clipView.backgroundColor!)
+        changeBackgroundColor(color: UIColor.white)
         
         scaleViewControllerBackHandler!(clipView.yy_screenshot()!, row)
         navigationController?.popViewController(animated: true)

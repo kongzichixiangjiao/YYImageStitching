@@ -11,6 +11,7 @@ import Photos
 
 class YYImageModel {
     var asset: PHAsset!
+    var row: Int!
     var isSelected: Bool = false
     var indexPath: IndexPath!
     var image: UIImage?

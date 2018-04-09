@@ -43,6 +43,10 @@ class YYRootViewController: YYMovingViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func sharePic(_ sender: UIButton) {
+        print("share")
+    }
+    
     lazy var scaleViewControllerBackHandler: YYScaleViewController.ScaleViewControllerBackHandler = {
         [weak self] img, row in
         self?.dataSource[row].image = img
@@ -83,7 +87,10 @@ extension YYRootViewController: UICollectionViewPlaceHolderDelegate {
 extension YYRootViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YYScaleMovingCell.identifier, for: indexPath) as! YYScaleMovingCell
-        cell.model = self.dataSource[indexPath.row]
+        let model = self.dataSource[indexPath.row] 
+        model.row = indexPath.row
+        cell.model = model 
+        cell.myDelegate = self
         guard let img = self.dataSource[indexPath.row].image else {
             self.imageManager.requestImage(for: cell.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
                 cell.imageView.image = result ?? UIImage.init(named: "iw_none")
@@ -117,3 +124,12 @@ extension YYRootViewController {
     
 }
 
+extension YYRootViewController: YYScaleMovingCellDelegate {
+    func deleteItem(row: Int) {
+        if self.dataSource.count == 0 {
+            return
+        }
+        self.dataSource.remove(at: row)
+        self.collectionView.yy_reloadData()
+    }
+}
