@@ -42,6 +42,7 @@
 		DC64BC36205FC134003E204E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC35205FC134003E204E /* UIColor+Extension.swift */; };
 		DC64BC38205FC165003E204E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC37205FC165003E204E /* String+Extension.swift */; };
 		DC64BC3A205FC1A0003E204E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC39205FC1A0003E204E /* UIImage+Extension.swift */; };
+		DC7EB758207B17FC004D7027 /* UIView+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7EB757207B17FC004D7027 /* UIView+Gesture.swift */; };
 		DC849BC9206E4250003B1842 /* YYLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC849BC7206E4250003B1842 /* YYLoginViewController.swift */; };
 		DC849BCA206E4250003B1842 /* YYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC849BC8206E4250003B1842 /* YYLoginViewController.xib */; };
 		DC862EB0206DD51D00B7926F /* UIView+LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EAF206DD51D00B7926F /* UIView+LoadView.swift */; };
@@ -159,6 +160,7 @@
 		DC64BC35205FC134003E204E /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		DC64BC37205FC165003E204E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		DC64BC39205FC1A0003E204E /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		DC7EB757207B17FC004D7027 /* UIView+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gesture.swift"; sourceTree = "<group>"; };
 		DC849BC7206E4250003B1842 /* YYLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYLoginViewController.swift; sourceTree = "<group>"; };
 		DC849BC8206E4250003B1842 /* YYLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYLoginViewController.xib; sourceTree = "<group>"; };
 		DC862EAF206DD51D00B7926F /* UIView+LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoadView.swift"; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				DC1623AE206CD0E2007AFA13 /* UIView+XIB_Layer.swift */,
 				DC862EAF206DD51D00B7926F /* UIView+LoadView.swift */,
 				DC862EB3206DD68F00B7926F /* UIView+Frame.swift */,
+				DC7EB757207B17FC004D7027 /* UIView+Gesture.swift */,
 				DC862F10206DE73C00B7926F /* UICollectionView+Extension.swift */,
 			);
 			path = Extension;
@@ -806,6 +809,7 @@
 				DC862F01206DDAFA00B7926F /* YYStitchingFlowLayout.swift in Sources */,
 				DC1623A9206C9860007AFA13 /* UIView+Layout.swift in Sources */,
 				DC16B9E92072033D00C048E3 /* YYToast.swift in Sources */,
+				DC7EB758207B17FC004D7027 /* UIView+Gesture.swift in Sources */,
 				DC6387E72071BE0300FFBA05 /* GifImageOperation.swift in Sources */,
 				DC6387EA2071BE0300FFBA05 /* PageControl.swift in Sources */,
 				DC862EEC206DDAFA00B7926F /* YYImageModel.swift in Sources */,

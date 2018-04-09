@@ -88,7 +88,6 @@ class YYAlertToolsView: UIView {
     }
     
     public func show(type: YYAlertToolsViewType) {
-        
         self.currentType = type
         self.frame = CGRect(x: 0, y: backY(isShow: false, type: type), width: MainScreenWidth, height: backH(type: type))
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: .curveEaseInOut, animations: {
@@ -97,6 +96,10 @@ class YYAlertToolsView: UIView {
     }
     
     public func hide(type: YYAlertToolsViewType) {
+        if (type == .defualt) {
+            self.removeFromSuperview()
+            return
+        }
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3.0, options: .curveEaseInOut, animations: {
             self.frame = CGRect(x: 0, y: self.backY(isShow: false, type: type), width: MainScreenWidth, height: self.backH(type: type))
         }, completion: { b in

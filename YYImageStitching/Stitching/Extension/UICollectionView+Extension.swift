@@ -9,7 +9,9 @@
 import UIKit
 
 extension UICollectionView {
+    
     func yy_register(nibName: String) {
         self.register(UINib(nibName: nibName, bundle: nil), forCellWithReuseIdentifier: nibName)
     }
+    
 }

@@ -16,7 +16,8 @@ class YYScaleViewController: YYPickerImageViewController {
     typealias ScaleViewControllerBackHandler = (_ image: UIImage, _ row: Int) -> ()
     var scaleViewControllerBackHandler: ScaleViewControllerBackHandler?
     
-    var row: Int = 0
+    typealias ScaleViewControllerDeleteHandler = (_ row: Int) -> ()
+    var scaleViewControllerDeleteHandler: ScaleViewControllerDeleteHandler?
     
     var model: YYImageModel!
     
@@ -55,7 +56,7 @@ class YYScaleViewController: YYPickerImageViewController {
         clipView.transform = CGAffineTransform.identity
         changeBackgroundColor(color: UIColor.white)
         
-        scaleViewControllerBackHandler!(clipView.yy_screenshot()!, row)
+        scaleViewControllerBackHandler!(clipView.yy_screenshot()!, self.model.row)
         navigationController?.popViewController(animated: true)
     }
     
@@ -182,6 +183,20 @@ class YYScaleViewController: YYPickerImageViewController {
     
     @IBAction func filterAction(_ sender: UIButton) {
         alertToolsView.show(type: .filter)
+    }
+    
+    @IBAction func deleteAction(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "注意咯", message: "疯了吧，删我？", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "没疯", style: .default) { (action) in
+            
+        }
+        let deleteAction = UIAlertAction(title: "就删你", style: .destructive) { (action) in
+            self.scaleViewControllerDeleteHandler!(self.model.row)
+            self.navigationController?.popViewController(animated: true)
+        }
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     deinit {

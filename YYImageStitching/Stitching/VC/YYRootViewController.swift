@@ -25,7 +25,7 @@ class YYRootViewController: YYMovingViewController {
     
     func initViews() {
         registerCell(nibName: YYScaleMovingCell.identifier)
-        updateCollectionViewFrame(left: 30, right: 30)
+        updateCollectionViewFrame(left: 30, bottom: 44, right: 30)
         collectionView.backgroundColor = kSelfViewColor
         collectionView.collectionViewLayout = flowLayout
         collectionView.emptyDelegate = self
@@ -51,6 +51,17 @@ class YYRootViewController: YYMovingViewController {
         [weak self] img, row in
         self?.dataSource[row].image = img
         self?.collectionView.reloadItems(at: [IndexPath(item: row, section: 0)])
+    }
+    
+    lazy var scaleViewControllerDeleteHandler: YYScaleViewController.ScaleViewControllerDeleteHandler = {
+        [weak self] row in
+        if let weakSelf = self {
+            if weakSelf.dataSource.count == 0 {
+                return
+            }
+            weakSelf.dataSource.remove(at: row)
+            weakSelf.collectionView.yy_reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,8 +100,7 @@ extension YYRootViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YYScaleMovingCell.identifier, for: indexPath) as! YYScaleMovingCell
         let model = self.dataSource[indexPath.row] 
         model.row = indexPath.row
-        cell.model = model 
-        cell.myDelegate = self
+        cell.model = model
         guard let img = self.dataSource[indexPath.row].image else {
             self.imageManager.requestImage(for: cell.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
                 cell.imageView.image = result ?? UIImage.init(named: "iw_none")
@@ -117,19 +127,9 @@ extension YYRootViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UIStoryboard.yy_main(vcName: "YYScaleViewController") as! YYScaleViewController
         vc.scaleViewControllerBackHandler = self.scaleViewControllerBackHandler
-        vc.row = indexPath.row
+        vc.scaleViewControllerDeleteHandler = self.scaleViewControllerDeleteHandler
         vc.model = self.dataSource[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-}
-
-extension YYRootViewController: YYScaleMovingCellDelegate {
-    func deleteItem(row: Int) {
-        if self.dataSource.count == 0 {
-            return
-        }
-        self.dataSource.remove(at: row)
-        self.collectionView.yy_reloadData()
-    }
 }

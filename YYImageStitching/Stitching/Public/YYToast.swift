@@ -26,7 +26,7 @@ class YYToast: CALayer {
     
     lazy var strockLayer: CAShapeLayer? = {
         let l = CAShapeLayer()
-        l.fillColor = UIColor.rgba(220, 220, 220, 1).cgColor
+        l.fillColor = UIColor.clear.cgColor
         l.strokeEnd = 1
         l.strokeColor = UIColor.rgba(220, 220, 220, 1).cgColor
         l.lineWidth = 6

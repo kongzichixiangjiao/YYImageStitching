@@ -9,17 +9,9 @@
 import UIKit
 import Photos
 
-protocol YYScaleMovingCellDelegate: class {
-    func deleteItem(row: Int)
-}
-
 class YYScaleMovingCell: UICollectionViewCell {
     
     static let identifier = "YYScaleMovingCell"
-    
-    weak var myDelegate: YYScaleMovingCellDelegate?
-    
-    @IBOutlet weak var deleteButton: UIButton!
     
     lazy var scrollView: UIScrollView = {
         let v = UIScrollView(frame: self.bounds)
@@ -35,7 +27,7 @@ class YYScaleMovingCell: UICollectionViewCell {
     lazy var imageView: UIImageView = {
         let v = UIImageView(frame: self.bounds)
         v.image = UIImage(named: "img_default.jpg")
-        v.isUserInteractionEnabled = false
+        v.isUserInteractionEnabled = true
         return v
     }()
     
@@ -49,10 +41,11 @@ class YYScaleMovingCell: UICollectionViewCell {
         super.awakeFromNib()
         
         initViews()
+        imageView.yy_addTapGesture(target: self, numberOfTapsRequired: 2, action: #selector(tap(sender:)))
     }
     
-    @IBAction func deleteAction(_ sender: UIButton) {
-        myDelegate?.deleteItem(row: model.row)
+    @objc func tap(sender: UITapGestureRecognizer) {
+        print("2")
     }
     
     override func layoutSubviews() {
@@ -66,7 +59,6 @@ class YYScaleMovingCell: UICollectionViewCell {
         */
         self.contentView.addSubview(imageView)
         imageView.yy_addConstraint(toItem: self.contentView)
-        self.contentView.insertSubview(deleteButton, at: 10)
     }
     
 }

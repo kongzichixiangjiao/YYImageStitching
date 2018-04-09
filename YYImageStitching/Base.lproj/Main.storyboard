@@ -91,19 +91,40 @@
                                             <action selector="filterAction:" destination="jz5-3u-aRz" eventType="touchUpInside" id="eFN-fT-Sbv"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bi-iO-Hri">
+                                        <rect key="frame" x="325" y="0.0" width="30" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="删除">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="ga_borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="ga_borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deleteAction:" destination="jz5-3u-aRz" eventType="touchUpInside" id="wQV-iM-UBg"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="AQh-wO-XXq" firstAttribute="leading" secondItem="vXd-GH-r4G" secondAttribute="leading" constant="20" id="4lV-9S-gR9"/>
                                     <constraint firstItem="EHl-iu-f0e" firstAttribute="leading" secondItem="YBJ-yN-Jer" secondAttribute="trailing" constant="33" id="B9q-bq-ocW"/>
+                                    <constraint firstAttribute="trailing" secondItem="9bi-iO-Hri" secondAttribute="trailing" constant="20" id="C4K-8Z-bd1"/>
                                     <constraint firstAttribute="height" constant="44" id="G1L-BN-Q5J"/>
                                     <constraint firstItem="YBJ-yN-Jer" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="MvF-Qr-AL6"/>
                                     <constraint firstAttribute="bottom" secondItem="EHl-iu-f0e" secondAttribute="bottom" id="OFR-Lv-VUG"/>
+                                    <constraint firstItem="9bi-iO-Hri" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="ORt-pm-bgr"/>
                                     <constraint firstAttribute="bottom" secondItem="YBJ-yN-Jer" secondAttribute="bottom" id="UFQ-kR-hN4"/>
                                     <constraint firstItem="YBJ-yN-Jer" firstAttribute="leading" secondItem="AQh-wO-XXq" secondAttribute="trailing" constant="33" id="ej3-nZ-wQb"/>
                                     <constraint firstItem="EHl-iu-f0e" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="h2b-qr-lnf"/>
                                     <constraint firstAttribute="bottom" secondItem="AQh-wO-XXq" secondAttribute="bottom" id="hdc-HU-EZA"/>
                                     <constraint firstItem="AQh-wO-XXq" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="uxa-sM-a8p"/>
+                                    <constraint firstAttribute="bottom" secondItem="9bi-iO-Hri" secondAttribute="bottom" id="xlL-Xm-Nvc"/>
                                     <constraint firstItem="YBJ-yN-Jer" firstAttribute="centerY" secondItem="AQh-wO-XXq" secondAttribute="centerY" id="z1t-Fg-x2p"/>
                                 </constraints>
                             </view>
@@ -120,11 +141,31 @@
             </objects>
             <point key="canvasLocation" x="452" y="749"/>
         </scene>
-        <!--Stitching-->
+        <!--joint-->
         <scene sceneID="BJ4-Fl-ORl">
             <objects>
                 <viewController id="LWs-n8-ZBT" customClass="YYRootViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Stitching" id="Fsh-EL-8iq">
+                    <view key="view" contentMode="scaleToFill" id="DGO-fT-ANs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaL-4t-yAf">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Yi9-v1-ez6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oNq-qb-xJt" firstAttribute="bottom" secondItem="yaL-4t-yAf" secondAttribute="bottom" id="PS2-q2-YHm"/>
+                            <constraint firstItem="yaL-4t-yAf" firstAttribute="leading" secondItem="oNq-qb-xJt" secondAttribute="leading" id="Uq6-NV-Bsp"/>
+                            <constraint firstItem="oNq-qb-xJt" firstAttribute="trailing" secondItem="yaL-4t-yAf" secondAttribute="trailing" id="pTS-VZ-q07"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oNq-qb-xJt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="joint" id="Fsh-EL-8iq">
                         <barButtonItem key="leftBarButtonItem" title="分享" width="40" style="plain" id="rla-va-A7v">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kQb-Oh-MEY">
                                 <rect key="frame" x="16" y="2" width="40" height="40"/>
