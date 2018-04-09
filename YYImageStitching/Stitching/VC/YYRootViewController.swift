@@ -47,6 +47,17 @@ class YYRootViewController: YYMovingViewController {
         print("share")
     }
     
+    var space1: CGFloat = 0
+    @IBAction func lineSpace(_ sender: UIButton) {
+        space1 = 20
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: space1, bottom: 0, right: space1)
+        collectionView.backgroundColor = UIColor.white
+        flowLayout.minLineSpacing = space1
+        let layout = flowLayout
+        collectionView.collectionViewLayout = layout
+        collectionView.yy_reloadData()
+    }
+    
     lazy var scaleViewControllerBackHandler: YYScaleViewController.ScaleViewControllerBackHandler = {
         [weak self] img, row in
         self?.dataSource[row].image = img
@@ -67,6 +78,7 @@ class YYRootViewController: YYMovingViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    
     deinit {
         print("-----------YYRootViewController--------------")
     }
@@ -119,9 +131,9 @@ extension YYRootViewController {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let img = self.dataSource[indexPath.row].image else {
             let aseet = self.dataSource[indexPath.row].asset!
-            return CGSize.yy_imageZoom(baseW: self.collectionView.frame.size.width, w: CGFloat(aseet.pixelWidth), h: CGFloat(aseet.pixelHeight))
+            return CGSize.yy_imageZoom(baseW: self.collectionView.frame.size.width - 2*space1, w: CGFloat(aseet.pixelWidth), h: CGFloat(aseet.pixelHeight))
         }
-        return CGSize.yy_imageZoom(baseW: self.collectionView.frame.size.width, w: img.size.width, h: img.size.height)
+        return CGSize.yy_imageZoom(baseW: self.collectionView.frame.size.width - 2*space1, w: img.size.width, h: img.size.height)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

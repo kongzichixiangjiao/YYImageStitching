@@ -157,11 +157,6 @@ class YYScaleViewController: YYPickerImageViewController {
     private func changeBorderColor(color: UIColor = UIColor.white) {
         self.clipView.backgroundColor = color
         self.clipView.borderColor = color
-//        self.imageManager.requestImage(for: self.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
-////            self.clipView.image = nil
-////            self.clipView.image = result
-//            self.clipView.borderColor = color
-//        }
     }
     
     func changeTransform(scale: CGFloat) {
