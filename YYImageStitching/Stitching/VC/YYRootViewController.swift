@@ -8,7 +8,7 @@
 
 import UIKit
 
-let kSelfViewColor = UIColor.rgb(180, 180, 180)
+let kSelfViewColor = UIColor.rgb(240, 240, 240)
 class YYRootViewController: YYMovingViewController {
     
     var leftSpace: CGFloat = 0
@@ -27,7 +27,7 @@ class YYRootViewController: YYMovingViewController {
     
     func initViews() {
         registerCell(nibName: YYScaleMovingCell.identifier)
-        updateCollectionViewFrame(left: 30, bottom: 44, right: 30)
+        updateCollectionViewFrame(left: 0, bottom: 44, right: 0)
         collectionView.backgroundColor = UIColor.white
         collectionView.collectionViewLayout = flowLayout
         collectionView.emptyDelegate = self

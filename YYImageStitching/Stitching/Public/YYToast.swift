@@ -24,6 +24,8 @@ class YYToast: CALayer {
         return t!
     }
     
+    private var kToastCount: Int = 0
+    
     lazy var strockLayer: CAShapeLayer? = {
         let l = CAShapeLayer()
         l.fillColor = UIColor.clear.cgColor
@@ -82,11 +84,15 @@ class YYToast: CALayer {
         self.isHidden = false
         mMaskView?.isHidden = false
         startAnimation(type: type)
+        kToastCount += 1
     }
     
     // MARK: hide()
     public func hide() {
-        stopAnimation()
+        kToastCount -= 1
+        if (kToastCount == 0) {
+            stopAnimation()
+        }
     }
     
     // MARK: startAnimation()
@@ -117,7 +123,6 @@ class YYToast: CALayer {
         initLayer()
     }
 
-    
     private func initLayer() {
         self.backgroundColor = UIColor.rgba(220, 220, 220, 0.5).cgColor
         
