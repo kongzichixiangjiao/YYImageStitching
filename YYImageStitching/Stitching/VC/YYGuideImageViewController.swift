@@ -29,7 +29,8 @@ class YYGuideImageViewController: UIViewController {
         let guideView = GuidePageView.init(images: imageGifArray, loginRegistCompletion: {
             UIApplication.shared.delegate?.window??.rootViewController = YYLoginViewController(nibName: "YYLoginViewController", bundle: nil)
         }) {
-            UIApplication.shared.delegate?.window??.rootViewController = UIStoryboard.yy_main().instantiateInitialViewController()
+            UIApplication.shared.delegate?.window??.rootViewController = YYLoginViewController(nibName: "YYLoginViewController", bundle: nil)
+//            UIApplication.shared.delegate?.window??.rootViewController = UIStoryboard.yy_main().instantiateInitialViewController()
         }
         self.view.addSubview(guideView)
     }

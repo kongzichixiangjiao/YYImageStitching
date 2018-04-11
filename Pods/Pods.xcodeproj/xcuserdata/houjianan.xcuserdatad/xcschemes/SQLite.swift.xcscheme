@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C9D20C6E5DB4EC9EE4415B97A7F06333"
-               BuildableName = "Pods_YYImageStitching.framework"
-               BlueprintName = "Pods-YYImageStitching"
+               BlueprintIdentifier = "39832F7E989A624F442525F28BEF45EC"
+               BuildableName = "SQLite.framework"
+               BlueprintName = "SQLite.swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C9D20C6E5DB4EC9EE4415B97A7F06333"
-            BuildableName = "Pods_YYImageStitching.framework"
-            BlueprintName = "Pods-YYImageStitching"
+            BlueprintIdentifier = "39832F7E989A624F442525F28BEF45EC"
+            BuildableName = "SQLite.framework"
+            BlueprintName = "SQLite.swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

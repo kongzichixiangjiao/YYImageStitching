@@ -1,12 +1,17 @@
 PODS:
+  - SQLite.swift (0.11.4):
+    - SQLite.swift/standard (= 0.11.4)
+  - SQLite.swift/standard (0.11.4)
   - WechatOpenSDK (1.8.1)
 
 DEPENDENCIES:
+  - SQLite.swift
   - WechatOpenSDK
 
 SPEC CHECKSUMS:
+  SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
   WechatOpenSDK: 491d965d79335070328571d3e79f714549e79a5e
 
-PODFILE CHECKSUM: 8c3d688f43d8ed566cca0ef41d99e51992d7c6b6
+PODFILE CHECKSUM: 0fe39277026359f014f746ec64bf2112ed909b79
 
 COCOAPODS: 1.4.0.rc.1

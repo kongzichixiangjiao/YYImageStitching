@@ -5,5 +5,6 @@ use_frameworks!
 
 target 'YYImageStitching' do
 pod 'WechatOpenSDK'
+pod 'SQLite.swift'
 
 end

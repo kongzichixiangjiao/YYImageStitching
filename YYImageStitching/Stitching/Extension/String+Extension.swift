@@ -8,7 +8,11 @@
 
 import UIKit
 import Foundation
-
+extension String {
+    var int64: Int64 {
+        return Int64(self) ?? -99999999999
+    }
+}
 // WARK: COLOR
 extension String {
     var color0X: UIColor! {
