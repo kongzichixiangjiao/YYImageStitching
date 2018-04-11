@@ -45,6 +45,22 @@
 		DC64BC36205FC134003E204E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC35205FC134003E204E /* UIColor+Extension.swift */; };
 		DC64BC38205FC165003E204E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC37205FC165003E204E /* String+Extension.swift */; };
 		DC64BC3A205FC1A0003E204E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC39205FC1A0003E204E /* UIImage+Extension.swift */; };
+		DC685CA4207DA644005631C1 /* CirCleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CA3207DA644005631C1 /* CirCleLayout.swift */; };
+		DC685CA6207DA793005631C1 /* YYTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CA5207DA793005631C1 /* YYTViewController.swift */; };
+		DC685CE9207DB21E005631C1 /* CPCollectionViewWheelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CE8207DB21E005631C1 /* CPCollectionViewWheelLayout.swift */; };
+		DC685CF7207DBF9C005631C1 /* CollectionViewCardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CEB207DBF9C005631C1 /* CollectionViewCardLayout.swift */; };
+		DC685CF8207DBF9C005631C1 /* CollectionViewCaterpillarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CEC207DBF9C005631C1 /* CollectionViewCaterpillarLayout.swift */; };
+		DC685CF9207DBF9C005631C1 /* CollectionViewCircleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CED207DBF9C005631C1 /* CollectionViewCircleLayout.swift */; };
+		DC685CFA207DBF9C005631C1 /* CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CEE207DBF9C005631C1 /* CollectionViewLayout.swift */; };
+		DC685CFB207DBF9C005631C1 /* CollectionViewStageLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CEF207DBF9C005631C1 /* CollectionViewStageLayout.swift */; };
+		DC685CFC207DBF9C005631C1 /* CollectionViewTimeMachineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CF0207DBF9C005631C1 /* CollectionViewTimeMachineLayout.swift */; };
+		DC685CFD207DBF9C005631C1 /* CollectionViewTransitionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CF1207DBF9C005631C1 /* CollectionViewTransitionLayout.swift */; };
+		DC685CFE207DBF9C005631C1 /* CollectionViewTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CF2207DBF9C005631C1 /* CollectionViewTransitionManager.swift */; };
+		DC685CFF207DBF9C005631C1 /* CollectionViewWheelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CF3207DBF9C005631C1 /* CollectionViewWheelLayout.swift */; };
+		DC685D00207DBF9C005631C1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC685CF5207DBF9C005631C1 /* Info.plist */; };
+		DC685D01207DBF9C005631C1 /* LayoutConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CF6207DBF9C005631C1 /* LayoutConfiguration.swift */; };
+		DC685D04207DC135005631C1 /* YYCircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685D02207DC135005631C1 /* YYCircleCell.swift */; };
+		DC685D05207DC135005631C1 /* YYCircleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC685D03207DC135005631C1 /* YYCircleCell.xib */; };
 		DC7EB758207B17FC004D7027 /* UIView+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7EB757207B17FC004D7027 /* UIView+Gesture.swift */; };
 		DC849BC9206E4250003B1842 /* YYLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC849BC7206E4250003B1842 /* YYLoginViewController.swift */; };
 		DC849BCA206E4250003B1842 /* YYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC849BC8206E4250003B1842 /* YYLoginViewController.xib */; };
@@ -166,6 +182,23 @@
 		DC64BC35205FC134003E204E /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		DC64BC37205FC165003E204E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		DC64BC39205FC1A0003E204E /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		DC685CA3207DA644005631C1 /* CirCleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleLayout.swift; sourceTree = "<group>"; };
+		DC685CA5207DA793005631C1 /* YYTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYTViewController.swift; sourceTree = "<group>"; };
+		DC685CE8207DB21E005631C1 /* CPCollectionViewWheelLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPCollectionViewWheelLayout.swift; sourceTree = "<group>"; };
+		DC685CEB207DBF9C005631C1 /* CollectionViewCardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCardLayout.swift; sourceTree = "<group>"; };
+		DC685CEC207DBF9C005631C1 /* CollectionViewCaterpillarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCaterpillarLayout.swift; sourceTree = "<group>"; };
+		DC685CED207DBF9C005631C1 /* CollectionViewCircleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCircleLayout.swift; sourceTree = "<group>"; };
+		DC685CEE207DBF9C005631C1 /* CollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewLayout.swift; sourceTree = "<group>"; };
+		DC685CEF207DBF9C005631C1 /* CollectionViewStageLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewStageLayout.swift; sourceTree = "<group>"; };
+		DC685CF0207DBF9C005631C1 /* CollectionViewTimeMachineLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewTimeMachineLayout.swift; sourceTree = "<group>"; };
+		DC685CF1207DBF9C005631C1 /* CollectionViewTransitionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewTransitionLayout.swift; sourceTree = "<group>"; };
+		DC685CF2207DBF9C005631C1 /* CollectionViewTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewTransitionManager.swift; sourceTree = "<group>"; };
+		DC685CF3207DBF9C005631C1 /* CollectionViewWheelLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWheelLayout.swift; sourceTree = "<group>"; };
+		DC685CF4207DBF9C005631C1 /* CPCollectionViewKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCollectionViewKit.h; sourceTree = "<group>"; };
+		DC685CF5207DBF9C005631C1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC685CF6207DBF9C005631C1 /* LayoutConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConfiguration.swift; sourceTree = "<group>"; };
+		DC685D02207DC135005631C1 /* YYCircleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYCircleCell.swift; sourceTree = "<group>"; };
+		DC685D03207DC135005631C1 /* YYCircleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYCircleCell.xib; sourceTree = "<group>"; };
 		DC7EB757207B17FC004D7027 /* UIView+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gesture.swift"; sourceTree = "<group>"; };
 		DC849BC7206E4250003B1842 /* YYLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYLoginViewController.swift; sourceTree = "<group>"; };
 		DC849BC8206E4250003B1842 /* YYLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYLoginViewController.xib; sourceTree = "<group>"; };
@@ -410,6 +443,25 @@
 			path = Stitching;
 			sourceTree = "<group>";
 		};
+		DC685CEA207DBF9C005631C1 /* CPCollectionViewKit */ = {
+			isa = PBXGroup;
+			children = (
+				DC685CEB207DBF9C005631C1 /* CollectionViewCardLayout.swift */,
+				DC685CEC207DBF9C005631C1 /* CollectionViewCaterpillarLayout.swift */,
+				DC685CED207DBF9C005631C1 /* CollectionViewCircleLayout.swift */,
+				DC685CEE207DBF9C005631C1 /* CollectionViewLayout.swift */,
+				DC685CEF207DBF9C005631C1 /* CollectionViewStageLayout.swift */,
+				DC685CF0207DBF9C005631C1 /* CollectionViewTimeMachineLayout.swift */,
+				DC685CF1207DBF9C005631C1 /* CollectionViewTransitionLayout.swift */,
+				DC685CF2207DBF9C005631C1 /* CollectionViewTransitionManager.swift */,
+				DC685CF3207DBF9C005631C1 /* CollectionViewWheelLayout.swift */,
+				DC685CF4207DBF9C005631C1 /* CPCollectionViewKit.h */,
+				DC685CF5207DBF9C005631C1 /* Info.plist */,
+				DC685CF6207DBF9C005631C1 /* LayoutConfiguration.swift */,
+			);
+			path = CPCollectionViewKit;
+			sourceTree = "<group>";
+		};
 		DC862EB9206DDAF900B7926F /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +484,7 @@
 				DC862EC1206DDAF900B7926F /* YYStitchingViewController.swift */,
 				DC849BC7206E4250003B1842 /* YYLoginViewController.swift */,
 				DC849BC8206E4250003B1842 /* YYLoginViewController.xib */,
+				DC685CA5207DA793005631C1 /* YYTViewController.swift */,
 				DC6387EB2071C46400FFBA05 /* YYGuideImageViewController.swift */,
 			);
 			path = VC;
@@ -516,6 +569,8 @@
 				DC862EDA206DDAF900B7926F /* YYScaleMovingCell.xib */,
 				DC862EDB206DDAF900B7926F /* YYStitchingCell.swift */,
 				DC862EDC206DDAF900B7926F /* YYStitchingCell.xib */,
+				DC685D02207DC135005631C1 /* YYCircleCell.swift */,
+				DC685D03207DC135005631C1 /* YYCircleCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -523,6 +578,9 @@
 		DC862EDD206DDAFA00B7926F /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				DC685CEA207DBF9C005631C1 /* CPCollectionViewKit */,
+				DC685CE8207DB21E005631C1 /* CPCollectionViewWheelLayout.swift */,
+				DC685CA3207DA644005631C1 /* CirCleLayout.swift */,
 				DC862EDE206DDAFA00B7926F /* YYMovingFlowLayout.swift */,
 				DC862EDF206DDAFA00B7926F /* YYRootFlowLayout.swift */,
 				DC862EE0206DDAFA00B7926F /* YYStitchingFlowLayout.swift */,
@@ -692,6 +750,7 @@
 				DC862EF1206DDAFA00B7926F /* YYEmptyView.xib in Resources */,
 				DC6387DA2071BC4200FFBA05 /* guideImage4.jpg in Resources */,
 				DC862EF6206DDAFA00B7926F /* YYAlertToolsView.xib in Resources */,
+				DC685D00207DBF9C005631C1 /* Info.plist in Resources */,
 				DC849BCA206E4250003B1842 /* YYLoginViewController.xib in Resources */,
 				DC6387D82071BC4200FFBA05 /* guideImage2.jpg in Resources */,
 				DC6387D52071BC4200FFBA05 /* adImage3.gif in Resources */,
@@ -710,6 +769,7 @@
 				DC6387DB2071BC4200FFBA05 /* guideImage5.jpg in Resources */,
 				DC6387DC2071BC4200FFBA05 /* guideImage6.gif in Resources */,
 				DC6387DF2071BC4200FFBA05 /* guideMovie1.mov in Resources */,
+				DC685D05207DC135005631C1 /* YYCircleCell.xib in Resources */,
 				DC6387DE2071BC4200FFBA05 /* guideImage8.gif in Resources */,
 				DC862EF3206DDAFA00B7926F /* YYNavigationView.xib in Resources */,
 				DC64BC08205FB88B003E204E /* Assets.xcassets in Resources */,
@@ -798,25 +858,34 @@
 				DC862EFD206DDAFA00B7926F /* YYStitchingCell.swift in Sources */,
 				DC862EF5206DDAFA00B7926F /* YYAlertToolsView.swift in Sources */,
 				DC229C7620639FB900F45C8C /* ScrollView+PlaceHolder.swift in Sources */,
+				DC685CF7207DBF9C005631C1 /* CollectionViewCardLayout.swift in Sources */,
 				DC862EEB206DDAFA00B7926F /* YYStitchingViewController.swift in Sources */,
 				DC1623AF206CD0E2007AFA13 /* UIView+XIB_Layer.swift in Sources */,
+				DC685CFB207DBF9C005631C1 /* CollectionViewStageLayout.swift in Sources */,
+				DC685CFE207DBF9C005631C1 /* CollectionViewTransitionManager.swift in Sources */,
 				DC862F11206DE73C00B7926F /* UICollectionView+Extension.swift in Sources */,
 				DC862EED206DDAFA00B7926F /* YYClipBorderView.swift in Sources */,
 				DCCB54FF206A1D240024F22B /* Array+Extension.swift in Sources */,
+				DC685CA4207DA644005631C1 /* CirCleLayout.swift in Sources */,
 				DC862EE5206DDAFA00B7926F /* AppDelegate.swift in Sources */,
+				DC685CF8207DBF9C005631C1 /* CollectionViewCaterpillarLayout.swift in Sources */,
 				DC862EB4206DD68F00B7926F /* UIView+Frame.swift in Sources */,
 				DC02F5BC206F943C006903DD /* ImageHelper.swift in Sources */,
 				DC862EB2206DD58E00B7926F /* NSObject+Extension.swift in Sources */,
 				DC862EEF206DDAFA00B7926F /* YYClipView.swift in Sources */,
 				DC862EF4206DDAFA00B7926F /* YYProgressView.swift in Sources */,
+				DC685CFF207DBF9C005631C1 /* CollectionViewWheelLayout.swift in Sources */,
+				DC685CFC207DBF9C005631C1 /* CollectionViewTimeMachineLayout.swift in Sources */,
 				DC862EF9206DDAFA00B7926F /* YYMovingCell.swift in Sources */,
 				DC6387E92071BE0300FFBA05 /* GuidePageView.swift in Sources */,
 				DC862EEE206DDAFA00B7926F /* YYClipImageView.swift in Sources */,
 				DC64BC3A205FC1A0003E204E /* UIImage+Extension.swift in Sources */,
 				DC862F13206DEB7300B7926F /* Theme.swift in Sources */,
 				DC0BE9AA207CBD2700B959E3 /* YYSectorView.swift in Sources */,
+				DC685CFA207DBF9C005631C1 /* CollectionViewLayout.swift in Sources */,
 				DC862EE6206DDAFA00B7926F /* YYBaseCollectionViewController.swift in Sources */,
 				DC862EE8206DDAFA00B7926F /* YYPickerImageViewController.swift in Sources */,
+				DC685D01207DBF9C005631C1 /* LayoutConfiguration.swift in Sources */,
 				DCB02AB02072326000F0D55B /* YYFilterStringCell.swift in Sources */,
 				DC849BC9206E4250003B1842 /* YYLoginViewController.swift in Sources */,
 				DC862F01206DDAFA00B7926F /* YYStitchingFlowLayout.swift in Sources */,
@@ -827,17 +896,22 @@
 				DC0BE9A6207C8B1000B959E3 /* YYSQLite.swift in Sources */,
 				DC6387EA2071BE0300FFBA05 /* PageControl.swift in Sources */,
 				DC862EEC206DDAFA00B7926F /* YYImageModel.swift in Sources */,
+				DC685CFD207DBF9C005631C1 /* CollectionViewTransitionLayout.swift in Sources */,
+				DC685CF9207DBF9C005631C1 /* CollectionViewCircleLayout.swift in Sources */,
 				DCC06504206B82EF009DD6D9 /* UIView+Shot.swift in Sources */,
 				DCE6AD70207A03DD00B9117C /* WX+AppDelegate.swift in Sources */,
 				DC862F08206DE64400B7926F /* YYBorderToolsView.swift in Sources */,
 				DC862F0E206DE69D00B7926F /* YYBorderToolsColorCell.swift in Sources */,
 				DC862EEA206DDAFA00B7926F /* YYScaleViewController.swift in Sources */,
+				DC685CA6207DA793005631C1 /* YYTViewController.swift in Sources */,
 				DC862EE9206DDAFA00B7926F /* YYRootViewController.swift in Sources */,
 				DC02F5B8206F8D0D006903DD /* YYFilterManager.swift in Sources */,
 				DC02F5BB206F943C006903DD /* ImageVIewExtension.swift in Sources */,
 				DCB02AB32072330600F0D55B /* YYFilterStringFlowLayout.swift in Sources */,
 				DC862EF0206DDAFA00B7926F /* YYEmptyView.swift in Sources */,
+				DC685CE9207DB21E005631C1 /* CPCollectionViewWheelLayout.swift in Sources */,
 				DC292AC22069E8A5004A989B /* UIDevice+Extension.swift in Sources */,
+				DC685D04207DC135005631C1 /* YYCircleCell.swift in Sources */,
 				DCB02AAB2072307900F0D55B /* YYSelectedFiltersView.swift in Sources */,
 				DCF7465B206A17BB00C487B6 /* UIImageView+Extension.swift in Sources */,
 				DC862EF2206DDAFA00B7926F /* YYNavigationView.swift in Sources */,
@@ -956,7 +1030,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1010,7 +1084,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1027,7 +1101,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HGA4995V4J;
 				INFOPLIST_FILE = YYImageStitching/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stitching.jianan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1045,7 +1119,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HGA4995V4J;
 				INFOPLIST_FILE = YYImageStitching/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stitching.jianan;
 				PRODUCT_NAME = "$(TARGET_NAME)";

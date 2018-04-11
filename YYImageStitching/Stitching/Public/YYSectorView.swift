@@ -10,30 +10,40 @@ import UIKit
 
 class YYSectorView: UIView {
 
-    var angle: CGFloat = 0
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.isUserInteractionEnabled = true
+        yy_addSwipeGesture(target: self, action: #selector(swipe(sender:)))
+    }
     
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    var angle: CGFloat = 0
+    var time: Double = 0
     override func draw(_ rect: CGRect) {
         let borderW: CGFloat = 1
-        let w: CGFloat = rect.size.width - 10
-        let h: CGFloat = rect.size.height - 10
+        let w: CGFloat = rect.size.width
+        let h: CGFloat = rect.size.height
         let r: CGFloat = w / 2
         let center: CGPoint = CGPoint(x: w / 2, y: h / 2)
-        
-        let context = UIGraphicsGetCurrentContext()
-        
-        context?.move(to: center)
-        context?.addLine(to: CGPoint(x: w / 2 - r * CGFloat(sin(Double.pi / 3)), y: h / 2 - r * CGFloat(cos(Double.pi / 3))))
-        context?.addArc(tangent1End: CGPoint(x: w, y: 0), tangent2End: CGPoint(x: w / 2, y: h / 2), radius: r)
-        context?.addLine(to: center)
-        context?.closePath()
-        
-        context?.setFillColor(UIColor.yellow.cgColor)
-        context?.fillPath()
-        
-        context?.setStrokeColor(UIColor.black.cgColor)
-        context?.setLineWidth(borderW)
-        context?.strokePath()
-        context?.drawPath(using: .fillStroke)
-    }
 
+        let color = UIColor.randomColor()
+        color.set()
+        let aPath = UIBezierPath(arcCenter: center, radius: r,
+                                 startAngle: CGFloat(0 + time), endAngle: CGFloat(1 + time), clockwise: true)
+        aPath.addLine(to: center)
+        aPath.close()
+        aPath.lineWidth = 1.0
+        aPath.fill()
+    }
+    
+    @objc func swipe(sender: UISwipeGestureRecognizer) {
+        if sender.state == .began {
+            print(sender.direction)
+        }
+    }
+    
+  
 }

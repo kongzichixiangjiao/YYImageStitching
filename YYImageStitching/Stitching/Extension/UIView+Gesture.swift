@@ -20,5 +20,11 @@ extension UIView {
         tap.numberOfTapsRequired = numberOfTapsRequired
         self.addGestureRecognizer(tap)
     }
+    func yy_addSwipeGesture(target: Any, action: Selector) {
+        let tap = UISwipeGestureRecognizer(target: target, action: action)
+        tap.direction = .down
+        self.addGestureRecognizer(tap)
+    }
+    
 }
 

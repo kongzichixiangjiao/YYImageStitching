@@ -20,6 +20,7 @@ class YYBaseCollectionViewController: YYPickerImageViewController {
         c.backgroundColor = UIColor.white
         c.showsVerticalScrollIndicator = false
         c.showsHorizontalScrollIndicator = false
+        c.isUserInteractionEnabled = true 
         self.view.addSubview(c)
         return c
     }()

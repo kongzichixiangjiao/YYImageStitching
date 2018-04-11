@@ -32,6 +32,7 @@ class YYRootViewController: YYMovingViewController {
         collectionView.collectionViewLayout = flowLayout
         collectionView.emptyDelegate = self
         collectionView.yy_reloadData()
+        collectionView.alwaysBounceVertical = true
     }
     
     override func didReceiveMemoryWarning() {
