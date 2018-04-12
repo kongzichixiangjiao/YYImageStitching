@@ -10,7 +10,7 @@ import UIKit
 
 class YYSectorView: UIView {
     var isNei: Bool = false
-    
+    var stop: Bool = false
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.isUserInteractionEnabled = true
@@ -90,6 +90,16 @@ class YYSectorView: UIView {
             velocity += v.y
         }
         setNeedsDisplay()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        stop = true
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        stop = false 
     }
     
 }

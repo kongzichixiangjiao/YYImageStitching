@@ -11,6 +11,10 @@ import UIKit
 class YYTViewController: YYBaseCollectionViewController {
     
     var velocity: CGFloat = 0
+    var count: Int = 0
+    var timer: Timer!
+    
+    var stop: Bool = false
     
     lazy var sectorView: YYSectorView = {
         let v = YYSectorView(frame: CGRect(x: 0, y: 0, width: 350, height: 350), isNei: false)
@@ -32,21 +36,44 @@ class YYTViewController: YYBaseCollectionViewController {
         super.viewDidLoad()
         
         self.view.addSubview(sectorView)
-        
         sectorView.yy_addPanGesture(target: self, action: #selector(pan(sender:)))
+        sectorView1.yy_addTapGesture(target: self, numberOfTapsRequired: 1, action: #selector(tap(sender:)))
         
         self.view.addSubview(sectorView1)
-        
         sectorView1.yy_addPanGesture(target: self, action: #selector(pan1(sender:)))
-        sectorView1.yy_addTapGesture(target: self, numberOfTapsRequired: 1, action: #selector(tap(sender:)))
+        sectorView1.yy_addTapGesture(target: self, numberOfTapsRequired: 1, action: #selector(tap1(sender:)))
+        
         sectorView1.center = sectorView.center
         
 //        registerCell(nibName: YYCircleCell.identifier)
 
 //        collectionView.collectionViewLayout = CollectionViewCircleLayout(withConfiguration: CircleLayoutConfiguration(withCellSize: CGSize(width: 140, height: 140), spacing: 50, offsetX: 0, offsetY: 200))
+        
+        timer = Timer(timeInterval: 0.08, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer, forMode: .commonModes)
+        timer.fire()
+    }
+    
+    @objc func timerAction() {
+        if sectorView.stop { return }
+        if sectorView1.stop { return }
+        self.sectorView.transform = self.sectorView.transform.rotated(by: 0.03)
+        
+        self.sectorView1.transform = self.sectorView1.transform.rotated(by: -0.04)
     }
     
     @objc func pan(sender: UIPanGestureRecognizer) {
+        self.sectorView.layer.speed = 1
+        count += 1
+        
+        if count % 5 == 0 {
+            sectorView.transform = sectorView.transform.rotated(by: -2 *
+            CGFloat.pi * 1 / 4)
+        }
+        if sender.state == .ended {
+            sectorView.stop = false
+        }
+        return
         if sender.state == .began {
             let v = sender.velocity(in: self.view)
             print(v.y)
@@ -73,16 +100,25 @@ class YYTViewController: YYBaseCollectionViewController {
             }
             velocity += v.y
         }
-        count += 1
     }
-    var count: Int = 0
+    
     @objc func pan1(sender: UIPanGestureRecognizer) {
-        
-        
         self.sectorView1.layer.speed = 1
         
-    var startP = CGPoint.zero
-    var endP = CGPoint.zero
+        count += 1
+        
+        if count % 5 == 0 {
+            sectorView1.transform = sectorView1.transform.rotated(by: -2 *
+                CGFloat.pi * 1 / 4)
+        }
+        if sender.state == .ended {
+            sectorView1.stop = false
+        }
+        return
+        
+        var startP = CGPoint.zero
+        var endP = CGPoint.zero
+        
         if sender.state == .began {
             let v = sender.velocity(in: self.view)
 //            print(v.y)
@@ -132,12 +168,10 @@ class YYTViewController: YYBaseCollectionViewController {
             let v = sender.velocity(in: self.view)
 //            print(v.y)
             if (v.y > 0) {
-               
                     if count % 5 == 0 {
                         sectorView1.transform = sectorView1.transform.rotated(by: 2 *
                             CGFloat.pi * 1 / 4)
                     }
-                
             } else {
                 if count % 5 == 0 {
                     sectorView1.transform = sectorView1.transform.rotated(by: -2 *
@@ -149,12 +183,20 @@ class YYTViewController: YYBaseCollectionViewController {
         count += 1
     }
     
+    @objc func tap1(sender: UITapGestureRecognizer) {
+//        self.stop = !self.stop
+    }
+    
     @objc func tap(sender: UITapGestureRecognizer) {
         self.sectorView1.layer.speed = 0.0
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    deinit {
+        timer.invalidate()
     }
     
 }
