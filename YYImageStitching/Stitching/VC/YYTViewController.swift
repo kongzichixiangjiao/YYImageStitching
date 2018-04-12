@@ -10,15 +10,147 @@ import UIKit
 
 class YYTViewController: YYBaseCollectionViewController {
     
+    var velocity: CGFloat = 0
+    
+    lazy var sectorView: YYSectorView = {
+        let v = YYSectorView(frame: CGRect(x: 0, y: 0, width: 350, height: 350), isNei: false)
+        v.backgroundColor = UIColor.orange
+        v.layer.masksToBounds = true
+        v.layer.cornerRadius = 350 / 2
+        return v
+    }()
+    
+    lazy var sectorView1: YYSectorView = {
+        let v = YYSectorView(frame: CGRect(x: 0, y: 0, width: 236, height: 236), isNei: true)
+        v.backgroundColor = UIColor.yellow
+        v.layer.masksToBounds = true
+        v.layer.cornerRadius = 236 / 2
+        return v
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCell(nibName: YYCircleCell.identifier)
-//        collectionView.alwaysBounceVertical = true
-        let configuration = CPWheelLayoutConfiguration.init(withCellSize: CGSize.init(width: 60, height: 60), radius: 200, angular: 30, wheelType: .topCenter)
-        let wheelLayout = CPCollectionViewWheelLayout.init(withConfiguration: configuration)
-//        collectionView.collectionViewLayout = wheelLayout
         
-        collectionView.collectionViewLayout = CollectionViewCircleLayout(withConfiguration: CircleLayoutConfiguration(withCellSize: CGSize(width: 140, height: 140), spacing: 120, offsetX: 0, offsetY: 200))
+        self.view.addSubview(sectorView)
+        
+        sectorView.yy_addPanGesture(target: self, action: #selector(pan(sender:)))
+        
+        self.view.addSubview(sectorView1)
+        
+        sectorView1.yy_addPanGesture(target: self, action: #selector(pan1(sender:)))
+        sectorView1.yy_addTapGesture(target: self, numberOfTapsRequired: 1, action: #selector(tap(sender:)))
+        sectorView1.center = sectorView.center
+        
+//        registerCell(nibName: YYCircleCell.identifier)
+
+//        collectionView.collectionViewLayout = CollectionViewCircleLayout(withConfiguration: CircleLayoutConfiguration(withCellSize: CGSize(width: 140, height: 140), spacing: 50, offsetX: 0, offsetY: 200))
+    }
+    
+    @objc func pan(sender: UIPanGestureRecognizer) {
+        if sender.state == .began {
+            let v = sender.velocity(in: self.view)
+            print(v.y)
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+                self.sectorView.transform = self.sectorView.transform.rotated(by: 2 *
+                    CGFloat.pi * 1 / 4)
+            }, completion: nil)
+        }
+        return
+        if sender.state == .changed {
+            let v = sender.velocity(in: self.view)
+            print(v.y)
+            if (v.y > 0) {
+                
+                if count % 5 == 0 {
+                    sectorView.transform = sectorView.transform.rotated(by: 2 *
+                        CGFloat.pi * 1 / 4)
+                }
+            } else {
+                if count % 5 == 0 {
+                    sectorView.transform = sectorView.transform.rotated(by: -2 *
+                        CGFloat.pi * 1 / 4)
+                }
+            }
+            velocity += v.y
+        }
+        count += 1
+    }
+    var count: Int = 0
+    @objc func pan1(sender: UIPanGestureRecognizer) {
+        
+        
+        self.sectorView1.layer.speed = 1
+        
+    var startP = CGPoint.zero
+    var endP = CGPoint.zero
+        if sender.state == .began {
+            let v = sender.velocity(in: self.view)
+//            print(v.y)
+            startP = sender.translation(in: sectorView1)
+            
+//            let animation = CABasicAnimation(keyPath: "transform.rotation.z")
+//            animation.fromValue = 0
+//            animation.toValue = CGFloat.pi * 2
+//            animation.duration = 0.5
+//            animation.repeatCount = 20
+//            animation.isRemovedOnCompletion = true
+//            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+//            animation.delegate = self
+//            self.sectorView1.layer.add(animation, forKey: "z")
+//            sectorView1.transform = sectorView1.transform.rotated(by: CGFloat.pi * CGFloat(arc4random_uniform(4)))
+
+//            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+//                self.sectorView1.transform = self.sectorView1.transform.rotated(by: -2 *
+//                    CGFloat.pi * 1 / 4)
+//            }, completion: nil)
+            
+        }
+        
+        if (sender.state == .ended) {
+            
+            let v = sender.velocity(in: self.view)
+            endP = sender.translation(in: sectorView1)
+            print(endP.y - startP.y)
+            print("y == ", v.y)
+            if (v.y > 600 && (endP.y - startP.y > 30 || endP.x - startP.x > 30)) {
+                let animation = CABasicAnimation(keyPath: "transform.rotation.z")
+                animation.fromValue = 0
+                animation.toValue = CGFloat.pi * 2
+                animation.duration = 0.3
+                animation.repeatCount = 5
+                //            animation.isRemovedOnCompletion = true
+                //            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+                animation.delegate = self
+                self.sectorView1.layer.add(animation, forKey: "z")
+                sectorView1.transform = sectorView1.transform.rotated(by: CGFloat.pi * CGFloat(arc4random_uniform(4)))
+            } else if (v.y > 600 && endP.y - startP.y > -100) {
+                
+            }
+        }
+        
+        if sender.state == .changed {
+            let v = sender.velocity(in: self.view)
+//            print(v.y)
+            if (v.y > 0) {
+               
+                    if count % 5 == 0 {
+                        sectorView1.transform = sectorView1.transform.rotated(by: 2 *
+                            CGFloat.pi * 1 / 4)
+                    }
+                
+            } else {
+                if count % 5 == 0 {
+                    sectorView1.transform = sectorView1.transform.rotated(by: -2 *
+                        CGFloat.pi * 1 / 4)
+                }
+            }
+            velocity += v.y
+        }
+        count += 1
+    }
+    
+    @objc func tap(sender: UITapGestureRecognizer) {
+        self.sectorView1.layer.speed = 0.0
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,11 +158,40 @@ class YYTViewController: YYBaseCollectionViewController {
     }
     
 }
+
+extension YYTViewController: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    
+    }
+}
+
 extension YYTViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YYCircleCell.identifier, for: indexPath) as! YYCircleCell
-        cell.textLabel.text = String(indexPath.row)
-        return cell
+        cell.textLabel.backgroundColor = UIColor.clear
+        switch indexPath.row + 1 {
+        case 1:
+            cell.textLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 4 / 4)
+            return cell
+        case 2:
+            cell.textLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi * 3 / 4)
+            return cell
+        case 3:
+            cell.textLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi * 1 / 4)
+            return cell
+        case 4:
+            cell.textLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 0 / 4)
+            return cell
+        case 5:
+            cell.textLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 1 / 4)
+            return cell
+        case 6:
+            cell.textLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 3 / 4)
+            return cell
+        default:
+            cell.textLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+            return cell
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

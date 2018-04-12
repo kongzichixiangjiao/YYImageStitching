@@ -47,7 +47,6 @@
 		DC64BC3A205FC1A0003E204E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC39205FC1A0003E204E /* UIImage+Extension.swift */; };
 		DC685CA4207DA644005631C1 /* CirCleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CA3207DA644005631C1 /* CirCleLayout.swift */; };
 		DC685CA6207DA793005631C1 /* YYTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CA5207DA793005631C1 /* YYTViewController.swift */; };
-		DC685CE9207DB21E005631C1 /* CPCollectionViewWheelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CE8207DB21E005631C1 /* CPCollectionViewWheelLayout.swift */; };
 		DC685CF7207DBF9C005631C1 /* CollectionViewCardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CEB207DBF9C005631C1 /* CollectionViewCardLayout.swift */; };
 		DC685CF8207DBF9C005631C1 /* CollectionViewCaterpillarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CEC207DBF9C005631C1 /* CollectionViewCaterpillarLayout.swift */; };
 		DC685CF9207DBF9C005631C1 /* CollectionViewCircleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CED207DBF9C005631C1 /* CollectionViewCircleLayout.swift */; };
@@ -57,7 +56,6 @@
 		DC685CFD207DBF9C005631C1 /* CollectionViewTransitionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CF1207DBF9C005631C1 /* CollectionViewTransitionLayout.swift */; };
 		DC685CFE207DBF9C005631C1 /* CollectionViewTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CF2207DBF9C005631C1 /* CollectionViewTransitionManager.swift */; };
 		DC685CFF207DBF9C005631C1 /* CollectionViewWheelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CF3207DBF9C005631C1 /* CollectionViewWheelLayout.swift */; };
-		DC685D00207DBF9C005631C1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC685CF5207DBF9C005631C1 /* Info.plist */; };
 		DC685D01207DBF9C005631C1 /* LayoutConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CF6207DBF9C005631C1 /* LayoutConfiguration.swift */; };
 		DC685D04207DC135005631C1 /* YYCircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685D02207DC135005631C1 /* YYCircleCell.swift */; };
 		DC685D05207DC135005631C1 /* YYCircleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC685D03207DC135005631C1 /* YYCircleCell.xib */; };
@@ -184,7 +182,6 @@
 		DC64BC39205FC1A0003E204E /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		DC685CA3207DA644005631C1 /* CirCleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleLayout.swift; sourceTree = "<group>"; };
 		DC685CA5207DA793005631C1 /* YYTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYTViewController.swift; sourceTree = "<group>"; };
-		DC685CE8207DB21E005631C1 /* CPCollectionViewWheelLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPCollectionViewWheelLayout.swift; sourceTree = "<group>"; };
 		DC685CEB207DBF9C005631C1 /* CollectionViewCardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCardLayout.swift; sourceTree = "<group>"; };
 		DC685CEC207DBF9C005631C1 /* CollectionViewCaterpillarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCaterpillarLayout.swift; sourceTree = "<group>"; };
 		DC685CED207DBF9C005631C1 /* CollectionViewCircleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCircleLayout.swift; sourceTree = "<group>"; };
@@ -194,8 +191,6 @@
 		DC685CF1207DBF9C005631C1 /* CollectionViewTransitionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewTransitionLayout.swift; sourceTree = "<group>"; };
 		DC685CF2207DBF9C005631C1 /* CollectionViewTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewTransitionManager.swift; sourceTree = "<group>"; };
 		DC685CF3207DBF9C005631C1 /* CollectionViewWheelLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWheelLayout.swift; sourceTree = "<group>"; };
-		DC685CF4207DBF9C005631C1 /* CPCollectionViewKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCollectionViewKit.h; sourceTree = "<group>"; };
-		DC685CF5207DBF9C005631C1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC685CF6207DBF9C005631C1 /* LayoutConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConfiguration.swift; sourceTree = "<group>"; };
 		DC685D02207DC135005631C1 /* YYCircleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYCircleCell.swift; sourceTree = "<group>"; };
 		DC685D03207DC135005631C1 /* YYCircleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYCircleCell.xib; sourceTree = "<group>"; };
@@ -455,8 +450,6 @@
 				DC685CF1207DBF9C005631C1 /* CollectionViewTransitionLayout.swift */,
 				DC685CF2207DBF9C005631C1 /* CollectionViewTransitionManager.swift */,
 				DC685CF3207DBF9C005631C1 /* CollectionViewWheelLayout.swift */,
-				DC685CF4207DBF9C005631C1 /* CPCollectionViewKit.h */,
-				DC685CF5207DBF9C005631C1 /* Info.plist */,
 				DC685CF6207DBF9C005631C1 /* LayoutConfiguration.swift */,
 			);
 			path = CPCollectionViewKit;
@@ -579,7 +572,6 @@
 			isa = PBXGroup;
 			children = (
 				DC685CEA207DBF9C005631C1 /* CPCollectionViewKit */,
-				DC685CE8207DB21E005631C1 /* CPCollectionViewWheelLayout.swift */,
 				DC685CA3207DA644005631C1 /* CirCleLayout.swift */,
 				DC862EDE206DDAFA00B7926F /* YYMovingFlowLayout.swift */,
 				DC862EDF206DDAFA00B7926F /* YYRootFlowLayout.swift */,
@@ -750,7 +742,6 @@
 				DC862EF1206DDAFA00B7926F /* YYEmptyView.xib in Resources */,
 				DC6387DA2071BC4200FFBA05 /* guideImage4.jpg in Resources */,
 				DC862EF6206DDAFA00B7926F /* YYAlertToolsView.xib in Resources */,
-				DC685D00207DBF9C005631C1 /* Info.plist in Resources */,
 				DC849BCA206E4250003B1842 /* YYLoginViewController.xib in Resources */,
 				DC6387D82071BC4200FFBA05 /* guideImage2.jpg in Resources */,
 				DC6387D52071BC4200FFBA05 /* adImage3.gif in Resources */,
@@ -909,7 +900,6 @@
 				DC02F5BB206F943C006903DD /* ImageVIewExtension.swift in Sources */,
 				DCB02AB32072330600F0D55B /* YYFilterStringFlowLayout.swift in Sources */,
 				DC862EF0206DDAFA00B7926F /* YYEmptyView.swift in Sources */,
-				DC685CE9207DB21E005631C1 /* CPCollectionViewWheelLayout.swift in Sources */,
 				DC292AC22069E8A5004A989B /* UIDevice+Extension.swift in Sources */,
 				DC685D04207DC135005631C1 /* YYCircleCell.swift in Sources */,
 				DCB02AAB2072307900F0D55B /* YYSelectedFiltersView.swift in Sources */,
