@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YYTViewController: YYBaseCollectionViewController {
+class YYWheelViewController: YYBaseCollectionViewController {
     
     var velocity: CGFloat = 0
     var count: Int = 0
@@ -201,13 +201,13 @@ class YYTViewController: YYBaseCollectionViewController {
     
 }
 
-extension YYTViewController: CAAnimationDelegate {
+extension YYWheelViewController: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
     
     }
 }
 
-extension YYTViewController {
+extension YYWheelViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YYCircleCell.identifier, for: indexPath) as! YYCircleCell
         cell.textLabel.backgroundColor = UIColor.clear

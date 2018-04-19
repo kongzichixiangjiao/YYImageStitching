@@ -46,7 +46,7 @@
 		DC64BC38205FC165003E204E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC37205FC165003E204E /* String+Extension.swift */; };
 		DC64BC3A205FC1A0003E204E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64BC39205FC1A0003E204E /* UIImage+Extension.swift */; };
 		DC685CA4207DA644005631C1 /* CirCleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CA3207DA644005631C1 /* CirCleLayout.swift */; };
-		DC685CA6207DA793005631C1 /* YYTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CA5207DA793005631C1 /* YYTViewController.swift */; };
+		DC685CA6207DA793005631C1 /* YYWheelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CA5207DA793005631C1 /* YYWheelViewController.swift */; };
 		DC685CF7207DBF9C005631C1 /* CollectionViewCardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CEB207DBF9C005631C1 /* CollectionViewCardLayout.swift */; };
 		DC685CF8207DBF9C005631C1 /* CollectionViewCaterpillarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CEC207DBF9C005631C1 /* CollectionViewCaterpillarLayout.swift */; };
 		DC685CF9207DBF9C005631C1 /* CollectionViewCircleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CED207DBF9C005631C1 /* CollectionViewCircleLayout.swift */; };
@@ -181,7 +181,7 @@
 		DC64BC37205FC165003E204E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		DC64BC39205FC1A0003E204E /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		DC685CA3207DA644005631C1 /* CirCleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleLayout.swift; sourceTree = "<group>"; };
-		DC685CA5207DA793005631C1 /* YYTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYTViewController.swift; sourceTree = "<group>"; };
+		DC685CA5207DA793005631C1 /* YYWheelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYWheelViewController.swift; sourceTree = "<group>"; };
 		DC685CEB207DBF9C005631C1 /* CollectionViewCardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCardLayout.swift; sourceTree = "<group>"; };
 		DC685CEC207DBF9C005631C1 /* CollectionViewCaterpillarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCaterpillarLayout.swift; sourceTree = "<group>"; };
 		DC685CED207DBF9C005631C1 /* CollectionViewCircleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCircleLayout.swift; sourceTree = "<group>"; };
@@ -455,6 +455,14 @@
 			path = CPCollectionViewKit;
 			sourceTree = "<group>";
 		};
+		DC7642F2207EFF8600E41C2A /* Wheel */ = {
+			isa = PBXGroup;
+			children = (
+				DC685CA5207DA793005631C1 /* YYWheelViewController.swift */,
+			);
+			path = Wheel;
+			sourceTree = "<group>";
+		};
 		DC862EB9206DDAF900B7926F /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +477,7 @@
 		DC862EBB206DDAF900B7926F /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				DC7642F2207EFF8600E41C2A /* Wheel */,
 				DC862EBC206DDAF900B7926F /* YYBaseCollectionViewController.swift */,
 				DC862EBD206DDAF900B7926F /* YYMovingViewController.swift */,
 				DC862EBE206DDAF900B7926F /* YYPickerImageViewController.swift */,
@@ -477,7 +486,6 @@
 				DC862EC1206DDAF900B7926F /* YYStitchingViewController.swift */,
 				DC849BC7206E4250003B1842 /* YYLoginViewController.swift */,
 				DC849BC8206E4250003B1842 /* YYLoginViewController.xib */,
-				DC685CA5207DA793005631C1 /* YYTViewController.swift */,
 				DC6387EB2071C46400FFBA05 /* YYGuideImageViewController.swift */,
 			);
 			path = VC;
@@ -894,7 +902,7 @@
 				DC862F08206DE64400B7926F /* YYBorderToolsView.swift in Sources */,
 				DC862F0E206DE69D00B7926F /* YYBorderToolsColorCell.swift in Sources */,
 				DC862EEA206DDAFA00B7926F /* YYScaleViewController.swift in Sources */,
-				DC685CA6207DA793005631C1 /* YYTViewController.swift in Sources */,
+				DC685CA6207DA793005631C1 /* YYWheelViewController.swift in Sources */,
 				DC862EE9206DDAFA00B7926F /* YYRootViewController.swift in Sources */,
 				DC02F5B8206F8D0D006903DD /* YYFilterManager.swift in Sources */,
 				DC02F5BB206F943C006903DD /* ImageVIewExtension.swift in Sources */,

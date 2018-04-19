@@ -30,8 +30,8 @@ class YYGuideImageViewController: UIViewController {
             UIApplication.shared.delegate?.window??.rootViewController = YYLoginViewController(nibName: "YYLoginViewController", bundle: nil)
         }) {
 //            UIApplication.shared.delegate?.window??.rootViewController = YYLoginViewController(nibName: "YYLoginViewController", bundle: nil)
-             UIApplication.shared.delegate?.window??.rootViewController = YYTViewController()
-//            UIApplication.shared.delegate?.window??.rootViewController = UIStoryboard.yy_main().instantiateInitialViewController()
+//             UIApplication.shared.delegate?.window??.rootViewController = YYWheelViewController()
+            UIApplication.shared.delegate?.window??.rootViewController = UIStoryboard.yy_main().instantiateInitialViewController()
         }
         self.view.addSubview(guideView)
     }
