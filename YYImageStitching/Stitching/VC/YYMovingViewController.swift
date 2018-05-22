@@ -82,14 +82,14 @@ extension YYMovingViewController {
     // iOS8 适配
     func moveCollectionViewCell(indexPath: IndexPath) {
         if indexPath == indexPathMove {
-            _ = collectionView.cellForItem(at: indexPath) as! YYMovingCell
+            _ = collectionView.cellForItem(at: indexPath)
             moveCellType = .NONE
             indexPathMove = IndexPath(item: 1000, section: 0)
             collectionView.endInteractiveMovement()
         } else {
             switch moveCellType! {
             case .SELECTED:
-                _ = collectionView.cellForItem(at: indexPath) as! YYMovingCell
+                _ = collectionView.cellForItem(at: indexPath)
                 collectionView.moveItem(at: indexPathMove, to: indexPath)
                 moveCellType = .NONE
                 indexPathMove = IndexPath(item: 1000, section: 0)
@@ -98,7 +98,7 @@ extension YYMovingViewController {
             case .MOVE:
                 break
             case .NONE:
-                _ = collectionView.cellForItem(at: indexPath) as! YYMovingCell
+                _ = collectionView.cellForItem(at: indexPath)
                 indexPathMove = indexPath
                 moveCellType = .SELECTED
                 collectionView.beginInteractiveMovementForItem(at: indexPath)

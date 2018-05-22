@@ -104,6 +104,7 @@
 		DC862F13206DEB7300B7926F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862F12206DEB7300B7926F /* Theme.swift */; };
 		DC862F16206E21BF00B7926F /* YYScaleToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862F15206E21BF00B7926F /* YYScaleToolsView.swift */; };
 		DC862F18206E21C700B7926F /* YYScaleToolsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC862F17206E21C700B7926F /* YYScaleToolsView.xib */; };
+		DCA0D0D920B3B0CD00308088 /* AppDelegate+GoogleAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA0D0D820B3B0CD00308088 /* AppDelegate+GoogleAd.swift */; };
 		DCB02AAB2072307900F0D55B /* YYSelectedFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB02AAA2072307900F0D55B /* YYSelectedFiltersView.swift */; };
 		DCB02AAD2072308600F0D55B /* YYSelectedFiltersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB02AAC2072308600F0D55B /* YYSelectedFiltersView.xib */; };
 		DCB02AB02072326000F0D55B /* YYFilterStringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB02AAE2072326000F0D55B /* YYFilterStringCell.swift */; };
@@ -240,6 +241,7 @@
 		DC862F15206E21BF00B7926F /* YYScaleToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYScaleToolsView.swift; sourceTree = "<group>"; };
 		DC862F17206E21C700B7926F /* YYScaleToolsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYScaleToolsView.xib; sourceTree = "<group>"; };
 		DC87BC242079FBEA005A0382 /* ImageStiching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageStiching.h; sourceTree = "<group>"; };
+		DCA0D0D820B3B0CD00308088 /* AppDelegate+GoogleAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+GoogleAd.swift"; sourceTree = "<group>"; };
 		DCB02AAA2072307900F0D55B /* YYSelectedFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYSelectedFiltersView.swift; sourceTree = "<group>"; };
 		DCB02AAC2072308600F0D55B /* YYSelectedFiltersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYSelectedFiltersView.xib; sourceTree = "<group>"; };
 		DCB02AAE2072326000F0D55B /* YYFilterStringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFilterStringCell.swift; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 			children = (
 				DC862F12206DEB7300B7926F /* Theme.swift */,
 				DC862EBA206DDAF900B7926F /* AppDelegate.swift */,
+				DCA0D0D820B3B0CD00308088 /* AppDelegate+GoogleAd.swift */,
 				DCE6AD6F207A03DC00B9117C /* WX+AppDelegate.swift */,
 				DC87BC242079FBEA005A0382 /* ImageStiching.h */,
 			);
@@ -644,7 +647,6 @@
 				DC64BBFA205FB88B003E204E /* Frameworks */,
 				DC64BBFB205FB88B003E204E /* Resources */,
 				B5C72795C692ED7B49411C78 /* [CP] Embed Pods Frameworks */,
-				7760B6A2947FEB97C99EFF69 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -813,21 +815,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7760B6A2947FEB97C99EFF69 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YYImageStitching/Pods-YYImageStitching-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B5C72795C692ED7B49411C78 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -907,6 +894,7 @@
 				DC02F5B8206F8D0D006903DD /* YYFilterManager.swift in Sources */,
 				DC02F5BB206F943C006903DD /* ImageVIewExtension.swift in Sources */,
 				DCB02AB32072330600F0D55B /* YYFilterStringFlowLayout.swift in Sources */,
+				DCA0D0D920B3B0CD00308088 /* AppDelegate+GoogleAd.swift in Sources */,
 				DC862EF0206DDAFA00B7926F /* YYEmptyView.swift in Sources */,
 				DC292AC22069E8A5004A989B /* UIDevice+Extension.swift in Sources */,
 				DC685D04207DC135005631C1 /* YYCircleCell.swift in Sources */,

@@ -5,6 +5,6 @@ use_frameworks!
 
 target 'YYImageStitching' do
 pod 'WechatOpenSDK'
-pod 'SQLite.swift'
-
+pod 'SQLite.swift', '~> 0.11.0'
+pod 'Google-Mobile-Ads-SDK'
 end

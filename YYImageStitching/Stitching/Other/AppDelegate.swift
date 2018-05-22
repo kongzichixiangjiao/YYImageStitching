@@ -14,8 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        googleAd()
+        
+        
         window?.backgroundColor = UIColor.white
         window?.rootViewController = YYGuideImageViewController()
+        
         return true
     }
 

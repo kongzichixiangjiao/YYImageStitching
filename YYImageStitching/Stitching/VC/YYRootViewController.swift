@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 let kSelfViewColor = UIColor.rgb(240, 240, 240)
 class YYRootViewController: YYMovingViewController {
@@ -15,6 +16,13 @@ class YYRootViewController: YYMovingViewController {
     
     lazy var flowLayout: YYRootFlowLayout = {
         return YYRootFlowLayout()
+    }()
+    
+    lazy var interstitial: GADInterstitial = {
+        let i = GADInterstitial(adUnitID: "ca-app-pub-3164648306313935/3666512617")
+        i.delegate = self
+        i.load(GADRequest())
+        return i
     }()
     
     override func viewDidLoad() {
@@ -154,4 +162,30 @@ extension YYRootViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+}
+
+extension YYRootViewController: GADInterstitialDelegate {
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        
+    }
+    
+    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+        
+    }
+    
+    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+        
+    }
+    
+    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+        
+    }
+    
+    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
+        
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        
+    }
 }

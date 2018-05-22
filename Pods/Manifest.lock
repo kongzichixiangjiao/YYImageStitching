@@ -1,17 +1,26 @@
 PODS:
-  - SQLite.swift (0.11.4):
-    - SQLite.swift/standard (= 0.11.4)
-  - SQLite.swift/standard (0.11.4)
-  - WechatOpenSDK (1.8.1)
+  - Google-Mobile-Ads-SDK (7.31.0)
+  - SQLite.swift (0.11.5):
+    - SQLite.swift/standard (= 0.11.5)
+  - SQLite.swift/standard (0.11.5)
+  - WechatOpenSDK (1.8.2)
 
 DEPENDENCIES:
-  - SQLite.swift
+  - Google-Mobile-Ads-SDK
+  - SQLite.swift (~> 0.11.0)
   - WechatOpenSDK
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Google-Mobile-Ads-SDK
+    - SQLite.swift
+    - WechatOpenSDK
+
 SPEC CHECKSUMS:
-  SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
-  WechatOpenSDK: 491d965d79335070328571d3e79f714549e79a5e
+  Google-Mobile-Ads-SDK: 6e529e748b45507a2ca904e0b5a52669ba3920c4
+  SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
+  WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
 
-PODFILE CHECKSUM: 0fe39277026359f014f746ec64bf2112ed909b79
+PODFILE CHECKSUM: 5d1fa5b8849b5eb81164c5919908ea886fd868b2
 
-COCOAPODS: 1.4.0.rc.1
+COCOAPODS: 1.5.2
