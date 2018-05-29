@@ -31,7 +31,7 @@ class YYClipperViewController: UIViewController {
     
     var kSpace: CGFloat = 20
     var kTopSpace: CGFloat = 0
-    var kBottomSpace: CGFloat = 0
+    var kLeftSpace: CGFloat = 0
     var percentageType: PercentageType?
     var beginMoveType: CropPostionType = .none
     
@@ -94,13 +94,16 @@ class YYClipperViewController: UIViewController {
         
         targetImage = UIImage(named: "5.jpg")
         // 5.jpg  guideImage3.jpg  img_default.png timg.jpeg
-        view.backgroundColor = UIColor.white
         
-        bigImageView.image = targetImage
+        view.backgroundColor = UIColor.white
         
         initViews()
         addAllGesture()
         
+        initBarButtons()
+    }
+    
+    func initBarButtons() {
         let right = UIBarButtonItem(title: "比例", style: .plain, target: self, action: #selector(rightPercentageBar))
         self.navigationItem.rightBarButtonItem = right
         let otherRight = UIBarButtonItem(title: "裁剪", style: .plain, target: self, action: #selector(otherRightBarCrop))
@@ -130,8 +133,12 @@ class YYClipperViewController: UIViewController {
         let action = UIAlertAction(title: "确定", style: .default) { (action) in
 //            self.delegate?.clipperViewControllerWithCrop(image: self.cropImage())
 //            self.navigationController?.popViewController(animated: true)
-            self.bigImageView.image = self.cropImage()
-            self.cropMaskView.center = self.bigImageView.center
+            DispatchQueue.main.async {
+//                self.bigImageView.image = self.cropImage()
+//                self.cropMaskView.center = self.bigImageView.center
+                self.targetImage = self.cropImage()
+                self.setUpCropLayer()
+            }
         }
         let action1 = UIAlertAction(title: "取消", style: .cancel) { (action) in
             
@@ -154,6 +161,8 @@ class YYClipperViewController: UIViewController {
     
     func setUpCropLayer(isMoveCropView: Bool = false) {
         
+        bigImageView.image = targetImage
+        
         let bw = bigImageView.width
         let bh = bigImageView.height
         let tw = targetImage.width!
@@ -172,15 +181,14 @@ class YYClipperViewController: UIViewController {
             bigImageView.contentMode = .center
             cropAreaWidth = tw
             cropAreaHeight = th
-
         }
         cropAreaY = (bh - min(cropAreaHeight, bh)) / 2 + kSpace
         cropAreaX = (bw - min(cropAreaWidth, bw)) / 2 + kSpace
         
         kTopSpace = (bigImageView.height - cropAreaHeight) / 2
-        kBottomSpace = (bigImageView.width - cropAreaWidth) / 2
+        kLeftSpace = (bigImageView.width - cropAreaWidth) / 2
         
-        cropMaskView.frame = CGRect(x: kBottomSpace, y: kTopSpace, width: cropAreaWidth, height: cropAreaHeight)
+        cropMaskView.frame = CGRect(x: kLeftSpace, y: kTopSpace, width: cropAreaWidth, height: cropAreaHeight)
         
         if (originalCropFrame == CGRect.zero) {
             originalCropFrame = cropMaskView.frame
@@ -193,52 +201,6 @@ class YYClipperViewController: UIViewController {
     func addAllGesture() {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(handleDynamicPanGesture(sender:)))
         bigImageView.addGestureRecognizer(pan)
-    }
-    
-    func setUpCropMaskViewFrame(type: CropPostionType, movePoint: CGPoint) {
-        
-        switch type {
-        case .top:
-            cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: movePoint.y, width: changeCropFrame.width, height: changeCropFrame.height - movePoint.y + changeCropFrame.minY)
-            print("top")
-            break
-        case .bottom:
-            cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: changeCropFrame.width, height: movePoint.y - changeCropFrame.minY)
-            print("bottom")
-            break
-        case .left:
-            cropMaskView.frame = CGRect(x: movePoint.x, y: changeCropFrame.minY, width: originalCropFrame.width - movePoint.x - (originalCropFrame.width - changeCropFrame.maxX), height: changeCropFrame.height)
-            print("left")
-            break
-        case .right:
-            cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: changeCropFrame.maxX - (changeCropFrame.maxX - movePoint.x) - changeCropFrame.minX, height: changeCropFrame.height)
-            print("right")
-            break
-        case .none:
-            print("none")
-            break
-        case .move:
-            print("move")
-            cropMaskView.center = movePoint
-            // right
-            if (movePoint.x + changeCropFrame.width / 2 > bigImageView.width) {
-                cropMaskView.center = CGPoint(x: bigImageView.width / 2 + bigImageView.width / 2 - changeCropFrame.width / 2, y: cropMaskView.center.y)
-            }
-            // left
-            if (movePoint.x - changeCropFrame.width / 2 < 0) {
-                cropMaskView.center = CGPoint(x: changeCropFrame.width / 2, y: cropMaskView.center.y)
-            }
-            // top
-            if (movePoint.y - changeCropFrame.height / 2 < kTopSpace) {
-                cropMaskView.center = CGPoint(x: cropMaskView.center.x, y: changeCropFrame.height / 2 + kTopSpace)
-            }
-            // bottom
-            if (movePoint.y + changeCropFrame.height / 2 > bigImageView.height - kTopSpace) {
-                cropMaskView.center = CGPoint(x: cropMaskView.center.x, y: bigImageView.height - changeCropFrame.height / 2 - kTopSpace)
-            }
-            
-            break
-        }
     }
     
     var panBeginPoint = CGPoint.zero
@@ -285,14 +247,60 @@ class YYClipperViewController: UIViewController {
                 cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: changeCropFrame.width, height: bigImageView.height - changeCropFrame.minY - kTopSpace)
             }
             // right
-            if (cropMaskView.maxX > bigImageView.width + 1) {
-                cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: bigImageView.width - changeCropFrame.minX, height: changeCropFrame.height)
+            if (cropMaskView.maxX > bigImageView.width + 1 - kLeftSpace) {
+                cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: bigImageView.width - changeCropFrame.minX - kLeftSpace, height: changeCropFrame.height)
             }
             // left
-            if (cropMaskView.x < 0) {
-                cropMaskView.frame = CGRect(x: 0, y: changeCropFrame.minY, width: changeCropFrame.width + changeCropFrame.minX, height: changeCropFrame.height)
+            if (cropMaskView.x + 1 < kLeftSpace) {
+                cropMaskView.frame = CGRect(x: kLeftSpace, y: changeCropFrame.minY, width: changeCropFrame.width + changeCropFrame.minX - kLeftSpace, height: changeCropFrame.height)
             }
             changeCropFrame = cropMaskView.frame
+        }
+    }
+    
+    func setUpCropMaskViewFrame(type: CropPostionType, movePoint: CGPoint) {
+        
+        switch type {
+        case .top:
+            cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: movePoint.y, width: changeCropFrame.width, height: changeCropFrame.height - movePoint.y + changeCropFrame.minY)
+            print("top")
+            break
+        case .bottom:
+            cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: changeCropFrame.width, height: movePoint.y - changeCropFrame.minY)
+            print("bottom")
+            break
+        case .left:
+            cropMaskView.frame = CGRect(x: movePoint.x, y: changeCropFrame.minY, width: originalCropFrame.width - movePoint.x - (originalCropFrame.width - changeCropFrame.maxX), height: changeCropFrame.height)
+            print("left")
+            break
+        case .right:
+            cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: changeCropFrame.maxX - (changeCropFrame.maxX - movePoint.x) - changeCropFrame.minX, height: changeCropFrame.height)
+            print("right")
+            break
+        case .none:
+            print("none")
+            break
+        case .move:
+            print("move")
+            cropMaskView.center = movePoint
+            // right
+            if (movePoint.x + changeCropFrame.width / 2 > bigImageView.width - kLeftSpace) {
+                cropMaskView.center = CGPoint(x: bigImageView.width - changeCropFrame.width / 2 - kLeftSpace, y: cropMaskView.center.y)
+            }
+            // left
+            if (movePoint.x - changeCropFrame.width / 2 < kLeftSpace) {
+                cropMaskView.center = CGPoint(x: changeCropFrame.width / 2 + kLeftSpace, y: cropMaskView.center.y)
+            }
+            // top
+            if (movePoint.y - changeCropFrame.height / 2 < kTopSpace) {
+                cropMaskView.center = CGPoint(x: cropMaskView.center.x, y: changeCropFrame.height / 2 + kTopSpace)
+            }
+            // bottom
+            if (movePoint.y + changeCropFrame.height / 2 > bigImageView.height - kTopSpace) {
+                cropMaskView.center = CGPoint(x: cropMaskView.center.x, y: bigImageView.height - changeCropFrame.height / 2 - kTopSpace)
+            }
+            
+            break
         }
     }
     
