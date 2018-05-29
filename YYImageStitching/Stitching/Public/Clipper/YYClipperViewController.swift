@@ -17,10 +17,6 @@ class YYClipperViewController: UIViewController {
     
     weak var delegate: YYClipperViewControllerDelegate?
     
-    enum ACTIVEGESTUREVIEW {
-        case CROPVIEWLEFT, CROPVIEWRIGHT, CROPVIEWTOP, CROPVIEWBOTTOM, BIGIMAGEVIEW
-    }
-    
     enum CropPostionType {
         case left, right, top, bottom, none, move
     }
@@ -52,17 +48,13 @@ class YYClipperViewController: UIViewController {
         return v
     }()
     
-    
     var cropView: UIView = {
         let v = UIView()
         v.isUserInteractionEnabled = false
         return v
     }()
     
-    var originalCropFrame: CGRect = CGRect.zero
     var changeCropFrame: CGRect = CGRect.zero
-    
-    var activeGestureView: ACTIVEGESTUREVIEW!
     
     var originalFrame: CGRect!
     
@@ -71,29 +63,10 @@ class YYClipperViewController: UIViewController {
     var cropAreaWidth: CGFloat = 0
     var cropAreaHeight: CGFloat = 0
     
-    var cropLeft: CGFloat = 0
-    var cropTop: CGFloat = 0
-    var cropBottom: CGFloat = 0
-    var cropRight: CGFloat = 0
-    
-    var clipHeight: CGFloat = 0
-    var clipWidth: CGFloat = 0
-    
-    private let kBottomBarViewHeight: CGFloat = 44
-    
-    lazy var bgView: UIView = {
-        let v = UIView()
-        v.frame = CGRect(x: 0, y: 0, width: MainScreenWidth, height: MainScreenHeight - NavigationViewHeight - kBottomBarViewHeight)
-        return v
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
-        
-//        targetImage = UIImage(named: "5.jpg")
-        // 5.jpg  guideImage3.jpg  img_default.png timg.jpeg
         
         view.backgroundColor = UIColor.white
         
@@ -188,10 +161,6 @@ class YYClipperViewController: UIViewController {
         
         cropMaskView.frame = CGRect(x: kLeftSpace, y: kTopSpace, width: cropAreaWidth, height: cropAreaHeight)
         
-        if (originalCropFrame == CGRect.zero) {
-            originalCropFrame = cropMaskView.frame
-        }
-        
         changeCropFrame = cropMaskView.frame
         bigImageView.addSubview(cropMaskView)
     }
@@ -219,7 +188,7 @@ class YYClipperViewController: UIViewController {
             if (topRect.contains(panBeginPoint)) {
                 beginMoveType = .top
             }
-            let leftRect = CGRect(x: x - kSpace, y: y, width: kSpace * 2, height: h)
+            let leftRect = CGRect(x: x, y: y, width: kSpace * 2, height: h)
             if (leftRect.contains(panBeginPoint)) {
                 beginMoveType = .left
             }
@@ -268,7 +237,7 @@ class YYClipperViewController: UIViewController {
             print("bottom")
             break
         case .left:
-            cropMaskView.frame = CGRect(x: movePoint.x, y: changeCropFrame.minY, width: originalCropFrame.width - movePoint.x - (originalCropFrame.width - changeCropFrame.maxX), height: changeCropFrame.height)
+            cropMaskView.frame = CGRect(x: movePoint.x, y: changeCropFrame.minY, width: changeCropFrame.maxX - movePoint.x, height: changeCropFrame.height)
             print("left")
             break
         case .right:

@@ -54,13 +54,14 @@ class YYRootViewController: YYMovingViewController {
     func jointImages() {
         if (dataSource.count == 0) {return}
         let v = UIView()
+        v.backgroundColor = UIColor.white
         v.frame = CGRect.zero
         for model in dataSource {
             if let image = model.image {
                 let imageView = UIImageView()
                 imageView.image = image
-                imageView.frame = CGRect(x: leftSpace, y: v.height, width: self.view.width - leftSpace * 2, height: image.height * ((self.view.width - leftSpace * 2) / image.width) + lineSpace)
-                v.frame = CGRect(x: 0, y: 0, width: self.view.width, height: v.height + imageView.height)
+                imageView.frame = CGRect(x: leftSpace, y: v.height + lineSpace, width: self.view.width - leftSpace * 2, height: image.height * ((self.view.width - leftSpace * 2) / image.width))
+                v.frame = CGRect(x: 0, y: 0, width: self.view.width, height: v.height + imageView.height + lineSpace)
                 v.addSubview(imageView)
             }
         }
@@ -93,7 +94,13 @@ class YYRootViewController: YYMovingViewController {
         leftSpace = leftSpace == 0 ? 5 : (leftSpace == 5 ? 10 : 0)
         collectionView.yy_reloadData()
     }
-  
+    
+    @IBAction func nineSegmentation(_ sender: UIButton) {
+        let vc = YYClipperViewController()
+        vc.targetImage = self.dataSource[0].image
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     lazy var scaleViewControllerBackHandler: YYScaleViewController.ScaleViewControllerBackHandler = {
         [weak self] img, row in
@@ -181,6 +188,13 @@ extension YYRootViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+}
+
+extension YYRootViewController: YYClipperViewControllerDelegate {
+    func clipperViewControllerWithCrop(image: UIImage) {
+        self.dataSource[0].image = image
+        self.collectionView.reloadData()
+    }
 }
 
 
