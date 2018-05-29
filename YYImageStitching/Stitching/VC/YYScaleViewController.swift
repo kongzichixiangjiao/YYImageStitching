@@ -201,7 +201,8 @@ class YYScaleViewController: YYPickerImageViewController {
     
     @IBAction func clipAction(_ sender: UIButton) {
         let vc = YYClipperViewController()
-        vc.bigImageView.image = self.model.image
+        vc.delegate = self
+        vc.targetImage = self.model.image
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -209,5 +210,12 @@ class YYScaleViewController: YYPickerImageViewController {
         print("-----------YYScaleViewController--------------")
     }
     
+}
+
+extension YYScaleViewController: YYClipperViewControllerDelegate {
+    func clipperViewControllerWithCrop(image: UIImage) {
+        self.model.image = image
+        self.clipView.image = self.model.image
+    }
 }
 

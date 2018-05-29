@@ -10,26 +10,35 @@ import Foundation
 
 extension AppDelegate {
     
-    func shareWechat() {
-        WXApi.registerApp("")
+    static func shareImage(scene: WXScene = WXSceneSession, image: UIImage) -> Bool {
+        WXApi.isWXAppInstalled()
         
         let message = WXMediaMessage()
-        message.setThumbImage(UIImage())
+        //        message.title = "23123"
+        //        message.description = "123123"
+        //        message.messageExt  = messageExt
+        //        message.messageAction = messageAction
+        //        message.mediaTagName  = "tagName"
+        //        message.setThumbImage(image)
         
-        let objc = WXImageObject()
-        objc.imageData = Data()
-        
-        message.mediaObject = objc
+        let imageObject = WXImageObject()
+        imageObject.imageData = UIImagePNGRepresentation(image)
+        message.mediaObject = imageObject
         
         let req = SendMessageToWXReq()
         req.bText = false
         req.message = message
-        req.scene = Int32(WXSceneSession.rawValue)
-        WXApi.send(req)
+        req.scene = Int32(scene.rawValue)
+        
+        return WXApi.send(req)
     }
     
     func onResp(_ resp: BaseResp!) {
-        
+        print(resp)
+    }
+    
+    func wx_registerApp() {
+        WXApi.registerApp("wxe1493b647daa5a07")
     }
     
     func wx_application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

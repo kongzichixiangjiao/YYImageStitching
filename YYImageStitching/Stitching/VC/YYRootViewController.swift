@@ -7,10 +7,12 @@
 //
 
 import UIKit
+
 let kSelfViewColor = UIColor.rgb(240, 240, 240)
 class YYRootViewController: YYMovingViewController {
     
     var leftSpace: CGFloat = 0
+    var lineSpace: CGFloat = 0
     
     lazy var flowLayout: YYRootFlowLayout = {
         return YYRootFlowLayout()
@@ -39,23 +41,46 @@ class YYRootViewController: YYMovingViewController {
     }
     
     @IBAction func addPictures(_ sender: UIButton) {
-        let vc = YYClipperViewController()
-//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "YYStitchingViewController") as! YYStitchingViewController
-//        vc.myDelegate = self
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "YYStitchingViewController") as! YYStitchingViewController
+        vc.myDelegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func sharePic(_ sender: UIButton) {
         print("share")
-//        self.navigationController?.pushViewController(YYInterstitialAdViewController(), animated: true)
-        self.navigationController?.pushViewController(YYBannerAdViewController(), animated: true)
+        jointImages()
+    }
+    
+    func jointImages() {
+        if (dataSource.count == 0) {return}
+        let v = UIView()
+        v.frame = CGRect.zero
+        for model in dataSource {
+            if let image = model.image {
+                let imageView = UIImageView()
+                imageView.image = image
+                imageView.frame = CGRect(x: leftSpace, y: v.height, width: self.view.width - leftSpace * 2, height: image.height * ((self.view.width - leftSpace * 2) / image.width) + lineSpace)
+                v.frame = CGRect(x: 0, y: 0, width: self.view.width, height: v.height + imageView.height)
+                v.addSubview(imageView)
+            }
+        }
+        
+        if AppDelegate.shareImage(image: v.yy_screenshot()!) {
+            print("去分享")
+        } else {
+            print("NO~~~~")
+        }
     }
     
     @IBAction func lineSpace(_ sender: UIButton) {
         if dataSource.count == 0 {
             return
         }
+        
         flowLayout.minLineSpacing = flowLayout.minLineSpacing == 0 ? 5 : (flowLayout.minLineSpacing == 5 ? 10 : 0)
+        
+        lineSpace = flowLayout.minLineSpacing
+        
         let layout = flowLayout
         collectionView.collectionViewLayout = layout
         collectionView.yy_reloadData()

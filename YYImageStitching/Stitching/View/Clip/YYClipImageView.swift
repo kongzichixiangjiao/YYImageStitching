@@ -14,7 +14,7 @@ class YYClipImageView: UIImageView {
         super.init(frame: frame)
         
         self.isUserInteractionEnabled = true
-        
+        self.contentMode = .scaleAspectFit
         let pan = UIPanGestureRecognizer(target: self, action: #selector(pan(sender:)))
         self.addGestureRecognizer(pan)
         

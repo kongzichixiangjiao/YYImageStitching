@@ -92,7 +92,7 @@ class YYClipperViewController: UIViewController {
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
         
-        targetImage = UIImage(named: "5.jpg")
+//        targetImage = UIImage(named: "5.jpg")
         // 5.jpg  guideImage3.jpg  img_default.png timg.jpeg
         
         view.backgroundColor = UIColor.white
@@ -131,11 +131,9 @@ class YYClipperViewController: UIViewController {
     
     @objc func otherRightBarCrop() {
         let action = UIAlertAction(title: "确定", style: .default) { (action) in
-//            self.delegate?.clipperViewControllerWithCrop(image: self.cropImage())
-//            self.navigationController?.popViewController(animated: true)
+            self.delegate?.clipperViewControllerWithCrop(image: self.cropImage())
+            self.navigationController?.popViewController(animated: true)
             DispatchQueue.main.async {
-//                self.bigImageView.image = self.cropImage()
-//                self.cropMaskView.center = self.bigImageView.center
                 self.targetImage = self.cropImage()
                 self.setUpCropLayer()
             }
