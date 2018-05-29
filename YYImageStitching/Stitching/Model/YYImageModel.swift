@@ -13,10 +13,12 @@ class YYImageModel {
     var asset: PHAsset!
     var row: Int!
     var isSelected: Bool = false
+    var isClipped: Bool = false
     var indexPath: IndexPath!
     var image: UIImage?
     var scale: CGFloat = 1
     var resultImage: UIImage?
+    var clipImage: UIImage?
     var borderWidth: CGFloat = 0
     var borderColor: UIColor = UIColor.orange
     var filter: FilterEnum = .normal

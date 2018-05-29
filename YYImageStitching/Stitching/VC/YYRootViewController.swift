@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import GoogleMobileAds
-
 let kSelfViewColor = UIColor.rgb(240, 240, 240)
 class YYRootViewController: YYMovingViewController {
     
@@ -16,13 +14,6 @@ class YYRootViewController: YYMovingViewController {
     
     lazy var flowLayout: YYRootFlowLayout = {
         return YYRootFlowLayout()
-    }()
-    
-    lazy var interstitial: GADInterstitial = {
-        let i = GADInterstitial(adUnitID: "ca-app-pub-3164648306313935/3666512617")
-        i.delegate = self
-        i.load(GADRequest())
-        return i
     }()
     
     override func viewDidLoad() {
@@ -45,17 +36,19 @@ class YYRootViewController: YYMovingViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func addPictures(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "YYStitchingViewController") as! YYStitchingViewController
-        vc.myDelegate = self
+        let vc = YYClipperViewController()
+//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "YYStitchingViewController") as! YYStitchingViewController
+//        vc.myDelegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func sharePic(_ sender: UIButton) {
         print("share")
+//        self.navigationController?.pushViewController(YYInterstitialAdViewController(), animated: true)
+        self.navigationController?.pushViewController(YYBannerAdViewController(), animated: true)
     }
     
     @IBAction func lineSpace(_ sender: UIButton) {
@@ -75,6 +68,7 @@ class YYRootViewController: YYMovingViewController {
         leftSpace = leftSpace == 0 ? 5 : (leftSpace == 5 ? 10 : 0)
         collectionView.yy_reloadData()
     }
+  
     
     lazy var scaleViewControllerBackHandler: YYScaleViewController.ScaleViewControllerBackHandler = {
         [weak self] img, row in
@@ -164,28 +158,4 @@ extension YYRootViewController {
     
 }
 
-extension YYRootViewController: GADInterstitialDelegate {
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        
-    }
-    
-    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
-        
-    }
-    
-    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
-        
-    }
-    
-    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
-        
-    }
-    
-    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
-        
-    }
-    
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        
-    }
-}
+

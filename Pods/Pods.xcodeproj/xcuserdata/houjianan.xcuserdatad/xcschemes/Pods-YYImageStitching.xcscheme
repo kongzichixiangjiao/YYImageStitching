@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C9D20C6E5DB4EC9EE4415B97A7F06333"
+               BlueprintIdentifier = "D70FC01FE57B2E05BA67E776E418B6C6"
                BuildableName = "Pods_YYImageStitching.framework"
                BlueprintName = "Pods-YYImageStitching"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C9D20C6E5DB4EC9EE4415B97A7F06333"
+            BlueprintIdentifier = "D70FC01FE57B2E05BA67E776E418B6C6"
             BuildableName = "Pods_YYImageStitching.framework"
             BlueprintName = "Pods-YYImageStitching"
             ReferencedContainer = "container:Pods.xcodeproj">

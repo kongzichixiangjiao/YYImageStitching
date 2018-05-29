@@ -29,7 +29,7 @@ class YYScaleViewController: YYPickerImageViewController {
     }()
     
     lazy var clipView: YYClipView = {
-        let vSize = CGSize.yy_imageZoomWithBaseScreen(w: CGFloat(self.model.image!.size.width), h: CGFloat(self.model.image!.size.height))
+        let vSize = CGSize.yy_imageZoomWithBaseScreen(w: CGFloat(self.model.image!.size.width), h: CGFloat(self.model.image!.size.height) - 64 - 44)
         let y: CGFloat = vSize.height > self.view.frame.size.height ? kNavigationViewHeight : self.view.frame.size.height / 2 - vSize.height / 2
         let v = YYClipView(frame: CGRect(origin: CGPoint(x: 0, y: y), size: vSize))
         v.backgroundColor = UIColor.darkText
@@ -65,14 +65,18 @@ class YYScaleViewController: YYPickerImageViewController {
         self.view.backgroundColor = kSelfViewColor
         
         initViews()
+        
     }
     
     private func initViews() {
-        self.view.addSubview(self.clipView)
+        self.view.insertSubview(self.clipView, at: 0)
         self.view.addSubview(self.navigationView)
         
         self.navigationView.myTitle = ""
-        
+
+    }
+    
+    func changeViews() {
         changeTransform(scale: self.model.scale)
         changeBorderColor(color: self.model.borderColor)
         changeBorderWidth(width: self.model.borderWidth, type: .add)
@@ -113,6 +117,7 @@ class YYScaleViewController: YYPickerImageViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        self.clipView.image = self.model.image
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -192,6 +197,12 @@ class YYScaleViewController: YYPickerImageViewController {
         alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func clipAction(_ sender: UIButton) {
+        let vc = YYClipperViewController()
+        vc.bigImageView.image = self.model.image
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     deinit {

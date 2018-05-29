@@ -38,9 +38,9 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQh-wO-XXq">
-                                        <rect key="frame" x="20" y="0.0" width="16" height="44"/>
+                                        <rect key="frame" x="20" y="0.0" width="41" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" image="huanxiong">
+                                        <state key="normal" title="边框" image="huanxiong">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -56,9 +56,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBJ-yN-Jer">
-                                        <rect key="frame" x="69" y="0.0" width="14" height="44"/>
+                                        <rect key="frame" x="94" y="0.0" width="39" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" image="jingyu">
+                                        <state key="normal" title="缩放" image="jingyu">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -74,9 +74,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHl-iu-f0e">
-                                        <rect key="frame" x="116" y="0.0" width="14" height="44"/>
+                                        <rect key="frame" x="166" y="0.0" width="39" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" image="jiakechong">
+                                        <state key="normal" title="滤镜" image="jiakechong">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -92,9 +92,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bi-iO-Hri">
-                                        <rect key="frame" x="341" y="0.0" width="14" height="44"/>
+                                        <rect key="frame" x="316" y="0.0" width="39" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" image="yanjingshe">
+                                        <state key="normal" title="删除" image="yanjingshe">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -109,22 +109,53 @@
                                             <action selector="deleteAction:" destination="jz5-3u-aRz" eventType="touchUpInside" id="wQV-iM-UBg"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahw-jc-SAy" customClass="YYOnePixView" customModule="YYImageStitching" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="qUf-dO-Fz4"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMz-Lj-hOS">
+                                        <rect key="frame" x="236" y="0.0" width="39" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="裁剪" image="jiakechong">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="ga_borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="ga_borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="clipAction:" destination="jz5-3u-aRz" eventType="touchUpInside" id="uC4-Wt-PCD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="AQh-wO-XXq" firstAttribute="leading" secondItem="vXd-GH-r4G" secondAttribute="leading" constant="20" id="4lV-9S-gR9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ahw-jc-SAy" secondAttribute="trailing" id="B9p-ZT-HpO"/>
                                     <constraint firstItem="EHl-iu-f0e" firstAttribute="leading" secondItem="YBJ-yN-Jer" secondAttribute="trailing" constant="33" id="B9q-bq-ocW"/>
                                     <constraint firstAttribute="trailing" secondItem="9bi-iO-Hri" secondAttribute="trailing" constant="20" id="C4K-8Z-bd1"/>
                                     <constraint firstAttribute="height" constant="44" id="G1L-BN-Q5J"/>
                                     <constraint firstItem="YBJ-yN-Jer" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="MvF-Qr-AL6"/>
                                     <constraint firstAttribute="bottom" secondItem="EHl-iu-f0e" secondAttribute="bottom" id="OFR-Lv-VUG"/>
                                     <constraint firstItem="9bi-iO-Hri" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="ORt-pm-bgr"/>
+                                    <constraint firstItem="UMz-Lj-hOS" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="OUS-Ah-cvK"/>
                                     <constraint firstAttribute="bottom" secondItem="YBJ-yN-Jer" secondAttribute="bottom" id="UFQ-kR-hN4"/>
                                     <constraint firstItem="YBJ-yN-Jer" firstAttribute="leading" secondItem="AQh-wO-XXq" secondAttribute="trailing" constant="33" id="ej3-nZ-wQb"/>
                                     <constraint firstItem="EHl-iu-f0e" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="h2b-qr-lnf"/>
                                     <constraint firstAttribute="bottom" secondItem="AQh-wO-XXq" secondAttribute="bottom" id="hdc-HU-EZA"/>
+                                    <constraint firstItem="UMz-Lj-hOS" firstAttribute="leading" secondItem="EHl-iu-f0e" secondAttribute="trailing" constant="31" id="koK-V6-uq9"/>
+                                    <constraint firstAttribute="bottom" secondItem="UMz-Lj-hOS" secondAttribute="bottom" id="oDk-f7-enf"/>
+                                    <constraint firstItem="Ahw-jc-SAy" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="pNf-Ah-byq"/>
                                     <constraint firstItem="AQh-wO-XXq" firstAttribute="top" secondItem="vXd-GH-r4G" secondAttribute="top" id="uxa-sM-a8p"/>
                                     <constraint firstAttribute="bottom" secondItem="9bi-iO-Hri" secondAttribute="bottom" id="xlL-Xm-Nvc"/>
+                                    <constraint firstItem="Ahw-jc-SAy" firstAttribute="leading" secondItem="vXd-GH-r4G" secondAttribute="leading" id="xlX-3I-I0x"/>
                                     <constraint firstItem="YBJ-yN-Jer" firstAttribute="centerY" secondItem="AQh-wO-XXq" secondAttribute="centerY" id="z1t-Fg-x2p"/>
                                 </constraints>
                             </view>
@@ -139,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcU-eO-I7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="404" y="750"/>
+            <point key="canvasLocation" x="404" y="749.7751124437782"/>
         </scene>
         <!--joint-->
         <scene sceneID="BJ4-Fl-ORl">
@@ -198,13 +229,11 @@
                         <viewLayoutGuide key="safeArea" id="oNq-qb-xJt"/>
                     </view>
                     <navigationItem key="navigationItem" title="joint" id="Fsh-EL-8iq">
-                        <barButtonItem key="leftBarButtonItem" title="分享" width="40" style="plain" id="rla-va-A7v">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kQb-Oh-MEY">
+                        <barButtonItem key="leftBarButtonItem" title="分享" width="40" id="rla-va-A7v">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="kQb-Oh-MEY">
                                 <rect key="frame" x="16" y="2" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="icon_share">
-                                    <color key="titleColor" red="0.015686274510000001" green="0.2274509804" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" image="icon_share"/>
                                 <connections>
                                     <action selector="sharePic:" destination="LWs-n8-ZBT" eventType="touchUpInside" id="cZN-9D-tU8"/>
                                 </connections>

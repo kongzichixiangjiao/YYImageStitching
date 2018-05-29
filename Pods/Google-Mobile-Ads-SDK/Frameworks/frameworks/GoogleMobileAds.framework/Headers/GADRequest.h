@@ -16,11 +16,11 @@ GAD_ASSUME_NONNULL_BEGIN
 /// Add this constant to the testDevices property's array to receive test ads on the simulator.
 GAD_EXTERN const id kGADSimulatorID;
 
-/// Deprecated gender constants.
+/// Genders to help deliver more relevant ads.
 typedef NS_ENUM(NSInteger, GADGender) {
-  kGADGenderUnknown,  ///< Deprecated.
-  kGADGenderMale,     ///< Deprecated.
-  kGADGenderFemale    ///< Deprecated.
+  kGADGenderUnknown,  ///< Unknown gender.
+  kGADGenderMale,     ///< Male gender.
+  kGADGenderFemale    ///< Female gender.
 };
 
 /// Specifies optional parameters for ad requests.
@@ -34,9 +34,9 @@ typedef NS_ENUM(NSInteger, GADGender) {
 /// Ad networks may have additional parameters they accept. To pass these parameters to them, create
 /// the ad network extras object for that network, fill in the parameters, and register it here. The
 /// ad network should have a header defining the interface for the 'extras' object to create. All
-/// networks will have access to the basic settings you've set in this GADRequest. If you register
-/// an extras object that is the same class as one you have registered before, the previous extras
-/// will be overwritten.
+/// networks will have access to the basic settings you've set in this GADRequest (gender, birthday,
+/// testing mode, etc.). If you register an extras object that is the same class as one you have
+/// registered before, the previous extras will be overwritten.
 - (void)registerAdNetworkExtras:(id<GADAdNetworkExtras>)extras;
 
 /// Returns the network extras defined for an ad network.
@@ -57,6 +57,12 @@ typedef NS_ENUM(NSInteger, GADGender) {
 @property(nonatomic, copy, GAD_NULLABLE) NSArray *testDevices;
 
 #pragma mark User Information
+
+/// Provide the user's gender to increase ad relevancy.
+@property(nonatomic, assign) GADGender gender;
+
+/// Provide the user's birthday to increase ad relevancy.
+@property(nonatomic, copy, GAD_NULLABLE) NSDate *birthday;
 
 /// The user's current location may be used to deliver more relevant ads. However do not use Core
 /// Location just for advertising, make sure it is used for more beneficial reasons as well. It is
@@ -104,18 +110,15 @@ typedef NS_ENUM(NSInteger, GADGender) {
 
 #pragma mark Deprecated Methods
 
-/// Deprecated property. The user's gender.
-@property(nonatomic, assign) GADGender gender GAD_DEPRECATED_ATTRIBUTE;
-
-/// Deprecated property. The user's birthday.
-@property(nonatomic, copy, GAD_NULLABLE) NSDate *birthday GAD_DEPRECATED_ATTRIBUTE;
-
-/// Deprecated.
+/// Provide the user's birthday to increase ad relevancy.
 - (void)setBirthdayWithMonth:(NSInteger)month
                          day:(NSInteger)day
-                        year:(NSInteger)year GAD_DEPRECATED_ATTRIBUTE;
+                        year:(NSInteger)year
+    GAD_DEPRECATED_MSG_ATTRIBUTE(" use the birthday property.");
 
-/// Deprecated.
+/// When Core Location isn't available but the user's location is known supplying it here may
+/// deliver more relevant ads. It can be any free-form text such as @"Champs-Elysees Paris" or
+/// @"94041 US".
 - (void)setLocationWithDescription:(NSString *GAD_NULLABLE_TYPE)locationDescription
     GAD_DEPRECATED_MSG_ATTRIBUTE(" use setLocationWithLatitude:longitude:accuracy:.");
 

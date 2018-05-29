@@ -7,4 +7,6 @@ target 'YYImageStitching' do
 pod 'WechatOpenSDK'
 pod 'SQLite.swift', '~> 0.11.0'
 pod 'Google-Mobile-Ads-SDK'
+pod 'SnapKit'
+
 end

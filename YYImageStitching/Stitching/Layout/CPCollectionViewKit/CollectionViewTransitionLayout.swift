@@ -40,7 +40,7 @@ open class CollectionViewTransitionLayout: UICollectionViewTransitionLayout {
             attributesArray.removeAll()
             for index in 0..<cellCount {
                 let indexPath = IndexPath(item: index, section: 0)
-                var attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+                let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
                 
                 var fromAttributes: UICollectionViewLayoutAttributes?
                 var toAttributes: UICollectionViewLayoutAttributes?

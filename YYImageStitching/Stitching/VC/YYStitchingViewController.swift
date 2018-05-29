@@ -86,6 +86,8 @@ class YYStitchingViewController: YYBaseCollectionViewController {
         myDelegate?.stichingBack(models: self.selectedArray)
         self.navigationController?.popViewController(animated: true)
     }
+    
+
 }
 
 extension YYStitchingViewController {

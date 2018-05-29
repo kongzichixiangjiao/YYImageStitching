@@ -19,6 +19,7 @@
 		DC16B9E92072033D00C048E3 /* YYToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC16B9E82072033D00C048E3 /* YYToast.swift */; };
 		DC229C7620639FB900F45C8C /* ScrollView+PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC229C7520639FB900F45C8C /* ScrollView+PlaceHolder.swift */; };
 		DC292AC22069E8A5004A989B /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC292AC12069E8A5004A989B /* UIDevice+Extension.swift */; };
+		DC40742920B80A41002B891E /* cropMaskView.png in Resources */ = {isa = PBXBuildFile; fileRef = DC40742820B80A41002B891E /* cropMaskView.png */; };
 		DC6387D52071BC4200FFBA05 /* adImage3.gif in Resources */ = {isa = PBXBuildFile; fileRef = DC6387C82071BC4100FFBA05 /* adImage3.gif */; };
 		DC6387D62071BC4200FFBA05 /* adImage4.gif in Resources */ = {isa = PBXBuildFile; fileRef = DC6387C92071BC4100FFBA05 /* adImage4.gif */; };
 		DC6387D72071BC4200FFBA05 /* guideImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC6387CA2071BC4100FFBA05 /* guideImage1.jpg */; };
@@ -60,6 +61,7 @@
 		DC685D04207DC135005631C1 /* YYCircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685D02207DC135005631C1 /* YYCircleCell.swift */; };
 		DC685D05207DC135005631C1 /* YYCircleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC685D03207DC135005631C1 /* YYCircleCell.xib */; };
 		DC7EB758207B17FC004D7027 /* UIView+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7EB757207B17FC004D7027 /* UIView+Gesture.swift */; };
+		DC7FA63E20B6C29E00A6FC6F /* YYAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7FA63D20B6C29E00A6FC6F /* YYAlertViewController.swift */; };
 		DC849BC9206E4250003B1842 /* YYLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC849BC7206E4250003B1842 /* YYLoginViewController.swift */; };
 		DC849BCA206E4250003B1842 /* YYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC849BC8206E4250003B1842 /* YYLoginViewController.xib */; };
 		DC862EB0206DD51D00B7926F /* UIView+LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EAF206DD51D00B7926F /* UIView+LoadView.swift */; };
@@ -105,6 +107,18 @@
 		DC862F16206E21BF00B7926F /* YYScaleToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862F15206E21BF00B7926F /* YYScaleToolsView.swift */; };
 		DC862F18206E21C700B7926F /* YYScaleToolsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC862F17206E21C700B7926F /* YYScaleToolsView.xib */; };
 		DCA0D0D920B3B0CD00308088 /* AppDelegate+GoogleAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA0D0D820B3B0CD00308088 /* AppDelegate+GoogleAd.swift */; };
+		DCA6B58220B6B499003B9196 /* YYClipperBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6B58120B6B499003B9196 /* YYClipperBottomView.swift */; };
+		DCA6B58420B6B4A0003B9196 /* YYClipperBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA6B58320B6B4A0003B9196 /* YYClipperBottomView.xib */; };
+		DCA6B58720B6B54F003B9196 /* YYClipperBottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6B58520B6B54F003B9196 /* YYClipperBottomCell.swift */; };
+		DCA6B58820B6B54F003B9196 /* YYClipperBottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA6B58620B6B54F003B9196 /* YYClipperBottomCell.xib */; };
+		DCAB75E320B3BE4D001F5A44 /* YYInterstitialAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB75E220B3BE4D001F5A44 /* YYInterstitialAdViewController.swift */; };
+		DCAB75E620B3BFD8001F5A44 /* YYBannerAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB75E520B3BFD8001F5A44 /* YYBannerAdViewController.swift */; };
+		DCAB75E820B3E9D5001F5A44 /* YYOnePixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB75E720B3E9D5001F5A44 /* YYOnePixView.swift */; };
+		DCAB75EC20B3FFFF001F5A44 /* ImageClipperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB75EA20B3FFFF001F5A44 /* ImageClipperView.swift */; };
+		DCAB75ED20B3FFFF001F5A44 /* ImageClipperRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB75EB20B3FFFF001F5A44 /* ImageClipperRect.swift */; };
+		DCAB75EF20B4054C001F5A44 /* YYClipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB75EE20B4054C001F5A44 /* YYClipViewController.swift */; };
+		DCAB75F520B53E5D001F5A44 /* YYClipAreaLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB75F420B53E5D001F5A44 /* YYClipAreaLayer.swift */; };
+		DCAB75F720B54F00001F5A44 /* YYClipperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB75F620B54F00001F5A44 /* YYClipperViewController.swift */; };
 		DCB02AAB2072307900F0D55B /* YYSelectedFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB02AAA2072307900F0D55B /* YYSelectedFiltersView.swift */; };
 		DCB02AAD2072308600F0D55B /* YYSelectedFiltersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB02AAC2072308600F0D55B /* YYSelectedFiltersView.xib */; };
 		DCB02AB02072326000F0D55B /* YYFilterStringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB02AAE2072326000F0D55B /* YYFilterStringCell.swift */; };
@@ -112,6 +126,8 @@
 		DCB02AB32072330600F0D55B /* YYFilterStringFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB02AB22072330600F0D55B /* YYFilterStringFlowLayout.swift */; };
 		DCC06504206B82EF009DD6D9 /* UIView+Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC06503206B82EF009DD6D9 /* UIView+Shot.swift */; };
 		DCCB54FF206A1D240024F22B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCB54FE206A1D240024F22B /* Array+Extension.swift */; };
+		DCE43DCA20BBE0ED00FB1058 /* YYImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE43DC920BBE0ED00FB1058 /* YYImageView.swift */; };
+		DCE43DCC20BCF18500FB1058 /* timg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DCE43DCB20BCF18500FB1058 /* timg.jpeg */; };
 		DCE6AD70207A03DD00B9117C /* WX+AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6AD6F207A03DC00B9117C /* WX+AppDelegate.swift */; };
 		DCF7465B206A17BB00C487B6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7465A206A17BB00C487B6 /* UIImageView+Extension.swift */; };
 		DCF7465D206A188900C487B6 /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7465C206A188800C487B6 /* CGSize+Extension.swift */; };
@@ -149,6 +165,7 @@
 		DC16B9E82072033D00C048E3 /* YYToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYToast.swift; sourceTree = "<group>"; };
 		DC229C7520639FB900F45C8C /* ScrollView+PlaceHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScrollView+PlaceHolder.swift"; sourceTree = "<group>"; };
 		DC292AC12069E8A5004A989B /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		DC40742820B80A41002B891E /* cropMaskView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cropMaskView.png; sourceTree = "<group>"; };
 		DC6387C82071BC4100FFBA05 /* adImage3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = adImage3.gif; sourceTree = "<group>"; };
 		DC6387C92071BC4100FFBA05 /* adImage4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = adImage4.gif; sourceTree = "<group>"; };
 		DC6387CA2071BC4100FFBA05 /* guideImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImage1.jpg; sourceTree = "<group>"; };
@@ -196,6 +213,7 @@
 		DC685D02207DC135005631C1 /* YYCircleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYCircleCell.swift; sourceTree = "<group>"; };
 		DC685D03207DC135005631C1 /* YYCircleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYCircleCell.xib; sourceTree = "<group>"; };
 		DC7EB757207B17FC004D7027 /* UIView+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gesture.swift"; sourceTree = "<group>"; };
+		DC7FA63D20B6C29E00A6FC6F /* YYAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYAlertViewController.swift; sourceTree = "<group>"; };
 		DC849BC7206E4250003B1842 /* YYLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYLoginViewController.swift; sourceTree = "<group>"; };
 		DC849BC8206E4250003B1842 /* YYLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYLoginViewController.xib; sourceTree = "<group>"; };
 		DC862EAF206DD51D00B7926F /* UIView+LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoadView.swift"; sourceTree = "<group>"; };
@@ -242,6 +260,18 @@
 		DC862F17206E21C700B7926F /* YYScaleToolsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYScaleToolsView.xib; sourceTree = "<group>"; };
 		DC87BC242079FBEA005A0382 /* ImageStiching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageStiching.h; sourceTree = "<group>"; };
 		DCA0D0D820B3B0CD00308088 /* AppDelegate+GoogleAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+GoogleAd.swift"; sourceTree = "<group>"; };
+		DCA6B58120B6B499003B9196 /* YYClipperBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYClipperBottomView.swift; sourceTree = "<group>"; };
+		DCA6B58320B6B4A0003B9196 /* YYClipperBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYClipperBottomView.xib; sourceTree = "<group>"; };
+		DCA6B58520B6B54F003B9196 /* YYClipperBottomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYClipperBottomCell.swift; sourceTree = "<group>"; };
+		DCA6B58620B6B54F003B9196 /* YYClipperBottomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYClipperBottomCell.xib; sourceTree = "<group>"; };
+		DCAB75E220B3BE4D001F5A44 /* YYInterstitialAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYInterstitialAdViewController.swift; sourceTree = "<group>"; };
+		DCAB75E520B3BFD8001F5A44 /* YYBannerAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYBannerAdViewController.swift; sourceTree = "<group>"; };
+		DCAB75E720B3E9D5001F5A44 /* YYOnePixView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYOnePixView.swift; sourceTree = "<group>"; };
+		DCAB75EA20B3FFFF001F5A44 /* ImageClipperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageClipperView.swift; sourceTree = "<group>"; };
+		DCAB75EB20B3FFFF001F5A44 /* ImageClipperRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageClipperRect.swift; sourceTree = "<group>"; };
+		DCAB75EE20B4054C001F5A44 /* YYClipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYClipViewController.swift; sourceTree = "<group>"; };
+		DCAB75F420B53E5D001F5A44 /* YYClipAreaLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYClipAreaLayer.swift; sourceTree = "<group>"; };
+		DCAB75F620B54F00001F5A44 /* YYClipperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYClipperViewController.swift; sourceTree = "<group>"; };
 		DCB02AAA2072307900F0D55B /* YYSelectedFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYSelectedFiltersView.swift; sourceTree = "<group>"; };
 		DCB02AAC2072308600F0D55B /* YYSelectedFiltersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYSelectedFiltersView.xib; sourceTree = "<group>"; };
 		DCB02AAE2072326000F0D55B /* YYFilterStringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFilterStringCell.swift; sourceTree = "<group>"; };
@@ -249,6 +279,8 @@
 		DCB02AB22072330600F0D55B /* YYFilterStringFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFilterStringFlowLayout.swift; sourceTree = "<group>"; };
 		DCC06503206B82EF009DD6D9 /* UIView+Shot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shot.swift"; sourceTree = "<group>"; };
 		DCCB54FE206A1D240024F22B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		DCE43DC920BBE0ED00FB1058 /* YYImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYImageView.swift; sourceTree = "<group>"; };
+		DCE43DCB20BCF18500FB1058 /* timg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg.jpeg; sourceTree = "<group>"; };
 		DCE6AD6F207A03DC00B9117C /* WX+AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WX+AppDelegate.swift"; sourceTree = "<group>"; };
 		DCF7465A206A17BB00C487B6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		DCF7465C206A188800C487B6 /* CGSize+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extension.swift"; sourceTree = "<group>"; };
@@ -310,9 +342,12 @@
 		DC16B9E72072033D00C048E3 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				DCAB75E920B3FFF6001F5A44 /* Clipper */,
 				DC0BE9A5207C8B1000B959E3 /* YYSQLite.swift */,
 				DC16B9E82072033D00C048E3 /* YYToast.swift */,
 				DC0BE9A9207CBD2700B959E3 /* YYSectorView.swift */,
+				DCAB75E720B3E9D5001F5A44 /* YYOnePixView.swift */,
+				DC7FA63D20B6C29E00A6FC6F /* YYAlertViewController.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -480,6 +515,7 @@
 		DC862EBB206DDAF900B7926F /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				DCAB75E420B3BFBC001F5A44 /* AD */,
 				DC7642F2207EFF8600E41C2A /* Wheel */,
 				DC862EBC206DDAF900B7926F /* YYBaseCollectionViewController.swift */,
 				DC862EBD206DDAF900B7926F /* YYMovingViewController.swift */,
@@ -490,6 +526,7 @@
 				DC849BC7206E4250003B1842 /* YYLoginViewController.swift */,
 				DC849BC8206E4250003B1842 /* YYLoginViewController.xib */,
 				DC6387EB2071C46400FFBA05 /* YYGuideImageViewController.swift */,
+				DCAB75EE20B4054C001F5A44 /* YYClipViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -597,6 +634,7 @@
 				DC6387C72071BC4100FFBA05 /* guideImage */,
 				DC862EE2206DDAFA00B7926F /* 5.jpg */,
 				DC862EE3206DDAFA00B7926F /* download.plist */,
+				DCE43DCB20BCF18500FB1058 /* timg.jpeg */,
 				DC862EE4206DDAFA00B7926F /* img_default.png */,
 			);
 			path = Source;
@@ -621,6 +659,32 @@
 				DC862F17206E21C700B7926F /* YYScaleToolsView.xib */,
 			);
 			path = scale;
+			sourceTree = "<group>";
+		};
+		DCAB75E420B3BFBC001F5A44 /* AD */ = {
+			isa = PBXGroup;
+			children = (
+				DCAB75E220B3BE4D001F5A44 /* YYInterstitialAdViewController.swift */,
+				DCAB75E520B3BFD8001F5A44 /* YYBannerAdViewController.swift */,
+			);
+			path = AD;
+			sourceTree = "<group>";
+		};
+		DCAB75E920B3FFF6001F5A44 /* Clipper */ = {
+			isa = PBXGroup;
+			children = (
+				DC40742820B80A41002B891E /* cropMaskView.png */,
+				DCAB75EA20B3FFFF001F5A44 /* ImageClipperView.swift */,
+				DCAB75EB20B3FFFF001F5A44 /* ImageClipperRect.swift */,
+				DCAB75F420B53E5D001F5A44 /* YYClipAreaLayer.swift */,
+				DCAB75F620B54F00001F5A44 /* YYClipperViewController.swift */,
+				DCE43DC920BBE0ED00FB1058 /* YYImageView.swift */,
+				DCA6B58120B6B499003B9196 /* YYClipperBottomView.swift */,
+				DCA6B58320B6B4A0003B9196 /* YYClipperBottomView.xib */,
+				DCA6B58520B6B54F003B9196 /* YYClipperBottomCell.swift */,
+				DCA6B58620B6B54F003B9196 /* YYClipperBottomCell.xib */,
+			);
+			path = Clipper;
 			sourceTree = "<group>";
 		};
 		DCB02AA92072305000F0D55B /* filter */ = {
@@ -756,11 +820,14 @@
 				DC6387D82071BC4200FFBA05 /* guideImage2.jpg in Resources */,
 				DC6387D52071BC4200FFBA05 /* adImage3.gif in Resources */,
 				DC862EFC206DDAFA00B7926F /* YYScaleMovingCell.xib in Resources */,
+				DCA6B58820B6B54F003B9196 /* YYClipperBottomCell.xib in Resources */,
 				DC862F09206DE64400B7926F /* YYBorderToolsView.xib in Resources */,
 				DC6387E82071BE0300FFBA05 /* GuideImage.bundle in Resources */,
 				DC862F0F206DE69D00B7926F /* YYBorderToolsColorCell.xib in Resources */,
 				DC862F03206DDAFA00B7926F /* download.plist in Resources */,
 				DC6387DD2071BC4200FFBA05 /* guideImage7.gif in Resources */,
+				DCE43DCC20BCF18500FB1058 /* timg.jpeg in Resources */,
+				DCA6B58420B6B4A0003B9196 /* YYClipperBottomView.xib in Resources */,
 				DC862F04206DDAFA00B7926F /* img_default.png in Resources */,
 				DC6387D92071BC4200FFBA05 /* guideImage3.jpg in Resources */,
 				DC862EFA206DDAFA00B7926F /* YYMovingCell.xib in Resources */,
@@ -776,6 +843,7 @@
 				DC64BC08205FB88B003E204E /* Assets.xcassets in Resources */,
 				DC6387D62071BC4200FFBA05 /* adImage4.gif in Resources */,
 				DC6387D72071BC4200FFBA05 /* guideImage1.jpg in Resources */,
+				DC40742920B80A41002B891E /* cropMaskView.png in Resources */,
 				DC64BC06205FB88B003E204E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -823,10 +891,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-YYImageStitching/Pods-YYImageStitching-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -843,6 +913,7 @@
 				DC862F00206DDAFA00B7926F /* YYRootFlowLayout.swift in Sources */,
 				DC862EFD206DDAFA00B7926F /* YYStitchingCell.swift in Sources */,
 				DC862EF5206DDAFA00B7926F /* YYAlertToolsView.swift in Sources */,
+				DCAB75F520B53E5D001F5A44 /* YYClipAreaLayer.swift in Sources */,
 				DC229C7620639FB900F45C8C /* ScrollView+PlaceHolder.swift in Sources */,
 				DC685CF7207DBF9C005631C1 /* CollectionViewCardLayout.swift in Sources */,
 				DC862EEB206DDAFA00B7926F /* YYStitchingViewController.swift in Sources */,
@@ -860,15 +931,20 @@
 				DC862EB2206DD58E00B7926F /* NSObject+Extension.swift in Sources */,
 				DC862EEF206DDAFA00B7926F /* YYClipView.swift in Sources */,
 				DC862EF4206DDAFA00B7926F /* YYProgressView.swift in Sources */,
+				DCAB75E320B3BE4D001F5A44 /* YYInterstitialAdViewController.swift in Sources */,
 				DC685CFF207DBF9C005631C1 /* CollectionViewWheelLayout.swift in Sources */,
 				DC685CFC207DBF9C005631C1 /* CollectionViewTimeMachineLayout.swift in Sources */,
 				DC862EF9206DDAFA00B7926F /* YYMovingCell.swift in Sources */,
 				DC6387E92071BE0300FFBA05 /* GuidePageView.swift in Sources */,
+				DCA6B58720B6B54F003B9196 /* YYClipperBottomCell.swift in Sources */,
 				DC862EEE206DDAFA00B7926F /* YYClipImageView.swift in Sources */,
 				DC64BC3A205FC1A0003E204E /* UIImage+Extension.swift in Sources */,
 				DC862F13206DEB7300B7926F /* Theme.swift in Sources */,
 				DC0BE9AA207CBD2700B959E3 /* YYSectorView.swift in Sources */,
+				DCAB75F720B54F00001F5A44 /* YYClipperViewController.swift in Sources */,
 				DC685CFA207DBF9C005631C1 /* CollectionViewLayout.swift in Sources */,
+				DC7FA63E20B6C29E00A6FC6F /* YYAlertViewController.swift in Sources */,
+				DCAB75EF20B4054C001F5A44 /* YYClipViewController.swift in Sources */,
 				DC862EE6206DDAFA00B7926F /* YYBaseCollectionViewController.swift in Sources */,
 				DC862EE8206DDAFA00B7926F /* YYPickerImageViewController.swift in Sources */,
 				DC685D01207DBF9C005631C1 /* LayoutConfiguration.swift in Sources */,
@@ -878,17 +954,21 @@
 				DC1623A9206C9860007AFA13 /* UIView+Layout.swift in Sources */,
 				DC16B9E92072033D00C048E3 /* YYToast.swift in Sources */,
 				DC7EB758207B17FC004D7027 /* UIView+Gesture.swift in Sources */,
+				DCAB75E620B3BFD8001F5A44 /* YYBannerAdViewController.swift in Sources */,
 				DC6387E72071BE0300FFBA05 /* GifImageOperation.swift in Sources */,
 				DC0BE9A6207C8B1000B959E3 /* YYSQLite.swift in Sources */,
 				DC6387EA2071BE0300FFBA05 /* PageControl.swift in Sources */,
 				DC862EEC206DDAFA00B7926F /* YYImageModel.swift in Sources */,
+				DCA6B58220B6B499003B9196 /* YYClipperBottomView.swift in Sources */,
 				DC685CFD207DBF9C005631C1 /* CollectionViewTransitionLayout.swift in Sources */,
 				DC685CF9207DBF9C005631C1 /* CollectionViewCircleLayout.swift in Sources */,
 				DCC06504206B82EF009DD6D9 /* UIView+Shot.swift in Sources */,
 				DCE6AD70207A03DD00B9117C /* WX+AppDelegate.swift in Sources */,
 				DC862F08206DE64400B7926F /* YYBorderToolsView.swift in Sources */,
 				DC862F0E206DE69D00B7926F /* YYBorderToolsColorCell.swift in Sources */,
+				DCE43DCA20BBE0ED00FB1058 /* YYImageView.swift in Sources */,
 				DC862EEA206DDAFA00B7926F /* YYScaleViewController.swift in Sources */,
+				DCAB75E820B3E9D5001F5A44 /* YYOnePixView.swift in Sources */,
 				DC685CA6207DA793005631C1 /* YYWheelViewController.swift in Sources */,
 				DC862EE9206DDAFA00B7926F /* YYRootViewController.swift in Sources */,
 				DC02F5B8206F8D0D006903DD /* YYFilterManager.swift in Sources */,
@@ -903,8 +983,10 @@
 				DC862EF2206DDAFA00B7926F /* YYNavigationView.swift in Sources */,
 				DC6387EC2071C46400FFBA05 /* YYGuideImageViewController.swift in Sources */,
 				DCF7465D206A188900C487B6 /* CGSize+Extension.swift in Sources */,
+				DCAB75EC20B3FFFF001F5A44 /* ImageClipperView.swift in Sources */,
 				DC0BE9A8207C8C4B00B959E3 /* YYUserModel.swift in Sources */,
 				DC862F0B206DE68600B7926F /* YYBorderToolsColorFlowLayout.swift in Sources */,
+				DCAB75ED20B3FFFF001F5A44 /* ImageClipperRect.swift in Sources */,
 				DC862F16206E21BF00B7926F /* YYScaleToolsView.swift in Sources */,
 				DC862EB0206DD51D00B7926F /* UIView+LoadView.swift in Sources */,
 				DC862EFB206DDAFA00B7926F /* YYScaleMovingCell.swift in Sources */,
