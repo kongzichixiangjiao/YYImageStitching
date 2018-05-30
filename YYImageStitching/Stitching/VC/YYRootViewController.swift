@@ -96,9 +96,11 @@ class YYRootViewController: YYMovingViewController {
     }
     
     @IBAction func nineSegmentation(_ sender: UIButton) {
-        let vc = YYClipperViewController()
+        if dataSource.count == 0 {
+            return 
+        }
+        let vc = YYNineImageViewController(nibName: "YYNineImageViewController", bundle: nil)
         vc.targetImage = self.dataSource[0].image
-        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -13,6 +13,10 @@ protocol YYClipperViewControllerDelegate: class {
     func clipperViewControllerWithCrop(image: UIImage)
 }
 
+enum ClipperType: Int {
+    case none = 0, nine = 1
+}
+
 class YYClipperViewController: UIViewController {
     
     weak var delegate: YYClipperViewControllerDelegate?
@@ -24,7 +28,7 @@ class YYClipperViewController: UIViewController {
     enum PercentageType: CGFloat {
         case p_1ratio1 = 1, p_3ratio2 = 1.5, p_16ratio9 = 1.77777778
     }
-    
+    var clipperType: ClipperType = .none
     var kSpace: CGFloat = 20
     var kTopSpace: CGFloat = 0
     var kLeftSpace: CGFloat = 0

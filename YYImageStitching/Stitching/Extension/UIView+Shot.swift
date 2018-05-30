@@ -23,6 +23,9 @@ extension UIView {
             
             return img
         } else {
+            if (self.frame.size.height == 0 || self.frame.size.width == 0) {
+                return nil 
+            }
             return yy_screenshot(size: self.frame.size)
         }
     }
