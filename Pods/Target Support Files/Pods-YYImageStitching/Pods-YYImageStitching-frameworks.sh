@@ -143,12 +143,34 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Fusuma/Fusuma.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ImagePickerSheetController/ImagePickerSheetController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ImageSource/ImageSource.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JNWSpringAnimation/JNWSpringAnimation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Marshroute/Marshroute.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Paparazzo/Paparazzo.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Fusuma/Fusuma.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ImagePickerSheetController/ImagePickerSheetController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ImageSource/ImageSource.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JNWSpringAnimation/JNWSpringAnimation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Marshroute/Marshroute.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Paparazzo/Paparazzo.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

@@ -16,5 +16,6 @@ pod 'SKPhotoBrowser'
 pod 'ImagePickerSheetController'
 # 图片处理
 pod 'YPImagePicker'
+# 图片处理
 pod 'Paparazzo'
 end
