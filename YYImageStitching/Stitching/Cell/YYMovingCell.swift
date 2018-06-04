@@ -15,15 +15,18 @@ class YYMovingCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var selectedButton: UIButton!
+    @IBOutlet weak var myMaskView: UIView!
     
     @IBOutlet weak var topSpace: NSLayoutConstraint!
     @IBOutlet weak var bottomSpace: NSLayoutConstraint!
     @IBOutlet weak var leftSpace: NSLayoutConstraint!
     @IBOutlet weak var rightSpace: NSLayoutConstraint!
     
+    
     var model: YYImageModel! {
         didSet {
             selectedButton.isSelected = model.isSelected
+            myMaskView.isHidden = !model.isSelected
         }
     }
     

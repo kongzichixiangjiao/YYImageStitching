@@ -19,17 +19,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="LWs-n8-ZBT" kind="relationship" relationship="rootViewController" id="o2J-dd-gBX"/>
+                        <segue destination="Vy2-6c-cJ2" kind="relationship" relationship="rootViewController" id="BwR-sx-FlW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSZ-Hh-Wqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-969" y="34"/>
+            <point key="canvasLocation" x="-1649" y="34"/>
         </scene>
-        <!--Scale View Controller-->
+        <!--Edit View Controller-->
         <scene sceneID="OT9-w3-ci3">
             <objects>
-                <viewController storyboardIdentifier="YYScaleViewController" id="jz5-3u-aRz" customClass="YYScaleViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YYEditViewController" id="jz5-3u-aRz" customClass="YYEditViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n1f-tX-65U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,12 +170,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcU-eO-I7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="404" y="749.7751124437782"/>
+            <point key="canvasLocation" x="567" y="65"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="Ydo-h6-fAB">
+            <objects>
+                <viewController storyboardIdentifier="YYHomeViewController" id="Vy2-6c-cJ2" customClass="YYHomeViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eK4-nR-JhA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PLH-hb-g7b">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFx-05-tJA">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="图片拼接" image="pinjie">
+                                            <color key="titleColor" red="0.1333333333" green="0.51372549020000002" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pinjie:" destination="Vy2-6c-cJ2" eventType="touchUpInside" id="756-Ss-4YL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOo-Mf-QVh">
+                                        <rect key="frame" x="0.0" y="201" width="375" height="201"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="增加滤镜" image="lvjing">
+                                            <color key="titleColor" red="0.1333333333" green="0.51372549020000002" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="lvjing:" destination="Vy2-6c-cJ2" eventType="touchUpInside" id="mho-6c-Ruw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGS-hT-TjI">
+                                        <rect key="frame" x="0.0" y="402" width="375" height="201"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="九宫格" image="nine">
+                                            <color key="titleColor" red="0.1333333333" green="0.51372549020000002" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="jiugongge:" destination="Vy2-6c-cJ2" eventType="touchUpInside" id="KdI-8T-ygo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KPj-rI-uVf" firstAttribute="trailing" secondItem="PLH-hb-g7b" secondAttribute="trailing" id="0CW-Hl-eei"/>
+                            <constraint firstItem="KPj-rI-uVf" firstAttribute="bottom" secondItem="PLH-hb-g7b" secondAttribute="bottom" id="5hh-Np-bsP"/>
+                            <constraint firstItem="PLH-hb-g7b" firstAttribute="top" secondItem="KPj-rI-uVf" secondAttribute="top" id="AwK-SM-LHq"/>
+                            <constraint firstItem="PLH-hb-g7b" firstAttribute="leading" secondItem="KPj-rI-uVf" secondAttribute="leading" id="BQQ-l0-4J8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KPj-rI-uVf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Aoo-ov-Z7N"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lOm-S0-DLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-905" y="58"/>
         </scene>
         <!--joint-->
         <scene sceneID="BJ4-Fl-ORl">
             <objects>
-                <viewController id="LWs-n8-ZBT" customClass="YYRootViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YYRootViewController" id="LWs-n8-ZBT" customClass="YYRootViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DGO-fT-ANs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -183,58 +242,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaL-4t-yAf">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcV-6b-Zud">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="pgB-1L-sPd"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="左右边距" image="line_space">
-                                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rg2-T5-RAe">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <state key="normal" title="设置"/>
                                         <connections>
-                                            <action selector="lineSpace:" destination="LWs-n8-ZBT" eventType="touchUpInside" id="t5p-3V-wIn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGY-jA-hfV">
-                                        <rect key="frame" x="100" y="0.0" width="100" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="9Xc-tt-Khh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="图片间隔" image="row_space">
-                                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="leftAndRightSpace:" destination="LWs-n8-ZBT" eventType="touchUpInside" id="GYU-4V-Ud5"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoG-UK-1fa">
-                                        <rect key="frame" x="200" y="0.0" width="100" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="rb4-sS-7qU"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="九格分割" image="row_space">
-                                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="nineSegmentation:" destination="LWs-n8-ZBT" eventType="touchUpInside" id="nHx-Tx-woj"/>
+                                            <action selector="setup:" destination="LWs-n8-ZBT" eventType="touchUpInside" id="mel-8G-H8N"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="BGY-jA-hfV" secondAttribute="bottom" id="Ozz-CB-tFY"/>
-                                    <constraint firstItem="mcV-6b-Zud" firstAttribute="top" secondItem="yaL-4t-yAf" secondAttribute="top" id="QLq-k0-260"/>
-                                    <constraint firstItem="BGY-jA-hfV" firstAttribute="top" secondItem="yaL-4t-yAf" secondAttribute="top" id="Qed-jX-y9a"/>
-                                    <constraint firstItem="uoG-UK-1fa" firstAttribute="top" secondItem="yaL-4t-yAf" secondAttribute="top" id="RZD-qu-2r6"/>
-                                    <constraint firstItem="uoG-UK-1fa" firstAttribute="leading" secondItem="BGY-jA-hfV" secondAttribute="trailing" id="TOn-RI-XZb"/>
+                                    <constraint firstAttribute="bottom" secondItem="rg2-T5-RAe" secondAttribute="bottom" id="J8B-OP-I6o"/>
+                                    <constraint firstItem="rg2-T5-RAe" firstAttribute="leading" secondItem="yaL-4t-yAf" secondAttribute="leading" id="M37-J3-s6Z"/>
+                                    <constraint firstItem="rg2-T5-RAe" firstAttribute="top" secondItem="yaL-4t-yAf" secondAttribute="top" id="Uab-M8-pu1"/>
                                     <constraint firstAttribute="height" constant="44" id="Yi9-v1-ez6"/>
-                                    <constraint firstItem="mcV-6b-Zud" firstAttribute="leading" secondItem="yaL-4t-yAf" secondAttribute="leading" id="dZL-LO-RvX"/>
-                                    <constraint firstItem="BGY-jA-hfV" firstAttribute="leading" secondItem="mcV-6b-Zud" secondAttribute="trailing" id="dyC-5S-xzN"/>
-                                    <constraint firstAttribute="bottom" secondItem="mcV-6b-Zud" secondAttribute="bottom" id="fD9-NO-uV2"/>
-                                    <constraint firstAttribute="bottom" secondItem="uoG-UK-1fa" secondAttribute="bottom" id="rVk-7W-0U7"/>
+                                    <constraint firstAttribute="trailing" secondItem="rg2-T5-RAe" secondAttribute="trailing" id="zcI-Hf-NQL"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -247,16 +269,6 @@
                         <viewLayoutGuide key="safeArea" id="oNq-qb-xJt"/>
                     </view>
                     <navigationItem key="navigationItem" title="joint" id="Fsh-EL-8iq">
-                        <barButtonItem key="leftBarButtonItem" title="分享" width="40" id="rla-va-A7v">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="kQb-Oh-MEY">
-                                <rect key="frame" x="16" y="2" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="icon_share"/>
-                                <connections>
-                                    <action selector="sharePic:" destination="LWs-n8-ZBT" eventType="touchUpInside" id="cZN-9D-tU8"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" id="1da-GV-CiQ">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vQm-Ft-rRc">
                                 <rect key="frame" x="311" y="0.0" width="48" height="44"/>
@@ -274,62 +286,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQh-cr-djH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-268" y="34"/>
-        </scene>
-        <!--图片库-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="YYStitchingViewController" title="图片库" id="BYZ-38-t0r" customClass="YYStitchingViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8m9-Xh-aQ3">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A11-Wo-Ojr">
-                                        <rect key="frame" x="20" y="0.0" width="335" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="完成">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="finishedAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mra-47-OrK"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.42324218749999998" green="0.16674107142857142" blue="0.62977120535714282" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="CmA-9f-iYz"/>
-                                    <constraint firstItem="A11-Wo-Ojr" firstAttribute="leading" secondItem="8m9-Xh-aQ3" secondAttribute="leading" constant="20" id="LgH-J1-BUw"/>
-                                    <constraint firstAttribute="bottom" secondItem="A11-Wo-Ojr" secondAttribute="bottom" id="bLB-eZ-uWb"/>
-                                    <constraint firstItem="A11-Wo-Ojr" firstAttribute="top" secondItem="8m9-Xh-aQ3" secondAttribute="top" id="bSs-i5-3C8"/>
-                                    <constraint firstAttribute="trailing" secondItem="A11-Wo-Ojr" secondAttribute="trailing" constant="20" id="ph6-AC-KfX"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="8m9-Xh-aQ3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M5V-rU-Mid"/>
-                            <constraint firstItem="8m9-Xh-aQ3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dsI-bW-P5B"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8m9-Xh-aQ3" secondAttribute="bottom" id="eJ8-iM-UmX"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="照片库" id="55b-IP-q4D"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="404" y="34"/>
+            <point key="canvasLocation" x="-146" y="66"/>
         </scene>
     </scenes>
     <resources>
         <image name="huanxiong" width="16" height="14"/>
-        <image name="icon_share" width="14" height="16"/>
         <image name="jiakechong" width="14" height="15"/>
         <image name="jingyu" width="14" height="10"/>
-        <image name="line_space" width="32" height="32"/>
-        <image name="row_space" width="32" height="32"/>
+        <image name="lvjing" width="30" height="30"/>
+        <image name="nine" width="30" height="30"/>
+        <image name="pinjie" width="30" height="30"/>
         <image name="yanjingshe" width="14" height="21"/>
     </resources>
 </document>

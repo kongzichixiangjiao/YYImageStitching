@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YYGuideImageViewController: UIViewController {
+class YYGuideImageViewController: YYBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

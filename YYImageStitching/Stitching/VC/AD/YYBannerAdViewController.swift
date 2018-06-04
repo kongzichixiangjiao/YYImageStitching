@@ -11,7 +11,7 @@ import UIKit
 import GoogleMobileAds
 import UIKit
 
-class YYBannerAdViewController: UIViewController {
+class YYBannerAdViewController: YYBaseViewController {
     
     var bannerView: GADBannerView!
     

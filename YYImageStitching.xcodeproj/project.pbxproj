@@ -74,8 +74,7 @@
 		DC862EE7206DDAFA00B7926F /* YYMovingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EBD206DDAF900B7926F /* YYMovingViewController.swift */; };
 		DC862EE8206DDAFA00B7926F /* YYPickerImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EBE206DDAF900B7926F /* YYPickerImageViewController.swift */; };
 		DC862EE9206DDAFA00B7926F /* YYRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EBF206DDAF900B7926F /* YYRootViewController.swift */; };
-		DC862EEA206DDAFA00B7926F /* YYScaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EC0206DDAF900B7926F /* YYScaleViewController.swift */; };
-		DC862EEB206DDAFA00B7926F /* YYStitchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EC1206DDAF900B7926F /* YYStitchingViewController.swift */; };
+		DC862EEA206DDAFA00B7926F /* YYEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EC0206DDAF900B7926F /* YYEditViewController.swift */; };
 		DC862EEC206DDAFA00B7926F /* YYImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EC3206DDAF900B7926F /* YYImageModel.swift */; };
 		DC862EED206DDAFA00B7926F /* YYClipBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EC6206DDAF900B7926F /* YYClipBorderView.swift */; };
 		DC862EEE206DDAFA00B7926F /* YYClipImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EC7206DDAF900B7926F /* YYClipImageView.swift */; };
@@ -109,6 +108,11 @@
 		DC862F16206E21BF00B7926F /* YYScaleToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862F15206E21BF00B7926F /* YYScaleToolsView.swift */; };
 		DC862F18206E21C700B7926F /* YYScaleToolsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC862F17206E21C700B7926F /* YYScaleToolsView.xib */; };
 		DCA0D0D920B3B0CD00308088 /* AppDelegate+GoogleAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA0D0D820B3B0CD00308088 /* AppDelegate+GoogleAd.swift */; };
+		DCA4DA7E20BF9806006F6A60 /* YYPhotoPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA4DA7D20BF9806006F6A60 /* YYPhotoPicker.storyboard */; };
+		DCA4DA8120BF986D006F6A60 /* YYSelectedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4DA8020BF986D006F6A60 /* YYSelectedImageViewController.swift */; };
+		DCA4DA8320BF9965006F6A60 /* PhotoGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4DA8220BF9965006F6A60 /* PhotoGroupsController.swift */; };
+		DCA4DA8520BF9A1E006F6A60 /* YYPhotoPickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4DA8420BF9A1E006F6A60 /* YYPhotoPickerManager.swift */; };
+		DCA4DA8820BFDBF6006F6A60 /* YYHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4DA8720BFDBF6006F6A60 /* YYHomeViewController.swift */; };
 		DCA6B58220B6B499003B9196 /* YYClipperBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6B58120B6B499003B9196 /* YYClipperBottomView.swift */; };
 		DCA6B58420B6B4A0003B9196 /* YYClipperBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA6B58320B6B4A0003B9196 /* YYClipperBottomView.xib */; };
 		DCA6B58720B6B54F003B9196 /* YYClipperBottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6B58520B6B54F003B9196 /* YYClipperBottomCell.swift */; };
@@ -130,6 +134,8 @@
 		DCCB54FF206A1D240024F22B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCB54FE206A1D240024F22B /* Array+Extension.swift */; };
 		DCE43DCA20BBE0ED00FB1058 /* YYImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE43DC920BBE0ED00FB1058 /* YYImageView.swift */; };
 		DCE43DCC20BCF18500FB1058 /* timg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DCE43DCB20BCF18500FB1058 /* timg.jpeg */; };
+		DCE5A70020C4D121005124A0 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE5A6FF20C4D121005124A0 /* Other.swift */; };
+		DCE5A70220C4D35B005124A0 /* YYBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE5A70120C4D35B005124A0 /* YYBaseViewController.swift */; };
 		DCE6AD70207A03DD00B9117C /* WX+AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6AD6F207A03DC00B9117C /* WX+AppDelegate.swift */; };
 		DCF7465B206A17BB00C487B6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7465A206A17BB00C487B6 /* UIImageView+Extension.swift */; };
 		DCF7465D206A188900C487B6 /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7465C206A188800C487B6 /* CGSize+Extension.swift */; };
@@ -228,8 +234,7 @@
 		DC862EBD206DDAF900B7926F /* YYMovingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYMovingViewController.swift; sourceTree = "<group>"; };
 		DC862EBE206DDAF900B7926F /* YYPickerImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYPickerImageViewController.swift; sourceTree = "<group>"; };
 		DC862EBF206DDAF900B7926F /* YYRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYRootViewController.swift; sourceTree = "<group>"; };
-		DC862EC0206DDAF900B7926F /* YYScaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYScaleViewController.swift; sourceTree = "<group>"; };
-		DC862EC1206DDAF900B7926F /* YYStitchingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYStitchingViewController.swift; sourceTree = "<group>"; };
+		DC862EC0206DDAF900B7926F /* YYEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYEditViewController.swift; sourceTree = "<group>"; };
 		DC862EC3206DDAF900B7926F /* YYImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYImageModel.swift; sourceTree = "<group>"; };
 		DC862EC6206DDAF900B7926F /* YYClipBorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYClipBorderView.swift; sourceTree = "<group>"; };
 		DC862EC7206DDAF900B7926F /* YYClipImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYClipImageView.swift; sourceTree = "<group>"; };
@@ -264,6 +269,11 @@
 		DC862F17206E21C700B7926F /* YYScaleToolsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYScaleToolsView.xib; sourceTree = "<group>"; };
 		DC87BC242079FBEA005A0382 /* ImageStiching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageStiching.h; sourceTree = "<group>"; };
 		DCA0D0D820B3B0CD00308088 /* AppDelegate+GoogleAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+GoogleAd.swift"; sourceTree = "<group>"; };
+		DCA4DA7D20BF9806006F6A60 /* YYPhotoPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YYPhotoPicker.storyboard; sourceTree = "<group>"; };
+		DCA4DA8020BF986D006F6A60 /* YYSelectedImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYSelectedImageViewController.swift; sourceTree = "<group>"; };
+		DCA4DA8220BF9965006F6A60 /* PhotoGroupsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGroupsController.swift; sourceTree = "<group>"; };
+		DCA4DA8420BF9A1E006F6A60 /* YYPhotoPickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYPhotoPickerManager.swift; sourceTree = "<group>"; };
+		DCA4DA8720BFDBF6006F6A60 /* YYHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYHomeViewController.swift; sourceTree = "<group>"; };
 		DCA6B58120B6B499003B9196 /* YYClipperBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYClipperBottomView.swift; sourceTree = "<group>"; };
 		DCA6B58320B6B4A0003B9196 /* YYClipperBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYClipperBottomView.xib; sourceTree = "<group>"; };
 		DCA6B58520B6B54F003B9196 /* YYClipperBottomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYClipperBottomCell.swift; sourceTree = "<group>"; };
@@ -285,6 +295,8 @@
 		DCCB54FE206A1D240024F22B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		DCE43DC920BBE0ED00FB1058 /* YYImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYImageView.swift; sourceTree = "<group>"; };
 		DCE43DCB20BCF18500FB1058 /* timg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg.jpeg; sourceTree = "<group>"; };
+		DCE5A6FF20C4D121005124A0 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
+		DCE5A70120C4D35B005124A0 /* YYBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYBaseViewController.swift; sourceTree = "<group>"; };
 		DCE6AD6F207A03DC00B9117C /* WX+AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WX+AppDelegate.swift"; sourceTree = "<group>"; };
 		DCF7465A206A17BB00C487B6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		DCF7465C206A188800C487B6 /* CGSize+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extension.swift"; sourceTree = "<group>"; };
@@ -508,6 +520,7 @@
 			isa = PBXGroup;
 			children = (
 				DC862F12206DEB7300B7926F /* Theme.swift */,
+				DCE5A6FF20C4D121005124A0 /* Other.swift */,
 				DC862EBA206DDAF900B7926F /* AppDelegate.swift */,
 				DCA0D0D820B3B0CD00308088 /* AppDelegate+GoogleAd.swift */,
 				DCE6AD6F207A03DC00B9117C /* WX+AppDelegate.swift */,
@@ -519,14 +532,16 @@
 		DC862EBB206DDAF900B7926F /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				DCE5A70120C4D35B005124A0 /* YYBaseViewController.swift */,
+				DCA4DA8620BFDBE3006F6A60 /* Home */,
+				DCA4DA7F20BF986D006F6A60 /* PhotoPicker */,
 				DCAB75E420B3BFBC001F5A44 /* AD */,
 				DC7642F2207EFF8600E41C2A /* Wheel */,
 				DC862EBC206DDAF900B7926F /* YYBaseCollectionViewController.swift */,
 				DC862EBD206DDAF900B7926F /* YYMovingViewController.swift */,
 				DC862EBE206DDAF900B7926F /* YYPickerImageViewController.swift */,
 				DC862EBF206DDAF900B7926F /* YYRootViewController.swift */,
-				DC862EC0206DDAF900B7926F /* YYScaleViewController.swift */,
-				DC862EC1206DDAF900B7926F /* YYStitchingViewController.swift */,
+				DC862EC0206DDAF900B7926F /* YYEditViewController.swift */,
 				DC849BC7206E4250003B1842 /* YYLoginViewController.swift */,
 				DC849BC8206E4250003B1842 /* YYLoginViewController.xib */,
 				DC6387EB2071C46400FFBA05 /* YYGuideImageViewController.swift */,
@@ -665,6 +680,25 @@
 				DC862F17206E21C700B7926F /* YYScaleToolsView.xib */,
 			);
 			path = scale;
+			sourceTree = "<group>";
+		};
+		DCA4DA7F20BF986D006F6A60 /* PhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				DCA4DA7D20BF9806006F6A60 /* YYPhotoPicker.storyboard */,
+				DCA4DA8020BF986D006F6A60 /* YYSelectedImageViewController.swift */,
+				DCA4DA8220BF9965006F6A60 /* PhotoGroupsController.swift */,
+				DCA4DA8420BF9A1E006F6A60 /* YYPhotoPickerManager.swift */,
+			);
+			path = PhotoPicker;
+			sourceTree = "<group>";
+		};
+		DCA4DA8620BFDBE3006F6A60 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DCA4DA8720BFDBF6006F6A60 /* YYHomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		DCAB75E420B3BFBC001F5A44 /* AD */ = {
@@ -848,6 +882,7 @@
 				DC6387DE2071BC4200FFBA05 /* guideImage8.gif in Resources */,
 				DC862EF3206DDAFA00B7926F /* YYNavigationView.xib in Resources */,
 				DC64BC08205FB88B003E204E /* Assets.xcassets in Resources */,
+				DCA4DA7E20BF9806006F6A60 /* YYPhotoPicker.storyboard in Resources */,
 				DC6387D62071BC4200FFBA05 /* adImage4.gif in Resources */,
 				DC6387D72071BC4200FFBA05 /* guideImage1.jpg in Resources */,
 				DC40742920B80A41002B891E /* cropMaskView.png in Resources */,
@@ -900,11 +935,12 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Fusuma/Fusuma.framework",
-				"${BUILT_PRODUCTS_DIR}/ImagePickerSheetController/ImagePickerSheetController.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSource/ImageSource.framework",
 				"${BUILT_PRODUCTS_DIR}/JNWSpringAnimation/JNWSpringAnimation.framework",
 				"${BUILT_PRODUCTS_DIR}/Marshroute/Marshroute.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Paparazzo/Paparazzo.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -916,11 +952,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fusuma.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePickerSheetController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSource.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JNWSpringAnimation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Marshroute.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Paparazzo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -945,7 +982,7 @@
 				DCAB75F520B53E5D001F5A44 /* YYClipAreaLayer.swift in Sources */,
 				DC229C7620639FB900F45C8C /* ScrollView+PlaceHolder.swift in Sources */,
 				DC685CF7207DBF9C005631C1 /* CollectionViewCardLayout.swift in Sources */,
-				DC862EEB206DDAFA00B7926F /* YYStitchingViewController.swift in Sources */,
+				DCA4DA8320BF9965006F6A60 /* PhotoGroupsController.swift in Sources */,
 				DC1623AF206CD0E2007AFA13 /* UIView+XIB_Layer.swift in Sources */,
 				DC685CFB207DBF9C005631C1 /* CollectionViewStageLayout.swift in Sources */,
 				DC685CFE207DBF9C005631C1 /* CollectionViewTransitionManager.swift in Sources */,
@@ -976,12 +1013,14 @@
 				DCAB75EF20B4054C001F5A44 /* YYClipViewController.swift in Sources */,
 				DC862EE6206DDAFA00B7926F /* YYBaseCollectionViewController.swift in Sources */,
 				DC862EE8206DDAFA00B7926F /* YYPickerImageViewController.swift in Sources */,
+				DCE5A70220C4D35B005124A0 /* YYBaseViewController.swift in Sources */,
 				DC685D01207DBF9C005631C1 /* LayoutConfiguration.swift in Sources */,
 				DCB02AB02072326000F0D55B /* YYFilterStringCell.swift in Sources */,
 				DC849BC9206E4250003B1842 /* YYLoginViewController.swift in Sources */,
 				DC862F01206DDAFA00B7926F /* YYStitchingFlowLayout.swift in Sources */,
 				DC1623A9206C9860007AFA13 /* UIView+Layout.swift in Sources */,
 				DC16B9E92072033D00C048E3 /* YYToast.swift in Sources */,
+				DCE5A70020C4D121005124A0 /* Other.swift in Sources */,
 				DC7EB758207B17FC004D7027 /* UIView+Gesture.swift in Sources */,
 				DCAB75E620B3BFD8001F5A44 /* YYBannerAdViewController.swift in Sources */,
 				DC6387E72071BE0300FFBA05 /* GifImageOperation.swift in Sources */,
@@ -996,10 +1035,11 @@
 				DC862F08206DE64400B7926F /* YYBorderToolsView.swift in Sources */,
 				DC862F0E206DE69D00B7926F /* YYBorderToolsColorCell.swift in Sources */,
 				DCE43DCA20BBE0ED00FB1058 /* YYImageView.swift in Sources */,
-				DC862EEA206DDAFA00B7926F /* YYScaleViewController.swift in Sources */,
+				DC862EEA206DDAFA00B7926F /* YYEditViewController.swift in Sources */,
 				DCAB75E820B3E9D5001F5A44 /* YYOnePixView.swift in Sources */,
 				DC685CA6207DA793005631C1 /* YYWheelViewController.swift in Sources */,
 				DC862EE9206DDAFA00B7926F /* YYRootViewController.swift in Sources */,
+				DCA4DA8120BF986D006F6A60 /* YYSelectedImageViewController.swift in Sources */,
 				DC02F5B8206F8D0D006903DD /* YYFilterManager.swift in Sources */,
 				DC02F5BB206F943C006903DD /* ImageVIewExtension.swift in Sources */,
 				DCB02AB32072330600F0D55B /* YYFilterStringFlowLayout.swift in Sources */,
@@ -1010,12 +1050,14 @@
 				DCB02AAB2072307900F0D55B /* YYSelectedFiltersView.swift in Sources */,
 				DCF7465B206A17BB00C487B6 /* UIImageView+Extension.swift in Sources */,
 				DC862EF2206DDAFA00B7926F /* YYNavigationView.swift in Sources */,
+				DCA4DA8520BF9A1E006F6A60 /* YYPhotoPickerManager.swift in Sources */,
 				DC6387EC2071C46400FFBA05 /* YYGuideImageViewController.swift in Sources */,
 				DC628DD420BE343C00C68F8D /* YYNineImageViewController.swift in Sources */,
 				DCF7465D206A188900C487B6 /* CGSize+Extension.swift in Sources */,
 				DCAB75EC20B3FFFF001F5A44 /* ImageClipperView.swift in Sources */,
 				DC0BE9A8207C8C4B00B959E3 /* YYUserModel.swift in Sources */,
 				DC862F0B206DE68600B7926F /* YYBorderToolsColorFlowLayout.swift in Sources */,
+				DCA4DA8820BFDBF6006F6A60 /* YYHomeViewController.swift in Sources */,
 				DCAB75ED20B3FFFF001F5A44 /* ImageClipperRect.swift in Sources */,
 				DC862F16206E21BF00B7926F /* YYScaleToolsView.swift in Sources */,
 				DC862EB0206DD51D00B7926F /* UIView+LoadView.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class YYPickerImageViewController: UIViewController {
+class YYPickerImageViewController: YYBaseViewController {
 
     /// 带缓存的图片管理对象
     var imageManager:PHCachingImageManager!
@@ -37,7 +37,9 @@ class YYPickerImageViewController: UIViewController {
         self.imageManager.stopCachingImagesForAllAssets()
     }
     
-    public func initAssets() -> PHFetchResult<PHAsset> { //则获取所有资源
+    public func initAssets() -> [PHAsset] {
+        var assets: [PHAsset] = []
+        //获取所有资源
         let allPhotosOptions = PHFetchOptions()
         //按照创建时间倒序排列
         allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate",
@@ -45,9 +47,10 @@ class YYPickerImageViewController: UIViewController {
         //只获取图片
         allPhotosOptions.predicate = NSPredicate(format: "mediaType = %d",
                                                  PHAssetMediaType.image.rawValue)
-        let assetsFetchResults = PHAsset.fetchAssets(with: PHAssetMediaType.image,
-                                                 options: allPhotosOptions)
-        return assetsFetchResults
+        PHAsset.fetchAssets(with: PHAssetMediaType.image, options: allPhotosOptions).enumerateObjects { (asset, index, stop) in
+            assets.append(asset)
+        }
+        return assets
     }
 
     override func didReceiveMemoryWarning() {

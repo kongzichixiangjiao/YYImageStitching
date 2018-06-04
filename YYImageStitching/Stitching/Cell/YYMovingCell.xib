@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,24 +31,28 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rpu-EF-18w">
                                 <rect key="frame" x="0.0" y="0.0" width="159" height="152"/>
                             </imageView>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ze7-gk-oCs">
+                                <rect key="frame" x="0.0" y="0.0" width="159" height="152"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rz9-6C-hyH">
-                                <rect key="frame" x="133" y="10" width="16" height="16"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="16" id="YKD-4d-qPr"/>
-                                    <constraint firstAttribute="height" constant="16" id="vFf-Qb-0G4"/>
-                                </constraints>
-                                <state key="normal" image="img_selected_normal"/>
-                                <state key="selected" image="img_selected_selected"/>
+                                <rect key="frame" x="127" y="2" width="30" height="30"/>
+                                <state key="normal" image="CellNotSelected"/>
+                                <state key="selected" image="CellBlueSelected"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Rz9-6C-hyH" firstAttribute="top" secondItem="la1-gP-Fl7" secondAttribute="top" constant="10" id="0sf-jz-iPE"/>
+                            <constraint firstItem="Rz9-6C-hyH" firstAttribute="top" secondItem="la1-gP-Fl7" secondAttribute="top" constant="2" id="0sf-jz-iPE"/>
                             <constraint firstAttribute="trailing" secondItem="rpu-EF-18w" secondAttribute="trailing" id="1l1-9y-jMQ"/>
+                            <constraint firstItem="ze7-gk-oCs" firstAttribute="top" secondItem="la1-gP-Fl7" secondAttribute="top" id="C81-CM-F5r"/>
                             <constraint firstAttribute="bottom" secondItem="rpu-EF-18w" secondAttribute="bottom" id="DBB-EZ-3hT"/>
+                            <constraint firstAttribute="bottom" secondItem="ze7-gk-oCs" secondAttribute="bottom" id="NGp-wC-7ov"/>
+                            <constraint firstAttribute="trailing" secondItem="ze7-gk-oCs" secondAttribute="trailing" id="TUw-b4-6tx"/>
                             <constraint firstItem="rpu-EF-18w" firstAttribute="top" secondItem="la1-gP-Fl7" secondAttribute="top" id="TZf-fd-CRt"/>
                             <constraint firstItem="rpu-EF-18w" firstAttribute="leading" secondItem="la1-gP-Fl7" secondAttribute="leading" id="VZc-ww-d0s"/>
-                            <constraint firstAttribute="trailing" secondItem="Rz9-6C-hyH" secondAttribute="trailing" constant="10" id="rJc-HB-7x9"/>
+                            <constraint firstAttribute="trailing" secondItem="Rz9-6C-hyH" secondAttribute="trailing" constant="2" id="rJc-HB-7x9"/>
+                            <constraint firstItem="ze7-gk-oCs" firstAttribute="leading" secondItem="la1-gP-Fl7" secondAttribute="leading" id="rzo-iD-PLq"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -67,6 +71,7 @@
                 <outlet property="bottomSpace" destination="KhA-yQ-2dj" id="sJe-sF-yPJ"/>
                 <outlet property="imageView" destination="rpu-EF-18w" id="lCi-gv-zNn"/>
                 <outlet property="leftSpace" destination="bPF-sg-3o8" id="2Rm-1w-xxN"/>
+                <outlet property="myMaskView" destination="ze7-gk-oCs" id="i6R-q9-NZ9"/>
                 <outlet property="rightSpace" destination="CzU-mg-faQ" id="BRk-y9-H8b"/>
                 <outlet property="selectedButton" destination="Rz9-6C-hyH" id="aPc-85-omu"/>
                 <outlet property="titleLabel" destination="CCD-JL-jiF" id="dHw-vy-j5p"/>
@@ -76,7 +81,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="img_selected_normal" width="32" height="32"/>
-        <image name="img_selected_selected" width="32" height="32"/>
+        <image name="CellBlueSelected" width="30" height="30"/>
+        <image name="CellNotSelected" width="30" height="30"/>
     </resources>
 </document>

@@ -14,12 +14,6 @@ extension AppDelegate {
         WXApi.isWXAppInstalled()
         
         let message = WXMediaMessage()
-        //        message.title = "23123"
-        //        message.description = "123123"
-        //        message.messageExt  = messageExt
-        //        message.messageAction = messageAction
-        //        message.mediaTagName  = "tagName"
-        //        message.setThumbImage(image)
         
         let imageObject = WXImageObject()
         imageObject.imageData = UIImagePNGRepresentation(image)

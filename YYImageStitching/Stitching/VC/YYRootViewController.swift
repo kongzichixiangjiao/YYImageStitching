@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import PKHUD
 
-let kSelfViewColor = UIColor.rgb(240, 240, 240)
+let kSelfViewColor = UIColor.rgb(210, 210, 210)
 class YYRootViewController: YYMovingViewController {
     
     var leftSpace: CGFloat = 0
@@ -29,7 +30,7 @@ class YYRootViewController: YYMovingViewController {
     func initViews() {
         registerCell(nibName: YYScaleMovingCell.identifier)
         updateCollectionViewFrame(left: 0, bottom: 44, right: 0)
-        collectionView.backgroundColor = UIColor.white
+        collectionView.backgroundColor = UIColor.clear
         collectionView.collectionViewLayout = flowLayout
         collectionView.emptyDelegate = self
         collectionView.yy_reloadData()
@@ -41,14 +42,9 @@ class YYRootViewController: YYMovingViewController {
     }
     
     @IBAction func addPictures(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "YYStitchingViewController") as! YYStitchingViewController
+        let vc = UIStoryboard(name: "YYPhotoPicker", bundle: nil).instantiateViewController(withIdentifier: "YYSelectedImageViewController") as! YYSelectedImageViewController
         vc.myDelegate = self
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @IBAction func sharePic(_ sender: UIButton) {
-        print("share")
-        jointImages()
     }
     
     func jointImages() {
@@ -66,6 +62,10 @@ class YYRootViewController: YYMovingViewController {
             }
         }
         
+        shareWX(v: v)
+    }
+    
+    func shareWX(v: UIView) {
         if AppDelegate.shareImage(image: v.yy_screenshot()!) {
             print("去分享")
         } else {
@@ -73,44 +73,72 @@ class YYRootViewController: YYMovingViewController {
         }
     }
     
-    @IBAction func lineSpace(_ sender: UIButton) {
+    @IBAction func setup(_ sender: UIButton) {
         if dataSource.count == 0 {
+            pk_hud(text: "没照片你设置什么？")
             return
         }
-        
-        flowLayout.minLineSpacing = flowLayout.minLineSpacing == 0 ? 5 : (flowLayout.minLineSpacing == 5 ? 10 : 0)
-        
-        lineSpace = flowLayout.minLineSpacing
-        
-        let layout = flowLayout
-        collectionView.collectionViewLayout = layout
-        collectionView.yy_reloadData()
-    }
-    
-    @IBAction func leftAndRightSpace(_ sender: UIButton) {
-        if dataSource.count == 0 {
-            return
+        let buttons = ["图片间距", "图片边距", "背景色"]
+        scl_alert(title: "选择要设置的间距", subTitle: "", showCloseButton: true, buttons: buttons) {
+            [weak self] tag, bTitle in
+            if let weakSelf = self {
+                if bTitle == "背景色" {
+                    weakSelf.setupBackgroundColor()
+                    return
+                }
+                weakSelf.setupSpace(subTitle: bTitle, isLineSpace: (bTitle == "图片间距"))
+            }
         }
-        leftSpace = leftSpace == 0 ? 5 : (leftSpace == 5 ? 10 : 0)
-        collectionView.yy_reloadData()
     }
     
-    @IBAction func nineSegmentation(_ sender: UIButton) {
-        if dataSource.count == 0 {
-            return 
+    func setupBackgroundColor() {
+        let buttons = ["黑色", "白色", "灰色"]
+        scl_alert(title: "背景色", subTitle: "背景色选择", buttons: buttons) {
+            [weak self] tag, bTitle in
+            if let weakSelf = self {
+                switch tag {
+                case 0:
+                    weakSelf.view.backgroundColor = UIColor.rgb(0, 0, 0)
+                    break
+                case 1:
+                    weakSelf.view.backgroundColor = UIColor.rgb(255, 255, 255)
+                    break
+                case 2:
+                    weakSelf.view.backgroundColor = UIColor.rgb(200, 200, 200)
+                    break
+                default:
+                    break
+                }
+            }
         }
-        let vc = YYNineImageViewController(nibName: "YYNineImageViewController", bundle: nil)
-        vc.targetImage = self.dataSource[0].image
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    lazy var scaleViewControllerBackHandler: YYScaleViewController.ScaleViewControllerBackHandler = {
+    func setupSpace(title: String = "设置", subTitle: String, isLineSpace: Bool) {
+        let buttons = ["0", "5", "10", "20", "40"]
+        scl_alert(title: title, subTitle: subTitle, buttons: buttons) {
+            [weak self] tag, bTitle in
+            if let weakSelf = self {
+                let space = buttons[tag].int64
+                if isLineSpace {
+                    weakSelf.flowLayout.minLineSpacing = CGFloat(space)
+                    weakSelf.lineSpace = weakSelf.flowLayout.minLineSpacing
+                    let layout = weakSelf.flowLayout
+                    weakSelf.collectionView.collectionViewLayout = layout
+                } else {
+                    weakSelf.leftSpace = CGFloat(space)
+                }
+                weakSelf.collectionView.yy_reloadData()
+            }
+        }
+    }
+    
+    lazy var scaleViewControllerBackHandler: YYEditViewController.ScaleViewControllerBackHandler = {
         [weak self] img, row in
         self?.dataSource[row].image = img
         self?.collectionView.reloadItems(at: [IndexPath(item: row, section: 0)])
     }
     
-    lazy var scaleViewControllerDeleteHandler: YYScaleViewController.ScaleViewControllerDeleteHandler = {
+    lazy var scaleViewControllerDeleteHandler: YYEditViewController.ScaleViewControllerDeleteHandler = {
         [weak self] row in
         if let weakSelf = self {
             if weakSelf.dataSource.count == 0 {
@@ -130,8 +158,8 @@ class YYRootViewController: YYMovingViewController {
     }
 }
 
-extension YYRootViewController: YYStitchingViewControllerDelegate {
-    func stichingBack(models: [YYImageModel]) {
+extension YYRootViewController: YYSelectedImageViewControllerDelegate {
+    func selectedImageBack(models: [YYImageModel]) {
         if dataSource.count > 0 {
             dataSource += models
         } else {
@@ -183,7 +211,7 @@ extension YYRootViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = UIStoryboard.yy_main(vcName: "YYScaleViewController") as! YYScaleViewController
+        let vc = UIStoryboard.yy_main(vcName: "YYEditViewController") as! YYEditViewController
         vc.scaleViewControllerBackHandler = self.scaleViewControllerBackHandler
         vc.scaleViewControllerDeleteHandler = self.scaleViewControllerDeleteHandler
         vc.model = self.dataSource[indexPath.row]

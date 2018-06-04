@@ -13,9 +13,13 @@ pod 'Fusuma'
 # 图片预览
 pod 'SKPhotoBrowser'
 # 图片选择
-pod 'ImagePickerSheetController'
+#pod 'ImagePickerSheetController'
 # 图片处理
 pod 'YPImagePicker'
 # 图片处理
 pod 'Paparazzo'
+
+# 提醒
+pod 'SCLAlertView'
+pod 'PKHUD', '~> 5.0'
 end

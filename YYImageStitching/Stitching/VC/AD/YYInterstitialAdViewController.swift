@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class YYInterstitialAdViewController: UIViewController {
+class YYInterstitialAdViewController: YYBaseViewController {
 
     var interstitial: GADInterstitial!
     override func viewDidLoad() {

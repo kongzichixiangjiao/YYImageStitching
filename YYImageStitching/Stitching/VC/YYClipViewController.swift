@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YYClipViewController: UIViewController {
+class YYClipViewController: YYBaseViewController {
 
     
     var imageClipperView:ImageClipperView? = nil

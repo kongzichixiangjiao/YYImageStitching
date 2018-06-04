@@ -4,7 +4,6 @@ PODS:
     - Alamofire (~> 4.5)
   - Fusuma (1.2.4)
   - Google-Mobile-Ads-SDK (7.30.0)
-  - ImagePickerSheetController (0.9.3)
   - ImageSource/AlamofireImage (2.0.1):
     - AlamofireImage (~> 3)
     - ImageSource/Remote
@@ -51,6 +50,8 @@ PODS:
     - JNWSpringAnimation
     - Marshroute
     - Paparazzo/Core
+  - PKHUD (5.0.0)
+  - SCLAlertView (0.8)
   - SKPhotoBrowser (5.0.8)
   - SnapKit (4.0.0)
   - SQLite.swift (0.11.5):
@@ -64,8 +65,9 @@ PODS:
 DEPENDENCIES:
   - Fusuma
   - Google-Mobile-Ads-SDK
-  - ImagePickerSheetController
   - Paparazzo
+  - PKHUD (~> 5.0)
+  - SCLAlertView
   - SKPhotoBrowser
   - SnapKit
   - SQLite.swift (~> 0.11.0)
@@ -78,11 +80,12 @@ SPEC REPOS:
     - AlamofireImage
     - Fusuma
     - Google-Mobile-Ads-SDK
-    - ImagePickerSheetController
     - ImageSource
     - JNWSpringAnimation
     - Marshroute
     - Paparazzo
+    - PKHUD
+    - SCLAlertView
     - SKPhotoBrowser
     - SnapKit
     - SQLite.swift
@@ -95,11 +98,12 @@ SPEC CHECKSUMS:
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   Fusuma: e85c394878a2e1549c67140ba7c038aff8d7581c
   Google-Mobile-Ads-SDK: 7404f68120ae8682afeb5af001fbf4aad731c78e
-  ImagePickerSheetController: 4789b06940e299431455c61be77fda440883c36c
   ImageSource: 86b77f1fbf18273c7a3f8274900b169f78675a5e
   JNWSpringAnimation: cd4c2f4464324f63f176c3624ffccf205211a100
   Marshroute: 15cf8067a997bf298e9db9317dd7c32b8799a787
   Paparazzo: 9822c808f8a6f0c427975da2fe4c4e5c71f31c68
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SKPhotoBrowser: d50a4f7374d4d71574dbeb1429ae5c31e778b72e
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
@@ -107,6 +111,6 @@ SPEC CHECKSUMS:
   WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
   YPImagePicker: 7b44e0ca5e969a18e83cd3b54cec2e0cb287a40e
 
-PODFILE CHECKSUM: 2c2d29404bcbfbbada5186ea79f6f58d78b41d40
+PODFILE CHECKSUM: 34fa663302fbaa20ffe83f60d11c9f65cc3e0bbe
 
 COCOAPODS: 1.5.0

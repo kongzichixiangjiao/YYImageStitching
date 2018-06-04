@@ -17,7 +17,7 @@ enum ClipperType: Int {
     case none = 0, nine = 1
 }
 
-class YYClipperViewController: UIViewController {
+class YYClipperViewController: YYBaseViewController {
     
     weak var delegate: YYClipperViewControllerDelegate?
     
@@ -74,6 +74,11 @@ class YYClipperViewController: UIViewController {
         addAllGesture()
         
         initBarButtons()
+        
+        setUpCropLayer()
+        
+        rightPercentageBar()
+        
     }
     
     func initBarButtons() {
@@ -104,8 +109,15 @@ class YYClipperViewController: UIViewController {
     
     @objc func otherRightBarCrop() {
         let action = UIAlertAction(title: "确定", style: .default) { (action) in
-            self.delegate?.clipperViewControllerWithCrop(image: self.cropImage())
-            self.navigationController?.popViewController(animated: true)
+            if self.function == .nine {
+                let vc = YYNineImageViewController(nibName: "YYNineImageViewController", bundle: nil)
+                vc.targetImage = self.cropImage()
+                vc.function = self.function
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                self.delegate?.clipperViewControllerWithCrop(image: self.cropImage())
+                self.navigationController?.popViewController(animated: true)
+            }
             DispatchQueue.main.async {
                 self.targetImage = self.cropImage()
                 self.setUpCropLayer()
@@ -127,7 +139,6 @@ class YYClipperViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setUpCropLayer()
     }
     
     func setUpCropLayer(isMoveCropView: Bool = false) {

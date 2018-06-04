@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FB02F9A4CDD749CFD47DB12BCD02AD3A"
+               BlueprintIdentifier = "9AD5D3B90986DFB3D93FA58AB7B5B31A"
                BuildableName = "Pods_YYImageStitching.framework"
                BlueprintName = "Pods-YYImageStitching"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FB02F9A4CDD749CFD47DB12BCD02AD3A"
+            BlueprintIdentifier = "9AD5D3B90986DFB3D93FA58AB7B5B31A"
             BuildableName = "Pods_YYImageStitching.framework"
             BlueprintName = "Pods-YYImageStitching"
             ReferencedContainer = "container:Pods.xcodeproj">
