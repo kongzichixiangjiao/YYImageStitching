@@ -15,6 +15,7 @@ class YYImageModel {
     var isSelected: Bool = false
     var isClipped: Bool = false
     var indexPath: IndexPath!
+    var sourceImage: UIImage?
     var image: UIImage?
     var scale: CGFloat = 1
     var resultImage: UIImage?

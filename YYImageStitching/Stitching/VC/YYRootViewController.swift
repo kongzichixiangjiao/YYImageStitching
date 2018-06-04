@@ -188,9 +188,13 @@ extension YYRootViewController {
         model.row = indexPath.row
         cell.model = model
         guard let img = self.dataSource[indexPath.row].image else {
-            self.imageManager.requestImage(for: cell.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
+            let scale = UIScreen.main.scale
+            let size = CGSize(width: cell.size.width*scale, height: cell.size.height*scale)
+            
+            self.imageManager.requestImage(for: cell.model.asset, targetSize: size, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
                 cell.imageView.image = result ?? UIImage.init(named: "iw_none")
                 self.dataSource[indexPath.row].image = result
+                self.dataSource[indexPath.row].sourceImage = result
             }
             return cell
         }
@@ -211,11 +215,38 @@ extension YYRootViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = UIStoryboard.yy_main(vcName: "YYEditViewController") as! YYEditViewController
-        vc.scaleViewControllerBackHandler = self.scaleViewControllerBackHandler
-        vc.scaleViewControllerDeleteHandler = self.scaleViewControllerDeleteHandler
-        vc.model = self.dataSource[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
+        let buttons = ["滤镜", "裁剪", "删除", "瞎编辑", "还原"]
+        scl_alert(title: "你想干啥去？", subTitle: "", buttons: buttons) {
+            [weak self] tag, bTitle in
+            if let weakSelf = self {
+                switch tag {
+                case 0:
+                    break
+                case 1:
+                    let vc = YYClipperViewController()
+                    vc.function = weakSelf.function
+                    vc.targetImage = weakSelf.dataSource[indexPath.row].image
+                    vc.delegate = self
+                    weakSelf.navigationController?.pushViewController(vc, animated: true)
+                    break
+                case 2:
+                    break
+                case 3:
+                    let vc = UIStoryboard.yy_main(vcName: "YYEditViewController") as! YYEditViewController
+                    vc.scaleViewControllerBackHandler = weakSelf.scaleViewControllerBackHandler
+                    vc.scaleViewControllerDeleteHandler = weakSelf.scaleViewControllerDeleteHandler
+                    vc.model = weakSelf.dataSource[indexPath.row]
+                    weakSelf.navigationController?.pushViewController(vc, animated: true)
+                    break
+                case 4:
+                    weakSelf.dataSource[indexPath.row].image = weakSelf.dataSource[indexPath.row].sourceImage
+                    weakSelf.collectionView.reloadData()
+                    break
+                default:
+                    break 
+                }
+            }
+        }
     }
     
 }

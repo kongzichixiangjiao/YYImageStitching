@@ -231,7 +231,7 @@
             </objects>
             <point key="canvasLocation" x="-905" y="58"/>
         </scene>
-        <!--joint-->
+        <!--图片拼接-->
         <scene sceneID="BJ4-Fl-ORl">
             <objects>
                 <viewController storyboardIdentifier="YYRootViewController" id="LWs-n8-ZBT" customClass="YYRootViewController" customModule="YYImageStitching" customModuleProvider="target" sceneMemberID="viewController">
@@ -268,7 +268,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oNq-qb-xJt"/>
                     </view>
-                    <navigationItem key="navigationItem" title="joint" id="Fsh-EL-8iq">
+                    <navigationItem key="navigationItem" title="图片拼接" id="Fsh-EL-8iq">
                         <barButtonItem key="rightBarButtonItem" title="+" id="1da-GV-CiQ">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vQm-Ft-rRc">
                                 <rect key="frame" x="311" y="0.0" width="48" height="44"/>

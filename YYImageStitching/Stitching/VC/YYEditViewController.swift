@@ -29,7 +29,7 @@ class YYEditViewController: YYPickerImageViewController {
     }()
     
     lazy var clipView: YYClipView = {
-        let vSize = CGSize.yy_imageZoomWithBaseScreen(w: CGFloat(self.model.image!.size.width), h: CGFloat(self.model.image!.size.height) - 64 - 44)
+        let vSize = CGSize.yy_imageZoomWithBaseScreen(w: CGFloat(self.model.image!.size.width), h: CGFloat(self.model.image!.size.height))
         let y: CGFloat = vSize.height > self.view.frame.size.height ? kNavigationViewHeight : self.view.frame.size.height / 2 - vSize.height / 2
         let v = YYClipView(frame: CGRect(origin: CGPoint(x: 0, y: y), size: vSize))
         v.backgroundColor = UIColor.darkText

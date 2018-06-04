@@ -173,6 +173,8 @@ class YYClipperViewController: YYBaseViewController {
         if (percentageType == .p_1ratio1) {
             let s = min(cropAreaWidth, cropAreaHeight)
             cropMaskView.frame = CGRect(x: kLeftSpace, y: kTopSpace, width: s, height: s)
+        } else if (percentageType == .p_16ratio9) {
+            cropMaskView.frame = CGRect(x: kLeftSpace, y: kTopSpace, width: cropAreaWidth * 9 / 16, height: cropAreaHeight)
         } else {
             cropMaskView.frame = CGRect(x: kLeftSpace, y: kTopSpace, width: cropAreaWidth, height: cropAreaHeight)
         }
