@@ -26,7 +26,7 @@ class YYBaseViewController: UIViewController {
     }
     
 
-    func scl_alert(title: String, subTitle: String, closeButtonTitle: String = "取消", showCloseButton: Bool = false, buttons: [String], clickedButtonHandler: @escaping (_ tag: Int, _ bTitle: String) -> ()) {
+    func scl_alert(title: String, subTitle: String, closeButtonTitle: String = "取消", showCloseButton: Bool = true, buttons: [String], clickedButtonHandler: @escaping (_ tag: Int, _ bTitle: String) -> ()) {
         
         let appearance = SCLAlertView.SCLAppearance (
             showCloseButton: showCloseButton
@@ -44,7 +44,22 @@ class YYBaseViewController: UIViewController {
     }
     
     func pk_hud(text: String) {
-        HUD.flash(.label(text), delay: 1.0)
+        HUD.flash(.label(text), delay: 0.6)
+    }
+    
+    func pk_hud_success(title: String = "成功", text: String) {
+        HUD.flash(.labeledSuccess(title: title, subtitle: text), delay: 0.8)
     }
 
+}
+
+extension YYBaseViewController {
+    
+    public func saveImage(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafeRawPointer) {
+        pk_hud_success(text: "保存成功")
+    }
 }

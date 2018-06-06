@@ -10,8 +10,15 @@ import UIKit
 
 class YYHomeViewController: YYBaseViewController {
     
+    @IBOutlet var phoneButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = phoneButton
+    }
+    
+    @IBAction func phone(_ sender: UIBarButtonItem) {
+        
     }
     
     @IBAction func pinjie(_ sender: UIButton) {
@@ -31,6 +38,12 @@ class YYHomeViewController: YYBaseViewController {
         let vc = YYSelectedImageViewController()
         vc.maxCount = 1
         vc.function = .nine
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func masaike(_ sender: UIButton) {
+        let vc = YYMosaicViewController(nibName: "YYMosaicViewController", bundle: nil)
+        vc.function = .mosaic
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

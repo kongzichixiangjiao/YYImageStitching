@@ -178,7 +178,6 @@ class YYClipperViewController: YYBaseViewController {
         } else {
             cropMaskView.frame = CGRect(x: kLeftSpace, y: kTopSpace, width: cropAreaWidth, height: cropAreaHeight)
         }
-        
         changeCropFrame = cropMaskView.frame
         bigImageView.addSubview(cropMaskView)
     }
@@ -225,19 +224,47 @@ class YYClipperViewController: YYBaseViewController {
         } else if (sender.state == .ended) {
             // top
             if (cropMaskView.y + 1 < kTopSpace) {
-                cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: kTopSpace, width: changeCropFrame.width, height: changeCropFrame.maxY - kTopSpace)
+                if (percentageType == .p_1ratio1) {
+                    let s = min(changeCropFrame.width, changeCropFrame.maxY - kTopSpace)
+                    cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: kTopSpace, width: s, height: s)
+                } else if (percentageType == .p_16ratio9) {
+                    cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: kTopSpace, width: (changeCropFrame.maxY - kTopSpace) * 9 / 16, height: changeCropFrame.maxY - kTopSpace)
+                } else {
+                    cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: kTopSpace, width: changeCropFrame.width, height: changeCropFrame.maxY - kTopSpace)
+                }
             }
             // bottom
             if (cropMaskView.maxY > bigImageView.height - kTopSpace + 1) {
-                cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: changeCropFrame.width, height: bigImageView.height - changeCropFrame.minY - kTopSpace)
+                if (percentageType == .p_1ratio1) {
+                    let s = min(changeCropFrame.width, bigImageView.height - changeCropFrame.minY - kTopSpace)
+                    cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: s, height: s)
+                } else if (percentageType == .p_16ratio9) {
+                    cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: (bigImageView.height - changeCropFrame.minY - kTopSpace) * 9 / 16, height: bigImageView.height - changeCropFrame.minY - kTopSpace)
+                } else {
+                    cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: changeCropFrame.width, height: bigImageView.height - changeCropFrame.minY - kTopSpace)
+                }
             }
             // right
             if (cropMaskView.maxX > bigImageView.width + 1 - kLeftSpace) {
-                cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: bigImageView.width - changeCropFrame.minX - kLeftSpace, height: changeCropFrame.height)
+                if (percentageType == .p_1ratio1) {
+                    let s = min(bigImageView.width - changeCropFrame.minX - kLeftSpace, changeCropFrame.height)
+                    cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: s, height: s)
+                } else if (percentageType == .p_16ratio9) {
+                    cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: bigImageView.width - changeCropFrame.minX - kLeftSpace, height: (bigImageView.width - changeCropFrame.minX - kLeftSpace) * 9 / 16)
+                } else {
+                    cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: bigImageView.width - changeCropFrame.minX - kLeftSpace, height: changeCropFrame.height)
+                }
             }
             // left
             if (cropMaskView.x + 1 < kLeftSpace) {
-                cropMaskView.frame = CGRect(x: kLeftSpace, y: changeCropFrame.minY, width: changeCropFrame.width + changeCropFrame.minX - kLeftSpace, height: changeCropFrame.height)
+                if (percentageType == .p_1ratio1) {
+                    let s = min(changeCropFrame.width + changeCropFrame.minX - kLeftSpace, changeCropFrame.height)
+                    cropMaskView.frame = CGRect(x: kLeftSpace, y: changeCropFrame.minY, width: s, height: s)
+                } else if (percentageType == .p_16ratio9) {
+                    cropMaskView.frame = CGRect(x: kLeftSpace, y: changeCropFrame.minY, width: changeCropFrame.width + changeCropFrame.minX - kLeftSpace, height: (changeCropFrame.width + changeCropFrame.minX - kLeftSpace) * 9 / 16)
+                } else {
+                    cropMaskView.frame = CGRect(x: kLeftSpace, y: changeCropFrame.minY, width: changeCropFrame.width + changeCropFrame.minX - kLeftSpace, height: changeCropFrame.height)
+                }
             }
             changeCropFrame = cropMaskView.frame
         }
@@ -250,6 +277,8 @@ class YYClipperViewController: YYBaseViewController {
             if (percentageType == .p_1ratio1) {
                 let s = min(changeCropFrame.width, changeCropFrame.height - movePoint.y + changeCropFrame.minY)
                 cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: movePoint.y, width: s, height: s)
+            } else if (percentageType == .p_16ratio9) {
+                cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: movePoint.y, width: (changeCropFrame.height - movePoint.y + changeCropFrame.minY) * 9 / 16, height: changeCropFrame.height - movePoint.y + changeCropFrame.minY)
             } else {
                 cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: movePoint.y, width: changeCropFrame.width, height: changeCropFrame.height - movePoint.y + changeCropFrame.minY)
             }
@@ -259,6 +288,8 @@ class YYClipperViewController: YYBaseViewController {
             if (percentageType == .p_1ratio1) {
                 let s = min(changeCropFrame.width, movePoint.y - changeCropFrame.minY)
                 cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: s, height: s)
+            } else if (percentageType == .p_16ratio9) {
+                cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: (movePoint.y - changeCropFrame.minY) * 9/16, height: movePoint.y - changeCropFrame.minY)
             } else {
                 cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: changeCropFrame.width, height: movePoint.y - changeCropFrame.minY)
             }
@@ -268,6 +299,8 @@ class YYClipperViewController: YYBaseViewController {
             if (percentageType == .p_1ratio1) {
                 let s = min(changeCropFrame.maxX - movePoint.x, changeCropFrame.height)
                 cropMaskView.frame = CGRect(x: movePoint.x, y: changeCropFrame.minY, width: s, height: s)
+            } else if (percentageType == .p_16ratio9) {
+                cropMaskView.frame = CGRect(x: movePoint.x, y: changeCropFrame.minY, width: changeCropFrame.maxX - movePoint.x, height: (changeCropFrame.maxX - movePoint.x) * 9/16)
             } else {
                 cropMaskView.frame = CGRect(x: movePoint.x, y: changeCropFrame.minY, width: changeCropFrame.maxX - movePoint.x, height: changeCropFrame.height)
             }
@@ -277,7 +310,9 @@ class YYClipperViewController: YYBaseViewController {
             if (percentageType == .p_1ratio1) {
                 let s = min(changeCropFrame.maxX - (changeCropFrame.maxX - movePoint.x) - changeCropFrame.minX, changeCropFrame.height)
                 cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: s, height: s)
-            } else {
+            } else if (percentageType == .p_16ratio9) {
+                cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: movePoint.x - changeCropFrame.minX, height: (movePoint.x - changeCropFrame.minX) * 9/16)
+            }  else {
                 cropMaskView.frame = CGRect(x: changeCropFrame.minX, y: changeCropFrame.minY, width: changeCropFrame.maxX - (changeCropFrame.maxX - movePoint.x) - changeCropFrame.minX, height: changeCropFrame.height)
             }
             

@@ -31,6 +31,7 @@ class YYNineImageViewController: YYBaseViewController {
     var targetImage: UIImage!
     
     var count = -1
+    var tag: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,15 +63,10 @@ class YYNineImageViewController: YYBaseViewController {
     }
     
     @IBAction func shape(_ sender: UIButton) {
-        let buttons = ["圆形", "方形", "添加滤镜"]
+        let buttons = ["圆形", "方形"]
         scl_alert(title: "选择需要的设置", subTitle: "", buttons: buttons) {
             [weak self] tag, bTitle in
             if let weakSelf = self {
-                if (buttons[2] == bTitle) {
-                    weakSelf.addFilter()
-                    return
-                }
-                
                 for i in 0..<weakSelf.images.count {
                     if "圆形" == bTitle {
                         if weakSelf.imagesRoundness.count != weakSelf.images.count {
@@ -90,17 +86,44 @@ class YYNineImageViewController: YYBaseViewController {
         }
     }
     
-    func addFilter() {
-        let buttons = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-        scl_alert(title: "选一张", subTitle: "一次只能整一张", buttons: buttons) {
+    var shape = "圆形"
+    @IBAction func editImage(_ sender: UITapGestureRecognizer) {
+        let buttons = ["预览", "添加滤镜", "切换形状->" + shape]
+        
+        scl_alert(title: "设置", subTitle: "就是瞎整", buttons: buttons) {
             [weak self] tag, bTitle in
             if let weakSelf = self {
-                
+                let t = (sender.view?.tag)! - 1
+                if (bTitle == buttons[0]) {
+                    weakSelf.scanImage(tag: t)
+                } else if (bTitle == buttons[1]) {
+                    weakSelf.addFilter(tag: t)
+                } else {
+                    for i in 0..<weakSelf.images.count {
+                        if ("切换形状->" + "圆形") == bTitle {
+                            if weakSelf.imagesRoundness.count != weakSelf.images.count {
+                                let circleImage = weakSelf.images[i].yy_circleImage()
+                                weakSelf.imagesRoundness.append(circleImage)
+                                weakSelf.imageViews[i].image = circleImage
+                            } else {
+                                let circleImage = weakSelf.imagesRoundness[i]
+                                weakSelf.imageViews[i].image = circleImage
+                            }
+                            weakSelf.shape = "方形"
+                        } else {
+                            let image = weakSelf.images[i]
+                            weakSelf.imageViews[i].image = image
+                            
+                            weakSelf.shape = "圆形"
+                        }
+                    }
+                }
             }
         }
     }
     
-    @IBAction func scanImage(_ sender: UITapGestureRecognizer) {
+    private func scanImage(tag: Int) {
+        
         var items = [SKPhoto]()
         for image in self.images {
             let photo = SKPhoto.photoWithImage(image)
@@ -108,11 +131,25 @@ class YYNineImageViewController: YYBaseViewController {
         }
         
         let browser = SKPhotoBrowser(photos: items)
-        browser.initializePageIndex((sender.view?.tag)! - 1)
+        browser.initializePageIndex(tag)
         present(browser, animated: true, completion: {})
+        
     }
     
-    func saveImage() {
+    private func addFilter(tag: Int) {
+        let vc = YYFilterViewController(nibName: "YYFilterViewController", bundle: nil)
+        vc.function = function
+        if imagesRoundness.count != 0 {
+            vc.targetImage = (shape == "方形") ? imagesRoundness[tag] : images[tag]
+        } else {
+            vc.targetImage = images[tag]
+        }
+        self.tag = tag
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func saveImage() {
         count += 1
         if count == imageViews.count {
             let resultTitle = "提示"
@@ -125,14 +162,12 @@ class YYNineImageViewController: YYBaseViewController {
             return
         }
         let image = imageViews[count].image
-        UIImageWriteToSavedPhotosAlbum(image!, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+        
+        saveImage(image: image!)
     }
+
     
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafeRawPointer) {
-        saveImage()
-    }
-    
-    func cropImage(rect: CGRect) -> UIImage? {
+   private func cropImage(rect: CGRect) -> UIImage? {
         if let sourceImageRef = self.targetImage.cgImage {
             let newImageRef = sourceImageRef.cropping(to: rect)
             let newImage = UIImage(cgImage: newImageRef!)
@@ -141,6 +176,12 @@ class YYNineImageViewController: YYBaseViewController {
         return nil
     }
     
+}
+
+extension YYNineImageViewController: YYFilterViewControllerDelegate {
+    func filterViewControllerEditFinished(image: UIImage) {
+        self.imageViews[tag].image = image
+    }
 }
 
 

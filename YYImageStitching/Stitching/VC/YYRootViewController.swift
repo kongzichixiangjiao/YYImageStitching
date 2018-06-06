@@ -216,11 +216,16 @@ extension YYRootViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let buttons = ["滤镜", "裁剪", "删除", "瞎编辑", "还原"]
-        scl_alert(title: "你想干啥去？", subTitle: "", buttons: buttons) {
+        scl_alert(title: "你想干啥去？", subTitle: "", showCloseButton: true, buttons: buttons) {
             [weak self] tag, bTitle in
             if let weakSelf = self {
                 switch tag {
                 case 0:
+                    let vc = YYFilterViewController(nibName: "YYFilterViewController", bundle: nil)
+                    vc.function = weakSelf.function
+                    vc.model = weakSelf.dataSource[indexPath.row]
+                    vc.delegate = self
+                    weakSelf.navigationController?.pushViewController(vc, animated: true)
                     break
                 case 1:
                     let vc = YYClipperViewController()
@@ -256,6 +261,14 @@ extension YYRootViewController: YYClipperViewControllerDelegate {
         self.dataSource[0].image = image
         self.collectionView.reloadData()
     }
+}
+
+extension YYRootViewController: YYFilterViewControllerDelegate {
+    func filterViewControllerEditFinished(image: UIImage) {
+        
+        self.collectionView.reloadData()
+    }
+
 }
 
 

@@ -82,6 +82,10 @@
                         </imageView>
                         <imageView tag="7" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fyX-mR-exZ">
                             <rect key="frame" x="10" y="255" width="112" height="113"/>
+                            <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="jo1-cX-xbE" appends="YES" id="g5Q-ed-8Eq"/>
+                            </connections>
                         </imageView>
                         <imageView tag="8" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lgs-VM-MQ8">
                             <rect key="frame" x="132.5" y="255" width="112" height="113"/>
@@ -138,9 +142,6 @@
                         <constraint firstItem="PTs-SF-fq0" firstAttribute="centerY" secondItem="Hfk-Ce-yiK" secondAttribute="centerY" id="voZ-oS-J0J"/>
                         <constraint firstItem="fyX-mR-exZ" firstAttribute="width" secondItem="bwu-qN-xEB" secondAttribute="width" id="z8g-Wb-eBB"/>
                     </constraints>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="jo1-cX-xbE" appends="YES" id="2zs-0y-IHX"/>
-                    </connections>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGu-OT-wrK">
                     <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -165,49 +166,49 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="32.5" y="53.5"/>
         </view>
-        <tapGestureRecognizer id="t1v-ry-fzX">
+        <tapGestureRecognizer id="t1v-ry-fzX" userLabel="1Tap Gesture Recognizer">
             <connections>
-                <action selector="scanImage:" destination="-1" id="kIa-t4-2Uw"/>
+                <action selector="editImage:" destination="-1" id="zuM-Xy-bKh"/>
             </connections>
         </tapGestureRecognizer>
-        <tapGestureRecognizer id="3o9-gV-Zcn">
+        <tapGestureRecognizer id="3o9-gV-Zcn" userLabel="2Tap Gesture Recognizer">
             <connections>
-                <action selector="scanImage:" destination="-1" id="o3A-2L-dIA"/>
+                <action selector="editImage:" destination="-1" id="XrU-bE-hgE"/>
             </connections>
         </tapGestureRecognizer>
-        <tapGestureRecognizer id="aWq-q2-msN">
+        <tapGestureRecognizer id="aWq-q2-msN" userLabel="3Tap Gesture Recognizer">
             <connections>
-                <action selector="scanImage:" destination="-1" id="ZB2-L3-SPb"/>
+                <action selector="editImage:" destination="-1" id="UVB-5M-9je"/>
             </connections>
         </tapGestureRecognizer>
-        <tapGestureRecognizer id="aSb-U9-QUX">
+        <tapGestureRecognizer id="aSb-U9-QUX" userLabel="4Tap Gesture Recognizer">
             <connections>
-                <action selector="scanImage:" destination="-1" id="Z4w-2x-pLO"/>
+                <action selector="editImage:" destination="-1" id="ILP-qj-30c"/>
             </connections>
         </tapGestureRecognizer>
-        <tapGestureRecognizer id="t1g-pc-dUN">
+        <tapGestureRecognizer id="t1g-pc-dUN" userLabel="5Tap Gesture Recognizer">
             <connections>
-                <action selector="scanImage:" destination="-1" id="tm1-6I-hg5"/>
+                <action selector="editImage:" destination="-1" id="OQi-au-qnF"/>
             </connections>
         </tapGestureRecognizer>
-        <tapGestureRecognizer id="6wm-pO-Qtp">
+        <tapGestureRecognizer id="6wm-pO-Qtp" userLabel="6Tap Gesture Recognizer">
             <connections>
-                <action selector="scanImage:" destination="-1" id="UeE-IY-3ud"/>
+                <action selector="editImage:" destination="-1" id="iV1-Ja-n19"/>
             </connections>
         </tapGestureRecognizer>
-        <tapGestureRecognizer id="jo1-cX-xbE">
+        <tapGestureRecognizer id="jo1-cX-xbE" userLabel="7Tap Gesture Recognizer">
             <connections>
-                <action selector="scanImage:" destination="-1" id="gxi-gk-NdV"/>
+                <action selector="editImage:" destination="-1" id="jhY-0I-6y5"/>
             </connections>
         </tapGestureRecognizer>
-        <tapGestureRecognizer id="rBU-vU-UJE">
+        <tapGestureRecognizer id="rBU-vU-UJE" userLabel="8Tap Gesture Recognizer">
             <connections>
-                <action selector="scanImage:" destination="-1" id="rh3-RS-ITf"/>
+                <action selector="editImage:" destination="-1" id="Jic-xP-G8t"/>
             </connections>
         </tapGestureRecognizer>
-        <tapGestureRecognizer id="mud-rQ-f5o">
+        <tapGestureRecognizer id="mud-rQ-f5o" userLabel="9Tap Gesture Recognizer">
             <connections>
-                <action selector="scanImage:" destination="-1" id="y5j-uu-cHd"/>
+                <action selector="editImage:" destination="-1" id="YHW-Kc-SOR"/>
             </connections>
         </tapGestureRecognizer>
         <barButtonItem title="保存" id="Cn4-cO-nXo">

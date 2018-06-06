@@ -30,7 +30,6 @@ class YYClipViewController: YYBaseViewController {
         let image = imageClipperView?.clipImage()
         model.isClipped = true
         model.image = image
-//        UIImageWriteToSavedPhotosAlbum(image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +37,7 @@ class YYClipViewController: YYBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafeRawPointer) {
+    @objc override func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafeRawPointer) {
         var resultTitle:String?
         var resultMessage:String?
         if error != nil {

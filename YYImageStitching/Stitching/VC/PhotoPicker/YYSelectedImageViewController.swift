@@ -58,17 +58,24 @@ class YYSelectedImageViewController: YYBaseCollectionViewController {
             HUD.flash(.labeledError(title: "提醒", subtitle: "请选择图片"), delay: 2.0)
             return
         }
-        var image: UIImage!
-        self.imageManager.requestImage(for: self.selectedArray.first!.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
-            image = result ?? UIImage.init(named: "iw_none")
-        }
+        
         if (function == .nine) {
-            let vc = YYClipperViewController()
-            vc.function = function
-            vc.targetImage = image
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.imageManager.requestImage(for: self.selectedArray.first!.asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
+                let image = result ?? UIImage.init(named: "iw_none")
+                let vc = YYClipperViewController()
+                vc.function = self.function
+                vc.targetImage = image
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         } else if (function == .addFilter) {
-            
+            self.imageManager.requestImage(for: self.selectedArray.first!.asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
+                let image = result ?? UIImage.init(named: "iw_none")
+                let vc = YYFilterViewController(nibName: "YYFilterViewController", bundle: nil)
+                vc.function = self.function
+                vc.delegate = self
+                vc.targetImage = image
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         } else {
             myDelegate?.selectedImageBack(models: self.selectedArray)
             self.navigationController?.popViewController(animated: true)
@@ -174,5 +181,11 @@ extension YYSelectedImageViewController: YYPhotoGroupsControllerDelegate {
         selectedArray.removeAll()
         loadData(assets: assets)
         collectionView.reloadData()
+    }
+}
+
+extension YYSelectedImageViewController: YYFilterViewControllerDelegate {
+    func filterViewControllerEditFinished(image: UIImage) {
+        
     }
 }

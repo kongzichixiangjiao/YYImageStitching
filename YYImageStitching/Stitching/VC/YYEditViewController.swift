@@ -41,7 +41,6 @@ class YYEditViewController: YYPickerImageViewController {
         v.progressViewHandler = progressViewHandler
         v.borderToolsViewDidSelectedColorHanlder = borderToolsViewDidSelectedColorHanlder
         v.scaleToolsViewHandler = scaleToolsViewHandler
-        v.filtersToolsViewHandler = filtersToolsViewHandler
         return v
     }()
     
@@ -78,7 +77,6 @@ class YYEditViewController: YYPickerImageViewController {
         changeTransform(scale: self.model.scale)
         changeBorderColor(color: self.model.borderColor)
         changeBorderWidth(width: self.model.borderWidth, type: .add)
-        changeFilterImage(type: self.model.filter)
     }
     
     lazy var progressViewHandler: YYProgressView.YYProgressViewHandler = {
@@ -105,12 +103,6 @@ class YYEditViewController: YYPickerImageViewController {
         }
     }
     
-    lazy var filtersToolsViewHandler: YYSelectedFiltersView.FiltersToolsViewHandler = {
-        [weak self] type in
-        if let weakSelf = self {
-            weakSelf.changeFilterImage(type: type)
-        }
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -127,26 +119,6 @@ class YYEditViewController: YYPickerImageViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
-    }
-    
-    private func changeFilterImage(type: FilterEnum) {
-        
-        self.imageManager.requestImage(for: self.model.asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
-            guard let image = result else {
-                return
-            }
-            YYFilterManager.shared.outputImage(originalImage: image, type: type) {
-                [weak self] img,success  in
-                if let weakSelf = self {
-                    if success {
-                        weakSelf.model.filter = type
-                        weakSelf.clipView.image = img
-                    } else {
-                        weakSelf.clipView.image = image
-                    }
-                }
-            }
-        }
     }
     
     private func changeBorderWidth(width: CGFloat, type: YYClipViewSpaceType) {
@@ -178,11 +150,7 @@ class YYEditViewController: YYPickerImageViewController {
     @IBAction func scaleAction(_ sender: UIButton) {
         alertToolsView.show(type: .scale)
     }
-    
-    @IBAction func filterAction(_ sender: UIButton) {
-        alertToolsView.show(type: .filter)
-    }
-    
+
     @IBAction func deleteAction(_ sender: UIButton) {
         let alertController = UIAlertController(title: "注意咯", message: "疯了吧，删我？", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "没疯", style: .default) { (action) in
@@ -196,14 +164,7 @@ class YYEditViewController: YYPickerImageViewController {
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
     }
-    
-    @IBAction func clipAction(_ sender: UIButton) {
-        let vc = YYClipperViewController()
-        vc.delegate = self
-        vc.targetImage = self.model.image
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
+
     deinit {
         print("-----------YYEditViewController--------------")
     }
