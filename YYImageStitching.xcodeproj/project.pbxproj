@@ -20,8 +20,19 @@
 		DC229C7620639FB900F45C8C /* ScrollView+PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC229C7520639FB900F45C8C /* ScrollView+PlaceHolder.swift */; };
 		DC292AC22069E8A5004A989B /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC292AC12069E8A5004A989B /* UIDevice+Extension.swift */; };
 		DC40742920B80A41002B891E /* cropMaskView.png in Resources */ = {isa = PBXBuildFile; fileRef = DC40742820B80A41002B891E /* cropMaskView.png */; };
-		DC628DD420BE343C00C68F8D /* YYNineImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC628DD220BE343C00C68F8D /* YYNineImageViewController.swift */; };
-		DC628DD520BE343C00C68F8D /* YYNineImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC628DD320BE343C00C68F8D /* YYNineImageViewController.xib */; };
+		DC61188B20C8BB8C00F5DFD0 /* YYFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC61187C20C8BB8B00F5DFD0 /* YYFilterViewController.swift */; };
+		DC61188C20C8BB8C00F5DFD0 /* YYFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC61187D20C8BB8B00F5DFD0 /* YYFilterViewController.xib */; };
+		DC61188D20C8BB8C00F5DFD0 /* YYNineImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC61187F20C8BB8B00F5DFD0 /* YYNineImageViewController.swift */; };
+		DC61188E20C8BB8C00F5DFD0 /* YYNineImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC61188020C8BB8B00F5DFD0 /* YYNineImageViewController.xib */; };
+		DC61188F20C8BB8C00F5DFD0 /* YYMosaicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC61188220C8BB8B00F5DFD0 /* YYMosaicView.swift */; };
+		DC61189020C8BB8C00F5DFD0 /* YYMosaicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC61188320C8BB8B00F5DFD0 /* YYMosaicViewController.swift */; };
+		DC61189120C8BB8C00F5DFD0 /* YYMosaicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC61188420C8BB8B00F5DFD0 /* YYMosaicViewController.xib */; };
+		DC61189220C8BB8C00F5DFD0 /* YYLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC61188620C8BB8B00F5DFD0 /* YYLoginViewController.swift */; };
+		DC61189320C8BB8C00F5DFD0 /* YYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC61188720C8BB8B00F5DFD0 /* YYLoginViewController.xib */; };
+		DC61189420C8BB8C00F5DFD0 /* YYBaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC61188920C8BB8B00F5DFD0 /* YYBaseCollectionViewController.swift */; };
+		DC61189520C8BB8C00F5DFD0 /* YYBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC61188A20C8BB8B00F5DFD0 /* YYBaseViewController.swift */; };
+		DC61189820C8BBB900F5DFD0 /* YYFilterBottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC61189620C8BBB900F5DFD0 /* YYFilterBottomCell.swift */; };
+		DC61189920C8BBB900F5DFD0 /* YYFilterBottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC61189720C8BBB900F5DFD0 /* YYFilterBottomCell.xib */; };
 		DC6387D52071BC4200FFBA05 /* adImage3.gif in Resources */ = {isa = PBXBuildFile; fileRef = DC6387C82071BC4100FFBA05 /* adImage3.gif */; };
 		DC6387D62071BC4200FFBA05 /* adImage4.gif in Resources */ = {isa = PBXBuildFile; fileRef = DC6387C92071BC4100FFBA05 /* adImage4.gif */; };
 		DC6387D72071BC4200FFBA05 /* guideImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC6387CA2071BC4100FFBA05 /* guideImage1.jpg */; };
@@ -62,15 +73,14 @@
 		DC685D01207DBF9C005631C1 /* LayoutConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685CF6207DBF9C005631C1 /* LayoutConfiguration.swift */; };
 		DC685D04207DC135005631C1 /* YYCircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685D02207DC135005631C1 /* YYCircleCell.swift */; };
 		DC685D05207DC135005631C1 /* YYCircleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC685D03207DC135005631C1 /* YYCircleCell.xib */; };
+		DC73714020C8CDA2005BFE4A /* YYFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73713F20C8CDA2005BFE4A /* YYFilterModel.swift */; };
+		DC73714220C8D0CB005BFE4A /* filters.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC73714120C8D0CB005BFE4A /* filters.plist */; };
 		DC7EB758207B17FC004D7027 /* UIView+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7EB757207B17FC004D7027 /* UIView+Gesture.swift */; };
 		DC7FA63E20B6C29E00A6FC6F /* YYAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7FA63D20B6C29E00A6FC6F /* YYAlertViewController.swift */; };
-		DC849BC9206E4250003B1842 /* YYLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC849BC7206E4250003B1842 /* YYLoginViewController.swift */; };
-		DC849BCA206E4250003B1842 /* YYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC849BC8206E4250003B1842 /* YYLoginViewController.xib */; };
 		DC862EB0206DD51D00B7926F /* UIView+LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EAF206DD51D00B7926F /* UIView+LoadView.swift */; };
 		DC862EB2206DD58E00B7926F /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EB1206DD58E00B7926F /* NSObject+Extension.swift */; };
 		DC862EB4206DD68F00B7926F /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EB3206DD68F00B7926F /* UIView+Frame.swift */; };
 		DC862EE5206DDAFA00B7926F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EBA206DDAF900B7926F /* AppDelegate.swift */; };
-		DC862EE6206DDAFA00B7926F /* YYBaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EBC206DDAF900B7926F /* YYBaseCollectionViewController.swift */; };
 		DC862EE7206DDAFA00B7926F /* YYMovingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EBD206DDAF900B7926F /* YYMovingViewController.swift */; };
 		DC862EE8206DDAFA00B7926F /* YYPickerImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EBE206DDAF900B7926F /* YYPickerImageViewController.swift */; };
 		DC862EE9206DDAFA00B7926F /* YYRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862EBF206DDAF900B7926F /* YYRootViewController.swift */; };
@@ -131,17 +141,11 @@
 		DCB02AB12072326000F0D55B /* YYFilterStringCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB02AAF2072326000F0D55B /* YYFilterStringCell.xib */; };
 		DCB02AB32072330600F0D55B /* YYFilterStringFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB02AB22072330600F0D55B /* YYFilterStringFlowLayout.swift */; };
 		DCC06504206B82EF009DD6D9 /* UIView+Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC06503206B82EF009DD6D9 /* UIView+Shot.swift */; };
-		DCC382D920C6200800A67033 /* YYFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC382D720C6200800A67033 /* YYFilterViewController.swift */; };
-		DCC382DA20C6200800A67033 /* YYFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC382D820C6200800A67033 /* YYFilterViewController.xib */; };
-		DCC382DD20C66A7B00A67033 /* YYMosaicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC382DB20C66A7B00A67033 /* YYMosaicViewController.swift */; };
-		DCC382DE20C66A7B00A67033 /* YYMosaicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC382DC20C66A7B00A67033 /* YYMosaicViewController.xib */; };
 		DCC382E420C6877300A67033 /* squares.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC382E320C6877300A67033 /* squares.png */; };
-		DCC382E620C6907E00A67033 /* YYMosaicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC382E520C6907E00A67033 /* YYMosaicView.swift */; };
 		DCCB54FF206A1D240024F22B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCB54FE206A1D240024F22B /* Array+Extension.swift */; };
 		DCE43DCA20BBE0ED00FB1058 /* YYImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE43DC920BBE0ED00FB1058 /* YYImageView.swift */; };
 		DCE43DCC20BCF18500FB1058 /* timg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DCE43DCB20BCF18500FB1058 /* timg.jpeg */; };
 		DCE5A70020C4D121005124A0 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE5A6FF20C4D121005124A0 /* Other.swift */; };
-		DCE5A70220C4D35B005124A0 /* YYBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE5A70120C4D35B005124A0 /* YYBaseViewController.swift */; };
 		DCE6AD70207A03DD00B9117C /* WX+AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6AD6F207A03DC00B9117C /* WX+AppDelegate.swift */; };
 		DCF7465B206A17BB00C487B6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7465A206A17BB00C487B6 /* UIImageView+Extension.swift */; };
 		DCF7465D206A188900C487B6 /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7465C206A188800C487B6 /* CGSize+Extension.swift */; };
@@ -180,8 +184,19 @@
 		DC229C7520639FB900F45C8C /* ScrollView+PlaceHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScrollView+PlaceHolder.swift"; sourceTree = "<group>"; };
 		DC292AC12069E8A5004A989B /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		DC40742820B80A41002B891E /* cropMaskView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cropMaskView.png; sourceTree = "<group>"; };
-		DC628DD220BE343C00C68F8D /* YYNineImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYNineImageViewController.swift; sourceTree = "<group>"; };
-		DC628DD320BE343C00C68F8D /* YYNineImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYNineImageViewController.xib; sourceTree = "<group>"; };
+		DC61187C20C8BB8B00F5DFD0 /* YYFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYFilterViewController.swift; sourceTree = "<group>"; };
+		DC61187D20C8BB8B00F5DFD0 /* YYFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYFilterViewController.xib; sourceTree = "<group>"; };
+		DC61187F20C8BB8B00F5DFD0 /* YYNineImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYNineImageViewController.swift; sourceTree = "<group>"; };
+		DC61188020C8BB8B00F5DFD0 /* YYNineImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYNineImageViewController.xib; sourceTree = "<group>"; };
+		DC61188220C8BB8B00F5DFD0 /* YYMosaicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYMosaicView.swift; sourceTree = "<group>"; };
+		DC61188320C8BB8B00F5DFD0 /* YYMosaicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYMosaicViewController.swift; sourceTree = "<group>"; };
+		DC61188420C8BB8B00F5DFD0 /* YYMosaicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYMosaicViewController.xib; sourceTree = "<group>"; };
+		DC61188620C8BB8B00F5DFD0 /* YYLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYLoginViewController.swift; sourceTree = "<group>"; };
+		DC61188720C8BB8B00F5DFD0 /* YYLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYLoginViewController.xib; sourceTree = "<group>"; };
+		DC61188920C8BB8B00F5DFD0 /* YYBaseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYBaseCollectionViewController.swift; sourceTree = "<group>"; };
+		DC61188A20C8BB8B00F5DFD0 /* YYBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYBaseViewController.swift; sourceTree = "<group>"; };
+		DC61189620C8BBB900F5DFD0 /* YYFilterBottomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFilterBottomCell.swift; sourceTree = "<group>"; };
+		DC61189720C8BBB900F5DFD0 /* YYFilterBottomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYFilterBottomCell.xib; sourceTree = "<group>"; };
 		DC6387C82071BC4100FFBA05 /* adImage3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = adImage3.gif; sourceTree = "<group>"; };
 		DC6387C92071BC4100FFBA05 /* adImage4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = adImage4.gif; sourceTree = "<group>"; };
 		DC6387CA2071BC4100FFBA05 /* guideImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImage1.jpg; sourceTree = "<group>"; };
@@ -228,15 +243,14 @@
 		DC685CF6207DBF9C005631C1 /* LayoutConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConfiguration.swift; sourceTree = "<group>"; };
 		DC685D02207DC135005631C1 /* YYCircleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYCircleCell.swift; sourceTree = "<group>"; };
 		DC685D03207DC135005631C1 /* YYCircleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYCircleCell.xib; sourceTree = "<group>"; };
+		DC73713F20C8CDA2005BFE4A /* YYFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFilterModel.swift; sourceTree = "<group>"; };
+		DC73714120C8D0CB005BFE4A /* filters.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = filters.plist; sourceTree = "<group>"; };
 		DC7EB757207B17FC004D7027 /* UIView+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gesture.swift"; sourceTree = "<group>"; };
 		DC7FA63D20B6C29E00A6FC6F /* YYAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYAlertViewController.swift; sourceTree = "<group>"; };
-		DC849BC7206E4250003B1842 /* YYLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYLoginViewController.swift; sourceTree = "<group>"; };
-		DC849BC8206E4250003B1842 /* YYLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYLoginViewController.xib; sourceTree = "<group>"; };
 		DC862EAF206DD51D00B7926F /* UIView+LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoadView.swift"; sourceTree = "<group>"; };
 		DC862EB1206DD58E00B7926F /* NSObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		DC862EB3206DD68F00B7926F /* UIView+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		DC862EBA206DDAF900B7926F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC862EBC206DDAF900B7926F /* YYBaseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYBaseCollectionViewController.swift; sourceTree = "<group>"; };
 		DC862EBD206DDAF900B7926F /* YYMovingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYMovingViewController.swift; sourceTree = "<group>"; };
 		DC862EBE206DDAF900B7926F /* YYPickerImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYPickerImageViewController.swift; sourceTree = "<group>"; };
 		DC862EBF206DDAF900B7926F /* YYRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYRootViewController.swift; sourceTree = "<group>"; };
@@ -298,17 +312,11 @@
 		DCB02AAF2072326000F0D55B /* YYFilterStringCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYFilterStringCell.xib; sourceTree = "<group>"; };
 		DCB02AB22072330600F0D55B /* YYFilterStringFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFilterStringFlowLayout.swift; sourceTree = "<group>"; };
 		DCC06503206B82EF009DD6D9 /* UIView+Shot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shot.swift"; sourceTree = "<group>"; };
-		DCC382D720C6200800A67033 /* YYFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFilterViewController.swift; sourceTree = "<group>"; };
-		DCC382D820C6200800A67033 /* YYFilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYFilterViewController.xib; sourceTree = "<group>"; };
-		DCC382DB20C66A7B00A67033 /* YYMosaicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYMosaicViewController.swift; sourceTree = "<group>"; };
-		DCC382DC20C66A7B00A67033 /* YYMosaicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYMosaicViewController.xib; sourceTree = "<group>"; };
 		DCC382E320C6877300A67033 /* squares.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squares.png; sourceTree = "<group>"; };
-		DCC382E520C6907E00A67033 /* YYMosaicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYMosaicView.swift; sourceTree = "<group>"; };
 		DCCB54FE206A1D240024F22B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		DCE43DC920BBE0ED00FB1058 /* YYImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYImageView.swift; sourceTree = "<group>"; };
 		DCE43DCB20BCF18500FB1058 /* timg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg.jpeg; sourceTree = "<group>"; };
 		DCE5A6FF20C4D121005124A0 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
-		DCE5A70120C4D35B005124A0 /* YYBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYBaseViewController.swift; sourceTree = "<group>"; };
 		DCE6AD6F207A03DC00B9117C /* WX+AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WX+AppDelegate.swift"; sourceTree = "<group>"; };
 		DCF7465A206A17BB00C487B6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		DCF7465C206A188800C487B6 /* CGSize+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extension.swift"; sourceTree = "<group>"; };
@@ -401,6 +409,55 @@
 				DC862F10206DE73C00B7926F /* UICollectionView+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		DC61187B20C8BB8B00F5DFD0 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				DC61187C20C8BB8B00F5DFD0 /* YYFilterViewController.swift */,
+				DC61187D20C8BB8B00F5DFD0 /* YYFilterViewController.xib */,
+				DC61189620C8BBB900F5DFD0 /* YYFilterBottomCell.swift */,
+				DC61189720C8BBB900F5DFD0 /* YYFilterBottomCell.xib */,
+				DC73713F20C8CDA2005BFE4A /* YYFilterModel.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		DC61187E20C8BB8B00F5DFD0 /* Nine */ = {
+			isa = PBXGroup;
+			children = (
+				DC61187F20C8BB8B00F5DFD0 /* YYNineImageViewController.swift */,
+				DC61188020C8BB8B00F5DFD0 /* YYNineImageViewController.xib */,
+			);
+			path = Nine;
+			sourceTree = "<group>";
+		};
+		DC61188120C8BB8B00F5DFD0 /* Mosaic */ = {
+			isa = PBXGroup;
+			children = (
+				DC61188220C8BB8B00F5DFD0 /* YYMosaicView.swift */,
+				DC61188320C8BB8B00F5DFD0 /* YYMosaicViewController.swift */,
+				DC61188420C8BB8B00F5DFD0 /* YYMosaicViewController.xib */,
+			);
+			path = Mosaic;
+			sourceTree = "<group>";
+		};
+		DC61188520C8BB8B00F5DFD0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DC61188620C8BB8B00F5DFD0 /* YYLoginViewController.swift */,
+				DC61188720C8BB8B00F5DFD0 /* YYLoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		DC61188820C8BB8B00F5DFD0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DC61188920C8BB8B00F5DFD0 /* YYBaseCollectionViewController.swift */,
+				DC61188A20C8BB8B00F5DFD0 /* YYBaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		DC6387C72071BC4100FFBA05 /* guideImage */ = {
@@ -544,27 +601,21 @@
 		DC862EBB206DDAF900B7926F /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				DCE5A70120C4D35B005124A0 /* YYBaseViewController.swift */,
+				DC61188820C8BB8B00F5DFD0 /* Base */,
+				DC61187B20C8BB8B00F5DFD0 /* Filter */,
+				DC61188520C8BB8B00F5DFD0 /* Login */,
+				DC61188120C8BB8B00F5DFD0 /* Mosaic */,
+				DC61187E20C8BB8B00F5DFD0 /* Nine */,
 				DCA4DA8620BFDBE3006F6A60 /* Home */,
 				DCA4DA7F20BF986D006F6A60 /* PhotoPicker */,
 				DCAB75E420B3BFBC001F5A44 /* AD */,
 				DC7642F2207EFF8600E41C2A /* Wheel */,
-				DC862EBC206DDAF900B7926F /* YYBaseCollectionViewController.swift */,
 				DC862EBD206DDAF900B7926F /* YYMovingViewController.swift */,
 				DC862EBE206DDAF900B7926F /* YYPickerImageViewController.swift */,
 				DC862EBF206DDAF900B7926F /* YYRootViewController.swift */,
 				DC862EC0206DDAF900B7926F /* YYEditViewController.swift */,
-				DC849BC7206E4250003B1842 /* YYLoginViewController.swift */,
-				DC849BC8206E4250003B1842 /* YYLoginViewController.xib */,
 				DC6387EB2071C46400FFBA05 /* YYGuideImageViewController.swift */,
 				DCAB75EE20B4054C001F5A44 /* YYClipViewController.swift */,
-				DC628DD220BE343C00C68F8D /* YYNineImageViewController.swift */,
-				DC628DD320BE343C00C68F8D /* YYNineImageViewController.xib */,
-				DCC382D720C6200800A67033 /* YYFilterViewController.swift */,
-				DCC382D820C6200800A67033 /* YYFilterViewController.xib */,
-				DCC382DB20C66A7B00A67033 /* YYMosaicViewController.swift */,
-				DCC382DC20C66A7B00A67033 /* YYMosaicViewController.xib */,
-				DCC382E520C6907E00A67033 /* YYMosaicView.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -675,6 +726,7 @@
 				DC862EE3206DDAFA00B7926F /* download.plist */,
 				DCE43DCB20BCF18500FB1058 /* timg.jpeg */,
 				DC862EE4206DDAFA00B7926F /* img_default.png */,
+				DC73714120C8D0CB005BFE4A /* filters.plist */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -868,14 +920,14 @@
 			files = (
 				DC6387E02071BC4200FFBA05 /* shopping.gif in Resources */,
 				DCB02AAD2072308600F0D55B /* YYSelectedFiltersView.xib in Resources */,
-				DCC382DA20C6200800A67033 /* YYFilterViewController.xib in Resources */,
 				DC862F02206DDAFA00B7926F /* 5.jpg in Resources */,
 				DC6387E12071BC4200FFBA05 /* view_bg_image.png in Resources */,
+				DC61188E20C8BB8C00F5DFD0 /* YYNineImageViewController.xib in Resources */,
+				DC61189920C8BBB900F5DFD0 /* YYFilterBottomCell.xib in Resources */,
 				DC862F18206E21C700B7926F /* YYScaleToolsView.xib in Resources */,
 				DC862EF1206DDAFA00B7926F /* YYEmptyView.xib in Resources */,
 				DC6387DA2071BC4200FFBA05 /* guideImage4.jpg in Resources */,
 				DC862EF6206DDAFA00B7926F /* YYAlertToolsView.xib in Resources */,
-				DC849BCA206E4250003B1842 /* YYLoginViewController.xib in Resources */,
 				DC6387D82071BC4200FFBA05 /* guideImage2.jpg in Resources */,
 				DC6387D52071BC4200FFBA05 /* adImage3.gif in Resources */,
 				DC862EFC206DDAFA00B7926F /* YYScaleMovingCell.xib in Resources */,
@@ -887,26 +939,28 @@
 				DC6387DD2071BC4200FFBA05 /* guideImage7.gif in Resources */,
 				DCE43DCC20BCF18500FB1058 /* timg.jpeg in Resources */,
 				DCA6B58420B6B4A0003B9196 /* YYClipperBottomView.xib in Resources */,
-				DC628DD520BE343C00C68F8D /* YYNineImageViewController.xib in Resources */,
 				DC862F04206DDAFA00B7926F /* img_default.png in Resources */,
 				DC6387D92071BC4200FFBA05 /* guideImage3.jpg in Resources */,
 				DC862EFA206DDAFA00B7926F /* YYMovingCell.xib in Resources */,
 				DC862EFE206DDAFA00B7926F /* YYStitchingCell.xib in Resources */,
 				DC64BC0B205FB88B003E204E /* LaunchScreen.storyboard in Resources */,
 				DCB02AB12072326000F0D55B /* YYFilterStringCell.xib in Resources */,
-				DCC382DE20C66A7B00A67033 /* YYMosaicViewController.xib in Resources */,
 				DC6387DB2071BC4200FFBA05 /* guideImage5.jpg in Resources */,
 				DC6387DC2071BC4200FFBA05 /* guideImage6.gif in Resources */,
+				DC61189120C8BB8C00F5DFD0 /* YYMosaicViewController.xib in Resources */,
 				DC6387DF2071BC4200FFBA05 /* guideMovie1.mov in Resources */,
 				DC685D05207DC135005631C1 /* YYCircleCell.xib in Resources */,
+				DC61188C20C8BB8C00F5DFD0 /* YYFilterViewController.xib in Resources */,
 				DC6387DE2071BC4200FFBA05 /* guideImage8.gif in Resources */,
 				DC862EF3206DDAFA00B7926F /* YYNavigationView.xib in Resources */,
 				DC64BC08205FB88B003E204E /* Assets.xcassets in Resources */,
+				DC73714220C8D0CB005BFE4A /* filters.plist in Resources */,
 				DCA4DA7E20BF9806006F6A60 /* YYPhotoPicker.storyboard in Resources */,
 				DC6387D62071BC4200FFBA05 /* adImage4.gif in Resources */,
 				DCC382E420C6877300A67033 /* squares.png in Resources */,
 				DC6387D72071BC4200FFBA05 /* guideImage1.jpg in Resources */,
 				DC40742920B80A41002B891E /* cropMaskView.png in Resources */,
+				DC61189320C8BB8C00F5DFD0 /* YYLoginViewController.xib in Resources */,
 				DC64BC06205FB88B003E204E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -957,6 +1011,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Fusuma/Fusuma.framework",
 				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSource/ImageSource.framework",
 				"${BUILT_PRODUCTS_DIR}/JNWSpringAnimation/JNWSpringAnimation.framework",
 				"${BUILT_PRODUCTS_DIR}/Marshroute/Marshroute.framework",
@@ -975,6 +1030,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fusuma.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSource.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JNWSpringAnimation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Marshroute.framework",
@@ -1001,6 +1057,7 @@
 			files = (
 				DC862F00206DDAFA00B7926F /* YYRootFlowLayout.swift in Sources */,
 				DC862EFD206DDAFA00B7926F /* YYStitchingCell.swift in Sources */,
+				DC61189820C8BBB900F5DFD0 /* YYFilterBottomCell.swift in Sources */,
 				DC862EF5206DDAFA00B7926F /* YYAlertToolsView.swift in Sources */,
 				DCAB75F520B53E5D001F5A44 /* YYClipAreaLayer.swift in Sources */,
 				DC229C7620639FB900F45C8C /* ScrollView+PlaceHolder.swift in Sources */,
@@ -1013,13 +1070,12 @@
 				DC862EED206DDAFA00B7926F /* YYClipBorderView.swift in Sources */,
 				DCCB54FF206A1D240024F22B /* Array+Extension.swift in Sources */,
 				DC685CA4207DA644005631C1 /* CirCleLayout.swift in Sources */,
-				DCC382E620C6907E00A67033 /* YYMosaicView.swift in Sources */,
 				DC862EE5206DDAFA00B7926F /* AppDelegate.swift in Sources */,
 				DC685CF8207DBF9C005631C1 /* CollectionViewCaterpillarLayout.swift in Sources */,
 				DC862EB4206DD68F00B7926F /* UIView+Frame.swift in Sources */,
 				DC02F5BC206F943C006903DD /* ImageHelper.swift in Sources */,
 				DC862EB2206DD58E00B7926F /* NSObject+Extension.swift in Sources */,
-				DCC382D920C6200800A67033 /* YYFilterViewController.swift in Sources */,
+				DC61188B20C8BB8C00F5DFD0 /* YYFilterViewController.swift in Sources */,
 				DC862EEF206DDAFA00B7926F /* YYClipView.swift in Sources */,
 				DC862EF4206DDAFA00B7926F /* YYProgressView.swift in Sources */,
 				DCAB75E320B3BE4D001F5A44 /* YYInterstitialAdViewController.swift in Sources */,
@@ -1031,17 +1087,15 @@
 				DC862EEE206DDAFA00B7926F /* YYClipImageView.swift in Sources */,
 				DC64BC3A205FC1A0003E204E /* UIImage+Extension.swift in Sources */,
 				DC862F13206DEB7300B7926F /* Theme.swift in Sources */,
+				DC61189420C8BB8C00F5DFD0 /* YYBaseCollectionViewController.swift in Sources */,
 				DC0BE9AA207CBD2700B959E3 /* YYSectorView.swift in Sources */,
 				DCAB75F720B54F00001F5A44 /* YYClipperViewController.swift in Sources */,
 				DC685CFA207DBF9C005631C1 /* CollectionViewLayout.swift in Sources */,
 				DC7FA63E20B6C29E00A6FC6F /* YYAlertViewController.swift in Sources */,
 				DCAB75EF20B4054C001F5A44 /* YYClipViewController.swift in Sources */,
-				DC862EE6206DDAFA00B7926F /* YYBaseCollectionViewController.swift in Sources */,
 				DC862EE8206DDAFA00B7926F /* YYPickerImageViewController.swift in Sources */,
-				DCE5A70220C4D35B005124A0 /* YYBaseViewController.swift in Sources */,
 				DC685D01207DBF9C005631C1 /* LayoutConfiguration.swift in Sources */,
 				DCB02AB02072326000F0D55B /* YYFilterStringCell.swift in Sources */,
-				DC849BC9206E4250003B1842 /* YYLoginViewController.swift in Sources */,
 				DC862F01206DDAFA00B7926F /* YYStitchingFlowLayout.swift in Sources */,
 				DC1623A9206C9860007AFA13 /* UIView+Layout.swift in Sources */,
 				DC16B9E92072033D00C048E3 /* YYToast.swift in Sources */,
@@ -1057,28 +1111,31 @@
 				DC685CF9207DBF9C005631C1 /* CollectionViewCircleLayout.swift in Sources */,
 				DCC06504206B82EF009DD6D9 /* UIView+Shot.swift in Sources */,
 				DCE6AD70207A03DD00B9117C /* WX+AppDelegate.swift in Sources */,
+				DC61189020C8BB8C00F5DFD0 /* YYMosaicViewController.swift in Sources */,
 				DC862F08206DE64400B7926F /* YYBorderToolsView.swift in Sources */,
 				DC862F0E206DE69D00B7926F /* YYBorderToolsColorCell.swift in Sources */,
+				DC61188D20C8BB8C00F5DFD0 /* YYNineImageViewController.swift in Sources */,
 				DCE43DCA20BBE0ED00FB1058 /* YYImageView.swift in Sources */,
 				DC862EEA206DDAFA00B7926F /* YYEditViewController.swift in Sources */,
 				DCAB75E820B3E9D5001F5A44 /* YYOnePixView.swift in Sources */,
 				DC685CA6207DA793005631C1 /* YYWheelViewController.swift in Sources */,
 				DC862EE9206DDAFA00B7926F /* YYRootViewController.swift in Sources */,
-				DCC382DD20C66A7B00A67033 /* YYMosaicViewController.swift in Sources */,
 				DCA4DA8120BF986D006F6A60 /* YYSelectedImageViewController.swift in Sources */,
 				DC02F5B8206F8D0D006903DD /* YYFilterManager.swift in Sources */,
 				DC02F5BB206F943C006903DD /* ImageVIewExtension.swift in Sources */,
+				DC61188F20C8BB8C00F5DFD0 /* YYMosaicView.swift in Sources */,
 				DCB02AB32072330600F0D55B /* YYFilterStringFlowLayout.swift in Sources */,
 				DCA0D0D920B3B0CD00308088 /* AppDelegate+GoogleAd.swift in Sources */,
 				DC862EF0206DDAFA00B7926F /* YYEmptyView.swift in Sources */,
 				DC292AC22069E8A5004A989B /* UIDevice+Extension.swift in Sources */,
 				DC685D04207DC135005631C1 /* YYCircleCell.swift in Sources */,
+				DC61189520C8BB8C00F5DFD0 /* YYBaseViewController.swift in Sources */,
 				DCB02AAB2072307900F0D55B /* YYSelectedFiltersView.swift in Sources */,
 				DCF7465B206A17BB00C487B6 /* UIImageView+Extension.swift in Sources */,
 				DC862EF2206DDAFA00B7926F /* YYNavigationView.swift in Sources */,
 				DCA4DA8520BF9A1E006F6A60 /* YYPhotoPickerManager.swift in Sources */,
+				DC61189220C8BB8C00F5DFD0 /* YYLoginViewController.swift in Sources */,
 				DC6387EC2071C46400FFBA05 /* YYGuideImageViewController.swift in Sources */,
-				DC628DD420BE343C00C68F8D /* YYNineImageViewController.swift in Sources */,
 				DCF7465D206A188900C487B6 /* CGSize+Extension.swift in Sources */,
 				DCAB75EC20B3FFFF001F5A44 /* ImageClipperView.swift in Sources */,
 				DC0BE9A8207C8C4B00B959E3 /* YYUserModel.swift in Sources */,
@@ -1088,6 +1145,7 @@
 				DC862F16206E21BF00B7926F /* YYScaleToolsView.swift in Sources */,
 				DC862EB0206DD51D00B7926F /* UIView+LoadView.swift in Sources */,
 				DC862EFB206DDAFA00B7926F /* YYScaleMovingCell.swift in Sources */,
+				DC73714020C8CDA2005BFE4A /* YYFilterModel.swift in Sources */,
 				DC64BC38205FC165003E204E /* String+Extension.swift in Sources */,
 				DC862EFF206DDAFA00B7926F /* YYMovingFlowLayout.swift in Sources */,
 				DC862EE7206DDAFA00B7926F /* YYMovingViewController.swift in Sources */,

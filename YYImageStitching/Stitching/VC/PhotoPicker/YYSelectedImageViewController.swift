@@ -76,6 +76,14 @@ class YYSelectedImageViewController: YYBaseCollectionViewController {
                 vc.targetImage = image
                 self.navigationController?.pushViewController(vc, animated: true)
             }
+        } else if (function == .mosaic) {
+            self.imageManager.requestImage(for: self.selectedArray.first!.asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
+                let image = result ?? UIImage.init(named: "iw_none")
+                let vc = YYMosaicViewController(nibName: "YYMosaicViewController", bundle: nil)
+                vc.function = self.function
+                vc.targetImage = image
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         } else {
             myDelegate?.selectedImageBack(models: self.selectedArray)
             self.navigationController?.popViewController(animated: true)

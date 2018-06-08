@@ -21,7 +21,6 @@ class YYMosaicViewController: YYBaseViewController {
         
         self.navigationItem.rightBarButtonItem = saveButton
         
-        targetImage = UIImage(named: "5.jpg")
     }
     
     lazy var context: CIContext = {
@@ -51,6 +50,8 @@ class YYMosaicViewController: YYBaseViewController {
         source?.processImage()
         let new = m.imageFromCurrentFramebuffer()
         
+        
+        mosaicView.surfaceImage = targetImage
         mosaicView.image = new
         
         HUD.hide()
@@ -59,7 +60,6 @@ class YYMosaicViewController: YYBaseViewController {
     lazy var mosaicView: YYMosaicView = {
         let v = YYMosaicView(frame: CGRect(x: 0, y: 64, width: self.view.width, height: self.view.height - 64))
         self.view.addSubview(v)
-        v.surfaceImage = targetImage
         return v
     }()
     
@@ -67,7 +67,7 @@ class YYMosaicViewController: YYBaseViewController {
         scl_alert(title: "选择", subTitle: "确定保存吗？", buttons: ["保存"]) {
             [weak self] tag, bTitle in
             if let weakSelf = self {
-                weakSelf.saveImage(image: weakSelf.view.yy_screenshot(size: weakSelf.targetImage.size)!)
+                weakSelf.saveImage(image: weakSelf.mosaicView.getSaveView())
             }
         }
     }

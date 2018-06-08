@@ -42,7 +42,8 @@ class YYHomeViewController: YYBaseViewController {
     }
     
     @IBAction func masaike(_ sender: UIButton) {
-        let vc = YYMosaicViewController(nibName: "YYMosaicViewController", bundle: nil)
+        let vc = YYSelectedImageViewController()
+        vc.maxCount = 1
         vc.function = .mosaic
         self.navigationController?.pushViewController(vc, animated: true)
     }

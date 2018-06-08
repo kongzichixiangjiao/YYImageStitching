@@ -19,18 +19,22 @@ class YYMosaicView: UIView {
     var image: UIImage! {
         didSet {
             self.imageLayer.contents = image.cgImage
+
         }
     }
     
     var surfaceImage: UIImage!   {
         didSet {
             self.imageView.image = surfaceImage
+            self.imageView.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: self.saveView.bounds.width, height: self.saveView.bounds.width / surfaceImage.width * surfaceImage.height))
+            self.imageView.center = self.saveView.center
         }
     }
     
     lazy var imageView: UIImageView = {
         let v = UIImageView()
-        v.frame = self.saveView.bounds
+        v.backgroundColor = UIColor.orange
+        v.contentMode = .scaleAspectFit
         return v
     }()
     
@@ -53,6 +57,7 @@ class YYMosaicView: UIView {
     var appendPaths: [[String : [CGPoint]]] = []
     var paths: [String : [CGPoint]] = ["":[CGPoint.zero]]
     var movePoint: [CGPoint] = []
+    private let space: CGFloat = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -65,16 +70,16 @@ class YYMosaicView: UIView {
     
     private func initViews() {
         
-        saveView.frame = CGRect(x: 20, y: 20, width: self.bounds.width - 40, height: self.bounds.height - 44 - 40)
+        saveView.frame = CGRect(x: space, y: space, width: self.bounds.width - space * 2, height: self.bounds.height - 44 - space * 2)
         self.addSubview(saveView)
         
         saveView.addSubview(imageView)
         
         imageLayer.frame = self.saveView.bounds
-        self.layer.addSublayer(imageLayer)
+        self.imageView.layer.addSublayer(imageLayer)
         
         shapeLayer.frame = self.saveView.bounds
-        self.layer.addSublayer(shapeLayer)
+        self.imageView.layer.addSublayer(shapeLayer)
         
         self.imageLayer.mask = self.shapeLayer
     }
@@ -97,7 +102,10 @@ class YYMosaicView: UIView {
         super.touchesBegan(touches, with: event)
         let touch = touches.first
         let point = touch?.location(in: self)
-        self.path.move(to: CGPoint(x: point!.x, y: point!.y))
+        if !self.imageView.frame.contains(point!) {
+            return
+        }
+        self.path.move(to: CGPoint(x: point!.x - space, y: point!.y - space - (self.saveView.height / 2 - self.imageView.height / 2)))
         self.shapeLayer.path = self.path.mutableCopy()
         paths["begin"] = [point] as? [CGPoint]
     }
@@ -106,7 +114,10 @@ class YYMosaicView: UIView {
         super.touchesMoved(touches, with: event)
         let touch = touches.first
         let point = touch?.location(in: self)
-        self.path.addLine(to: CGPoint(x: point!.x, y: point!.y))
+        if !self.imageView.frame.contains(point!) {
+            return
+        }
+        self.path.addLine(to: CGPoint(x: point!.x - space, y: point!.y - space - (self.saveView.height / 2 - self.imageView.height / 2)))
         self.shapeLayer.path = self.path.mutableCopy()
         movePoint.append(point!)
         paths["move"] = movePoint
@@ -116,7 +127,7 @@ class YYMosaicView: UIView {
         super.touchesEnded(touches, with: event)
         let touch = touches.first
         let point = touch?.location(in: self)
-        paths["end"] = [point] as? [CGPoint]
+        paths["end"] = [CGPoint(x: point!.x - space, y: point!.y - space - (self.saveView.height / 2 - self.imageView.height / 2))]
         appendPaths.append(paths)
         
         movePoint.removeAll()
@@ -157,6 +168,10 @@ class YYMosaicView: UIView {
             shapeLayer.path = newPath.mutableCopy()
             self.path = newPath.mutableCopy()!
         }
+    }
+    
+    func getSaveView() -> UIImage {
+        return self.imageView.yy_screenshot(size: self.imageView.size)!
     }
     
     required init?(coder aDecoder: NSCoder) {

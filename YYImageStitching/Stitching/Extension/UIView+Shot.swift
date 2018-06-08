@@ -31,7 +31,8 @@ extension UIView {
     }
     
     func yy_screenshot(size: CGSize) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(size, true, UIScreen.main.scale)
+        UIGraphicsBeginImageContext(size)
+//        UIGraphicsBeginImageContextWithOptions(size, true, UIScreen.main.scale)
         self.layer.render(in: UIGraphicsGetCurrentContext()!)
         let img = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

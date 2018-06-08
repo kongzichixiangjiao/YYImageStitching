@@ -5,6 +5,7 @@ PODS:
   - Fusuma (1.2.4)
   - Google-Mobile-Ads-SDK (7.30.0)
   - GPUImage (0.1.7)
+  - HandyJSON (4.1.1)
   - ImageSource/AlamofireImage (2.0.1):
     - AlamofireImage (~> 3)
     - ImageSource/Remote
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - Fusuma
   - Google-Mobile-Ads-SDK
   - GPUImage
+  - HandyJSON
   - Paparazzo
   - PKHUD (~> 5.0)
   - SCLAlertView
@@ -77,12 +79,13 @@ DEPENDENCIES:
   - YPImagePicker
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
     - Fusuma
     - Google-Mobile-Ads-SDK
     - GPUImage
+    - HandyJSON
     - ImageSource
     - JNWSpringAnimation
     - Marshroute
@@ -102,6 +105,7 @@ SPEC CHECKSUMS:
   Fusuma: e85c394878a2e1549c67140ba7c038aff8d7581c
   Google-Mobile-Ads-SDK: 7404f68120ae8682afeb5af001fbf4aad731c78e
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
   ImageSource: 86b77f1fbf18273c7a3f8274900b169f78675a5e
   JNWSpringAnimation: cd4c2f4464324f63f176c3624ffccf205211a100
   Marshroute: 15cf8067a997bf298e9db9317dd7c32b8799a787
@@ -115,6 +119,6 @@ SPEC CHECKSUMS:
   WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
   YPImagePicker: 7b44e0ca5e969a18e83cd3b54cec2e0cb287a40e
 
-PODFILE CHECKSUM: 70b2c17fd6ccd55f3e290acd389ee106d9567d67
+PODFILE CHECKSUM: dfda87ec08cacd369023b0bc3fa997f428996c8d
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

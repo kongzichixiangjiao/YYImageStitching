@@ -4,14 +4,20 @@ inhibit_all_warnings!
 use_frameworks!
 
 target 'YYImageStitching' do
+
+# 微信sdk
 pod 'WechatOpenSDK'
 pod 'SQLite.swift', '~> 0.11.0'
+# 谷歌广告
 pod 'Google-Mobile-Ads-SDK'
 pod 'SnapKit'
+
+pod 'HandyJSON'
 
 pod 'Fusuma'
 # 图片预览
 pod 'SKPhotoBrowser'
+# pod 'CardSlider'
 # 图片选择
 #pod 'ImagePickerSheetController'
 # 图片处理
@@ -22,6 +28,9 @@ pod 'Paparazzo'
 # 提醒
 pod 'SCLAlertView'
 pod 'PKHUD', '~> 5.0'
+
+# 切换交互
+# pod 'paper-onboarding'
 
 #GPU
 pod 'GPUImage'

@@ -14,6 +14,7 @@ class YYBaseViewController: UIViewController {
 
     var function: FunctionType?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,7 +51,10 @@ class YYBaseViewController: UIViewController {
     func pk_hud_success(title: String = "成功", text: String) {
         HUD.flash(.labeledSuccess(title: title, subtitle: text), delay: 0.8)
     }
-
+    
+    func pk_hud_error(title: String = "出错了", text: String) {
+        HUD.flash(.labeledError(title: title, subtitle: text), delay: 0.8)
+    }
 }
 
 extension YYBaseViewController {
