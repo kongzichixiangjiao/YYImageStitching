@@ -31,6 +31,7 @@ class YYFilterViewController: YYBaseViewController {
     
     var dataSource: [YYFilterModel] = []
     var filterModel: YYFilterModel!
+    var groupFilter = GPUImageFilterGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -389,17 +390,24 @@ class YYFilterViewController: YYBaseViewController {
             return nil
         }
         
+//        groupFilter.addTarget(filter as! GPUImageInput?)
+        
         let img = UIImage(named: "lookup_soft_elegance_1.png")
         let source1 = GPUImagePicture(cgImage: img?.cgImage, smoothlyScaleOutput: true)
         source1?.addTarget(filter as! GPUImageInput?)
+        source1?.addTarget(groupFilter)
         source1?.processImage()
         
         let source = GPUImagePicture(image: targetImage)
         source?.addTarget(filter as! GPUImageInput?)
+//        source?.addTarget(groupFilter)
         source?.processImage()
         
         filter.useNextFrameForImageCapture()
         let new = filter.imageFromCurrentFramebuffer()
+        
+//        groupFilter.useNextFrameForImageCapture()
+//        let new = groupFilter.imageFromCurrentFramebuffer()
         
         self.imageView.image = new
         
@@ -448,6 +456,7 @@ extension YYFilterViewController: UICollectionViewDelegate, UICollectionViewData
         pk_hud(text: self.title!)
         
         self.filterModel.thumbnailImage = GPUImageFilter()
+        targetImage = GPUImageFilter()
         
         collectionView.reloadData()
     }
