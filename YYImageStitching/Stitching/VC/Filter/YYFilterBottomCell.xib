@@ -13,32 +13,42 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YYFilterBottomCell" id="gTV-IL-0wX" customClass="YYFilterBottomCell" customModule="YYImageStitching" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="190" height="99"/>
+            <rect key="frame" x="0.0" y="0.0" width="152" height="130"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="190" height="99"/>
+                <rect key="frame" x="0.0" y="0.0" width="152" height="130"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2v-4M-vkW">
-                        <rect key="frame" x="0.0" y="0.0" width="190" height="99"/>
+                        <rect key="frame" x="0.0" y="110" width="152" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="j8g-BW-48i"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qSS-wG-j33">
+                        <rect key="frame" x="0.0" y="0.0" width="152" height="110"/>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="x2v-4M-vkW" firstAttribute="top" secondItem="qSS-wG-j33" secondAttribute="bottom" id="ICX-N6-hNI"/>
                 <constraint firstAttribute="trailing" secondItem="x2v-4M-vkW" secondAttribute="trailing" id="IX3-qk-UOp"/>
                 <constraint firstAttribute="bottom" secondItem="x2v-4M-vkW" secondAttribute="bottom" id="JDH-Hp-P0R"/>
                 <constraint firstItem="x2v-4M-vkW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MEf-Vj-UfH"/>
-                <constraint firstItem="x2v-4M-vkW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fLP-PB-I8V"/>
+                <constraint firstItem="qSS-wG-j33" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bWr-a6-IEu"/>
+                <constraint firstItem="qSS-wG-j33" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wlM-C5-zIw"/>
+                <constraint firstAttribute="trailing" secondItem="qSS-wG-j33" secondAttribute="trailing" id="zyt-dj-NRP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="190" height="99"/>
+            <size key="customSize" width="152" height="130"/>
             <connections>
                 <outlet property="textLabel" destination="x2v-4M-vkW" id="J4O-qZ-ra3"/>
+                <outlet property="thumbnailImageView" destination="qSS-wG-j33" id="Mpu-ge-ruv"/>
             </connections>
-            <point key="canvasLocation" x="104" y="78.5"/>
+            <point key="canvasLocation" x="85" y="94"/>
         </collectionViewCell>
     </objects>
 </document>

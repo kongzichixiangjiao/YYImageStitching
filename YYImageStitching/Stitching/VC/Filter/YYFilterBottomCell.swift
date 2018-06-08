@@ -13,6 +13,7 @@ class YYFilterBottomCell: UICollectionViewCell {
     static let identifier = "YYFilterBottomCell"
     
     @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var thumbnailImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

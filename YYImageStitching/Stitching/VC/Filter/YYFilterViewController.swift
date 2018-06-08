@@ -27,6 +27,7 @@ class YYFilterViewController: YYBaseViewController {
     
     var model: YYImageModel?
     var targetImage: UIImage?
+    var twoTargetImage: UIImage?
     
     var dataSource: [YYFilterModel] = []
     var filterModel: YYFilterModel!
@@ -136,7 +137,7 @@ class YYFilterViewController: YYBaseViewController {
         }
     }
 
-    func GPUImageFilter() {
+    func GPUImageFilter() -> UIImage? {
         var filter: GPUImageOutput!
         
         switch YYFilterType(rawValue: self.filterModel.type) {
@@ -314,6 +315,10 @@ class YYFilterViewController: YYBaseViewController {
             
         case .Multiply?:
             filter = GPUImageMultiplyBlendFilter()
+            
+            break
+        case .Overlay?:
+            filter = GPUImageOverlayBlendFilter()
             break
         case .Normal?:
             filter = GPUImageNormalBlendFilter()
@@ -381,18 +386,28 @@ class YYFilterViewController: YYBaseViewController {
         
         if filter == nil {
             pk_hud_error(text: "滤镜创建失败")
-            return
+            return nil
         }
+        
+        let img = UIImage(named: "lookup_soft_elegance_1.png")
+        let source1 = GPUImagePicture(cgImage: img?.cgImage, smoothlyScaleOutput: true)
+        source1?.addTarget(filter as! GPUImageInput?)
+        source1?.processImage()
+        
         let source = GPUImagePicture(image: targetImage)
         source?.addTarget(filter as! GPUImageInput?)
         source?.processImage()
+        
         filter.useNextFrameForImageCapture()
         let new = filter.imageFromCurrentFramebuffer()
+        
         self.imageView.image = new
+        
+        return new
     }
     
     @IBAction func sliderChangeValue(_ sender: UISlider) {
-        GPUImageFilter()
+        _ = GPUImageFilter()
         self.filterModel.sliderCurrentValue = sender.value
         progressLabel.text = String(format: "%.2f", sender.value)
     }
@@ -409,6 +424,7 @@ extension YYFilterViewController: UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YYFilterBottomCell.identifier, for: indexPath) as! YYFilterBottomCell
         let model = self.dataSource[indexPath.row]
         cell.textLabel.text = model.type
+        cell.thumbnailImageView.image = model.thumbnailImage
         return cell
     }
     
@@ -417,7 +433,7 @@ extension YYFilterViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 44, height: collectionView.height)
+        return CGSize(width: 100, height: collectionView.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -429,11 +445,10 @@ extension YYFilterViewController: UICollectionViewDelegate, UICollectionViewData
         
         setupSlider()
         
-        collectionView.reloadData()
-        
-        targetImage = self.imageView.image
         pk_hud(text: self.title!)
         
-        GPUImageFilter()
+        self.filterModel.thumbnailImage = GPUImageFilter()
+        
+        collectionView.reloadData()
     }
 }
