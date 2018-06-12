@@ -27,7 +27,7 @@ class YYFilterViewController: YYBaseViewController {
     
     var model: YYImageModel?
     var targetImage: UIImage?
-    var twoTargetImage: UIImage?
+    var thumbnailImage: UIImage?
     
     var dataSource: [YYFilterModel] = []
     var filterModel: YYFilterModel!
@@ -36,8 +36,9 @@ class YYFilterViewController: YYBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initData()
+        
         initViews()
+        initData()
         registerCells()
     }
     
@@ -58,9 +59,7 @@ class YYFilterViewController: YYBaseViewController {
     
     func initFilters(model: YYFilterModel) {
         self.filterModel = model
-        pk_hud(text: model.type)
-        
-        model.thumbnailImage = GPUImageFilter()
+        model.thumbnailImage = GPUImageFilter(isThumbnail: true)
         
         collectionView.reloadData()
     }
@@ -75,8 +74,11 @@ class YYFilterViewController: YYBaseViewController {
         
         if let image = targetImage {
             imageView.image = image
+            thumbnailImage = image.yy_compressImage(100, imageLength: 100)
         } else {
+            targetImage = model?.image
             imageView.image = model?.image
+            thumbnailImage = model?.image?.yy_compressImage(100, imageLength: 100)
         }
     }
     
@@ -99,12 +101,15 @@ class YYFilterViewController: YYBaseViewController {
             }
             return
         }
-        
+        if (function == .imageJoint) {
+            self.model?.image = self.imageView.image
+        }
         delegate?.filterViewControllerEditFinished(image: self.imageView.image!)
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {
+        delegate?.filterViewControllerEditFinished(image: self.imageView.image!)
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -151,7 +156,7 @@ class YYFilterViewController: YYBaseViewController {
         }
     }
     
-    func GPUImageFilter() -> UIImage? {
+    func GPUImageFilter(isThumbnail: Bool = false) -> UIImage? {
         var filter: GPUImageOutput!
         var colormatrix: [Float]!
         
@@ -470,8 +475,11 @@ class YYFilterViewController: YYBaseViewController {
             (buffer: inout UnsafeMutableBufferPointer<Float>) -> UnsafeMutablePointer<Float> in
             return buffer.baseAddress!
         }
-        
-        self.imageView.image = targetImage?.yy_image(colorMatrix: p)
+        if isThumbnail {
+            self.imageView.image = thumbnailImage?.yy_image(colorMatrix: p)
+        } else {
+            self.imageView.image = targetImage?.yy_image(colorMatrix: p)
+        }
 
         return self.imageView.image
     }

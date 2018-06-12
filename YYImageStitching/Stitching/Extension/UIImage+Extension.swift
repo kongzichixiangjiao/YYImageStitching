@@ -62,20 +62,44 @@ extension UIImage {
      *
      *  return 压缩后图片的二进制
      */
-    func yy_compressImage(_ maxLength: Int) -> Data? {
+    func yy_compressImage(_ kbLength: Int, imageLength: CGFloat) -> Data? {
         
-        let newSize = self.yy_scaleImage(self, imageLength: 300)
+        let newSize = self.yy_scaleImage(self, imageLength: imageLength)
         let newImage = self.yy_resizeImage(newSize: newSize)
         
         var compress:CGFloat = 0.9
         var data = UIImageJPEGRepresentation(newImage, compress)
         
-        while data!.count > maxLength && compress > 0.01 {
+        while data!.count > kbLength * 1024 && compress > 0.01 {
             compress -= 0.02
             data = UIImageJPEGRepresentation(newImage, compress)
         }
         
         return data
+    }
+    
+    /**
+     *  压缩上传图片到指定字节
+     *
+     *  image     压缩的图片
+     *  maxLength 压缩后最大字节大小
+     *
+     *  return 图片
+     */
+    func yy_compressImage(_ kbLength: Int, imageLength: CGFloat) -> UIImage? {
+        
+        let newSize = self.yy_scaleImage(self, imageLength: imageLength)
+        let newImage = self.yy_resizeImage(newSize: newSize)
+        
+        var compress:CGFloat = 0.9
+        var data = UIImageJPEGRepresentation(newImage, compress)
+        
+        while data!.count > kbLength * 1024 && compress > 0.01 {
+            compress -= 0.02
+            data = UIImageJPEGRepresentation(newImage, compress)
+        }
+        
+        return UIImage(data: data!)
     }
     
     /**

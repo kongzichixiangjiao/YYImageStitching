@@ -27,6 +27,13 @@ class YYHomeViewController: YYBaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func caijian(_ sender: UIButton) {
+        let vc = YYSelectedImageViewController()
+        vc.maxCount = 1
+        vc.function = .caijian 
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func lvjing(_ sender: UIButton) {
         let vc = YYSelectedImageViewController()
         vc.maxCount = 1 

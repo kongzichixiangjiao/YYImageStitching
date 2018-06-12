@@ -55,11 +55,12 @@ class YYSelectedImageViewController: YYBaseCollectionViewController {
     
     @objc func selectedFinished(sender: UIBarButtonItem) {
         if (selectedArray.count == 0) {
-            HUD.flash(.labeledError(title: "提醒", subtitle: "请选择图片"), delay: 2.0)
+            pk_hud(text: "~o( =∩ω∩= )m都没选...")
+            self.navigationController?.popViewController(animated: true)
             return
         }
         
-        if (function == .nine) {
+        if (function == .nine || function == .caijian) {
             self.imageManager.requestImage(for: self.selectedArray.first!.asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: nil) { (result: UIImage?, dictionry: Dictionary?) in
                 let image = result ?? UIImage.init(named: "iw_none")
                 let vc = YYClipperViewController()

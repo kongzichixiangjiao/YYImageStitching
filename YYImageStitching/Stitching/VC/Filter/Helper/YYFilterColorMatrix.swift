@@ -8,6 +8,19 @@
 
 import Foundation
 
+/*
+[ a, b, c, d, e,
+  f, g, h, i, j,
+  k, l, m, n, o,
+  p, q, r, s, t ]
+
+a, b, c, d, e 表示三原色中的红色
+f, g, h, i, j 表示三原色中的绿色
+k, l, m, n, o 表示三原色中的蓝色
+p, q, r, s, t 表示颜色的透明度
+第五列用于表示颜色的偏移量
+*/
+
 //test
 var colormatrix_test: [Float] = [
     1.0, 0.0, 0.0, 22.0, 0,

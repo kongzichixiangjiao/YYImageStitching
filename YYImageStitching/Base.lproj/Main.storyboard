@@ -142,40 +142,50 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFx-05-tJA">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="整拼接" image="pinjie">
-                                            <color key="titleColor" red="0.1333333333" green="0.51372549020000002" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="pinjie:" destination="Vy2-6c-cJ2" eventType="touchUpInside" id="756-Ss-4YL"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1z-sM-hys">
+                                        <rect key="frame" x="0.0" y="120.5" width="375" height="120.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="整裁剪" image="caijian">
+                                            <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="caijian:" destination="Vy2-6c-cJ2" eventType="touchUpInside" id="1gs-vG-hGk"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOo-Mf-QVh">
-                                        <rect key="frame" x="0.0" y="151" width="375" height="150.5"/>
+                                        <rect key="frame" x="0.0" y="241" width="375" height="121"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="整滤镜" image="lvjing">
-                                            <color key="titleColor" red="0.1333333333" green="0.51372549020000002" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="lvjing:" destination="Vy2-6c-cJ2" eventType="touchUpInside" id="mho-6c-Ruw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGS-hT-TjI">
-                                        <rect key="frame" x="0.0" y="301.5" width="375" height="151"/>
+                                        <rect key="frame" x="0.0" y="362" width="375" height="120.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="整九格" image="nine">
-                                            <color key="titleColor" red="0.1333333333" green="0.51372549020000002" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="jiugongge:" destination="Vy2-6c-cJ2" eventType="touchUpInside" id="KdI-8T-ygo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejq-ot-YGi">
-                                        <rect key="frame" x="0.0" y="452.5" width="375" height="150.5"/>
+                                        <rect key="frame" x="0.0" y="482.5" width="375" height="120.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="马赛克" image="masaike">
-                                            <color key="titleColor" red="0.1333333333" green="0.51372549020000002" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="masaike:" destination="Vy2-6c-cJ2" eventType="touchUpInside" id="q24-2Y-2Hh"/>
@@ -266,6 +276,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="caijian" width="24" height="24"/>
         <image name="huanxiong" width="16" height="14"/>
         <image name="jingyu" width="14" height="10"/>
         <image name="lvjing" width="30" height="30"/>

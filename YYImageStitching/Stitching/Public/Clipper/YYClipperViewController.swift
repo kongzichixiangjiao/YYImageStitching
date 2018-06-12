@@ -82,10 +82,19 @@ class YYClipperViewController: YYBaseViewController {
     }
     
     func initBarButtons() {
+//        if function == .caijian {
+//            let left = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(save))
+//            self.navigationItem.leftBarButtonItem = left
+//        }
         let right = UIBarButtonItem(title: "比例", style: .plain, target: self, action: #selector(rightPercentageBar))
         self.navigationItem.rightBarButtonItem = right
         let otherRight = UIBarButtonItem(title: "裁剪", style: .plain, target: self, action: #selector(otherRightBarCrop))
         self.navigationItem.rightBarButtonItems = [right, otherRight]
+    }
+    
+    @objc func save() {
+        saveImage(image: cropImage())
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @objc func rightPercentageBar() {
@@ -114,6 +123,17 @@ class YYClipperViewController: YYBaseViewController {
                 vc.targetImage = self.cropImage()
                 vc.function = self.function
                 self.navigationController?.pushViewController(vc, animated: true)
+            } else if (self.function == .caijian) {
+                let buttons = ["需要"]
+                self.scl_alert(title: "需要保存吗？", subTitle: "", buttons: buttons, clickedButtonHandler: {
+                    [weak self] tag, bTitle in
+                    if let weakSelf = self {
+                        if (bTitle == buttons.first) {
+                            weakSelf.saveImage(image: weakSelf.cropImage())
+                            weakSelf.navigationController?.popToRootViewController(animated: true)
+                        }
+                    }
+                })
             } else {
                 self.delegate?.clipperViewControllerWithCrop(image: self.cropImage())
                 self.navigationController?.popViewController(animated: true)

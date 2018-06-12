@@ -10,5 +10,5 @@
 import Foundation
 
 enum FunctionType: Int {
-    case imageJoint = 0, addFilter = 1, nine = 2, mosaic = 3
+    case imageJoint = 0, addFilter = 1, nine = 2, mosaic = 3, caijian = 4
 }

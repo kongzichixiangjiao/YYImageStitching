@@ -235,6 +235,8 @@ extension YYRootViewController {
                     weakSelf.navigationController?.pushViewController(vc, animated: true)
                     break
                 case 2:
+                    self?.dataSource.remove(at: indexPath.row)
+                    self?.collectionView.reloadData()
                     break
                 case 3:
                     let vc = UIStoryboard.yy_main(vcName: "YYEditViewController") as! YYEditViewController
@@ -265,7 +267,6 @@ extension YYRootViewController: YYClipperViewControllerDelegate {
 
 extension YYRootViewController: YYFilterViewControllerDelegate {
     func filterViewControllerEditFinished(image: UIImage) {
-        
         self.collectionView.reloadData()
     }
 
