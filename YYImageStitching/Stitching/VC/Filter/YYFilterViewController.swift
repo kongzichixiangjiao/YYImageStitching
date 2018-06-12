@@ -42,7 +42,8 @@ class YYFilterViewController: YYBaseViewController {
     }
     
     func initData() {
-        let path = Bundle.main.path(forResource: "filters", ofType: "plist", inDirectory: nil) ?? ""
+//        let path = Bundle.main.path(forResource: "filters", ofType: "plist", inDirectory: nil) ?? ""
+        let path = Bundle.main.path(forResource: "filtersNew", ofType: "plist", inDirectory: nil) ?? ""
         
         let arr = NSArray.init(contentsOf: URL(fileURLWithPath: path)) as! [[String : Any]]
         if let list = ([YYFilterModel].deserialize(from: arr) as? [YYFilterModel]) {
@@ -50,6 +51,18 @@ class YYFilterViewController: YYBaseViewController {
             self.filterModel = self.dataSource.first
         }
         
+        for model in dataSource {
+            initFilters(model: model)
+        }
+    }
+    
+    func initFilters(model: YYFilterModel) {
+        self.filterModel = model
+        pk_hud(text: model.type)
+        
+        model.thumbnailImage = GPUImageFilter()
+        
+        collectionView.reloadData()
     }
     
     func registerCells() {
@@ -78,13 +91,13 @@ class YYFilterViewController: YYBaseViewController {
                 [weak self] tag, bTitle in
                 if let weakSelf = self {
                     guard let img = weakSelf.imageView.image else {
-                       weakSelf.pk_hud(text: "图片有毒")
+                        weakSelf.pk_hud(text: "图片有毒")
                         return
                     }
                     weakSelf.saveImage(image: img)
                 }
             }
-            return 
+            return
         }
         
         delegate?.filterViewControllerEditFinished(image: self.imageView.image!)
@@ -114,7 +127,7 @@ class YYFilterViewController: YYBaseViewController {
             image = model!.image!
         }
         return image
-
+        
     }
     
     func changeFilterImage(type: FilterEnum) {
@@ -137,9 +150,10 @@ class YYFilterViewController: YYBaseViewController {
             }
         }
     }
-
+    
     func GPUImageFilter() -> UIImage? {
         var filter: GPUImageOutput!
+        var colormatrix: [Float]!
         
         switch YYFilterType(rawValue: self.filterModel.type) {
         case .saturation?:
@@ -172,11 +186,11 @@ class YYFilterViewController: YYBaseViewController {
             break
         case .vignette?:
             filter = GPUImageVignetteFilter()
-//            vignetteCenter; (defaults to 0.5, 0.5)
-//            @property (nonatomic, readwrite) GPUVector3 vignetteColor; (defaults to black)
-//            @property (nonatomic, readwrite) CGFloat vignetteStart; Default of 0.5.
-//            @property (nonatomic, readwrite) CGFloat vignetteEnd; Default of 0.75.
-//            (filter as! GPUImageVignetteFilter).vignetteStart = CGFloat(slider.value)
+            //            vignetteCenter; (defaults to 0.5, 0.5)
+            //            @property (nonatomic, readwrite) GPUVector3 vignetteColor; (defaults to black)
+            //            @property (nonatomic, readwrite) CGFloat vignetteStart; Default of 0.5.
+            //            @property (nonatomic, readwrite) CGFloat vignetteEnd; Default of 0.75.
+            //            (filter as! GPUImageVignetteFilter).vignetteStart = CGFloat(slider.value)
             (filter as! GPUImageVignetteFilter).vignetteEnd = CGFloat(slider.value)
             break
         case .Hue?:
@@ -312,11 +326,8 @@ class YYFilterViewController: YYBaseViewController {
             (filter as! GPUImageErosionFilter).verticalTexelSpacing = CGFloat(slider.value)
             (filter as! GPUImageErosionFilter).horizontalTexelSpacing = 1
             break
-            
-            
         case .Multiply?:
             filter = GPUImageMultiplyBlendFilter()
-            
             break
         case .Overlay?:
             filter = GPUImageOverlayBlendFilter()
@@ -381,16 +392,58 @@ class YYFilterViewController: YYBaseViewController {
         case .Divide?:
             filter = GPUImageDivideBlendFilter()
             break
+        case .colormatrix_heibai?:
+            colormatrix = colormatrix_heibai
+            break
+        case .colormatrix_lomo?:
+            colormatrix = colormatrix_lomo
+            break
+        case .colormatrix_huajiu?:
+            colormatrix = colormatrix_huajiu
+            break
+        case .colormatrix_gete?:
+            colormatrix = colormatrix_gete
+            break
+        case .colormatrix_ruihua?:
+            colormatrix = colormatrix_ruihua
+            break
+        case .colormatrix_danya?:
+            colormatrix = colormatrix_danya
+            break
+        case .colormatrix_jiuhong?:
+            colormatrix = colormatrix_jiuhong
+            break
+        case .colormatrix_qingning?:
+            colormatrix = colormatrix_qingning
+            break
+        case .colormatrix_langman?:
+            colormatrix = colormatrix_langman
+            break
+        case .colormatrix_guangyun?:
+            colormatrix = colormatrix_guangyun
+            break
+        case .colormatrix_landiao?:
+            colormatrix = colormatrix_landiao
+            break
+        case .colormatrix_menghuan?:
+            colormatrix = colormatrix_menghuan
+            break
+        case .colormatrix_yese?:
+            colormatrix = colormatrix_yese
+            break
+        case .colormatrix_test?:
+            colormatrix = colormatrix_test
+            break
         default:
             break
         }
-        
+        /*
         if filter == nil {
             pk_hud_error(text: "滤镜创建失败")
             return nil
         }
         
-//        groupFilter.addTarget(filter as! GPUImageInput?)
+        //        groupFilter.addTarget(filter as! GPUImageInput?)
         
         let img = UIImage(named: "lookup_soft_elegance_1.png")
         let source1 = GPUImagePicture(cgImage: img?.cgImage, smoothlyScaleOutput: true)
@@ -400,18 +453,27 @@ class YYFilterViewController: YYBaseViewController {
         
         let source = GPUImagePicture(image: targetImage)
         source?.addTarget(filter as! GPUImageInput?)
-//        source?.addTarget(groupFilter)
+        //        source?.addTarget(groupFilter)
         source?.processImage()
         
         filter.useNextFrameForImageCapture()
         let new = filter.imageFromCurrentFramebuffer()
         
-//        groupFilter.useNextFrameForImageCapture()
-//        let new = groupFilter.imageFromCurrentFramebuffer()
+        //        groupFilter.useNextFrameForImageCapture()
+        //        let new = groupFilter.imageFromCurrentFramebuffer()
+ 
+//        self.imageView.image = new
+        */
+        let p = colormatrix.withUnsafeMutableBufferPointer() {
+            // 这里，形参是一个含有一个UnsafeMutableBufferPointer的形参，
+            // 返回类型为UnsafeMutablePointer的函数类型。
+            (buffer: inout UnsafeMutableBufferPointer<Float>) -> UnsafeMutablePointer<Float> in
+            return buffer.baseAddress!
+        }
         
-        self.imageView.image = new
-        
-        return new
+        self.imageView.image = targetImage?.yy_image(colorMatrix: p)
+
+        return self.imageView.image
     }
     
     @IBAction func sliderChangeValue(_ sender: UISlider) {
@@ -425,6 +487,7 @@ class YYFilterViewController: YYBaseViewController {
         slider.maximumValue = self.filterModel.sliderMaxValue
         slider.setValue(self.filterModel.sliderCurrentValue, animated: true)
     }
+    
 }
 
 extension YYFilterViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -455,9 +518,13 @@ extension YYFilterViewController: UICollectionViewDelegate, UICollectionViewData
         
         pk_hud(text: self.title!)
         
-        self.filterModel.thumbnailImage = GPUImageFilter()
-        targetImage = GPUImageFilter()
+        if self.filterModel.thumbnailImage == nil {
+            self.filterModel.thumbnailImage = GPUImageFilter()
+        }
+        self.imageView.image = GPUImageFilter()
         
         collectionView.reloadData()
+        
+        
     }
 }

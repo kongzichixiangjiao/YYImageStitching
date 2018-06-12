@@ -17,6 +17,9 @@
 		DC1623A9206C9860007AFA13 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1623A8206C9860007AFA13 /* UIView+Layout.swift */; };
 		DC1623AF206CD0E2007AFA13 /* UIView+XIB_Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1623AE206CD0E2007AFA13 /* UIView+XIB_Layer.swift */; };
 		DC16B9E92072033D00C048E3 /* YYToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC16B9E82072033D00C048E3 /* YYToast.swift */; };
+		DC21788C20CF71F700A777A9 /* YYFilterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21788B20CF71F700A777A9 /* YYFilterHelper.swift */; };
+		DC21788E20CF721100A777A9 /* YYFilterColorMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21788D20CF721100A777A9 /* YYFilterColorMatrix.swift */; };
+		DC21789020CF736100A777A9 /* filtersNew.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC21788F20CF736100A777A9 /* filtersNew.plist */; };
 		DC229C7620639FB900F45C8C /* ScrollView+PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC229C7520639FB900F45C8C /* ScrollView+PlaceHolder.swift */; };
 		DC292AC22069E8A5004A989B /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC292AC12069E8A5004A989B /* UIDevice+Extension.swift */; };
 		DC40742920B80A41002B891E /* cropMaskView.png in Resources */ = {isa = PBXBuildFile; fileRef = DC40742820B80A41002B891E /* cropMaskView.png */; };
@@ -131,6 +134,7 @@
 		DC862F13206DEB7300B7926F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862F12206DEB7300B7926F /* Theme.swift */; };
 		DC862F16206E21BF00B7926F /* YYScaleToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC862F15206E21BF00B7926F /* YYScaleToolsView.swift */; };
 		DC862F18206E21C700B7926F /* YYScaleToolsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC862F17206E21C700B7926F /* YYScaleToolsView.xib */; };
+		DC961C5020CF55EB00C176FF /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC961C4F20CF55EB00C176FF /* Int+Extension.swift */; };
 		DCA0D0D920B3B0CD00308088 /* AppDelegate+GoogleAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA0D0D820B3B0CD00308088 /* AppDelegate+GoogleAd.swift */; };
 		DCA4DA7E20BF9806006F6A60 /* YYPhotoPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA4DA7D20BF9806006F6A60 /* YYPhotoPicker.storyboard */; };
 		DCA4DA8120BF986D006F6A60 /* YYSelectedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4DA8020BF986D006F6A60 /* YYSelectedImageViewController.swift */; };
@@ -195,6 +199,9 @@
 		DC1623A8206C9860007AFA13 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		DC1623AE206CD0E2007AFA13 /* UIView+XIB_Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+XIB_Layer.swift"; sourceTree = "<group>"; };
 		DC16B9E82072033D00C048E3 /* YYToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYToast.swift; sourceTree = "<group>"; };
+		DC21788B20CF71F700A777A9 /* YYFilterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFilterHelper.swift; sourceTree = "<group>"; };
+		DC21788D20CF721100A777A9 /* YYFilterColorMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFilterColorMatrix.swift; sourceTree = "<group>"; };
+		DC21788F20CF736100A777A9 /* filtersNew.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = filtersNew.plist; sourceTree = "<group>"; };
 		DC229C7520639FB900F45C8C /* ScrollView+PlaceHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScrollView+PlaceHolder.swift"; sourceTree = "<group>"; };
 		DC292AC12069E8A5004A989B /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		DC40742820B80A41002B891E /* cropMaskView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cropMaskView.png; sourceTree = "<group>"; };
@@ -315,7 +322,8 @@
 		DC862F12206DEB7300B7926F /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		DC862F15206E21BF00B7926F /* YYScaleToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYScaleToolsView.swift; sourceTree = "<group>"; };
 		DC862F17206E21C700B7926F /* YYScaleToolsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYScaleToolsView.xib; sourceTree = "<group>"; };
-		DC87BC242079FBEA005A0382 /* ImageStiching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageStiching.h; sourceTree = "<group>"; };
+		DC87BC242079FBEA005A0382 /* YYImageStitching-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YYImageStitching-Bridging-Header.h"; sourceTree = "<group>"; };
+		DC961C4F20CF55EB00C176FF /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		DCA0D0D820B3B0CD00308088 /* AppDelegate+GoogleAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+GoogleAd.swift"; sourceTree = "<group>"; };
 		DCA4DA7D20BF9806006F6A60 /* YYPhotoPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YYPhotoPicker.storyboard; sourceTree = "<group>"; };
 		DCA4DA8020BF986D006F6A60 /* YYSelectedImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYSelectedImageViewController.swift; sourceTree = "<group>"; };
@@ -435,6 +443,7 @@
 				DC862EB3206DD68F00B7926F /* UIView+Frame.swift */,
 				DC7EB757207B17FC004D7027 /* UIView+Gesture.swift */,
 				DC862F10206DE73C00B7926F /* UICollectionView+Extension.swift */,
+				DC961C4F20CF55EB00C176FF /* Int+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -442,6 +451,7 @@
 		DC61187B20C8BB8B00F5DFD0 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				DC961C4A20CE286200C176FF /* Helper */,
 				DC6A67B520CA78100000AF40 /* FilterImages */,
 				DC61187C20C8BB8B00F5DFD0 /* YYFilterViewController.swift */,
 				DC61187D20C8BB8B00F5DFD0 /* YYFilterViewController.xib */,
@@ -643,7 +653,7 @@
 				DC862EBA206DDAF900B7926F /* AppDelegate.swift */,
 				DCA0D0D820B3B0CD00308088 /* AppDelegate+GoogleAd.swift */,
 				DCE6AD6F207A03DC00B9117C /* WX+AppDelegate.swift */,
-				DC87BC242079FBEA005A0382 /* ImageStiching.h */,
+				DC87BC242079FBEA005A0382 /* YYImageStitching-Bridging-Header.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -777,6 +787,7 @@
 				DCE43DCB20BCF18500FB1058 /* timg.jpeg */,
 				DC862EE4206DDAFA00B7926F /* img_default.png */,
 				DC73714120C8D0CB005BFE4A /* filters.plist */,
+				DC21788F20CF736100A777A9 /* filtersNew.plist */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -800,6 +811,15 @@
 				DC862F17206E21C700B7926F /* YYScaleToolsView.xib */,
 			);
 			path = scale;
+			sourceTree = "<group>";
+		};
+		DC961C4A20CE286200C176FF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				DC21788B20CF71F700A777A9 /* YYFilterHelper.swift */,
+				DC21788D20CF721100A777A9 /* YYFilterColorMatrix.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		DCA4DA7F20BF986D006F6A60 /* PhotoPicker */ = {
@@ -976,6 +996,7 @@
 				DC6387E12071BC4200FFBA05 /* view_bg_image.png in Resources */,
 				DC61188E20C8BB8C00F5DFD0 /* YYNineImageViewController.xib in Resources */,
 				DC61189920C8BBB900F5DFD0 /* YYFilterBottomCell.xib in Resources */,
+				DC21789020CF736100A777A9 /* filtersNew.plist in Resources */,
 				DC862F18206E21C700B7926F /* YYScaleToolsView.xib in Resources */,
 				DC862EF1206DDAFA00B7926F /* YYEmptyView.xib in Resources */,
 				DC6A67D020CA78110000AF40 /* voroni_points2.png in Resources */,
@@ -1143,6 +1164,7 @@
 				DC862EEF206DDAFA00B7926F /* YYClipView.swift in Sources */,
 				DC862EF4206DDAFA00B7926F /* YYProgressView.swift in Sources */,
 				DCAB75E320B3BE4D001F5A44 /* YYInterstitialAdViewController.swift in Sources */,
+				DC961C5020CF55EB00C176FF /* Int+Extension.swift in Sources */,
 				DC685CFF207DBF9C005631C1 /* CollectionViewWheelLayout.swift in Sources */,
 				DC685CFC207DBF9C005631C1 /* CollectionViewTimeMachineLayout.swift in Sources */,
 				DC862EF9206DDAFA00B7926F /* YYMovingCell.swift in Sources */,
@@ -1156,6 +1178,7 @@
 				DCAB75F720B54F00001F5A44 /* YYClipperViewController.swift in Sources */,
 				DC685CFA207DBF9C005631C1 /* CollectionViewLayout.swift in Sources */,
 				DC7FA63E20B6C29E00A6FC6F /* YYAlertViewController.swift in Sources */,
+				DC21788E20CF721100A777A9 /* YYFilterColorMatrix.swift in Sources */,
 				DCAB75EF20B4054C001F5A44 /* YYClipViewController.swift in Sources */,
 				DC862EE8206DDAFA00B7926F /* YYPickerImageViewController.swift in Sources */,
 				DC685D01207DBF9C005631C1 /* LayoutConfiguration.swift in Sources */,
@@ -1190,6 +1213,7 @@
 				DC61188F20C8BB8C00F5DFD0 /* YYMosaicView.swift in Sources */,
 				DCB02AB32072330600F0D55B /* YYFilterStringFlowLayout.swift in Sources */,
 				DCA0D0D920B3B0CD00308088 /* AppDelegate+GoogleAd.swift in Sources */,
+				DC21788C20CF71F700A777A9 /* YYFilterHelper.swift in Sources */,
 				DC862EF0206DDAFA00B7926F /* YYEmptyView.swift in Sources */,
 				DC292AC22069E8A5004A989B /* UIDevice+Extension.swift in Sources */,
 				DC685D04207DC135005631C1 /* YYCircleCell.swift in Sources */,
@@ -1302,6 +1326,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1362,6 +1387,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1387,13 +1413,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = HGA4995V4J;
 				INFOPLIST_FILE = YYImageStitching/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.funengliang.houjianan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Stitching/Other/ImageStiching.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Stitching/Other/YYImageStitching-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1405,13 +1432,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = HGA4995V4J;
 				INFOPLIST_FILE = YYImageStitching/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.funengliang.houjianan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Stitching/Other/ImageStiching.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Stitching/Other/YYImageStitching-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

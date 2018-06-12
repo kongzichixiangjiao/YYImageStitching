@@ -11,4 +11,5 @@
 
 #import "WXApi.h"
 
+
 #endif /* ImageStiching_h */
