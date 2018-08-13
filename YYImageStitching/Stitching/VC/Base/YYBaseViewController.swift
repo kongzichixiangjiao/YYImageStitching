@@ -55,6 +55,15 @@ class YYBaseViewController: UIViewController {
     func pk_hud_error(title: String = "出错了", text: String) {
         HUD.flash(.labeledError(title: title, subtitle: text), delay: 0.8)
     }
+    
+    func px_show_hud_progress() {
+        HUD.flash(.progress)
+    }
+    
+    func px_hide_hud_progress() {
+        HUD.hide()
+    }
+    
 }
 
 extension YYBaseViewController {

@@ -159,7 +159,6 @@
 		DCB02AB12072326000F0D55B /* YYFilterStringCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB02AAF2072326000F0D55B /* YYFilterStringCell.xib */; };
 		DCB02AB32072330600F0D55B /* YYFilterStringFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB02AB22072330600F0D55B /* YYFilterStringFlowLayout.swift */; };
 		DCC06504206B82EF009DD6D9 /* UIView+Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC06503206B82EF009DD6D9 /* UIView+Shot.swift */; };
-		DCC382E420C6877300A67033 /* squares.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC382E320C6877300A67033 /* squares.png */; };
 		DCCB54FF206A1D240024F22B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCB54FE206A1D240024F22B /* Array+Extension.swift */; };
 		DCE43DCA20BBE0ED00FB1058 /* YYImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE43DC920BBE0ED00FB1058 /* YYImageView.swift */; };
 		DCE43DCC20BCF18500FB1058 /* timg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DCE43DCB20BCF18500FB1058 /* timg.jpeg */; };
@@ -348,7 +347,6 @@
 		DCB02AAF2072326000F0D55B /* YYFilterStringCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYFilterStringCell.xib; sourceTree = "<group>"; };
 		DCB02AB22072330600F0D55B /* YYFilterStringFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFilterStringFlowLayout.swift; sourceTree = "<group>"; };
 		DCC06503206B82EF009DD6D9 /* UIView+Shot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shot.swift"; sourceTree = "<group>"; };
-		DCC382E320C6877300A67033 /* squares.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squares.png; sourceTree = "<group>"; };
 		DCCB54FE206A1D240024F22B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		DCE43DC920BBE0ED00FB1058 /* YYImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYImageView.swift; sourceTree = "<group>"; };
 		DCE43DCB20BCF18500FB1058 /* timg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg.jpeg; sourceTree = "<group>"; };
@@ -790,7 +788,6 @@
 			children = (
 				DC6387C72071BC4100FFBA05 /* guideImage */,
 				DC862EE2206DDAFA00B7926F /* 5.jpg */,
-				DCC382E320C6877300A67033 /* squares.png */,
 				DC862EE3206DDAFA00B7926F /* download.plist */,
 				DCE43DCB20BCF18500FB1058 /* timg.jpeg */,
 				DC862EE4206DDAFA00B7926F /* img_default.png */,
@@ -1049,7 +1046,6 @@
 				DCA4DA7E20BF9806006F6A60 /* YYPhotoPicker.storyboard in Resources */,
 				DC6387D62071BC4200FFBA05 /* adImage4.gif in Resources */,
 				DC6A67CB20CA78110000AF40 /* lookup_soft_elegance_2.png in Resources */,
-				DCC382E420C6877300A67033 /* squares.png in Resources */,
 				DC6387D72071BC4200FFBA05 /* guideImage1.jpg in Resources */,
 				DC40742920B80A41002B891E /* cropMaskView.png in Resources */,
 				DC61189320C8BB8C00F5DFD0 /* YYLoginViewController.xib in Resources */,

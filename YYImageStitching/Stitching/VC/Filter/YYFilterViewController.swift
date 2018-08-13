@@ -40,6 +40,8 @@ class YYFilterViewController: YYBaseViewController {
         initViews()
         initData()
         registerCells()
+        
+        self.imageView.image = targetImage
     }
     
     func initData() {
@@ -523,7 +525,7 @@ extension YYFilterViewController: UICollectionViewDelegate, UICollectionViewData
         self.title = filterModel.type
         
         setupSlider()
-        
+
         pk_hud(text: self.title!)
         
         if self.filterModel.thumbnailImage == nil {
@@ -532,7 +534,6 @@ extension YYFilterViewController: UICollectionViewDelegate, UICollectionViewData
         self.imageView.image = GPUImageFilter()
         
         collectionView.reloadData()
-        
         
     }
 }

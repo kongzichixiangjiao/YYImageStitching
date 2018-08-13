@@ -283,7 +283,7 @@
         <image name="masaike" width="20" height="20"/>
         <image name="nine" width="30" height="30"/>
         <image name="phone" width="20" height="17"/>
-        <image name="pinjie" width="30" height="30"/>
+        <image name="pinjie" width="20" height="20"/>
         <image name="yanjingshe" width="14" height="21"/>
     </resources>
 </document>
