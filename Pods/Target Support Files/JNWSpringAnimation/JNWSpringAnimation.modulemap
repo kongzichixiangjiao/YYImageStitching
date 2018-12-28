@@ -1,6 +1,0 @@
-framework module JNWSpringAnimation {
-  umbrella header "JNWSpringAnimation-umbrella.h"
-
-  export *
-  module * { export * }
-}

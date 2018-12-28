@@ -1,67 +1,20 @@
 PODS:
-  - Alamofire (4.7.2)
-  - AlamofireImage (3.3.1):
-    - Alamofire (~> 4.5)
   - Fusuma (1.2.4)
-  - Google-Mobile-Ads-SDK (7.30.0)
+  - Google-Mobile-Ads-SDK (7.31.0)
   - GPUImage (0.1.7)
-  - HandyJSON (4.1.1)
-  - ImageSource/AlamofireImage (2.0.1):
-    - AlamofireImage (~> 3)
-    - ImageSource/Remote
-  - ImageSource/Core (2.0.1)
-  - ImageSource/Local (2.0.1):
-    - ImageSource/Core
-  - ImageSource/PHAsset (2.0.1):
-    - ImageSource/Core
-  - ImageSource/Remote (2.0.1):
-    - ImageSource/Core
-    - ImageSource/UIKit
-  - ImageSource/UIKit (2.0.1):
-    - ImageSource/Core
-  - JNWSpringAnimation (0.7.1)
-  - Marshroute (0.4.2)
-  - Paparazzo (2.0.0):
-    - ImageSource/Core
-    - ImageSource/Local
-    - ImageSource/PHAsset
-    - ImageSource/Remote
-    - JNWSpringAnimation
-    - Paparazzo/AlamofireImage (= 2.0.0)
-    - Paparazzo/Core (= 2.0.0)
-    - Paparazzo/Marshroute (= 2.0.0)
-  - Paparazzo/AlamofireImage (2.0.0):
-    - ImageSource/AlamofireImage
-    - ImageSource/Core
-    - ImageSource/Local
-    - ImageSource/PHAsset
-    - ImageSource/Remote
-    - JNWSpringAnimation
-    - Paparazzo/Core
-  - Paparazzo/Core (2.0.0):
-    - ImageSource/Core
-    - ImageSource/Local
-    - ImageSource/PHAsset
-    - ImageSource/Remote
-    - JNWSpringAnimation
-  - Paparazzo/Marshroute (2.0.0):
-    - ImageSource/Core
-    - ImageSource/Local
-    - ImageSource/PHAsset
-    - ImageSource/Remote
-    - JNWSpringAnimation
-    - Marshroute
-    - Paparazzo/Core
-  - PKHUD (5.0.0)
+  - HandyJSON (4.1.3)
+  - PKHUD (5.1.0)
+  - PryntTrimmerView (2.0.1)
   - SCLAlertView (0.8)
-  - SKPhotoBrowser (5.0.8)
+  - SKPhotoBrowser (5.1.0)
   - SnapKit (4.0.0)
   - SQLite.swift (0.11.5):
     - SQLite.swift/standard (= 0.11.5)
   - SQLite.swift/standard (0.11.5)
   - SteviaLayout (4.2.0)
   - WechatOpenSDK (1.8.2)
-  - YPImagePicker (2.8.1):
+  - YPImagePicker (3.4.0):
+    - PryntTrimmerView (~> 2.0)
     - SteviaLayout (~> 4.2.0)
 
 DEPENDENCIES:
@@ -69,7 +22,6 @@ DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - GPUImage
   - HandyJSON
-  - Paparazzo
   - PKHUD (~> 5.0)
   - SCLAlertView
   - SKPhotoBrowser
@@ -80,17 +32,12 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Alamofire
-    - AlamofireImage
     - Fusuma
     - Google-Mobile-Ads-SDK
     - GPUImage
     - HandyJSON
-    - ImageSource
-    - JNWSpringAnimation
-    - Marshroute
-    - Paparazzo
     - PKHUD
+    - PryntTrimmerView
     - SCLAlertView
     - SKPhotoBrowser
     - SnapKit
@@ -100,25 +47,20 @@ SPEC REPOS:
     - YPImagePicker
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   Fusuma: e85c394878a2e1549c67140ba7c038aff8d7581c
-  Google-Mobile-Ads-SDK: 7404f68120ae8682afeb5af001fbf4aad731c78e
+  Google-Mobile-Ads-SDK: 6e529e748b45507a2ca904e0b5a52669ba3920c4
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
-  HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
-  ImageSource: 86b77f1fbf18273c7a3f8274900b169f78675a5e
-  JNWSpringAnimation: cd4c2f4464324f63f176c3624ffccf205211a100
-  Marshroute: 15cf8067a997bf298e9db9317dd7c32b8799a787
-  Paparazzo: 9822c808f8a6f0c427975da2fe4c4e5c71f31c68
-  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  HandyJSON: bc81fbeb62d65ae5d5942ed29bc4a8265d18c1e8
+  PKHUD: 62ea46a1e88c4def1da784878d199bb54c841e3c
+  PryntTrimmerView: 4260ae497a2f3e1bbfc0b71247eb74ab92bf0490
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
-  SKPhotoBrowser: d50a4f7374d4d71574dbeb1429ae5c31e778b72e
+  SKPhotoBrowser: c20c1da34d737b4e3e101feead6c8dd92ebf860a
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
   SteviaLayout: 0d2112caea45707695e8c718262c8ea3dd37ef17
   WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
-  YPImagePicker: 7b44e0ca5e969a18e83cd3b54cec2e0cb287a40e
+  YPImagePicker: 049aa31e2858c63730ace6b6358bba946178dfe3
 
-PODFILE CHECKSUM: dfda87ec08cacd369023b0bc3fa997f428996c8d
+PODFILE CHECKSUM: 0e3a458494cb51bc4ba87b97c2b81f2b78fdec14
 
 COCOAPODS: 1.5.3

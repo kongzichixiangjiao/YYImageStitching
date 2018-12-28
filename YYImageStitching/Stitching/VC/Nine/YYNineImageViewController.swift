@@ -131,6 +131,7 @@ class YYNineImageViewController: YYBaseViewController {
         }
         
         let browser = SKPhotoBrowser(photos: items)
+//        browser.updateDeleteButton(UIImage(named: "nav_back")!, size: CGSize(width: 40, height: 40))
         browser.initializePageIndex(tag)
         present(browser, animated: true, completion: {})
         

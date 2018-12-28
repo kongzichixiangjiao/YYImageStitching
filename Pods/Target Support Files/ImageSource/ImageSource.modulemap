@@ -1,6 +1,0 @@
-framework module ImageSource {
-  umbrella header "ImageSource-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -52,9 +52,11 @@ public class YPBottomPager: UIViewController, UIScrollViewDelegate {
     func reload() {
         let viewWidth: CGFloat = UIScreen.main.bounds.width
         for (index, c) in controllers.enumerated() {
+            c.willMove(toParentViewController: self)
             addChildViewController(c)
             let x: CGFloat = CGFloat(index) * viewWidth
             v.scrollView.sv(c.view)
+            c.didMove(toParentViewController: self)
             c.view.left(x)
             c.view.top(0)
             c.view.width(viewWidth)
@@ -67,7 +69,7 @@ public class YPBottomPager: UIViewController, UIScrollViewDelegate {
         // Build headers
         for (index, c) in controllers.enumerated() {
             let menuItem = YPMenuItem()
-            menuItem.text.text = c.title?.capitalized
+            menuItem.textLabel.text = c.title?.capitalized
             menuItem.button.tag = index
             menuItem.button.addTarget(self,
                                       action: #selector(tabTapped(_:)),
@@ -96,7 +98,7 @@ public class YPBottomPager: UIViewController, UIScrollViewDelegate {
             currentPage = page
             //select menut item and deselect others
             for mi in v.header.menuItems {
-                mi.unselect()
+                mi.deselect()
             }
             let currentMenuItem = v.header.menuItems[page]
             currentMenuItem.select()
@@ -110,7 +112,7 @@ public class YPBottomPager: UIViewController, UIScrollViewDelegate {
         v.scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: false)
         //select menut item and deselect others
         for mi in v.header.menuItems {
-            mi.unselect()
+            mi.deselect()
         }
         let currentMenuItem = v.header.menuItems[page]
         currentMenuItem.select()

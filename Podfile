@@ -23,7 +23,7 @@ pod 'SKPhotoBrowser'
 # 图片处理
 pod 'YPImagePicker'
 # 图片处理
-pod 'Paparazzo'
+#pod 'Paparazzo'
 
 # 提醒
 pod 'SCLAlertView'

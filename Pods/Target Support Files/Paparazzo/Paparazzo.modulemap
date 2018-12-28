@@ -1,6 +1,0 @@
-framework module Paparazzo {
-  umbrella header "Paparazzo-umbrella.h"
-
-  export *
-  module * { export * }
-}
